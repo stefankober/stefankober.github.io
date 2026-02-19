@@ -50,7 +50,26 @@
             bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
         ></button>
       </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
     </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
   </div>
 </header>
 
@@ -68,7 +87,7 @@
     
     <h1 class="mb-16">Stefan Kober&#x27;s Homepage</h1>
     <section><p>A collection of philosophical work, research, and experiments.<br />
-Underneath the philosophy, mathematics, and software lies one recurring concern: what it means to be human in this world, and how to construct orientation without having final answers.</p>
+Underneath the philosophy, mathematics, and software lies one recurring concern: what it means to be human in this world, and how to find orientation without having final answers.</p>
 <h2 id="essays">Essays</h2>
 <h3 id="a-tinkerer-s-philosophy-conviction-formation-theory">A Tinkerer's Philosophy: Conviction Formation Theory</h3>
 <ul>
@@ -141,8 +160,6 @@ A drill engine for building procedural mastery through generated tasks.
 </ul>
 <h2 id="music">Music</h2>
 <p>No material archived yet.</p>
-<h2 id="contact">Contact</h2>
-<p>sk [dot] 1241 [at] nym [dot] hush [dot] com.</p>
 </section>
       <!-- Page List -->
 
