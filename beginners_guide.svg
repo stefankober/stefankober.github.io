@@ -72,10 +72,10 @@
   <rect x="340" y="105" width="200" height="60" rx="6" class="block"/>
   <rect x="580" y="105" width="200" height="60" rx="6" class="block"/>
 
-  <text x="440" y="131" text-anchor="middle" class="text">Nouns + names +</text>
-  <text x="440" y="153" text-anchor="middle" class="text">descriptions</text>
+  <text x="440" y="130" text-anchor="middle" class="text">Nouns + names +</text>
+  <text x="440" y="152" text-anchor="middle" class="text">descriptions</text>
 
-  <text x="680" y="143" text-anchor="middle" class="text">Verbs that connect them</text>
+  <text x="680" y="140" text-anchor="middle" class="text">Verbs that connect them</text>
 
   <rect x="340" y="175" width="440" height="30" rx="6" class="block"/>
   <text x="560" y="194" text-anchor="middle" class="text">Qualifiers for nouns and verbs</text>
@@ -127,5 +127,5 @@
   <text x="660" y="636" text-anchor="middle" class="text">How else could this be understood?</text>
 
   <rect x="340" y="650" width="440" height="30" rx="6" class="block"/>
-  <text x="560" y="670" text-anchor="middle" class="text">Feedback on emotions</text>
+  <text x="560" y="668" text-anchor="middle" class="text">Feedback on emotions</text>
 </svg>
