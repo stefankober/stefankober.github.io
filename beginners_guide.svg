@@ -1,0 +1,131 @@
+<svg viewBox="0 0 980 820" width="100%" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root{
+      --bg:#fbfaf6;
+      --text:#1a1a1a;
+      --muted:#6a6a6a;
+      --accent:#1f5fa3;
+      --border:#d8dde6;
+    }
+
+    .bg { fill: var(--bg); }
+    .outer { stroke: var(--border); stroke-width: 1; fill: none; }
+    .rowline { stroke: var(--border); stroke-width: 1; }
+    .divider { stroke: var(--border); stroke-width: 1; }
+
+    .label {
+      font: 600 18px "Cormorant Garamond", serif;
+      fill: var(--text);
+    }
+    .small {
+      font: 400 13px Inter, sans-serif;
+      fill: var(--muted);
+    }
+    .text {
+      font: 500 14px Inter, sans-serif;
+      fill: var(--text);
+    }
+
+    .block {
+      fill: var(--accent);
+      opacity: 0.22;
+      stroke: var(--accent);
+      stroke-width: 1;
+    }
+    .wedge {
+      fill: var(--accent);
+      opacity: 0.16;
+      stroke: var(--accent);
+      stroke-width: 1;
+    }
+    .arrow {
+      stroke: var(--accent);
+      stroke-width: 2;
+      fill: none;
+      opacity: .7;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="860" height="725" class="bg"/>
+
+  <!-- Overall frame -->
+  <rect x="30" y="30" width="800" height="665" class="outer"/>
+
+  <!-- Two-column divider -->
+  <line x1="290" y1="90" x2="290" y2="695" class="divider"/>
+
+  <!-- New grid: header + 5 rows -->
+  <line x1="30" y1="90"  x2="830" y2="90"  class="rowline"/>
+  <line x1="30" y1="260" x2="830" y2="260" class="rowline"/>
+  <line x1="30" y1="350" x2="830" y2="350" class="rowline"/>
+  <line x1="30" y1="470" x2="830" y2="470" class="rowline"/>
+  <line x1="30" y1="590" x2="830" y2="590" class="rowline"/>
+
+  <!-- Header band -->
+  <text x="430" y="62" class="label" text-anchor="middle">Questioning - A One-Page Field Manual</text>
+
+  <!-- ========== ROW 1: What to ask for (90–250) ========== -->
+  <text x="60" y="135" class="label">What to ask for</text>
+  <text x="60" y="156" class="small">Build a story</text>
+
+  <rect x="340" y="105" width="200" height="60" rx="6" class="block"/>
+  <rect x="580" y="105" width="200" height="60" rx="6" class="block"/>
+
+  <text x="440" y="131" text-anchor="middle" class="text">Nouns + names +</text>
+  <text x="440" y="153" text-anchor="middle" class="text">descriptions</text>
+
+  <text x="680" y="143" text-anchor="middle" class="text">Verbs that connect them</text>
+
+  <rect x="340" y="175" width="440" height="30" rx="6" class="block"/>
+  <text x="560" y="194" text-anchor="middle" class="text">Qualifiers for nouns and verbs</text>
+
+  <rect x="340" y="215" width="440" height="30" rx="6" class="block"/>
+  <text x="560" y="234" text-anchor="middle" class="text">Time and place</text>
+
+  <!-- ========== ROW 2: Phases (250–370) ========== -->
+  <text x="60" y="306" class="label">Phases</text>
+  <text x="60" y="327" class="small">Move from coarse to fine</text>
+
+  <rect x="340" y="275" width="130" height="45" rx="6" class="block"/>
+  <rect x="495" y="275" width="130" height="45" rx="6" class="block"/>
+  <rect x="650" y="275" width="130" height="45" rx="6" class="block"/>
+
+  <text x="405" y="303" text-anchor="middle" class="text">Overview</text>
+  <text x="560" y="303" text-anchor="middle" class="text">Details</text>
+  <text x="715" y="303" text-anchor="middle" class="text">Loose ends</text>
+
+  <path d="M 340 335 H 780" class="arrow"/>
+  <path d="M 780 335 l -12 -7 v 14 z" fill="var(--accent)"/>
+
+  <!-- ========== ROW 3: Question types across phases (370–500) ========== -->
+  <text x="60" y="392" class="label">Question mix</text>
+  <text x="60" y="413" class="small">How often, when</text>
+
+  <polygon points="340,365 780,405 340,405" class="wedge"/>
+  <text x="380" y="393" class="text">Wh-questions</text>
+
+  <polygon points="340,455 780,455 780,415" class="wedge"/>
+  <text x="635" y="445" class="text">Yes/no questions</text>
+
+  <!-- ========== ROW 4: Tools when asking a person (500–620) ========== -->
+  <text x="60" y="512" class="label">With a person</text>
+  <text x="60" y="533" class="small">Keep the shared story complete</text>
+  <text x="60" y="548" class="small">and synchronized</text>
+
+  <polygon points="340,485 780,525 340,525" class="wedge"/>
+  <text x="360" y="515" class="text">Paraphrase and confirm</text>
+
+  <polygon points="340,535 780,575 340,575" class="wedge" opacity="0.10"/>
+  <text x="360" y="565" class="text">What else?</text>
+
+  <!-- ========== ROW 5: Only if needed (620–750) ========== -->
+  <text x="60" y="634" class="label">Only if needed</text>
+  <text x="60" y="655" class="small">Interrupt escalation loops</text>
+
+  <polygon points="340,640 780,605 780,640" class="wedge"/>
+  <text x="660" y="636" text-anchor="middle" class="text">How else could this be understood?</text>
+
+  <rect x="340" y="650" width="440" height="30" rx="6" class="block"/>
+  <text x="560" y="670" text-anchor="middle" class="text">Feedback on emotions</text>
+</svg>
