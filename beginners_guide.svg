@@ -63,7 +63,7 @@
   <line x1="30" y1="590" x2="830" y2="590" class="rowline"/>
 
   <!-- Header band -->
-  <text x="430" y="62" class="label" text-anchor="middle">Questioning - A One-Page Field Manual</text>
+  <text x="430" y="62" class="label" text-anchor="middle">Questioning - A One-Page Field Guide</text>
 
   <!-- ========== ROW 1: What to ask for (90–250) ========== -->
   <text x="60" y="135" class="label">What to ask for</text>
