@@ -1,0 +1,17 @@
+<svg viewBox="0 0 120 120" width="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Original square">
+  <rect x="10" y="10" width="100" height="100"
+        fill="none" stroke="currentColor" stroke-width="3"/>
+
+  <polygon points="10,10 40,10 10,80"
+           fill="#cc3333" stroke="currentColor"/>
+
+  <polygon points="10,80 80,110 10,110"
+           fill="#cc3333" stroke="currentColor"/>
+
+  <polygon points="80,110 110,40 110,110"
+           fill="#cc3333" stroke="currentColor"/>
+
+  <polygon points="110,40 40,10 110,10"
+           fill="#cc3333" stroke="currentColor"/>
+
+</svg>

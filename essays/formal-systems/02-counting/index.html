@@ -1,0 +1,225 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>2. Counting, Pairing, Geometry</title>
+  <meta property="og:title" content="2. Counting, Pairing, Geometry" />
+  <meta property="og:url" content="https://stefankober.github.io/essays/formal-systems/02-counting/" />
+  <link rel="canonical" href="https://stefankober.github.io/essays/formal-systems/02-counting/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://stefankober.github.io/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://stefankober.github.io/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://stefankober.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://stefankober.github.io/apple-touch-icon.png?h=58bee300054c5308feb3" />
+  <link rel="icon" type="image/png" href="https://stefankober.github.io/android-icon.png?h=8d80ec95446bd2c36826" />
+  <script src="https://stefankober.github.io/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://stefankober.github.io/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://stefankober.github.io/elasticlunr.min.js", "https://stefankober.github.io/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">2. Counting, Pairing, Geometry</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H8M0S">8&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+    <p class="back-to-toc">
+      ← <a href="https:&#x2F;&#x2F;stefankober.github.io&#x2F;essays&#x2F;formal-systems&#x2F;">How Formal Systems Reorganize Belief</a>
+    </p>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#counting">Counting</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#number-comparison-without-counting">Number Comparison Without Counting</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#geometry">Geometry</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+
+  <!-- Content -->
+  <section><h2 id="counting">Counting</h2>
+<p>Counting contains a quiet but powerful expectation: that two people who count the same collection of objects will arrive at the same result.</p>
+<p>This expectation is what makes counting useful. It is also what gives the operations built on it their practical value, such as addition, multiplication and exponentiation.</p>
+<p>When we count a pile of stones, we expect that anyone else who performs the same activity carefully will obtain the same number. If a discrepancy arises, we do not usually conclude that the amount has changed mysteriously, or that the amount is different for different persons. Instead, we recount and look for an error in the procedure.</p>
+<p>We have, in short, a strong conviction that collections of objects possess a definite number. The expectation that careful counting will converge on a single result appears almost self-evident.</p>
+<p>But where does this conviction come from? It is unlikely to arise from a single observation. Rather, it seems to grow out of many successful cases. Counting stones, apples, or sheep usually produces stable results, and when discrepancies occur they can often be traced to a missed or duplicated object. Through repeated experience of such situations, the procedure acquires a strong convincing force.</p>
+<p>Counting is also immensely practical. Everyday situations constantly reinforce the expectation that numbers track reality. If three apples were placed on a table and only two remain, something must have happened. Someone may have taken one, or one may have rolled away, but the number itself does not appear negotiable. Similar expectations govern stockkeeping, barter, and trade, where agreement about quantities is essential. In modern economies, where money functions as a universal medium of exchange, the same reliance on numerical agreement becomes even more pervasive.</p>
+<p>The ease with which mistakes can be detected further reinforces the procedure.</p>
+<p>Yet the practicality of counting has limits that are not merely errors in the procedure, and these limits often go unnoticed.</p>
+<p>Consider a school of fish moving in a clear lake. The fish are discrete objects, and it seems natural to say that at a given moment there must be a definite number of them. Yet a person standing at the shore may not possess a reliable procedure for determining that number. Fish move, overlap, and disappear beneath the surface. The difficulty is not that the fish cannot in principle be counted, but that the process of counting requires a stable method of identifying and tracking individual objects.</p>
+<p>The situation becomes even more difficult if we try to count the raindrops on a window during a storm. Fish may move around, but they remain individual objects. Raindrops behave differently. They appear, merge, split, and disappear. The very boundaries of the objects we are trying to count become unstable.</p>
+<p>These cases reveal something that is usually hidden in the simple example of counting stones. Counting does not operate in a vacuum. It depends on conditions that allow the procedure to stabilize: objects must be sufficiently distinct, their identity must persist long enough to be tracked, and the counting process must be carried out in a way that avoids duplication or omission.</p>
+<p>The strong conviction we attach to the results of simple counting likely has mundane reasons. We usually deal with small numbers of clearly visible objects that can be easily surveyed, and the operations we perform on them are simple and repeatable. Manipulating such objects step by step, and being able to repeat the procedure at will, gives the activity a particularly strong convincing force.</p>
+<p>Even the extension of counting into large numbers reflects this practical origin. In many cultures the counting sequence grows out of a small base, which is often connected to the ten fingers of the hands, combined with a simple naming scheme that allows numbers to be extended indefinitely.</p>
+<p>One can think of this as mapping the objects being counted onto a small set of counting markers, such as the fingers of the hands. When the objects exceed the available markers, the sequence begins again from the start, while we keep track of how many times the cycle has been completed.</p>
+<h2 id="number-comparison-without-counting">Number Comparison Without Counting</h2>
+<p>Even if we cannot count, or cannot count to sufficiently large numbers, we can still compare the size of two collections.</p>
+<p>Imagine two farmers trying to determine whose herd of cows is larger.</p>
+<p>One intuitively convincing method is to pair the cows. If each cow from the first farmer's herd can be paired with exactly one cow from the other farmer's herd, then the two herds contain the same number of cows, even though we may not know the number itself.</p>
+<p>If cows remain in the second herd after every cow of the first herd has been paired, then the second farmer's herd is larger.</p>
+<p>Why does this procedure feel convincing?</p>
+<p>One reason is probably that the pairing process itself can be directly inspected. Each cow is used once, and the pairing makes omissions or duplications visible. As long as the procedure is carried out carefully, the result does not depend on counting ability or on knowing large numbers. Conviction stabilizes through the visible structure of the pairing.</p>
+<p>Again, this works best when the objects remain stable over time, or when considering a fixed snapshot if their number changes.</p>
+<p>Perhaps another part of the convincing force comes from the fact that most people can mentally simulate such procedures.</p>
+<p>What gives pairing its particular force is probably that the procedure can be carried out and inspected by anyone. Disagreements do not have to be settled by argument alone. They can be resolved by performing the pairing together and examining the result.</p>
+<p>Inspectable procedures together with the possibility of public verification appear to be an important pattern in the stabilization of conviction.</p>
+<h2 id="geometry">Geometry</h2>
+<p>Geometry has played a special role in the history of philosophy. One of the earliest examples appears in Plato's <em>Meno</em>, where Socrates questions a slave boy about a geometric problem.</p>
+<p>Socrates draws a square in the sand and asks the boy how to construct a square with twice the area.</p>
+<p><img src="/meno1.svg" alt="" /></p>
+<p>The boy first proposes a solution that seems plausible but turns out to be incorrect, namely to double the length of the sides.</p>
+<p><img src="/meno2.svg" alt="" /></p>
+<p>But that quadruples the area, as we have now four squares of the same size.</p>
+<p>Socrates then leads the boy through a sequence of questions. At each step the boy is invited to reconsider his previous answer, and the construction is adjusted.</p>
+<p>Gradually a new insight emerges: the square built on the diagonal of the original square has twice its area.</p>
+<p><img src="/meno3.svg" alt="" /></p>
+<p>The reader can verify this in the same way as the boy does: the diagonals cut each of the four squares in half. The square enclosed by the diagonals consists of four such halves. Four halves make two whole squares, so its area is twice the area of the original square.</p>
+<p>What is striking about the episode is not only the result, but the manner in which conviction forms. The reasoning proceeds in small steps that can be inspected locally, like cutting a square in half along the diagonal. Errors appear and are corrected. Each move can be followed by anyone who looks at the diagram. The objects involved are simple enough to be mentally rotated, divided, and reassembled. One could even carry out the operations physically with pieces of paper.</p>
+<p>Again we encounter an inspectable procedure together with the possibility of public verification.</p>
+<p>Conviction in such cases does not arise from the authority of a person or a group, but from the authority of anyone who can inspect the procedure for themselves.</p>
+<p>In the dialogue Socrates interprets this episode in a particular way. He suggests that the boy already possessed the relevant knowledge, and that questioning merely helped him recollect it. This is presented as evidence for the theory that learning is, in some sense, recollection.</p>
+<p>From the standpoint of the present investigation, this interpretation can be understood as an attempt to explain a phenomenon that the dialogue displays: the gradual stabilization of conviction through a sequence of constrained steps. The recollection hypothesis offers one possible explanation for why such reasoning appears to compel agreement. Conviction formation theory offers another perspective on the same phenomenon, but without claiming to explain it through something deeper.</p>
+<p>It is also notable that this kind of stabilization occurs in a part of the dialogue that deals with geometry. In the surrounding discussion, where Socrates and Meno debate whether virtue can be taught, conviction does not settle in the same way. The arguments remain open, and the conversation ends without a clear resolution.</p>
+<p>The difference reflects the kind of convictional forces involved. In geometry the reasoning is constrained by a diagram and a sequence of operations that anyone can inspect. In the discussion of virtue no such constraints are available, and convictions remain fluid. They do not exert the same force, or rather: many convictional forces are present, but there is no stable background against which they can be inspected and compared step by step.</p>
+<p>This contrast helps to illuminate the phenomenon we are investigating. Certain kinds of reasoning, especially those operating within carefully constrained formal structures, appear to exert a particularly strong pressure on conviction.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/01-introduction/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>1. Introduction</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/03-measuring/" accesskey="."
+    ><span>3. Measuring</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://stefankober.github.io/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://stefankober.github.io/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://stefankober.github.io/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+  <!-- Mermaid -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    window.zolaTheme.mermaid.init({ mermaid, s: ".mermaid" });
+  </script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

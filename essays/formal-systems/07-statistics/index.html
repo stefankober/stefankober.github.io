@@ -1,0 +1,309 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>7. Statistics</title>
+  <meta property="og:title" content="7. Statistics" />
+  <meta property="og:url" content="https://stefankober.github.io/essays/formal-systems/07-statistics/" />
+  <link rel="canonical" href="https://stefankober.github.io/essays/formal-systems/07-statistics/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://stefankober.github.io/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://stefankober.github.io/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://stefankober.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://stefankober.github.io/apple-touch-icon.png?h=58bee300054c5308feb3" />
+  <link rel="icon" type="image/png" href="https://stefankober.github.io/android-icon.png?h=8d80ec95446bd2c36826" />
+  <script src="https://stefankober.github.io/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://stefankober.github.io/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://stefankober.github.io/elasticlunr.min.js", "https://stefankober.github.io/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">7. Statistics</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H16M0S">16&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+    <p class="back-to-toc">
+      ← <a href="https:&#x2F;&#x2F;stefankober.github.io&#x2F;essays&#x2F;formal-systems&#x2F;">How Formal Systems Reorganize Belief</a>
+    </p>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#from-probability-to-statistics">From Probability To Statistics</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#the-weaker-convictional-force-of-statistics">The Weaker Convictional Force Of Statistics</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#the-fisher-model-randomization">The Fisher Model: Randomization</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#sampling-and-distributions">Sampling And Distributions</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#bayesian-updating">Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#the-exemplarity-of-statistics-for-modern-formal-systems">The Exemplarity Of Statistics For Modern Formal Systems</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+
+  <!-- Content -->
+  <section><h2 id="from-probability-to-statistics">From Probability To Statistics</h2>
+<p>Probability theory started with a random device. The probabilities governing its outcomes can be inferred (for example from symmetry) or are given, and from this device we can derive what kinds of data should appear by calculating forward.</p>
+<p><img src="/random_device.svg" alt="" /></p>
+<p>In statistics we also work with random devices, but the probabilities involved are not known in advance. Instead we observe data and try to estimate which probabilities the device must have had in order to generate such observations. Think of it as throwing an asymmetric die and inferring the probabilities of each face.</p>
+<p><img src="/random_device_stats.svg" alt="" /></p>
+<p>In both cases we consider a random device together with one of the two other elements: either the probabilities, or the data it produces. In each case we try to infer the missing part.</p>
+<p>Thus in statistics the direction is reversed: from observed outcomes back to the probabilities governing the random device that produced them.</p>
+<h2 id="the-weaker-convictional-force-of-statistics">The Weaker Convictional Force Of Statistics</h2>
+<p>Statistics does not exert strong convictional force immediately. Most of its convincing power arises later, from its success in the construction of knowledge.</p>
+<p>Probability theory already relied on the concept of a random device, and logic itself built on earlier patterns of conviction. The same is probably true for geometry, before humans started extensive construction of buildings and roads, although we tend to take this for granted today. There is no direct access to completely unshaped convictional forces. We can only reconstruct them in hindsight, and they are always forces in a context.</p>
+<p>Statistical reasoning is even further removed from immediate sources of conviction. It presupposes the conceptual tools of probability theory and logic, and must additionally construct convincing ways of reasoning backwards.</p>
+<p>Different statistical traditions carry this construction out in different ways. Three influential approaches illustrate, in simplified form, how this is achieved.</p>
+<h2 id="the-fisher-model-randomization">The Fisher Model: Randomization</h2>
+<p>The statistician Ronald Aylmer Fisher developed a method based on the following idea. Suppose we compare two treatments and assume that they are equally effective. If the treatments are assigned randomly to the subjects, then every possible assignment of treatment labels to the observed outcomes is equally probable. Randomization ensures that hidden differences between subjects cannot systematically favor one treatment over the other.</p>
+<p>We focus on the outcomes because they are the quantities of interest, while the subjects merely carry those outcomes. In the simple case each subject receives one of two treatments, and that produces, or fails to produce, an outcome. Treatments may take many forms: medicines in clinical trials, fertilizers in agricultural experiments, different manufacturing procedures, or any other repeatable intervention of interest. The subjects receiving the treatments may be people, plants, machines, or materials.</p>
+<p>The assumption of equal effectiveness lets us do two things at once. First, it lets us <em>assign well-defined probabilities</em>: under that assumption, every possible assignment of labels to outcomes has the same probability. Giving two equally effective treatments is like giving everybody the same thing. All differences must be based on random fluctuations. Second, it lets us <em>test the assumption using these probabilities</em>. To do this, we order the possible outcomes according to how strongly they contradict the assumption. We agree to reject the assumption if the actual outcome lies among the most extreme results opposing it.</p>
+<p>That gives us a method for reasoning backwards from data to probabilities. If the data is too improbable given our assumption, we take the assumption to be untenable. Otherwise, we do not reject it.</p>
+<p>The statistician Phillip I. Good often illustrated this idea with a small experiment in which he nearly gathered good data for the longevity effects of vitamin E (for example in <em>Resampling Methods</em>, ch. 3.1 ff.).</p>
+<p>The experiment was simple. Good prepared eight petri dishes with cells, four filled with a conventional nutrient solution and four with vitamin E added.</p>
+<p>After three weeks three dishes of each kind had survived, leaving six observations. The story has at least one other twist that I will not spoil here, but the essential point is that Good ended up with six longevity measurements and six treatment labels.</p>
+<p>121 (vitamin E)<br />
+118 (vitamin E)<br />
+110 (vitamin E)<br />
+34 (control)<br />
+12 (control)<br />
+22 (control)</p>
+<p>Under the assumption that the treatments are equivalent, any assignment of treatment labels (3 times "vitamin E", 3 times "control") to the observed outcomes (121, 118, 110, 34, 22, 12) is equally probable.</p>
+<p>We can therefore create a table with all possible assignments of the labels and compute, for each case, the difference between the sums of the measurements assigned to the two treatments.</p>
+<p>There are 20 distinct assignments, and each is equally probable under the assumption that the treatments have the same effect.</p>
+<p>To assess how strongly the observed result contradicts that assumption, we compare the observed difference with the differences that arise in the other possible cases.</p>
+<p>This gives us the following table, ordered by the magnitude of the difference between the sums of the measurements assigned to the two treatments (compare to <em>Resampling Methods</em>, ch. 3.2):</p>
+<table><thead><tr><th></th><th>vitamin E</th><th>control</th><th>sum(vitamin E) - sum(control)</th><th>probability scale</th></tr></thead><tbody>
+<tr><td>1</td><td><strong>121 118 110</strong></td><td><strong>34 22 12</strong></td><td><strong>281</strong></td><td><strong>5%</strong></td></tr>
+<tr><td>2</td><td>121 118 34</td><td>110 22 12</td><td>129</td><td>10%</td></tr>
+<tr><td>3</td><td>121 110 34</td><td>118 22 12</td><td>113</td><td>15%</td></tr>
+<tr><td>4</td><td>118 110 34</td><td>121 22 12</td><td>107</td><td>20%</td></tr>
+<tr><td>5</td><td>121 118 22</td><td>110 34 12</td><td>105</td><td>25%</td></tr>
+<tr><td>6</td><td>121 110 22</td><td>118 34 12</td><td>89</td><td>30%</td></tr>
+<tr><td>7</td><td>121 118 12</td><td>110 34 22</td><td>85</td><td>35%</td></tr>
+<tr><td>8</td><td>118 110 22</td><td>121 34 12</td><td>83</td><td>40%</td></tr>
+<tr><td>9</td><td>121 110 12</td><td>118 34 22</td><td>69</td><td>45%</td></tr>
+<tr><td>10</td><td>118 110 12</td><td>121 34 22</td><td>63</td><td>50%</td></tr>
+<tr><td>11</td><td>121 34 22</td><td>118 110 12</td><td>-63</td><td>55%</td></tr>
+<tr><td>12</td><td>118 34 22</td><td>121 110 12</td><td>-69</td><td>60%</td></tr>
+<tr><td>13</td><td>121 34 12</td><td>118 110 22</td><td>-83</td><td>65%</td></tr>
+<tr><td>14</td><td>110 34 22</td><td>121 118 12</td><td>-85</td><td>70%</td></tr>
+<tr><td>15</td><td>118 34 12</td><td>121 110 22</td><td>-89</td><td>75%</td></tr>
+<tr><td>16</td><td>110 34 12</td><td>121 118 22</td><td>-105</td><td>80%</td></tr>
+<tr><td>17</td><td>121 22 12</td><td>118 110 34</td><td>-107</td><td>85%</td></tr>
+<tr><td>18</td><td>118 22 12</td><td>121 110 34</td><td>-113</td><td>90%</td></tr>
+<tr><td>19</td><td>110 22 12</td><td>121 118 34</td><td>-129</td><td>95%</td></tr>
+<tr><td>20</td><td>34 22 12</td><td>121 118 110</td><td>-281</td><td>100%</td></tr>
+</tbody></table>
+<p>The table lists all outcomes that could have occurred under the assumption that the treatments are equivalent.</p>
+<p>In this example we are interested in whether the vitamin E treatment performs better than the control, so we ignore outcomes that would instead suggest that the control performs better. Large positive differences count as stronger evidence against the assumption that the treatments are equivalent.</p>
+<p>The table is ordered from the strongest evidence against the assumption, in light of the question whether vitamin E performs better, to the weakest such evidence.</p>
+<p>The probability column shows how often a difference at least this favorable to vitamin E would appear in this experiment if it was repeated again and again, and if the treatments were actually equal. Under that assumption all 20 assignments are equally probable, so each row corresponds to an additional probability of $\frac{1}{20}$ or $5\%$.</p>
+<p>The observed result appears in the first row, and only one out of the 20 possible outcomes provides evidence at least this strong against the assumption of equal treatments, given the question whether vitamin E is better. The probability of such an outcome under the assumption of equal treatments is therefore $5\%$. That means it is inside the group of the $5\%$ most opposing outcomes.</p>
+<p>If the observed result appeared in the second row, two out of the 20 possible outcomes provide evidence at least this strong, giving a probability of $10\%$. If it appeared in the third row, the probability would be $15\%$, and so on.</p>
+<p>In statistical practice it is common to reject the assumption of equal treatments if the probability of the observed result is below $5\%$. This does not mean that the probability of the assumption is below $5\%$. When this rule is followed, false rejections of this assumption due purely to chance will occur only rarely, in at most $5%$ of such experiments in the long run.</p>
+<p>Fisher's method combines an assumption that introduces stable probabilities with a test of this assumption using said probabilities.
+The convincing force of this idea depends on probability and logic.</p>
+<h2 id="sampling-and-distributions">Sampling And Distributions</h2>
+<p>In sampling-based statistics the mechanism can be pictured using the image of an urn filled with colored balls. Drawing a ball corresponds to choosing one individual from a population.</p>
+<p><img src="/urn.svg" alt="" /></p>
+<p>The urn may contain many kinds of balls. Some represent high values of a measurement, others low ones. Or simply the presence or absence of an attribute.</p>
+<p>The exact composition (the probabilities) of the urn (the random device) is unknown. What we observe are the balls that happen to be drawn (the data). These observations restrict the probable compositions of the urn, and the more observations, the stronger the restrictions.</p>
+<p>Election surveys provide a familiar example. Before an election it is usually impossible to ask every voter how they intend to vote. Instead a smaller group of people is interviewed. Each interview can be viewed as drawing one ball from a very large urn representing the electorate.</p>
+<p>If the urn contains 60% red balls and 40% blue balls, repeated draws will tend to reproduce that proportion. (In the small depicted urn one would need to put the ball back and shake after a draw. In a really large urn that is already mixed this does not matter.) A single draw tells us almost nothing. Ten draws may still be misleading. But if many draws are taken, the relative frequencies begin to stabilize, and the mathematics behind it allows us to estimate the possible error for a given number of samples.</p>
+<p>This stabilization is captured mathematically by the law of large numbers. When many observations are taken from the same population, quantities such as averages or proportions tend to approach their population values.</p>
+<p>The convincing force of sampling-based reasoning arises from this stabilization, and from how it makes some patterns of data likely while rendering others increasingly improbable. A similar pattern already appeared in the discussion of measurement error, where repeated measurements cluster around a value even though individual observations vary. Sampling-based statistics provides a systematic way of analyzing such patterns.</p>
+<p>While Fisher’s model asked whether an observed difference could plausibly arise by chance under the assumption of equivalence of treatments, sampling models instead ask what a limited set of observations reveals about the properties of a larger population.</p>
+<p>Both approaches rely on the idea of repeated well-defined experiments and long-run frequencies. That is part of their convictional setup. For this reason they are usually grouped together under the name frequentist statistics.</p>
+<h2 id="bayesian-updating">Bayesian Updating</h2>
+<p>In the sampling model we imagined an urn filled with colored balls that have a certain ratio. The task was to estimate this ratio using properties of repeated experiments. But the true composition of the urn is never directly observed.</p>
+<p>Bayesian reasoning reframes the situation. Instead of assuming a single unknown ratio, it considers many possible compositions of the urn and assigns probabilities to them.</p>
+<p>Before seeing any data, some compositions may appear more plausible than others. A ratio of $60\%-40\%$ might receive a relatively high probability, while more extreme possibilities such as $70\%-30\%$ or a perfectly balanced $50\%-50\%$ receive less weight.</p>
+<p>Each of these possibilities represents a theory about the composition of the urn.</p>
+<p>At this point two kinds of probabilities appear. First, there are the <em>probabilities of observing certain data given a particular composition of the urn</em>. These follow directly from the mechanism of drawing balls from the urn. Second, there are <em>probabilities assigned to the different possible compositions of the urn</em> themselves. These represent our current beliefs about which urn is more plausible. They are subjective and can vary between observers.</p>
+<p><img src="/urn_in_head.svg" alt="" /></p>
+<p>Each possible composition is a theory about the real mechanism producing the data.</p>
+<p>When we draw a ball and observe its color, some of these theories become more plausible and others less so. If we repeatedly observe red balls, theories with many red balls gain weight, while theories dominated by blue balls lose credibility.</p>
+<p>The rule governing this adjustment is Bayes' theorem, which we encountered earlier among the probability rules (as definition of probability of A given B). In Bayesian reasoning it becomes a rule for updating theories in light of new observations. It connects the probability of the data under each theory with the probability we assign to the theories themselves:</p>
+<p>$P(theory|data) = \frac{P(data|theory)\times P(theory)}{P(data)}$.</p>
+<p>Let's look at an example to understand how to apply this rule.</p>
+<p>A magician has two coins that look identical. One is a normal coin that produces heads and tails with probability 0.5 each. The other is biased and produces heads with probability 0.9 and tails with probability 0.1.</p>
+<p>One day he finds a coin on the floor of his study and is unsure which one it is. To find out, he flips it five times and observes the sequence:</p>
+<p>head, head, tail, head, tail.</p>
+<p>In Bayesian terms he considers two competing theories about the mechanism producing the data:</p>
+<p>T1: $P(head|T1) = 0.5, P(tail|T1) = 0.5$.</p>
+<p>T2: $P(head|T2) = 0.9, P(tail|T2) = 0.1$.</p>
+<p>Since he initially has no reason to prefer one theory over the other, he assigns them equal probabilities:</p>
+<p>$P(T1) = 0.5$, and $P(T2) = 0.5$.</p>
+<p>But what is the probability of the data? The overall probability of head is $P(head|T1) \times P(T1) + P(head|T2) \times P(T2)$ because these are the only two ways in which a head can occur under our assumptions, weighted by the plausibility of the corresponding hypotheses.</p>
+<p>When the first head appears, Bayes' rule updates the plausibility of the two theories (we simply plug in all the values):</p>
+<p>$P(T1|head) = \frac{0.5 \times 0.5}{0.5 \times 0.5 + 0.9 \times 0.5} = \frac{0.25}{0.25 + 0.45} = \frac{0.25}{0.7} \approx 0.3571$</p>
+<p>$P(T2|head) = \frac{0.9 \times 0.5}{0.5 \times 0.5 + 0.9 \times 0.5} = \frac{0.45}{0.25 + 0.45} = \frac{0.45}{0.7} \approx 0.6429$</p>
+<p>The magician's initial assumptions were $P(T1) = 0.5$ and $P(T2) = 0.5$. After seeing the first head, he should now update his assumptions and believe that $P(T1) \approx 0.3571$ and $P(T2) \approx 0.6429$.</p>
+<p>The same update rule is applied for each additional observation. Carrying out this process for the entire sequence gives the following result:</p>
+<table><thead><tr><th>P(T1) (before seeing data)</th><th>P(T2) (before seeing data)</th><th>data</th><th>P(T1|data)</th><th>P(T2|data)</th></tr></thead><tbody>
+<tr><td>0.5</td><td>0.5</td><td>head</td><td>0.3571</td><td>0.6429</td></tr>
+<tr><td>0.3571</td><td>0.6429</td><td>head</td><td>0.2358</td><td>0.7642</td></tr>
+<tr><td>0.2358</td><td>0.7642</td><td>tail</td><td>0.6068</td><td>0.3932</td></tr>
+<tr><td>0.6068</td><td>0.3932</td><td>head</td><td>0.4616</td><td>0.5384</td></tr>
+<tr><td>0.4616</td><td>0.5384</td><td>tail</td><td>0.8108</td><td>0.1892</td></tr>
+</tbody></table>
+<p>Result: $P(T1) \approx 0.81$, $P(T2) \approx 0.19$.</p>
+<p>Heads are more likely under the biased coin, so each head shifts probability toward that theory. Tails are unlikely for the biased coin, so they shift probability back toward the normal one.</p>
+<p>After the five observed flips, Bayesian updating assigns a probability of roughly 0.8 to the hypothesis that the coin is the normal one.</p>
+<p>In Bayesian reasoning the random device is internalized and multiplied. Two kinds of probabilities are assigned: probabilities that describe how each random device generates data, and probabilities that represent our degree of belief in each model. The data is used to update these degrees of belief.</p>
+<p>Convictional force arises from the coherence of the updating rule and from its agreement with our intuition that evidence should favor the theories that best predict it. But like in all theories on that level of abstraction, the convictional force comes from arguments, procedures, successes, anecdotes, explanations, endorsements, and is diminished by counterexamples and counter-endorsements.</p>
+<p>Both Bayesian and frequentist approaches use probability theory to reason from data toward the mechanisms that may have produced them. They differ mainly in where probability is placed. Frequentist methods attach probabilities to outcomes of well-defined experiments. Bayesian reasoning attaches probabilities as degrees of belief to the possible mechanisms themselves.</p>
+<p>In practice they are frequently used side by side, each suited to different kinds of problems.</p>
+<h2 id="the-exemplarity-of-statistics-for-modern-formal-systems">The Exemplarity Of Statistics For Modern Formal Systems</h2>
+<p>Conviction formation theory holds that conviction comes naturally to us: "There is a house", "I am hungry", "Stones, when thrown into the air, fall back to the ground". Like breathing, conviction formation operates autonomously in the background, but can also be taken up deliberately. Formal systems such as logic, probability, and statistics refine and constrain the latter process from within, shaping explicit conviction formation rules. They can also influence the more automatic processes over time.</p>
+<p>Of all the formal systems we have examined, statistical reasoning occupies the most indirect position with respect to convincing force. Its convincing force does not arise from a single immediately compelling operation. Instead it develops mainly through the construction of methods for reasoning backwards from data to probabilities and through the success of those mechanisms across many applications.</p>
+<p>This indirectness is increased by another feature. In counting, measuring, geometry, and somewhat less in logic and probability, errors are often comparatively easy to spot, and different people can usually repeat the procedure for themselves without much difficulty. In statistics this is much less often the case. A result may fail because an assumption was violated, because the experiment was poorly designed, because the wrong model was chosen, or because an error entered later in calculation or interpretation. Such failures are often not locally visible, the mathematical machinery may be too involved for easy checking, and the underlying experiments may be costly, slow, or impossible to repeat.</p>
+<p>Many modern formal systems across science and engineering work in a similar way and share these traits. Their credibility derives from mathematical models whose reliability becomes visible through repeated success in empirical use.</p>
+<p>Conviction formation theory highlights that formal systems do not stand on their own. They grow out of patterns of conviction that are already present in everyday reasoning. Even mathematics is not independent of this, though it is often presented as if it were. It is built on patterns of conviction that were established long before formal systems made them explicit. For this reason, formal derivation alone rarely suffices to establish conviction in practice, especially as increasing complexity makes stable conviction harder to achieve directly.</p>
+<p>But practice often runs ahead of reflection. Works such as Judea Pearl's <em>The Book of Why</em> (which shows how statistical reasoning can be extended into a formal theory of causality), E. T. Jaynes' <em>Probability Theory: The Logic of Science</em> (which argues that probability provides a general logic of scientific reasoning), or George Pólya's <em>How to Solve It</em> rarely rely on formal derivation alone. Instead they build conviction gradually through carefully chosen examples that connect unfamiliar ideas to simpler forms of reasoning the reader already trusts.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/06-probability/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>6. Probability</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/08-games/" accesskey="."
+    ><span>8. Games</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://stefankober.github.io/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://stefankober.github.io/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://stefankober.github.io/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+  <!-- Mermaid -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    window.zolaTheme.mermaid.init({ mermaid, s: ".mermaid" });
+  </script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

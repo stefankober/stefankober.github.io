@@ -1,0 +1,10 @@
+<svg viewBox="0 0 120 120" width="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Original square">
+  <rect x="10" y="60" width="50" height="50"
+        fill="none" stroke="currentColor" stroke-width="3"/>
+  <rect x="10" y="10" width="50" height="50"
+          fill="none" stroke="currentColor" stroke-width="3"/>
+  <rect x="60" y="60" width="50" height="50"
+          fill="none" stroke="currentColor" stroke-width="3"/>
+  <rect x="60" y="10" width="50" height="50"
+          fill="none" stroke="currentColor" stroke-width="3"/>
+</svg>

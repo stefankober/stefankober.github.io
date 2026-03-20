@@ -1,0 +1,241 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>4. Incommensurability</title>
+  <meta property="og:title" content="4. Incommensurability" />
+  <meta property="og:url" content="https://stefankober.github.io/essays/formal-systems/04-incommensurability/" />
+  <link rel="canonical" href="https://stefankober.github.io/essays/formal-systems/04-incommensurability/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://stefankober.github.io/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://stefankober.github.io/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://stefankober.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://stefankober.github.io/apple-touch-icon.png?h=58bee300054c5308feb3" />
+  <link rel="icon" type="image/png" href="https://stefankober.github.io/android-icon.png?h=8d80ec95446bd2c36826" />
+  <script src="https://stefankober.github.io/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://stefankober.github.io/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://stefankober.github.io/elasticlunr.min.js", "https://stefankober.github.io/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">4. Incommensurability</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H8M0S">8&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+    <p class="back-to-toc">
+      ← <a href="https:&#x2F;&#x2F;stefankober.github.io&#x2F;essays&#x2F;formal-systems&#x2F;">How Formal Systems Reorganize Belief</a>
+    </p>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#incommensurability">Incommensurability</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#a-hard-earned-meta-conviction">A Hard-Earned Meta-Conviction</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+
+  <!-- Content -->
+  <section><h2 id="incommensurability">Incommensurability</h2>
+<p>Conviction in counting, pairing and geometry stabilizes because the procedures involved are simple, inspectable, and repeatable. They can be cut, moved, rotated, and reassembled. Different persons usually arrive at the same result. When they do not, the procedure can be repeated and a clear error typically appears.</p>
+<p>A possibility of detecting errors easily seems to be one hallmark of convincing force, so much so that other domains have repeatedly tried to imitate such procedures, at times with mixed success.</p>
+<p>Such stability, however, does not guarantee that our tools will never surprise us. Even within well-established frameworks, unexpected results can appear that challenge our assumptions. The discovery of incommensurable magnitudes in Greek geometry was one such exemplary moment.</p>
+<p>The Greeks, like other ancient peoples, had assembled a large corpus of geometrical knowledge that was also practically used.</p>
+<p>These results were typically reached through small formal steps that built upon each other, and their convictional force was tied to that structure. Application lent them further credibility.</p>
+<p>Before we look at the example, it helps to recall how geometry and measurement were connected in Greek thought. Geometrical magnitudes such as lengths and areas were commonly understood through comparison with a unit. To measure a length meant to determine how many times a chosen unit fit into it, possibly allowing ratios of whole numbers.</p>
+<p>A length could therefore be expressed as a fraction such as $\frac{1}{4}$ or $\frac{7}{11}$ of a unit. Within this framework it was natural to expect that any two lengths could be compared in this way: that some common unit could measure both.</p>
+<p>But then something remarkable happened.</p>
+<p>Let's recall the image of the squares with the diagonals from Meno.</p>
+<p><img src="/meno3.svg" alt="" /></p>
+<p>The Greeks found to their surprise, that if you measured the side of one of the squares in a fixed unit, say 1, 2, 3 or any finite amount of units, then there was no way you could measure the diagonal in the same unit system and vice versa.</p>
+<p>Recall that not only numbers, but fractions were allowed, too.</p>
+<p>What the square revealed was something stronger: even ratios were not enough. No matter which unit was chosen, there was no pair of integers $p$ and $q$ such that the diagonal had the length $\frac{p}{q}$ times the side.</p>
+<p>The argument that leads to the result proceeds through the same small, convincing steps that had produced many reliable results before.</p>
+<p>What it challenged was a broader expectation about the framework in which those results were interpreted: the assumption that all magnitudes could ultimately be expressed through ratios of whole numbers.</p>
+<p>The discovery therefore did not weaken conviction in geometry as a practice. Instead it revealed that the number system used to interpret geometrical magnitudes was incomplete. The reliability of small-step reasoning, the existence of multiple ways to reach the same results, and the wide practical applicability of geometry had gradually nurtured a powerful conviction: that geometry expressed the structure of nature itself, and that ratios of whole numbers were sufficient to describe all its magnitudes.</p>
+<p>Assume for simplicity we scale that square so the side is one in our chosen unit. It can even be a specific unit of length measurement, for example a centimeter. We can rescale by multiplying by a certain amount of units later to get any fraction of centimeters.</p>
+<p>Assume additionally that the length of the diagonal is a certain ratio of numbers in that unit, say $\frac{p}{q}$, where $p$ and $q$ are natural numbers, because a length is always positive. Which numbers exactly does not matter. What matters is only the assumption that such numbers exist. We can see however, that $p$ must be larger than $q$, as the diagonal line is by inspection larger than the square side.</p>
+<p>We have here a right triangle, and the short sides have a length of one by assumption:</p>
+<p><img src="/meno4.svg" alt="" /></p>
+<p>Thus we know that $c² = 1² + 1² = 1 + 1 = 2$.</p>
+<p>The Greeks knew already that $a² + b² = c²$ in a right triangle, and the calculation is a simple application of it.</p>
+<p>Here is a visual proof also for this result.</p>
+<p>There is four times the same right triangle in a square of side-length $a + b$. The area of $c²$ is the white square in the middle, all sides of that square are $c$-sides of one of the triangles.</p>
+<p><img src="/pythagoras.svg" alt="" /></p>
+<p>We arrange the triangles differently to show also $a²$ and $b²$. Obviously they have the same area like $c²$ in the last diagram, because the four triangles occupy the same area, too.
+We just moved them around, but did not resize them.</p>
+<p><img src="/pythagoras2.svg" alt="" /></p>
+<p>That construction shows that $a² + b² = c²$ in right triangles.</p>
+<p>We assumed that $c = \frac{p}{q}$, thus $c² = (\frac{p}{q})² = \frac{p²}{q²}$.</p>
+<p>We can now plug in $2$ for $c²$, and we get $2 = \frac{p²}{q²}$, therefore $2q² = p²$.</p>
+<p>That means $p²$ is an even number, as $2q²$ is obviously divisible by $2$ without a remainder (the result is $q²$), and that is one definition of even number.</p>
+<p>But if $p²$ is even, so is $p$.</p>
+<p>The proof for this result uses pairing, which we know from the two farmers from the last chapter.</p>
+<p>Just consider what would happen if $p$ were odd, and we'd arrange stones to symbolize $p$ and $p²$. The resulting square $p²$ must on each side have a central row and a central column. Even numbers do not result in a central row and column.</p>
+<p><img src="/even.svg" alt="" /></p>
+<p>We can pair each tile above the central row with one below it, and each tile left of the central point with one right of it. But the one square in the middle always remains without a partner, no matter how large that odd square is. The case with $p=5$ is just an example for this general arrangement possibility.</p>
+<p>So if $p$ were odd, $p²$ would also be odd.</p>
+<p>But we already know that $p²$ is even. Therefore $p$ cannot be odd. It must be even.</p>
+<p>That means we again don't know what that number is, but necessarily there is a number $k$ so that $p = 2k$ (by definition of even number).</p>
+<p>We can apply that to our formula $2q² = p²$, and we get $2q² = (2k)² = 4k²$. So $q² = 2k²$, thus $q$ is even too!</p>
+<p>Let's divide $p$ and $q$ by $2$, and try again, so we get a ratio in the lowest terms.</p>
+<p>$p_2 = \frac{p}{2}$.</p>
+<p>$q_2 = \frac{q}{2}$.</p>
+<p>$c = \frac{p_2}{q_2}$.</p>
+<p>$c² = \frac{p_2²}{q_2²}$.</p>
+<p>$2 = \frac{p_2²}{q_2²}$.</p>
+<p>We get again $2q_2² = p_2²$.</p>
+<p>From there we get again that $p_2$ is even, and so is $q_2$. We divide again by $2$, and get $p_3$ and $q_3$, which is a quarter of the initial $p$ and $q$.</p>
+<p>Recognize that this chain has no end. We again find that both are even, we again divide by $2$, and so on.</p>
+<p>But in the natural numbers, when numbers get smaller and smaller by continuous division by $2$, you eventually end up with a number that cannot be divided anymore. Because there are only finitely many natural numbers between zero and any positive number you can think of. An infinite chain is impossible.</p>
+<p>That means such $p$ and $q$ that $c = \frac{p}{q}$ do not exist in the natural numbers.</p>
+<p>Thus no common unit can measure both the side of the square and its diagonal. In modern terms: $\sqrt2$ is irrational, meaning "not a ratio".</p>
+<h2 id="a-hard-earned-meta-conviction">A Hard-Earned Meta-Conviction</h2>
+<p>The episode illustrates a pattern that appears repeatedly in the development of formal systems.</p>
+<p>A framework may function reliably across a large number of cases. Its procedures may be simple, inspectable, and repeatable. Results obtained within it may agree across different methods and find practical application. Under such conditions conviction in the framework can become very strong.</p>
+<p>Yet a special case may reveal that the conceptual structure used to interpret those results is too narrow.</p>
+<p>In the present example the reasoning of geometry remained entirely intact. What failed was the expectation that all geometrical magnitudes could be expressed through ratios of whole numbers. The framework of interpretation turned out to be incomplete.</p>
+<p>Events of this kind recur throughout the history of mathematics and science. Russell's paradox exposed limitations in naive set theory. Gödel's incompleteness theorem revealed intrinsic limits of formal arithmetic. Turing's halting problem showed that certain questions about algorithms cannot be decided mechanically.</p>
+<p>In each case the procedures within the system remained convincing. What changed was our understanding of the reach and limits of the system itself.</p>
+<p>Working with formal systems therefore produces not only stable convictions about particular results. Over time it also produces meta-convictions about the systems themselves.</p>
+<p>One of these is that strong internal conviction does not guarantee that a framework is comprehensive. A system may work extremely well across many situations and still contain boundaries that only become visible in special cases.</p>
+<p>Confidence in disciplined reasoning is therefore best accompanied by restraint and humility. Even a framework that works across many cases may still conceal boundaries we have not yet encountered.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/03-measuring/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>3. Measuring</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/05-logic-and-proof/" accesskey="."
+    ><span>5. Logic And Proof</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://stefankober.github.io/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://stefankober.github.io/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://stefankober.github.io/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+  <!-- Mermaid -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    window.zolaTheme.mermaid.init({ mermaid, s: ".mermaid" });
+  </script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>6. Probability</title>
+  <meta property="og:title" content="6. Probability" />
+  <meta property="og:url" content="https://stefankober.github.io/essays/formal-systems/06-probability/" />
+  <link rel="canonical" href="https://stefankober.github.io/essays/formal-systems/06-probability/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://stefankober.github.io/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://stefankober.github.io/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://stefankober.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://stefankober.github.io/apple-touch-icon.png?h=58bee300054c5308feb3" />
+  <link rel="icon" type="image/png" href="https://stefankober.github.io/android-icon.png?h=8d80ec95446bd2c36826" />
+  <script src="https://stefankober.github.io/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://stefankober.github.io/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://stefankober.github.io/elasticlunr.min.js", "https://stefankober.github.io/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">6. Probability</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H10M0S">10&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+    <p class="back-to-toc">
+      ← <a href="https:&#x2F;&#x2F;stefankober.github.io&#x2F;essays&#x2F;formal-systems&#x2F;">How Formal Systems Reorganize Belief</a>
+    </p>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#from-certainty-to-uncertainty">From Certainty To Uncertainty</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#games-of-chance">Games Of Chance</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#random-devices-and-possible-outcomes">Random Devices And Possible Outcomes</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#the-die-model">The Die Model</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#the-cards-model">The Cards Model</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#probability-theory-and-propositional-logic">Probability Theory And Propositional Logic</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+
+  <!-- Content -->
+  <section><h2 id="from-certainty-to-uncertainty">From Certainty To Uncertainty</h2>
+<p>In the previous chapters we encountered several procedures that stabilize conviction by aligning the reasoning process to formal devices. This progression culminated in logical systems, which are designed so that true premises lead to true conclusions through clearly defined rules.</p>
+<p>Most domains do not offer the luxury of definitely true premises.</p>
+<p>Measurements fluctuate. Observations vary. Outcomes depend on processes that cannot be predicted with certainty.</p>
+<p>In such situations strict logical derivation cannot be applied directly. Yet structured procedures have been developed that still allow conviction to stabilize in a controlled way.</p>
+<p>The systematic investigation of these patterns forms the domain of probability and statistics.</p>
+<h2 id="games-of-chance">Games Of Chance</h2>
+<p>The earliest systematic investigations of uncertainty arose in the context of games of chance and betting.</p>
+<p>Dice and cards produce outcomes that are unpredictable in individual cases, yet repeated play reveals stable patterns. Betting turns these patterns into practical questions: "How should the pot be divided fairly if a game ends early?", or "When should I bet on a game at all?"</p>
+<p>The early answers seem simple. One lists the possible outcomes, counts how many favor a certain bet, and compares that number to all possible outcomes.</p>
+<p>From this perspective the convincing force of probability appears to arise mostly from counting and taking ratios.</p>
+<p>But these calculations rely on a deeper idea that emerged in this context: the concept of a random device.</p>
+<h2 id="random-devices-and-possible-outcomes">Random Devices And Possible Outcomes</h2>
+<p>A <em>random device</em> is a device that has a known set of mutually exclusive possible outcomes and, when used, produces one outcome from that set. But it is unpredictable which outcome will appear.</p>
+<p><img src="/random_device.svg" alt="" /></p>
+<p>Examples of random devices are urns filled with colored balls, a deck of cards, a die, lottery tickets in a basket, socks in a drawer, or modern random number generator algorithms.</p>
+<p>However, these objects do not automatically function as random devices. They do so only when used in a specific way.</p>
+<p>There needs to be mixing, shuffling, throwing, shaking, or simply not knowing the result before it is revealed. In the case of random number generators, the seed must not be known.</p>
+<p>What makes such situations tractable is that the set of possible outcomes is fixed and known in advance. In addition, the procedure is arranged so that no outcome can be deliberately selected.</p>
+<h2 id="the-die-model">The Die Model</h2>
+<p>The die relies on symmetry to assign probabilities.</p>
+<p>What is remarkable about this reasoning is that the probabilities are not guessed or estimated. They are read directly from the structure of the situation. The symmetry of the device allows the possible outcomes to be treated as equally likely, and the probabilities follow from counting.</p>
+<p>When it is rolled or thrown in uncontrolled ways, this symmetry means that no face has a higher or lower chance of appearing than any other.</p>
+<p>Looking at one throw, the thus equally probable outcomes are</p>
+<p>1, 2, 3, 4, 5, <strong>6</strong>.</p>
+<p>And only one will appear.</p>
+<p>If we want to bet on a six, we count the favorable outcomes and divide them by all possible outcomes. There is one favorable outcome out of six, so the probability is $\frac{1}{6}$.</p>
+<p>A fair bet would therefore have to pay out in proportion to this probability. Over many games, such a bet yields no average advantage to either side.</p>
+<p>Looking at two throws, the equally probable outcomes are</p>
+<p>(1, 1) (1, 2) (1, 3) (1, 4) (1, 5) <strong>(1, 6)</strong><br />
+(2, 1) (2, 2) (2, 3) (2, 4) (2, 5) <strong>(2, 6)</strong><br />
+(3, 1) (3, 2) (3, 3) (3, 4) (3, 5) <strong>(3, 6)</strong><br />
+(4, 1) (4, 2) (4, 3) (4, 4) (4, 5) <strong>(4, 6)</strong><br />
+(5, 1) (5, 2) (5, 3) (5, 4) (5, 5) <strong>(5, 6)</strong><br />
+<strong>(6, 1) (6, 2) (6, 3) (6, 4) (6, 5) (6, 6)</strong>.</p>
+<p>Each pair represents one possible sequence of results. Because each individual throw has six equally possible outcomes, the game has $6 \times 6 = 36$ equally possible outcomes.</p>
+<p>If we bet on getting at least one six, we count all outcomes that contain a six. These are the last row and the last column. There are 11 such cases.</p>
+<p>The probability of at least one six in two throws is therefore $\frac{11}{36}$.</p>
+<p>Probability calculations can be simplified and extended, and a rich theory has been built on this foundation. But the basic idea is straightforward. Because the die is symmetric, all elementary outcomes are treated as equally probable. To determine the probability of an event, one counts the outcomes that produce it and compares them with the total number of possible outcomes. The resulting fraction gives the probability and therefore the fair betting odds.</p>
+<p>Symmetry is not the only way to obtain such probabilities. Whenever we have a process that selects outcomes from a known set without favoring any particular one, they are treated as equally probable. In a lottery basket the tickets are mixed and drawn blindly. In the case of socks in a drawer we rely on the fact that socks are usually thrown in without order and that the selection is blind.</p>
+<p>Under these conditions the probabilities are not merely guesses. They are determined by the structure of the situation we look at. Mathematics becomes applicable to life.</p>
+<h2 id="the-cards-model">The Cards Model</h2>
+<p>Cards introduce a small complication.</p>
+<p>Assume we have a deck of only six cards labeled 1 to 6.</p>
+<p>Drawing one card from the shuffled deck is essentially the same situation as throwing a six-sided die. Each card is indistinguishable during the draw, so the six possible outcomes are equally likely.</p>
+<p>But after that card was drawn and not returned to the deck, this changes. The second draw no longer has six possible outcomes. One card has already been removed. Only five remain.</p>
+<p>The second draw therefore resembles throwing a smaller die with five faces. But which five faces exactly depends on the first result.</p>
+<p>If the first card was 1, the remaining possibilities are 2, 3, 4, 5, 6.</p>
+<p>If the first card was 2, the remaining possibilities are 1, 3, 4, 5, 6.</p>
+<p>And so on.</p>
+<p>In other words, the probabilities for the next step depend on what has already happened. This resembles using a smaller die on each draw. Each die has fewer and fewer options, and which options disappear depends entirely on the previous draws.</p>
+<p>To keep track of the probabilities we need a form of bookkeeping. We can no longer speak simply of the probability of drawing a certain card in a certain draw. Instead we must ask for the probability of drawing that card <em>given</em> the cards that have already been drawn. This is called a <em>conditional probability</em>. The set of previous draws defines the state of the process.</p>
+<p>The basic idea remains the same as before. We still rely on a random device and counting of outcomes. But the set of possible outcomes at each step now depends on the state created by earlier steps.</p>
+<h2 id="probability-theory-and-propositional-logic">Probability Theory And Propositional Logic</h2>
+<p>Probability theory eventually takes the patterns we have just seen and organizes them into a symbolic system.</p>
+<p>In this respect it resembles propositional logic from the previous chapter. Logic introduced symbols such as $A$ and $B$ to represent statements and then specified rules for how these statements may be combined.</p>
+<p>Probability theory uses a similar strategy. In the presentation used here, the symbols now represent outcomes rather than statements.</p>
+<p>The set of possible outcomes of a random device is often called the sample space in probability theory.</p>
+<p>We write $P(A)$ for the probability that outcome $A$ occurs, as in the die example.</p>
+<p>We introduce $P(A|B)$ for the probability that outcome $A$ occurs given outcome $B$ has occurred, as in the cards example.</p>
+<p>Outcomes can then be combined in ways that parallel the logical connectives introduced earlier.</p>
+<p>For example, the outcome $A\ and\ B$ means that both outcomes occur. In the die example this could represent "a six appears in the first throw and a six appears in the second throw."</p>
+<p>The probability of this outcome has the form $P(A\ and\ B)=P(A) \times P(B|A)=P(B) \times P(A|B)$, which expresses that the probability of two outcomes occurring together equals the probability of one outcome multiplied by the probability of the other given the first.</p>
+<p>The corresponding rules for the other connectives are:</p>
+<p>$P(A\ or\ B) = P(A) + P(B) - P(A\ and\ B)$, which expresses that the probability of either outcome occurring is the sum of their probabilities minus the overlap counted twice.</p>
+<p>$P(A|B) = \frac{P(A)P(B|A)}{P(B)}$, which relates conditional probabilities in both directions. It is obtained by rearranging the two products in the rule for $P(A\ and\ B)$.</p>
+<p>$P(not\ B) = 1 - P(B)$, which expresses that the probability of an outcome not occurring is the remainder to one.</p>
+<p>These symbolic rules allow probability calculations to be carried out without listing every possible outcome explicitly, as we did in the examples above. Like logic, probability can be organized into a system of rules that can be applied to problems. This system has proven reliable in practice, though now calculation is involved when applying the rules.</p>
+<p>For example, consider the case of two throws of a die. Let A be the outcome "the first throw shows a six" and B the outcome "the second throw shows a six". Instead of asking for at least one six, we ask for exactly two sixes.</p>
+<p>From symmetry we know that $P(A)=\frac{1}{6}​,P(B)=\frac{1}{6}$.</p>
+<p>The result of the first throw does not influence the second because dice have no memory, thus also $P(B∣A)=P(B)=\frac{1}{6}$.</p>
+<p>Using the multiplication rule we obtain $P(A and B)=P(A) \times P(B∣A)=\frac{1}{6}​\times\frac{1}{6}​=\frac{1}{36}​$.</p>
+<p>This is the outcome (6, 6) in the table above, which appears once in the 36 possible outcomes.</p>
+<p>Like logical calculi, probability theory does not by itself initially possess much convincing force. The symbols and rules are introduced deliberately. Their convincing force arises elsewhere: they summarize the simpler models we have already seen, stabilize reasoning by constraining possible steps, and prove useful across a wide range of structured practical and scientific contexts.</p>
+<p>In that sense probability theory and logic share a similar role. They are not read directly off our thinking. They are refined systems built on earlier patterns of conviction formation. Their value lies in organizing those patterns, preventing certain kinds of mistakes, and providing mathematical guarantees when their assumptions are satisfied.</p>
+<p>Some authors, such as Cox, Jaynes, and de Finetti, also tried to show that the probability rules themselves can be motivated from simpler and more compelling constraints. This does not make the theory a direct reading of thought, but it does show that its formal structure was not introduced in a wholly arbitrary way.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/05-logic-and-proof/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>5. Logic And Proof</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/07-statistics/" accesskey="."
+    ><span>7. Statistics</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://stefankober.github.io/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://stefankober.github.io/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://stefankober.github.io/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+  <!-- Mermaid -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    window.zolaTheme.mermaid.init({ mermaid, s: ".mermaid" });
+  </script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

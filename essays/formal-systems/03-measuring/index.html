@@ -1,0 +1,269 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>3. Measuring</title>
+  <meta property="og:title" content="3. Measuring" />
+  <meta property="og:url" content="https://stefankober.github.io/essays/formal-systems/03-measuring/" />
+  <link rel="canonical" href="https://stefankober.github.io/essays/formal-systems/03-measuring/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://stefankober.github.io/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://stefankober.github.io/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://stefankober.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://stefankober.github.io/apple-touch-icon.png?h=58bee300054c5308feb3" />
+  <link rel="icon" type="image/png" href="https://stefankober.github.io/android-icon.png?h=8d80ec95446bd2c36826" />
+  <script src="https://stefankober.github.io/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://stefankober.github.io/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://stefankober.github.io/elasticlunr.min.js", "https://stefankober.github.io/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">3. Measuring</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H6M0S">6&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+    <p class="back-to-toc">
+      ← <a href="https:&#x2F;&#x2F;stefankober.github.io&#x2F;essays&#x2F;formal-systems&#x2F;">How Formal Systems Reorganize Belief</a>
+    </p>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#units">Units</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#hidden-assumptions">Hidden Assumptions</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#measurement-error">Measurement Error</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#indirect-measurement">Indirect Measurement</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#instruments">Instruments</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#calibration">Calibration</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#resolution">Resolution</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#converging-measurements">Converging Measurements</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#summary">Summary</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+
+  <!-- Content -->
+  <section><p>Counting works well when we are dealing with discrete objects: stones, apples, cows in a herd. The procedure is simple. We point to each object once and move through a sequence of numbers.</p>
+<p>But many quantities we care about cannot be counted in this way. The length of a board, the weight of a stone, or the duration of a day are not collections of discrete objects. They are magnitudes.</p>
+<p>To deal with such magnitudes we use another procedure: measuring.</p>
+<p>Measuring compares a magnitude with a chosen unit. A ruler is placed along a piece of wood, a scale compares a weight with a standard mass, a clock compares a duration with a repeating physical process.</p>
+<p>If the unit fits exactly a whole number of times, the result can be written as a number: three meters, five kilograms, ten seconds.</p>
+<p>But very often the unit does not fit exactly. Then we refine the comparison. The magnitude might be two and a half units, or two and three tenths, or two and three hundredths.</p>
+<p>In this way measuring converts a continuous magnitude into a procedure that resembles counting. Instead of counting objects, we count how many times the unit or parts of the unit fit.</p>
+<p>As with counting, conviction stabilizes because the procedure can be repeated. Different people using the same unit and the same instrument usually arrive at similar results. If they do not, the measurement can be repeated and the discrepancy investigated.</p>
+<h2 id="units">Units</h2>
+<p>The unit itself is not determined by nature. Different cultures have used many different units: body parts, rods, stones, astronomical cycles.</p>
+<p>What matters is not which unit is chosen, but that it remains stable and is shared among those who perform the measurement.</p>
+<p>A length measured in kilometers can also be expressed in miles, 里, or yojana. The numbers change, but the magnitude does not.</p>
+<p>This shows that measuring is fundamentally a procedure of comparison. The unit provides a reference against which magnitudes can be related.</p>
+<h2 id="hidden-assumptions">Hidden Assumptions</h2>
+<p>As with counting, the reliability of measuring depends on certain conditions.</p>
+<p>The object being measured should remain stable during the procedure along the measured axis. The measuring instrument should not change its length or weight. The unit should remain fixed. The procedure should be repeatable. All of this is a repeating pattern of stable conviction formation.</p>
+<p>When these conditions are satisfied, measurement appears straightforward. A length of two meters today will still measure two meters tomorrow. That is however not something that the measurement guarantees, it is something we already account for before something can aspire to become a common measure at all.</p>
+<p>And these assumptions are not always guaranteed.</p>
+<p>Materials expand when heated. Measuring rods can warp. A scale may drift out of calibration. A moving object may be difficult to measure precisely.</p>
+<p>In such situations repeated measurements can produce slightly different results.</p>
+<h2 id="measurement-error">Measurement Error</h2>
+<p>If a length is measured several times, the results may look like this:</p>
+<p>2.01 meters
+1.98 meters
+2.00 meters</p>
+<p>The measurements are not identical, but they usually cluster around a value.</p>
+<p>In such situations conviction no longer stabilizes through exact agreement. Instead it stabilizes through patterns in the deviations.</p>
+<p>Repeated measurements suggest that the true magnitude lies somewhere near the observed values. Differences between measurements are interpreted as measurement error.</p>
+<p>This introduces a new way in which conviction can stabilize. Agreement does not need to be perfect. It is enough that deviations remain small and follow recognizable patterns.</p>
+<h2 id="indirect-measurement">Indirect Measurement</h2>
+<p>There are cases when the quantity of interest cannot be measured directly.
+Instead it is related to other magnitudes that can be measured, either geometrically or functionally.</p>
+<p>What are some strong patterns of conviction stabilization when measurements get that complicated?</p>
+<p>The height of a tree may be inferred from the length of its shadow.
+The distance of a star can be estimated from parallax.
+A temperature is inferred from the expansion of a liquid in a thermometer.</p>
+<p>In such cases conviction stabilizes through stable chains of relations.
+If the relations between the magnitudes are well understood, measuring one quantity allows us to infer another.</p>
+<p>If that relationship is geometric, we can use complex rules that convince by being built up from small clear steps. We have seen that and some mechanisms in the last chapter.</p>
+<p>If the relationship is functional, then we must first be convinced that the functional relationship does hold at all.</p>
+<p>It can be so obvious or so well-known that this conviction arises naturally. This is dangerous terrain, however, because both cases tend to leave the exact nature of the relationship, its preconditions and edge cases unclarified.</p>
+<p>Tools we will touch upon later to investigate such relationships are probability and statistics.</p>
+<h2 id="instruments">Instruments</h2>
+<p>Many measurements rely on instruments that transform one magnitude into another. How are these transformations convincing?</p>
+<p>A thermometer converts temperature into the expansion of a liquid.
+A scale converts weight into the deflection of a spring.</p>
+<p>Conviction stabilizes when these transformations remain stable. It is mostly a special case of understood functional relationships.
+If the same instrument produces consistent results under the same conditions and this can be checked independently, the measurement gains credibility.</p>
+<h2 id="calibration">Calibration</h2>
+<p>Once instruments enter the process, a new problem appears: how can different instruments remain comparable in a convincing way?</p>
+<p>Instruments and units must occasionally be compared with reference standards.
+A scale may be tested with known weights, a ruler with a standard rod.</p>
+<p>Such procedures are called calibration.
+They allow measurement systems used in different places to remain comparable.</p>
+<p>Conviction stabilizes not only through repeated measurement, but also through networks of mutually checked instruments.</p>
+<h2 id="resolution">Resolution</h2>
+<p>Every measuring instrument has a limited resolution.
+A ruler marked in millimeters cannot clearly distinguish differences smaller than that.</p>
+<p>This limits the convincing force of a measuring instrument to the range in which its resolution is meaningful.</p>
+<p>For practical purposes this limitation is often sufficient.
+A carpenter may not need micrometer precision to cut a board.</p>
+<p>In the other direction, one does not use a yardstick to measure the height of a large mountain. The small individual errors of moving the stick to the next measurement would accumulate over so many movements.</p>
+<p>Using measurement devices outside of their practical use weakens conviction usually.</p>
+<h2 id="converging-measurements">Converging Measurements</h2>
+<p>Sometimes the same magnitude can be measured in different ways.
+If independent procedures produce similar results, confidence increases.</p>
+<p>Agreement across different measurement methods can reinforce conviction even when each individual method has limitations.</p>
+<p>That creates the possibility to use methods that rely on different mechanisms to get to a convincing result, even though the individual methods are not by themselves strongly convincing.</p>
+<h2 id="summary">Summary</h2>
+<p>Measurement introduces several new ways in which conviction can stabilize. Instead of exact agreement, conviction may stabilize through clustering of results, stable relations between magnitudes, reliable instrument behavior, shared calibration standards, and agreement across independent methods.</p>
+<p>These practices allow measurement to function even when perfect precision is impossible. But they also reveal that numbers obtained through measurement are rarely exact in the same sense as numbers obtained through counting.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/02-counting/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>2. Counting, Pairing, Geometry</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://stefankober.github.io/essays/formal-systems/04-incommensurability/" accesskey="."
+    ><span>4. Incommensurability</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://stefankober.github.io/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://stefankober.github.io/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://stefankober.github.io/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+  <!-- Mermaid -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    window.zolaTheme.mermaid.init({ mermaid, s: ".mermaid" });
+  </script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<svg viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .urn { fill:#f4efe4; stroke:#1a1a1a; stroke-width:2; }
+  .rim { fill:none; stroke:#1a1a1a; stroke-width:2; }
+  .r { fill:#c94b4b; stroke:#1a1a1a; stroke-width:1; }
+  .b { fill:#3f6fb5; stroke:#1a1a1a; stroke-width:1; }
+</style>
+
+<!-- urn -->
+<path class="urn" d="M30 28 Q32 20 40 20 L80 20 Q88 20 90 28 L82 95 Q80 105 70 108 L50 108 Q40 105 38 95 Z"/>
+<ellipse class="rim" cx="60" cy="26" rx="22" ry="4"/>
+
+<!-- balls -->
+<circle class="r" cx="52" cy="51" r="7"/>
+<circle class="r" cx="68" cy="51" r="7"/>
+
+<circle class="b" cx="45" cy="66" r="7"/>
+<circle class="r" cx="60" cy="66" r="7"/>
+<circle class="b" cx="75" cy="66" r="7"/>
+
+<circle class="r" cx="45" cy="82" r="7"/>
+<circle class="b" cx="60" cy="82" r="7"/>
+<circle class="r" cx="75" cy="82" r="7"/>
+
+<circle class="b" cx="52" cy="97" r="7"/>
+<circle class="r" cx="67" cy="97" r="7"/>
+</svg>
