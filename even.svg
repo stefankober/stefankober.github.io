@@ -3,7 +3,7 @@
     :root{
       --dot: #c9c9c9;     /* normal dots */
       --axis: #3b82f6;    /* middle row/column */
-      --center: #111111;  /* center dot */
+      --center: #5a5a5a;  /* center dot */
     }
     .dot { fill: var(--dot); }
     .axis { fill: var(--axis); }

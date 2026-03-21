@@ -6,7 +6,7 @@
     .small { font: 400 5px Inter, sans-serif; fill: #6a6a6a; }
     .num { font: 500 7px Inter, sans-serif; fill: #1a1a1a; }
     .q { font: 600 8px Inter, sans-serif; fill: #1f5fa3; }
-    .arrow { stroke: #1a1a1a; stroke-width: 1.2; fill: none; }
+    .arrow { stroke: #5a5a5a; stroke-width: 1.2; fill: none; }
     .label { font: 500 7px Inter, sans-serif; fill: #1a1a1a; }
   </style>
 
@@ -24,7 +24,7 @@
 
   <!-- arrow -->
   <line x1="54" y1="60" x2="74" y2="60" class="arrow"/>
-  <polygon points="54,60 59,57 59,63" fill="#1a1a1a"/>
+  <polygon points="54,60 59,57 59,63" fill="#5a5a5a"/>
 
   <!-- right box -->
   <rect x="80" y="40" width="32" height="40" class="box"/>

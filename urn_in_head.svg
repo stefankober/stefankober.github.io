@@ -21,7 +21,7 @@
 <circle class="b data" cx="210" cy="150" r="12"/>
 
 <line x1="20" y1="125" x2="240" y2="125"
-      stroke="#1a1a1a"
+      stroke="#5a5a5a"
       stroke-width="2"
       stroke-dasharray="6 4"/>
 
