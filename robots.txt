@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://stefankober.github.io/sitemap.xml
+Sitemap: https://www.stefankober.de/sitemap.xml
