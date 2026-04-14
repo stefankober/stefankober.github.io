@@ -237,7 +237,16 @@
     if (side === "west") maze.west[cell] = 1;
   }
 
-  function drawMaze(canvas, maze, startOpening, endOpening, decorations, tracePoints = []) {
+  function drawMaze(
+    canvas,
+    maze,
+    startOpening,
+    endOpening,
+    decorations,
+    tracePoints = [],
+    fadingTraces = [],
+    activeTraceColor = "rgba(110, 65, 30, 0.72)"
+  ) {
     const ctx = canvas.getContext("2d");
     const dpr = Math.max(1, window.devicePixelRatio || 1);
 
@@ -303,8 +312,12 @@
     ctx.stroke();
 
     drawDecorations(ctx, decorations, maze, cellW, cellH, innerX, innerY);
-    drawTrace(ctx, tracePoints);
-  }
+    for (const oldTrace of fadingTraces) {
+        drawTrace(ctx, oldTrace.points, oldTrace.color, oldTrace.alpha);
+      }
+
+      drawTrace(ctx, tracePoints, activeTraceColor, 1);
+      }
 
   function drawDecorations(ctx, decorations, maze, cellW, cellH, offsetX, offsetY) {
     for (const deco of decorations) {
@@ -336,11 +349,12 @@
     ctx.restore();
   }
 
-  function drawTrace(ctx, tracePoints) {
+  function drawTrace(ctx, tracePoints, color = "rgba(110, 65, 30, 0.72)", alpha = 1) {
     if (!tracePoints || tracePoints.length < 2) return;
 
     ctx.save();
-    ctx.strokeStyle = "rgba(110, 65, 30, 0.72)";
+    ctx.globalAlpha = alpha;
+    ctx.strokeStyle = color;
     ctx.lineWidth = 3;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -389,9 +403,50 @@
 
     let isTracing = false;
     const tracePoints = [];
+    const fadingTraces = [];
+
+    const traceColors = [
+      "rgba(110, 65, 30, 0.75)",
+      "rgba(150, 90, 40, 0.75)",
+      "rgba(120, 40, 40, 0.75)",
+      "rgba(90, 80, 40, 0.75)",
+      "rgba(70, 55, 110, 0.75)"
+    ];
+
+    let activeTraceColor = traceColors[Math.floor(Math.random() * traceColors.length)];
+    let fadeTimer = null;
 
     function redraw() {
-      drawMaze(canvas, maze, start, end, decorations, tracePoints);
+      drawMaze(
+        canvas,
+        maze,
+        start,
+        end,
+        decorations,
+        tracePoints,
+        fadingTraces,
+        activeTraceColor
+      );
+    }
+
+    function startFadeLoop() {
+      if (fadeTimer) return;
+
+      fadeTimer = window.setInterval(() => {
+        for (let i = fadingTraces.length - 1; i >= 0; i--) {
+          fadingTraces[i].alpha -= 0.0005;
+          if (fadingTraces[i].alpha <= 0) {
+            fadingTraces.splice(i, 1);
+          }
+        }
+
+        if (fadingTraces.length === 0) {
+          clearInterval(fadeTimer);
+          fadeTimer = null;
+        }
+
+        redraw();
+      }, 50);
     }
 
     function getCanvasPoint(event) {
@@ -420,12 +475,25 @@
     }
 
     canvas.addEventListener("pointerdown", (event) => {
+      if (tracePoints.length > 1) {
+        fadingTraces.push({
+          points: tracePoints.slice(),
+          color: activeTraceColor,
+          alpha: 0.45
+        });
+        startFadeLoop();
+      }
+
       isTracing = true;
       tracePoints.length = 0;
+      activeTraceColor = traceColors[Math.floor(Math.random() * traceColors.length)];
+
       appendTracePoint(getCanvasPoint(event));
+
       if (canvas.setPointerCapture) {
         canvas.setPointerCapture(event.pointerId);
       }
+
       redraw();
     });
 
@@ -439,6 +507,17 @@
     function stopTracing(event) {
       if (!isTracing) return;
       isTracing = false;
+
+      if (tracePoints.length > 1) {
+        fadingTraces.push({
+          points: tracePoints.slice(),
+          color: activeTraceColor,
+          alpha: 0.45
+        });
+        tracePoints.length = 0;
+        startFadeLoop();
+      }
+
       if (event && canvas.releasePointerCapture) {
         try {
           canvas.releasePointerCapture(event.pointerId);
@@ -446,6 +525,8 @@
           // ignore
         }
       }
+
+      redraw();
     }
 
     canvas.addEventListener("pointerup", stopTracing);
