@@ -1,27 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" aria-label="ladder">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" aria-label="key">
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- bow -->
+    <circle cx="11" cy="16" r="4.2"
+            fill="#d8b24a"
+            stroke="#5a4632"
+            stroke-width="1.4"/>
 
-    <!-- rails -->
-    <path d="M11 6 L9.5 26"
+    <circle cx="11" cy="16" r="1.8"
+            fill="none"
+            stroke="#8a6a49"
+            stroke-width="1"/>
+
+    <!-- shaft -->
+    <path d="M15.2 16
+             L23.5 16"
+          stroke="#5a4632"
+          stroke-width="1.8"/>
+
+    <!-- teeth -->
+    <path d="M20.5 16
+             L20.5 19
+             L22.2 19
+             L22.2 17.4
+             L24 17.4
+             L24 16"
           stroke="#5a4632"
           stroke-width="1.6"/>
-    <path d="M21 6 L22.5 26"
-          stroke="#5a4632"
-          stroke-width="1.6"/>
 
-    <!-- rungs -->
-    <path d="M10.3 10 L21.7 10"
-          stroke="#8a6a49"
-          stroke-width="1.2"/>
-    <path d="M10 14 L22 14"
-          stroke="#8a6a49"
-          stroke-width="1.2"/>
-    <path d="M9.7 18 L22.3 18"
-          stroke="#8a6a49"
-          stroke-width="1.2"/>
-    <path d="M9.4 22 L22.6 22"
-          stroke="#8a6a49"
-          stroke-width="1.2"/>
-
+    <!-- tiny highlight -->
+    <path d="M8.8 13.2
+             C9.8 12.6, 11.2 12.4, 12.4 12.8"
+          stroke="#f4df8a"
+          stroke-width="0.9"
+          opacity="0.9"/>
   </g>
 </svg>

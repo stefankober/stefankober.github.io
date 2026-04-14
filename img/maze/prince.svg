@@ -2,22 +2,23 @@
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
 
     <!-- lid -->
-    <path d="M10 14 C10 11, 22 11, 22 14"
+    <path d="M8 14
+             C8 10, 24 10, 24 14"
           fill="#9a6a3a"
           stroke="#5a4632"
-          stroke-width="1.4"/>
+          stroke-width="1.6"/>
 
     <!-- base -->
-    <rect x="10" y="14" width="12" height="8"
+    <rect x="8" y="14" width="16" height="8"
           fill="#b07a45"
           stroke="#5a4632"
-          stroke-width="1.4"/>
+          stroke-width="1.6"/>
 
-    <!-- lock -->
-    <rect x="15" y="17" width="2" height="2"
+    <!-- lock (bigger!) -->
+    <rect x="14.5" y="16.5" width="3" height="3"
           fill="#d8b24a"
           stroke="#5a4632"
-          stroke-width="0.8"/>
+          stroke-width="1"/>
 
   </g>
 </svg>
