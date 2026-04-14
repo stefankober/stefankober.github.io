@@ -53,6 +53,11 @@
     return h >>> 0;
   }
 
+
+  function pickRandom(arr, rng) {
+    return arr[rng.int(arr.length)] 
+  }
+
   function pickDecorations(maze, rng) {
     const names = [
       "princess",
@@ -398,6 +403,31 @@
     openBoundary(maze, end.cell, "south");
 
     const decorations = pickDecorations(maze, rng);
+
+    const captionEl = document.getElementById("maze-caption");
+
+    if (captionEl && decorations.length > 0) {
+      const example = pickRandom(decorations, rng);
+
+      const labelMap = {
+        flower: "a red flower",
+        gold: "some coins",
+        monster: "a monster",
+        prince: "a chest, or a mimic",
+        princess: "a yellow flower",
+        ladder: "a secret key",
+        book: "an old book",
+        potion: "a healing potion",
+        diamond: "a precious diamond",
+      };
+
+      const name = labelMap[example.name] || example.name;
+
+    captionEl.innerHTML =
+      `Enter at the top. Exit at the bottom. What you find along the way is yours. ` +
+      `For example, ${name}: ` +
+      `<img src="${example.src}" alt="${name}" style="vertical-align: middle; margin-left: 0.4em;">`;
+        }
 
     await preloadImages(decorations.map(d => d.src));
 
