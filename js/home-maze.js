@@ -60,13 +60,13 @@
       "monster",
       "prince",
       "flower",
-      "stairs",
+      "ladder",
       "book",
       "potion",
       "diamond"
     ];
 
-    const count = 5 + rng.int(3); // 3 to 5
+    const count = 5 + rng.int(3); // 5 to 7
     const decorations = [];
 
     for (let i = 0; i < count; i++) {
@@ -151,8 +151,8 @@
   }
 
   function bfsDistances(maze, start) {
-    const { cols, rows, north, south, east, west } = maze;
-    const total = cols * rows;
+    const { cols, north, south, east, west } = maze;
+    const total = maze.cols * maze.rows;
     const dist = new Int32Array(total);
     dist.fill(-1);
 
@@ -237,33 +237,7 @@
     if (side === "west") maze.west[cell] = 1;
   }
 
-  function drawArrow(ctx, x, y, direction, color, size) {
-    ctx.save();
-    ctx.translate(x, y);
-
-    let angle = 0;
-    if (direction === "down") angle = Math.PI / 2;
-    if (direction === "up") angle = -Math.PI / 2;
-    if (direction === "left") angle = Math.PI;
-    if (direction === "right") angle = 0;
-
-    ctx.rotate(angle);
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(size, 0);
-    ctx.lineTo(-size * 0.55, -size * 0.72);
-    ctx.lineTo(-size * 0.55, -size * 0.28);
-    ctx.lineTo(-size * 1.1, -size * 0.28);
-    ctx.lineTo(-size * 1.1, size * 0.28);
-    ctx.lineTo(-size * 0.55, size * 0.28);
-    ctx.lineTo(-size * 0.55, size * 0.72);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.restore();
-  }
-
-  function drawMaze(canvas, maze, startOpening, endOpening, decorations) {
+  function drawMaze(canvas, maze, startOpening, endOpening, decorations, tracePoints = []) {
     const ctx = canvas.getContext("2d");
     const dpr = Math.max(1, window.devicePixelRatio || 1);
 
@@ -298,7 +272,7 @@
     const wallWidth = Math.max(1, Math.min(cellW, cellH) * 0.13);
 
     ctx.lineWidth = wallWidth;
-    ctx.strokeStyle = "#4b3a2a"; // ink brown
+    ctx.strokeStyle = "#4b3a2a";
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
     ctx.beginPath();
@@ -328,16 +302,8 @@
 
     ctx.stroke();
 
-    const startX = innerX + ((startOpening.cell % maze.cols) + 0.5) * cellW;
-    const startY = innerY + Math.max(cellH * 0.65, 10);
-
-    const endX = innerX + ((endOpening.cell % maze.cols) + 0.5) * cellW;
-    const endY = innerY + innerH - Math.max(cellH * 0.65, 10);
-
-    const arrowSize = Math.max(6, Math.min(cellW, cellH) * 0.9);
-
     drawDecorations(ctx, decorations, maze, cellW, cellH, innerX, innerY);
-
+    drawTrace(ctx, tracePoints);
   }
 
   function drawDecorations(ctx, decorations, maze, cellW, cellH, offsetX, offsetY) {
@@ -370,10 +336,26 @@
     ctx.restore();
   }
 
-  function wobblyLine(ctx, x0, y0, x1, y1) {
-    const dx = x1 - x0;
-    const dy = y1 - y0;
+  function drawTrace(ctx, tracePoints) {
+    if (!tracePoints || tracePoints.length < 2) return;
 
+    ctx.save();
+    ctx.strokeStyle = "rgba(110, 65, 30, 0.72)";
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.beginPath();
+    ctx.moveTo(tracePoints[0].x, tracePoints[0].y);
+
+    for (let i = 1; i < tracePoints.length; i++) {
+      ctx.lineTo(tracePoints[i].x, tracePoints[i].y);
+    }
+
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function wobblyLine(ctx, x0, y0, x1, y1) {
     const midX = (x0 + x1) / 2 + (Math.random() - 0.5) * 1.5;
     const midY = (y0 + y1) / 2 + (Math.random() - 0.5) * 1.5;
 
@@ -384,6 +366,9 @@
   async function setupMaze(root) {
     const canvas = root.querySelector("[data-maze-canvas]");
     if (!canvas) return;
+
+    canvas.style.cursor = "crosshair";
+    canvas.style.touchAction = "none";
 
     const cols = Number(root.dataset.cols || 96);
     const rows = Number(root.dataset.rows || 108);
@@ -402,7 +387,70 @@
 
     await preloadImages(decorations.map(d => d.src));
 
-    const redraw = () => drawMaze(canvas, maze, start, end, decorations);
+    let isTracing = false;
+    const tracePoints = [];
+
+    function redraw() {
+      drawMaze(canvas, maze, start, end, decorations, tracePoints);
+    }
+
+    function getCanvasPoint(event) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
+      };
+    }
+
+    function appendTracePoint(point) {
+      const last = tracePoints[tracePoints.length - 1];
+      if (!last) {
+        tracePoints.push(point);
+        return true;
+      }
+
+      const dx = point.x - last.x;
+      const dy = point.y - last.y;
+      if ((dx * dx) + (dy * dy) >= 4) {
+        tracePoints.push(point);
+        return true;
+      }
+
+      return false;
+    }
+
+    canvas.addEventListener("pointerdown", (event) => {
+      isTracing = true;
+      tracePoints.length = 0;
+      appendTracePoint(getCanvasPoint(event));
+      if (canvas.setPointerCapture) {
+        canvas.setPointerCapture(event.pointerId);
+      }
+      redraw();
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!isTracing) return;
+      if (appendTracePoint(getCanvasPoint(event))) {
+        redraw();
+      }
+    });
+
+    function stopTracing(event) {
+      if (!isTracing) return;
+      isTracing = false;
+      if (event && canvas.releasePointerCapture) {
+        try {
+          canvas.releasePointerCapture(event.pointerId);
+        } catch (_) {
+          // ignore
+        }
+      }
+    }
+
+    canvas.addEventListener("pointerup", stopTracing);
+    canvas.addEventListener("pointercancel", stopTracing);
+
     redraw();
 
     let resizeTimer = null;
