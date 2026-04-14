@@ -410,22 +410,22 @@
       const example = pickRandom(decorations, rng);
 
       const labelMap = {
-        flower: "a red flower",
-        gold: "some coins",
-        monster: "a monster",
-        prince: "a chest, or a mimic",
-        princess: "a yellow flower",
-        ladder: "a secret key",
-        book: "an old book",
-        potion: "a healing potion",
-        diamond: "a precious diamond",
+        flower: "a red flower. Oh that smell!",
+        gold: "a few coins, of uncertain value.",
+        monster: "a creature to fight or befriend.",
+        prince: "a chest. What may it contain?",
+        princess: "a yellow flower. It seems to glow in the dark.",
+        ladder: "a key. But where is the lock?",
+        book: "an old book. It asks for patience.",
+        potion: "a small vial to heal or to wound.",
+        diamond: "a precious diamond. Or maybe glass?",
       };
 
       const name = labelMap[example.name] || example.name;
 
     captionEl.innerHTML =
       `Enter at the top. Exit at the bottom. What you find along the way is yours. ` +
-      `For example, ${name}: ` +
+      `For example, ${name} ` +
       `<img src="${example.src}" alt="${name}" style="vertical-align: middle; margin-left: 0.4em;">`;
         }
 
