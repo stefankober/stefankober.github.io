@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" aria-label="ladder">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- rails -->
+    <path d="M11 6 L9.5 26"
+          stroke="#5a4632"
+          stroke-width="1.6"/>
+    <path d="M21 6 L22.5 26"
+          stroke="#5a4632"
+          stroke-width="1.6"/>
+
+    <!-- rungs -->
+    <path d="M10.3 10 L21.7 10"
+          stroke="#8a6a49"
+          stroke-width="1.2"/>
+    <path d="M10 14 L22 14"
+          stroke="#8a6a49"
+          stroke-width="1.2"/>
+    <path d="M9.7 18 L22.3 18"
+          stroke="#8a6a49"
+          stroke-width="1.2"/>
+    <path d="M9.4 22 L22.6 22"
+          stroke="#8a6a49"
+          stroke-width="1.2"/>
+
+  </g>
+</svg>

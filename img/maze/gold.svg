@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-label="gold coins">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- coin 1 -->
+    <circle cx="20" cy="26" r="5"
+            fill="#d8b24a"
+            stroke="#5a4632"
+            stroke-width="1.6"/>
+    <circle cx="20" cy="26" r="3.5"
+            stroke="#8b6a2b"
+            stroke-width="1"/>
+
+    <!-- coin 2 -->
+    <circle cx="26" cy="24" r="5"
+            fill="#d8b24a"
+            stroke="#5a4632"
+            stroke-width="1.6"/>
+    <circle cx="26" cy="24" r="3.5"
+            stroke="#8b6a2b"
+            stroke-width="1"/>
+
+    <!-- coin 3 -->
+    <circle cx="24" cy="30" r="5"
+            fill="#d8b24a"
+            stroke="#5a4632"
+            stroke-width="1.6"/>
+    <circle cx="24" cy="30" r="3.5"
+            stroke="#8b6a2b"
+            stroke-width="1"/>
+
+    <!-- highlight -->
+    <path d="M22 21 C24 20.2, 27 20.5, 28.5 21.5"
+          stroke="#f4df8a"
+          stroke-width="1.2"
+          opacity="0.9"/>
+  </g>
+</svg>

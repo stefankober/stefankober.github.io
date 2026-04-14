@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-label="red flower">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- stem -->
+    <path d="M24 36 
+             C23 32, 25 28, 24 24"
+          stroke="#5a4632"
+          stroke-width="1.6"/>
+
+    <!-- leaves -->
+    <path d="M24 30 
+             C20 29, 18 27, 18 25
+             C20 25, 22 26.5, 24 28"
+          fill="#9fb27a"
+          stroke="#5a4632"
+          stroke-width="1.2"/>
+
+    <path d="M24 28 
+             C28 27, 30 25, 30 23
+             C28 23, 26 24.5, 24 26"
+          fill="#9fb27a"
+          stroke="#5a4632"
+          stroke-width="1.2"/>
+
+    <!-- petals (slightly uneven) -->
+    <path d="M24 16
+             C22 12, 18 12, 18 16
+             C16 15, 14 18, 16 20
+             C14 22, 17 24, 19 23
+             C20 26, 23 25, 24 23
+             C25 25, 28 26, 29 23
+             C31 24, 34 22, 32 20
+             C34 18, 32 15, 30 16
+             C30 12, 26 12, 24 16
+             Z"
+          fill="#c94a4a"
+          stroke="#5a4632"
+          stroke-width="1.8"/>
+
+    <!-- inner flower -->
+    <circle cx="24" cy="20" r="2.6"
+            fill="#f2d27a"
+            stroke="#5a4632"
+            stroke-width="1.2"/>
+
+    <!-- subtle highlight -->
+    <path d="M21 17 C22 16.5, 24 16.5, 25 17"
+          stroke="#f2a3a3"
+          stroke-width="1"
+          opacity="0.8"/>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+.home-maze {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.home-maze canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+:root {
+  --maze-line: color-mix(in srgb, currentColor 70%, transparent);
+  --maze-path: color-mix(in srgb, currentColor 18%, transparent);
+  --maze-start: #1b8f3a;
+  --maze-end: #b3261e;
+}

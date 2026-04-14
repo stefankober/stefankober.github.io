@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-label="green monster">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- body -->
+    <path d="M15 31
+             C14 24, 17 17, 24 16
+             C31 17, 34 24, 33 31
+             C32 35, 29 38, 24 38
+             C19 38, 16 35, 15 31
+             Z"
+          fill="#8cab63"
+          stroke="#5a4632"
+          stroke-width="2"/>
+
+    <!-- horns -->
+    <path d="M19 18 C18 15, 19 13, 21 12"
+          stroke="#5a4632"
+          stroke-width="1.6"/>
+    <path d="M29 18 C30 15, 29 13, 27 12"
+          stroke="#5a4632"
+          stroke-width="1.6"/>
+
+    <!-- eyes -->
+    <ellipse cx="20.5" cy="25" rx="2" ry="2.4"
+             fill="#f5f1e8"
+             stroke="#5a4632"
+             stroke-width="1.1"/>
+    <ellipse cx="27.5" cy="25" rx="2" ry="2.4"
+             fill="#f5f1e8"
+             stroke="#5a4632"
+             stroke-width="1.1"/>
+
+    <!-- pupils -->
+    <circle cx="20.8" cy="25.4" r="0.8" fill="#5a4632"/>
+    <circle cx="27.2" cy="25.4" r="0.8" fill="#5a4632"/>
+
+    <!-- mouth -->
+    <path d="M19 31
+             C21 33, 27 33, 29 31"
+          stroke="#5a4632"
+          stroke-width="1.6"/>
+
+    <!-- teeth -->
+    <path d="M21.2 31 L22 33.2 L22.8 31"
+          fill="#efe3c7"
+          stroke="#5a4632"
+          stroke-width="0.9"/>
+    <path d="M25.2 31 L26 33.1 L26.8 31"
+          fill="#efe3c7"
+          stroke="#5a4632"
+          stroke-width="0.9"/>
+
+    <!-- claws -->
+    <path d="M18 37 L17 39" stroke="#5a4632" stroke-width="1.2"/>
+    <path d="M24 38 L24 40" stroke="#5a4632" stroke-width="1.2"/>
+    <path d="M30 37 L31 39" stroke="#5a4632" stroke-width="1.2"/>
+
+    <!-- highlight -->
+    <path d="M20 20 C22 19, 25 19, 27 20"
+          stroke="#b9d694"
+          stroke-width="1.1"
+          opacity="0.8"/>
+  </g>
+</svg>

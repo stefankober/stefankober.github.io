@@ -98,8 +98,15 @@
 
     
     <h1 class="mb-16">Stefan Kober&#x27;s Homepage</h1>
-    <section><p><img src="/labyrinth.png" alt="" /></p>
-</section>
+    <section><p>Enter at the top, exit at the bottom. What you find along the way is yours.</p>
+<section class="home-maze"
+         data-home-maze
+         data-cols="66"
+         data-rows="66"
+         data-show-solution="false"
+         data-animate-entrance="true">
+  <canvas data-maze-canvas aria-label="A generated maze" role="img"></canvas>
+</section></section>
       <!-- Page List -->
 
     
@@ -134,6 +141,8 @@
   <!-- Begin Body End inject -->
   
   <!-- End Body End inject -->
+<link rel="stylesheet" href="/maze.css">
+<script src="/js/home-maze.js" defer></script>
 </body>
 
 </html>
