@@ -386,8 +386,13 @@
     const canvas = root.querySelector("[data-maze-canvas]");
     if (!canvas) return;
 
-    canvas.style.cursor = "crosshair";
-    canvas.style.touchAction = "none";
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+    if (!isTouchDevice) {
+      canvas.style.cursor = "crosshair";
+      canvas.style.touchAction = "none";
+    }
 
     const cols = Number(root.dataset.cols || 96);
     const rows = Number(root.dataset.rows || 108);
