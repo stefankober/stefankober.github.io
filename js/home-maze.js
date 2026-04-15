@@ -509,63 +509,65 @@
       return false;
     }
 
-    canvas.addEventListener("pointerdown", (event) => {
-      if (tracePoints.length > 1) {
-        fadingTraces.push({
-          points: tracePoints.slice(),
-          color: activeTraceColor,
-          alpha: 0.45
-        });
-        startFadeLoop();
-      }
+    if (!isTouchDevice) {
+      canvas.addEventListener("pointerdown", (event) => {
+        if (tracePoints.length > 1) {
+          fadingTraces.push({
+            points: tracePoints.slice(),
+            color: activeTraceColor,
+            alpha: 0.45
+          });
+          startFadeLoop();
+        }
 
-      isTracing = true;
-      tracePoints.length = 0;
-      activeTraceColor = traceColors[Math.floor(Math.random() * traceColors.length)];
+        isTracing = true;
+        tracePoints.length = 0;
+        activeTraceColor = traceColors[Math.floor(Math.random() * traceColors.length)];
 
-      appendTracePoint(getCanvasPoint(event));
+        appendTracePoint(getCanvasPoint(event));
 
-      if (canvas.setPointerCapture) {
-        canvas.setPointerCapture(event.pointerId);
-      }
+        if (canvas.setPointerCapture) {
+          canvas.setPointerCapture(event.pointerId);
+        }
 
-      redraw();
-    });
+        redraw();
+      });
 
-    canvas.addEventListener("pointermove", (event) => {
-      if (!isTracing) return;
-      if (appendTracePoint(getCanvasPoint(event))) {
+      canvas.addEventListener("pointermove", (event) => {
+        if (!isTracing) return;
+        if (appendTracePoint(getCanvasPoint(event))) {
+          redraw();
+        }
+      });
+
+      function stopTracing(event) {
+        if (!isTracing) return;
+        isTracing = false;
+
+        if (tracePoints.length > 1) {
+          fadingTraces.push({
+            points: tracePoints.slice(),
+            color: activeTraceColor,
+            alpha: 0.45
+          });
+          tracePoints.length = 0;
+          startFadeLoop();
+        }
+
+        if (event && canvas.releasePointerCapture) {
+          try {
+            canvas.releasePointerCapture(event.pointerId);
+          } catch (_) {
+            // ignore
+          }
+        }
+
         redraw();
       }
-    });
 
-    function stopTracing(event) {
-      if (!isTracing) return;
-      isTracing = false;
-
-      if (tracePoints.length > 1) {
-        fadingTraces.push({
-          points: tracePoints.slice(),
-          color: activeTraceColor,
-          alpha: 0.45
-        });
-        tracePoints.length = 0;
-        startFadeLoop();
-      }
-
-      if (event && canvas.releasePointerCapture) {
-        try {
-          canvas.releasePointerCapture(event.pointerId);
-        } catch (_) {
-          // ignore
-        }
-      }
-
-      redraw();
+      canvas.addEventListener("pointerup", stopTracing);
+      canvas.addEventListener("pointercancel", stopTracing);
     }
-
-    canvas.addEventListener("pointerup", stopTracing);
-    canvas.addEventListener("pointercancel", stopTracing);
 
     redraw();
 
