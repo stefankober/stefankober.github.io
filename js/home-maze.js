@@ -415,11 +415,11 @@
       const example = pickRandom(decorations, rng);
 
       const labelMap = {
-        flower: "a red flower. Oh that smell!",
+        flower: "a red flower. It seems to glow in the dark.",
         gold: "a few coins, of uncertain value.",
         monster: "a creature to fight or befriend.",
         prince: "a chest. What may it contain?",
-        princess: "a yellow flower. It seems to glow in the dark.",
+        princess: "a yellow flower. Oh that smell!",
         ladder: "a key. But where is the lock?",
         book: "an old book. It asks for patience.",
         potion: "a small vial to heal or to wound.",
