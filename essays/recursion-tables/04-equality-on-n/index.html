@@ -106,7 +106,7 @@
     <h1 class="my-0! pb-2.5">4. A First Example: Equality on ℕ</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H3M0S">3&nbsp;min</time><span
+    datetime="PT0H4M0S">4&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
@@ -141,6 +141,8 @@ That function returns $true$ if two numbers are the same, and $false$ otherwise.
 <tr><td><strong>suc(k)</strong></td><td>?</td><td>?</td></tr>
 </tbody></table>
 <p>Each cell represents one possible form of input. To define the function, we must fill every cell.</p>
+<p>The row headers indicate the first argument of the function, and the column headers indicate the second.
+The cells where they meet indicate the result of the function on these two inputs.</p>
 <p>Some cases are immediate.</p>
 <ul>
 <li>$zero$ and $zero$ are equal</li>
@@ -161,12 +163,8 @@ $$</p>
 <p>This completes the table:</p>
 <table><thead><tr><th>=</th><th>zero</th><th>suc(l)</th></tr></thead><tbody>
 <tr><td><strong>zero</strong></td><td>true</td><td>false</td></tr>
-<tr><td><strong>suc(k)</strong></td><td>false</td><td>recurse</td></tr>
+<tr><td><strong>suc(k)</strong></td><td>false</td><td>k = l</td></tr>
 </tbody></table>
-<p>with</p>
-<p>$$
-recurse: k = l
-$$</p>
 <p>Now the definition is complete. Every possible case is covered.</p>
 <p>If we get suc(k) = suc(l), we reduce it to k = l. We do that until we reach one of the base cases. One of the two numbers, or both, must be $zero$ eventually.</p>
 <p>The recursion case does not guess or inspect further structure. It simply removes one layer of construction from both numbers and repeats the same question. Each step moves closer to the base case.</p>

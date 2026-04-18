@@ -119,12 +119,8 @@
 <p>The corresponding recursion table has the same shape as before:</p>
 <table><thead><tr><th>+</th><th>zero</th><th>suc(l)</th></tr></thead><tbody>
 <tr><td><strong>zero</strong></td><td>zero</td><td>suc(l)</td></tr>
-<tr><td><strong>suc(k)</strong></td><td>suc(k)</td><td>recurse</td></tr>
+<tr><td><strong>suc(k)</strong></td><td>suc(k)</td><td>suc(k + suc(l))</td></tr>
 </tbody></table>
-<p>with</p>
-<p>$$
-suc(k) + suc(l) \mapsto suc(k + suc(l))
-$$</p>
 <p>The table can be read directly.</p>
 <ul>
 <li>If the first argument is $zero$, the result is the second argument</li>
@@ -141,12 +137,8 @@ $$</p>
 <p>Multiplication follows the same idea, but builds on addition:</p>
 <table><thead><tr><th>*</th><th>zero</th><th>suc(l)</th></tr></thead><tbody>
 <tr><td><strong>zero</strong></td><td>zero</td><td>zero</td></tr>
-<tr><td><strong>suc(k)</strong></td><td>zero</td><td>recurse</td></tr>
+<tr><td><strong>suc(k)</strong></td><td>zero</td><td>(k * suc(l)) + suc(l)</td></tr>
 </tbody></table>
-<p>with</p>
-<p>$$
-suc(k) * suc(l) \mapsto (k * suc(l)) + suc(l)
-$$</p>
 <p>Again, the table shows everything.</p>
 <ul>
 <li>If either argument is $zero$, the result is $zero$</li>
