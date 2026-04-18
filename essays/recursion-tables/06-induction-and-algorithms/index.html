@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
 
-<head prefix="og: https://ogp.me/ns#">
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="generator" content="Zola" />
-  <title>Articles</title>
-  <meta property="og:title" content="Articles" />
-  <meta property="og:url" content="https://www.stefankober.de/articles/" />
-  <link rel="canonical" href="https://www.stefankober.de/articles/" />
-  <meta property="og:type" content="website" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>6. From Recursion to Induction and Algorithms</title>
+  <meta property="og:title" content="6. From Recursion to Induction and Algorithms" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/recursion-tables/06-induction-and-algorithms/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/recursion-tables/06-induction-and-algorithms/" />
+  <meta property="og:type" content="article" />
   <!-- Begin Head inject -->
   
   <!-- End Head inject -->
@@ -97,28 +97,90 @@
 <script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
 
     
-    <h1 class="mb-16">Articles</h1>
-    <section><p><img src="/img/maze/book.svg" alt="" /></p>
-<h3 id="peer-reviewed">Peer reviewed</h3>
-<ul>
-<li><a href="http://www.coscipress.com/journal/JSC/article/e883664e3d780f81108fd3d939fb2c55"
-  target="_blank"
-  rel="noopener noreferrer">
-Kober, S.: <em>Radius-Guided Post-Clustering for Shape-Aware, Scalable Refinement of K-Means Results.</em> J. Superintell. Comput. 2025, 1(1), 53-62.
-</a></li>
-</ul>
-<h3 id="preprint">Preprint</h3>
-<ul>
-<li><a href="https://arxiv.org/abs/2504.20293"
-  target="_blank"
-  rel="noopener noreferrer">
-Kober, S.: <em>Radius-Guided Post-Clustering for Shape-Aware, Scalable Refinement of k-Means Results.</em> arXiv preprint, arXiv:2504.20293.
-</a>  <em>(peer-reviewed version available)</em></li>
-</ul>
-</section>
-      <!-- Page List -->
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
 
-    
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">6. From Recursion to Induction and Algorithms</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H3M0S">3&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- TOC -->
+
+  <!-- Content -->
+  <section><p>So far, recursion tables have been used to define functions. But the same structure also supports reasoning and computation more generally.</p>
+<p>When we define a function by recursion, we proceed by cases that follow the way values are built. This is closely related to how proofs by induction work.</p>
+<p>To prove a property for all natural numbers, we typically do two things:</p>
+<ul>
+<li>show it holds for $zero$</li>
+<li>show that if it holds for $k$, it also holds for $suc(k)$</li>
+</ul>
+<p>This mirrors the structure of the constructors. What is built in one step is handled in one step.</p>
+<p>Recursion tables make this correspondence visible. Each row of the table corresponds to a case that must be handled. The recursive entries correspond to the step where we reduce a problem to a simpler one.</p>
+<p>This can be used to reason about functions directly.</p>
+<p>Consider the claim:</p>
+<p>If $a * b = zero$, then $a = zero$ or $b = zero$.</p>
+<p>Looking at the recursion table for multiplication, we see immediately:</p>
+<ul>
+<li>whenever one of the arguments is $zero$, the result is $zero$</li>
+<li>whenever both arguments are of the form $suc(...)$, the result is built using addition of a successor</li>
+</ul>
+<p>In particular, in the recursive case the result cannot be $zero$, because it contains at least one $suc$. So the only way to obtain $zero$ is through the base cases.</p>
+<p>The argument is convincing without a separate formal proof. The conviction arises from inspecting how the function is defined.</p>
+<p>This correspondence is not only structural. It can be used directly.</p>
+<p>Consider the claim:</p>
+<p>$$
+n + zero = n
+$$</p>
+<p>Looking at the recursion table for addition, we see:</p>
+<ul>
+<li>in the row for $zero$ and the column for $zero$, the result is $zero$, so the claim holds</li>
+<li>in the row for $suc(k)$ and the column for $zero$, the result is $suc(k)$, so the claim also holds</li>
+</ul>
+<p>Every possible case of $n$ appears in the table. No further argument is needed. The table itself already shows that the property holds for all natural numbers.</p>
+<p>The same idea appears in programming.</p>
+<p>Recursive algorithms are often defined on data types that are built from a small number of constructors. Lists, for example, are either empty or built by adding an element to a smaller list. If that is the case, recursion tables can be used to define a function.</p>
+<p>A function like the length of a list follows this structure:</p>
+<table><thead><tr><th>len</th><th>empty list</th><th>list + element</th></tr></thead><tbody>
+<tr><td></td><td>0</td><td>1 + list</td></tr>
+</tbody></table>
+<p>Each step removes one element from the list. The algorithm terminates because there are only finitely many elements to remove.</p>
+<p>What becomes apparent across these examples is a general pattern.</p>
+<ul>
+<li>data is built in a finite number of steps</li>
+<li>functions follow that structure</li>
+<li>reasoning follows it as well</li>
+</ul>
+<p>Recursion tables bring these three aspects together in one place.</p>
+<p>They do not replace formal reasoning. But they make it possible to be convinced that proofs and programs work in an intuitive way before following proofs.</p>
+<p>This is another situation in which conviction forms through visibility: not by checking each step in isolation, but by seeing how the whole process is structured.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/recursion-tables/05-addition-and-multiplication/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>5. More Examples: Addition and Multiplication</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/recursion-tables/07-visibility-and-conviction/" accesskey="."
+    ><span>7. Visibility and Conviction</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
   </main>
   <!-- Footer -->
 <footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">

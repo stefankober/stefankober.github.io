@@ -1,0 +1,246 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>4. A First Example: Equality on ℕ</title>
+  <meta property="og:title" content="4. A First Example: Equality on ℕ" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/recursion-tables/04-equality-on-n/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/recursion-tables/04-equality-on-n/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=58bee300054c5308feb3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=8d80ec95446bd2c36826" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">4. A First Example: Equality on ℕ</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H3M0S">3&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#first-completeness">First, completeness.</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#second-structure">Second, structure.</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#third-direction">Third, direction.</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+
+  <!-- Content -->
+  <section><p>We now look at a concrete example where recursion tables show their full strength: equality on the natural numbers.</p>
+<p>We want to define the equality function.
+That function returns $true$ if two numbers are the same, and $false$ otherwise.</p>
+<p>Using the constructors of the natural numbers, we begin by listing all possible cases:</p>
+<table><thead><tr><th>=</th><th>zero</th><th>suc(l)</th></tr></thead><tbody>
+<tr><td><strong>zero</strong></td><td>?</td><td>?</td></tr>
+<tr><td><strong>suc(k)</strong></td><td>?</td><td>?</td></tr>
+</tbody></table>
+<p>Each cell represents one possible form of input. To define the function, we must fill every cell.</p>
+<p>Some cases are immediate.</p>
+<ul>
+<li>$zero$ and $zero$ are equal</li>
+<li>$zero$ and $suc(l)$ are not equal</li>
+<li>$suc(k)$ and $zero$ are not equal</li>
+</ul>
+<p>This gives:</p>
+<table><thead><tr><th>=</th><th>zero</th><th>suc(l)</th></tr></thead><tbody>
+<tr><td><strong>zero</strong></td><td>true</td><td>false</td></tr>
+<tr><td><strong>suc(k)</strong></td><td>false</td><td>?</td></tr>
+</tbody></table>
+<p>One case remains.</p>
+<p>How do we compare $suc(k)$ and $suc(l)$?</p>
+<p>They are equal exactly when $k$ and $l$ are equal. So we define:</p>
+<p>$$
+suc(k) = suc(l) \mapsto k = l
+$$</p>
+<p>This completes the table:</p>
+<table><thead><tr><th>=</th><th>zero</th><th>suc(l)</th></tr></thead><tbody>
+<tr><td><strong>zero</strong></td><td>true</td><td>false</td></tr>
+<tr><td><strong>suc(k)</strong></td><td>false</td><td>recurse</td></tr>
+</tbody></table>
+<p>with</p>
+<p>$$
+recurse: k = l
+$$</p>
+<p>Now the definition is complete. Every possible case is covered.</p>
+<p>If we get suc(k) = suc(l), we reduce it to k = l. We do that until we reach one of the base cases. One of the two numbers, or both, must be $zero$ eventually.</p>
+<p>The recursion case does not guess or inspect further structure. It simply removes one layer of construction from both numbers and repeats the same question. Each step moves closer to the base case.</p>
+<p>This is where recursion tables show their force.</p>
+<p>We do not need a separate argument to see that the function is total. Every case is visible in the table.</p>
+<p>We do not need a separate argument to see that the function terminates. Each recursive step reduces both inputs toward $zero$.</p>
+<p>The definition becomes convincing because its behavior can be inspected. Nothing is hidden. There is no case left unspecified, and no path that leads away from a result.</p>
+<p>This is the kind of situation in which conviction about a definition forms easily: when all possibilities are visible and the process can be followed step by step.</p>
+<p>Recursion tables thus show three things without proving them:</p>
+<h4 id="first-completeness">First, completeness.</h4>
+<p>The table has four cells, and all of them are filled. There is no situation left open. If you try to imagine an input for which the function is not defined, you will not find one, because every possible combination of zero and suc already appears.</p>
+<h4 id="second-structure">Second, structure.</h4>
+<p>The rows and columns are not arbitrary. They follow the way the inputs are built. One input is either zero or suc(m). The other is either zero or suc(n). The table simply lists these possibilities and shows what happens in each case.</p>
+<h4 id="third-direction">Third, direction.</h4>
+<p>In the bottom right cell, the function does not return a value immediately. Instead, it has to reduce the problem to one closer to the base cases, so it will eventually lead to a base case, where a value is given directly. Recursive application of the function will eventually reach one of the cases where a value is given directly.</p>
+<p>Taken together, this means that the table tells the readers everything they need to know about the function.</p>
+<p>One can check that every case is covered.
+One can see how the inputs are taken apart.
+And one can follow how the computation proceeds until it reaches a result.</p>
+<p>This is what recursion tables are meant to provide: not a formal proof, but a way to inspect a definition and understand how it works by looking at it.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/recursion-tables/03-types-constructors-destructors/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>3. Types, Constructors, and Destructors</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/recursion-tables/05-addition-and-multiplication/" accesskey="."
+    ><span>5. More Examples: Addition and Multiplication</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+  <!-- Mermaid -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    window.zolaTheme.mermaid.init({ mermaid, s: ".mermaid" });
+  </script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+<link rel="stylesheet" href="/maze.css">
+<script src="/js/home-maze.js" defer></script>
+</body>
+
+</html>

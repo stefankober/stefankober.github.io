@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
 
-<head prefix="og: https://ogp.me/ns#">
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="generator" content="Zola" />
-  <title>Articles</title>
-  <meta property="og:title" content="Articles" />
-  <meta property="og:url" content="https://www.stefankober.de/articles/" />
-  <link rel="canonical" href="https://www.stefankober.de/articles/" />
-  <meta property="og:type" content="website" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>1. From Truth Tables to Recursion Tables</title>
+  <meta property="og:title" content="1. From Truth Tables to Recursion Tables" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/recursion-tables/01-from-truth-tables-to-recursion-tables/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/recursion-tables/01-from-truth-tables-to-recursion-tables/" />
+  <meta property="og:type" content="article" />
   <!-- Begin Head inject -->
   
   <!-- End Head inject -->
@@ -97,28 +97,50 @@
 <script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
 
     
-    <h1 class="mb-16">Articles</h1>
-    <section><p><img src="/img/maze/book.svg" alt="" /></p>
-<h3 id="peer-reviewed">Peer reviewed</h3>
-<ul>
-<li><a href="http://www.coscipress.com/journal/JSC/article/e883664e3d780f81108fd3d939fb2c55"
-  target="_blank"
-  rel="noopener noreferrer">
-Kober, S.: <em>Radius-Guided Post-Clustering for Shape-Aware, Scalable Refinement of K-Means Results.</em> J. Superintell. Comput. 2025, 1(1), 53-62.
-</a></li>
-</ul>
-<h3 id="preprint">Preprint</h3>
-<ul>
-<li><a href="https://arxiv.org/abs/2504.20293"
-  target="_blank"
-  rel="noopener noreferrer">
-Kober, S.: <em>Radius-Guided Post-Clustering for Shape-Aware, Scalable Refinement of k-Means Results.</em> arXiv preprint, arXiv:2504.20293.
-</a>  <em>(peer-reviewed version available)</em></li>
-</ul>
-</section>
-      <!-- Page List -->
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
 
-    
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">1. From Truth Tables to Recursion Tables</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H2M0S">2&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- TOC -->
+
+  <!-- Content -->
+  <section><p>When Ludwig Wittgenstein introduced truth tables, he gave the abstract laws of propositional logic a visible form. Each connective could be understood at a glance by inspecting all possible combinations of truth values. What had to be inferred could now be seen.</p>
+<p>A truth table does something very simple: it makes completeness explicit. Every possible case is listed. Once the table is filled, nothing remains hidden. The behavior of a logical connective is no longer something hidden in the interplay of rules and axioms. It is something that can be inspected.</p>
+<p>This small device had a large effect on how logic could be taught. It replaced part of the burden of reasoning with a form of visual survey. Instead of asking whether a definition covers all cases, one could simply look.</p>
+<p>The idea behind what we will call <em>recursion tables</em> is to carry this move into a different domain.</p>
+<p>In place of truth values, we now consider values constructed from a small set of rules. Instead of asking how a connective behaves on fixed inputs, we ask how a function behaves on values that are built step by step. The question is no longer about truth, but about construction.</p>
+<p>Where truth tables enumerate combinations of values, recursion tables enumerate combinations of constructors. Each row and column corresponds to a way in which an input can be formed. Each cell records what the function does in that case.</p>
+<p>The aim is similar. We want to make visible that a definition is complete, that it handles every possible input, and that its recursive structure leads toward a result.</p>
+<p>The shift, however, is significant. Truth tables display static outcomes. Recursion tables display processes. Their entries do not merely state what is the case; they indicate how a result is obtained, often by referring back to smaller cases.</p>
+<p>This difference reflects a broader change in perspective. In propositional logic, correctness is determined by truth values. In the constructive setting we are moving toward, correctness is determined by how something is built.</p>
+<p>Recursion tables are a modest attempt to make that constructive discipline visible. They do not replace formal reasoning. But like truth tables before them, they can give the mind something to hold on to.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/recursion-tables/02-what-recursion-tables-show/" accesskey="."
+    ><span>2. Truth Tables</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
   </main>
   <!-- Footer -->
 <footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">

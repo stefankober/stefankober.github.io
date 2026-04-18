@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
 
-<head prefix="og: https://ogp.me/ns#">
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="generator" content="Zola" />
-  <title>Articles</title>
-  <meta property="og:title" content="Articles" />
-  <meta property="og:url" content="https://www.stefankober.de/articles/" />
-  <link rel="canonical" href="https://www.stefankober.de/articles/" />
-  <meta property="og:type" content="website" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>5. More Examples: Addition and Multiplication</title>
+  <meta property="og:title" content="5. More Examples: Addition and Multiplication" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/recursion-tables/05-addition-and-multiplication/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/recursion-tables/05-addition-and-multiplication/" />
+  <meta property="og:type" content="article" />
   <!-- Begin Head inject -->
   
   <!-- End Head inject -->
@@ -97,28 +97,91 @@
 <script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
 
     
-    <h1 class="mb-16">Articles</h1>
-    <section><p><img src="/img/maze/book.svg" alt="" /></p>
-<h3 id="peer-reviewed">Peer reviewed</h3>
-<ul>
-<li><a href="http://www.coscipress.com/journal/JSC/article/e883664e3d780f81108fd3d939fb2c55"
-  target="_blank"
-  rel="noopener noreferrer">
-Kober, S.: <em>Radius-Guided Post-Clustering for Shape-Aware, Scalable Refinement of K-Means Results.</em> J. Superintell. Comput. 2025, 1(1), 53-62.
-</a></li>
-</ul>
-<h3 id="preprint">Preprint</h3>
-<ul>
-<li><a href="https://arxiv.org/abs/2504.20293"
-  target="_blank"
-  rel="noopener noreferrer">
-Kober, S.: <em>Radius-Guided Post-Clustering for Shape-Aware, Scalable Refinement of k-Means Results.</em> arXiv preprint, arXiv:2504.20293.
-</a>  <em>(peer-reviewed version available)</em></li>
-</ul>
-</section>
-      <!-- Page List -->
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
 
-    
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">5. More Examples: Addition and Multiplication</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H2M0S">2&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- TOC -->
+
+  <!-- Content -->
+  <section><p>Once the pattern is clear, other functions on the natural numbers follow the same structure.</p>
+<p>Consider addition. We want a function that constructs the sum of two numbers.</p>
+<p>The corresponding recursion table has the same shape as before:</p>
+<table><thead><tr><th>+</th><th>zero</th><th>suc(l)</th></tr></thead><tbody>
+<tr><td><strong>zero</strong></td><td>zero</td><td>suc(l)</td></tr>
+<tr><td><strong>suc(k)</strong></td><td>suc(k)</td><td>recurse</td></tr>
+</tbody></table>
+<p>with</p>
+<p>$$
+suc(k) + suc(l) \mapsto suc(k + suc(l))
+$$</p>
+<p>The table can be read directly.</p>
+<ul>
+<li>If the first argument is $zero$, the result is the second argument</li>
+<li>If the second argument is $zero$, the result is the first argument</li>
+<li>If both are $zero$, the result is $zero$.</li>
+<li>If both are successors, we reduce the first argument and keep track of the step with an additional $suc$</li>
+</ul>
+<p>Each recursive step removes one layer from the first argument. The computation ends when that argument becomes $zero$.</p>
+<p>Let's look at 2 + 2:</p>
+<p>2 + 2 = $suc(suc(zero)) + suc(suc(zero))$</p>
+<p>$= suc(suc(zero)) + suc(suc(zero))$</p>
+<p>$= suc(suc(zero + suc(suc(zero))))$</p>
+<p>$= suc(suc(suc(suc(zero)))) = 4$</p>
+<p>Multiplication follows the same idea, but builds on addition:</p>
+<table><thead><tr><th>*</th><th>zero</th><th>suc(l)</th></tr></thead><tbody>
+<tr><td><strong>zero</strong></td><td>zero</td><td>zero</td></tr>
+<tr><td><strong>suc(k)</strong></td><td>zero</td><td>recurse</td></tr>
+</tbody></table>
+<p>with</p>
+<p>$$
+suc(k) * suc(l) \mapsto (k * suc(l)) + suc(l)
+$$</p>
+<p>Again, the table shows everything.</p>
+<ul>
+<li>If either argument is $zero$, the result is $zero$</li>
+<li>Otherwise, the problem is reduced step by step</li>
+<li>Each step replaces multiplication by a smaller multiplication plus an addition</li>
+</ul>
+<p>What changes from example to example is not the structure of the table, but what happens in the recursive case.</p>
+<p>This is the main pattern:</p>
+<ul>
+<li>base cases give direct values</li>
+<li>recursive cases reduce the problem</li>
+<li>the table shows both at once</li>
+</ul>
+<p>Once this is understood, new functions can be constructed in the same way. The table provides a template: list all constructor combinations, fill in the base cases, and define the recursive ones so that they move toward them.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/recursion-tables/04-equality-on-n/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>4. A First Example: Equality on ℕ</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/recursion-tables/06-induction-and-algorithms/" accesskey="."
+    ><span>6. From Recursion to Induction and Algorithms</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
   </main>
   <!-- Footer -->
 <footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
