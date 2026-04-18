@@ -131,7 +131,7 @@
 <p>Each recursive step removes one layer from the first argument. The computation ends when that argument becomes $zero$.</p>
 <p>Let's look at 2 + 2:</p>
 <p>2 + 2 = $suc(suc(zero)) + suc(suc(zero))$</p>
-<p>$= suc(suc(zero)) + suc(suc(zero))$</p>
+<p>$= suc(suc(zero) + suc(suc(zero)))$</p>
 <p>$= suc(suc(zero + suc(suc(zero))))$</p>
 <p>$= suc(suc(suc(suc(zero)))) = 4$</p>
 <p>Multiplication follows the same idea, but builds on addition:</p>
