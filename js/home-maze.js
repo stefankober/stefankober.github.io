@@ -416,21 +416,20 @@
 
       const labelMap = {
         flower: "a red flower. It seems to glow in the dark.",
-        gold: "a few coins, of uncertain value.",
-        monster: "a creature to fight or befriend.",
+        gold: "a bunch of coins, of uncertain value.",
+        monster: "a creature. Friend or foe?",
         prince: "a chest. What may it contain?",
         princess: "a yellow flower. Oh that smell!",
-        ladder: "a key. But where is the lock?",
-        book: "an old book. It asks for patience.",
-        potion: "a small vial to heal or to wound.",
+        ladder: "a key. What does it unlock?",
+        book: "an old book. The script is unfamiliar.",
+        potion: "a small vial. Unlabeled.",
         diamond: "a precious diamond. Or maybe glass?",
       };
 
       const name = labelMap[example.name] || example.name;
 
     captionEl.innerHTML =
-      `Enter at the top. Exit at the bottom. What you find along the way is yours. ` +
-      `For example, ${name} ` +
+      `Something is here. You might find ${name} ` +
       `<img src="${example.src}" alt="${name}" style="vertical-align: middle; margin-left: 0.4em;">`;
         }
 
