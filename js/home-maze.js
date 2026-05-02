@@ -429,7 +429,7 @@
       const name = labelMap[example.name] || example.name;
 
     captionEl.innerHTML =
-      `Something is here. You might find ${name} ` +
+      `Somewhere in the maze is ${name} ` +
       `<img src="${example.src}" alt="${name}" style="vertical-align: middle; margin-left: 0.4em;">`;
         }
 
