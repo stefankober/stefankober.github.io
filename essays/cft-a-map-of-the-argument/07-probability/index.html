@@ -1,0 +1,251 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>7. Probability And Uncertainty</title>
+  <meta property="og:title" content="7. Probability And Uncertainty" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/cft-a-map-of-the-argument/07-probability/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/cft-a-map-of-the-argument/07-probability/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=58bee300054c5308feb3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=8d80ec95446bd2c36826" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">7. Probability And Uncertainty</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H4M0S">4&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#frequency-and-everyday-expectation">Frequency and Everyday Expectation</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#conditions-and-limits">Conditions and Limits</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#probability-as-formal-extension">Probability as Formal Extension</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#formal-structure-and-empirical-basis">Formal Structure and Empirical Basis</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#probability-and-strategy">Probability and Strategy</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#formal-certainty-and-empirical-uncertainty">Formal Certainty and Empirical Uncertainty</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#from-uncertainty-to-practice">From Uncertainty to Practice</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+
+  <!-- Content -->
+  <section><p>Not all situations allow conviction to stabilize through direct observation, measurement, or proof.</p>
+<p>In many cases, outcomes cannot be determined with certainty, even when conditions are well understood. Under such conditions, conviction does not disappear. It stabilizes in a different way.</p>
+<p>Rather than attaching to single outcomes, conviction shifts to structured expectations across possible outcomes.</p>
+<h2 id="frequency-and-everyday-expectation">Frequency and Everyday Expectation</h2>
+<p>In everyday life, people form expectations based on repeated experience, or on the strength of their convictions.</p>
+<p>Some events are taken to occur often, others rarely. Patterns are noticed across cases. Over time, these patterns shape conviction.</p>
+<p>One comes to expect certain outcomes, not because they are guaranteed, but because they tend to occur.</p>
+<p>Convictions of this kind do not rely on certainty. They rely on accumulated experience.</p>
+<p>They can be expressed informally:</p>
+<p>This usually happens.<br />
+This is unlikely.<br />
+This rarely occurs.</p>
+<p>Such judgments are not precise, but they can be stable, and they are widespread. They adjust as new experience is gathered. When patterns shift, expectations change.</p>
+<p>Stabilization arises through repetition, and through the higher plausibility of some convictions over others.</p>
+<h2 id="conditions-and-limits">Conditions and Limits</h2>
+<p>This form of stabilization depends on conditions.</p>
+<p>Events must be sufficiently comparable. Experience must accumulate. Feedback must be available over time.</p>
+<p>Where these conditions are met, expectations can become reliable. Where they are not, conviction remains fragile.</p>
+<p>Rare events, changing environments, and small samples can produce misleading impressions. Patterns may appear where none exist, or fail to appear where they do.</p>
+<p>Frequency-based conviction is therefore limited. It works under certain conditions, and breaks down under others.</p>
+<p>The same holds for plausibility, or the strength of convictions compared to other convictions.</p>
+<h2 id="probability-as-formal-extension">Probability as Formal Extension</h2>
+<p>Formal probability theory builds on this form of conviction.</p>
+<p>It does not introduce a new kind of experience. It makes existing patterns more explicit, more precise, and more comparable.</p>
+<p>Cases are defined more clearly. Outcomes are specified. Expectations are expressed in numerical form. This allows different possibilities to be compared, combined, and tracked over time.</p>
+<p>This increases control over conviction. Expectations can be inspected, revised, and communicated across observers. Differences in judgment can be traced back to differences in assumptions, models, or data.</p>
+<p>Where these conditions are met, probabilistic reasoning can stabilize conviction more strongly than informal expectation. Where they are not, this additional structure does not produce stability.</p>
+<h2 id="formal-structure-and-empirical-basis">Formal Structure and Empirical Basis</h2>
+<p>Formal probability theory combines two elements.</p>
+<p>On the one hand, it introduces formal structure: definitions, models, and rules that organize possible outcomes.</p>
+<p>On the other hand, it depends on empirical stabilization: repeated cases, observed frequencies, and convergence over time.</p>
+<p>Formal structure alone does not stabilize conviction. It must connect to patterns that can be observed and tested.</p>
+<p>Where this connection holds, probabilistic conviction can become stable. Where it does not, it becomes fragile.</p>
+<h2 id="probability-and-strategy">Probability and Strategy</h2>
+<p>Probability is closely connected to strategy.</p>
+<p>Where outcomes are uncertain but comparable, probability provides a way to weigh different possibilities. It does not eliminate uncertainty, but it structures it.</p>
+<p>Strategy then acts under these structured possibilities, aiming to manage risk and preserve viable outcomes across different developments.</p>
+<h2 id="formal-certainty-and-empirical-uncertainty">Formal Certainty and Empirical Uncertainty</h2>
+<p>Probability combines two different kinds of structure.</p>
+<p>On the one hand, its formal components are fully determined. Once a probability model is specified, conclusions follow with the same certainty as in other formal systems.</p>
+<p>On the other hand, the application of such models depends on conditions that are not themselves certain. It must be determined which cases are comparable, whether assumptions hold, and whether observed patterns are stable.</p>
+<p>Conviction stabilizes at the intersection of these two layers.</p>
+<p>Formal reasoning provides clarity and consistency. Empirical patterns provide grounding through repeated interaction with the world.</p>
+<p>Where both align, probabilistic conviction can become stable. Where they diverge, it becomes fragile, as formal structure and empirical support no longer reinforce one another.</p>
+<h2 id="from-uncertainty-to-practice">From Uncertainty to Practice</h2>
+<p>Formal systems represent one extreme: stabilization under highly controlled conditions. Probability extends this by structuring uncertainty across comparable cases.</p>
+<p>In practice, these modes rarely operate in isolation. Conviction often forms where different mechanisms interact under less controlled conditions, where comparability is limited, feedback is incomplete, and outcomes are not fully structured in advance.</p>
+<p>The following chapter turns to such cases: how conviction forms and stabilizes where neither strict control nor well-defined probabilities are available.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/cft-a-map-of-the-argument/06-formal-systems/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>6. Formal Systems And Explicit Stabilization</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/cft-a-map-of-the-argument/08-ethics-meaning-life/" accesskey="."
+    ><span>8. Conviction In Practice: Ethics, Meaning, And Life</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+  <!-- Mermaid -->
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    window.zolaTheme.mermaid.init({ mermaid, s: ".mermaid" });
+  </script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+<link rel="stylesheet" href="/maze.css">
+<script src="/js/home-maze.js" defer></script>
+</body>
+
+</html>
