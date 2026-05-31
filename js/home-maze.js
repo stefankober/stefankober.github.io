@@ -429,8 +429,8 @@
       const name = labelMap[example.name] || example.name;
 
     captionEl.innerHTML =
-      `Somewhere in the maze is ${name} ` +
-      `<img src="${example.src}" alt="${name}" style="vertical-align: middle; margin-left: 0.4em;">`;
+      `<img src="${example.src}" alt="${name}" style="vertical-align: middle; margin-left: 0.4em;">` + 
+      `Somewhere in the maze is ${name} `;
         }
 
     await preloadImages(decorations.map(d => d.src));
