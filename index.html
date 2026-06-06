@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="generator" content="Zola" />
-  <title>Stefan Kober&#x27;s Homepage</title>
-  <meta property="og:title" content="Stefan Kober&apos;s Homepage" />
+  <title>What is this about?</title>
+  <meta property="og:title" content="What is this about?" />
   <meta property="og:url" content="https://www.stefankober.de/" />
   <link rel="canonical" href="https://www.stefankober.de/" />
   <meta property="og:type" content="website" />
@@ -97,18 +97,139 @@
 <script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
 
     
-    <h1 class="mb-16">Stefan Kober&#x27;s Homepage</h1>
-    <section><p id="maze-caption">
-  Here could be a maze. But it needs JavaScript.
-</p>
-<section class="home-maze"
-         data-home-maze
-         data-cols="66"
-         data-rows="66"
-         data-show-solution="false"
-         data-animate-entrance="true">
-  <canvas data-maze-canvas aria-label="A generated maze" role="img"></canvas>
-</section></section>
+    <h1 class="mb-16">What is this about?</h1>
+    <section><section id="homepage-quote" class="homepage-quote"></section>
+<script>
+const quotes = [
+  {
+    text: "Conviction formation theory opens a possibility: agreement at the level of mechanisms, even when agreement on facts or values breaks down.<br>It requires little commitment beyond what can be observed in experience. It asks us to attend to how conviction appears and stabilizes, so that patterns become visible.",
+    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
+    url: "/essays/ethics-aestethics-meaning/"
+  },
+  {
+    text: "Differences in conviction often begin in differences of attention. Not in disagreement, but in what is seen at all. Magicians and pickpockets rely on this. They direct attention away from the action.",
+    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
+    url: "/essays/ethics-aestethics-meaning/"
+  },
+  {
+    text: "In questions of meaning, experience can appear full or empty without prior reasoning. Something feels worth pursuing, or it does not. The sense of meaning is often immediate. There is no premise or conclusion here.",
+    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
+    url: "/essays/ethics-aestethics-meaning/"
+  },
+  {
+    text: "Immediate conviction varies between people. What convinces one person leaves another unmoved. One sees injustice, another does not. One is struck by beauty, another passes by. One feels meaning, another feels nothing.",
+    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
+    url: "/essays/ethics-aestethics-meaning/"
+  },
+  {
+    text: "The formation of conviction is not one-directional. It moves back and forth. I react, you respond, I adjust. Something emerges between us, or fails to. What convinces can shift through this exchange, sometimes subtly, sometimes abruptly.",
+    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
+    url: "/essays/ethics-aestethics-meaning/"
+  },
+  {
+    text: "Convictions do not stand alone. They connect in the form of stories.",
+    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
+    url: "/essays/ethics-aestethics-meaning/"
+  },
+  {
+    text: "Conviction depends on the conditions under which it forms and is sustained. <br>Under stable conditions, it can remain remarkably consistent. A person may hold many of the same convictions across time and situation. But when conditions change, conviction can weaken, shift, or distort.",
+    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
+    url: "/essays/ethics-aestethics-meaning/"
+  },
+  {
+    text: "We may not agree on what is true or right, but we may recognize how conviction forms. <br>Conviction formation theory begins from what convinces. Not in general, but in each case. What convinces me, what convinces you. From there, comparison becomes possible.",
+    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
+    url: "/essays/ethics-aestethics-meaning/"
+  },
+  {
+    text: "Convictions arise, some of them stabilize while others fracture, and coherence can exert a powerful pressure on belief. These are features of our intellectual life that we encounter constantly.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "Conviction formation theory shifts the level at which these phenomena are addressed. Instead of treating them as symptoms of an underlying metaphysical order that must ultimately be secured, it treats them as structural features of finite orientation in the world. They are not puzzles to be solved by stepping outside conviction, but patterns to be understood from within it.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "When we count a pile of stones, we expect that anyone else who performs the same activity carefully will obtain the same number. If a discrepancy arises, we do not usually conclude that the amount has changed mysteriously, or that the amount is different for different persons. Instead, we recount and look for an error in the procedure.<br>We have, in short, a strong conviction that collections of objects possess a definite number. The expectation that careful counting will converge on a single result appears almost self-evident.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "Why does this procedure feel convincing? <br>One reason is probably that the pairing process itself can be directly inspected. Each cow is used once, and the pairing makes omissions or duplications visible. As long as the procedure is carried out carefully, the result does not depend on counting ability or on knowing large numbers. Conviction stabilizes through the visible structure of the pairing.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "Socrates draws a square in the sand and asks the boy how to construct a square with twice the area. <br><img src='/meno1.svg' width='120' height='120'><br>The boy first proposes a solution that seems plausible but turns out to be incorrect, namely to double the length of the sides. <br><img src='/meno2.svg' width='120' height='120'><br>But that quadruples the area, as we have now four squares of the same size.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "From the perspective of conviction formation, logic introduces a distinctive strategy.<br>Instead of relying on naturally convincing procedures such as counting or diagrammatic construction, logic deliberately engineers a system in which reasoning becomes controllable.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "The convincing force of logic therefore does not arise simply from symbolic notation. It arises from a two-stage process: first, the construction of a controllable system, and second, the demonstration that this system reliably tracks patterns of reasoning we already experience as compelling.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "Scenes like the following are familiar from crime novels or detective films.<br>Suspect: 'I did not do it. But I feel sorry for the poor man. No one deserves to be stabbed with a knife to death like that.'<br>Inspector: 'But we never said the victim was stabbed with a knife.'<br>The suspect is then arrested.<br>What gives this scene its convincing force and relief?<br>One possible answer would be logic. Another might be probability, which we will get to in the next chapter. But many people immediately find the conclusion persuasive without consciously applying logic or probability. ",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "Conviction formation theory holds that conviction comes naturally to us: 'There is a house', 'I am hungry', 'Stones, when thrown into the air, fall back to the ground'. Like breathing, conviction formation operates autonomously in the background, but can also be taken up deliberately. Formal systems such as logic, probability, and statistics refine and constrain the latter process from within, shaping explicit conviction formation rules. They can also influence the more automatic processes over time.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "No one can avoid forming convictions. They arise as naturally as perception itself. We do not choose whether they appear, only how we respond to them. Conviction formation is a fact of life.",
+    source: "How Formal Systems Reorganize Belief",
+    url: "/essays/formal-systems/"
+  },
+  {
+    text: "Look outside on a sunny day and see that the sky is blue. Now try to make yourself believe that the sky is red. <br>Again, you may attempt to decide that it is red. This does not work. The perception remains. The belief does not follow.",
+    source: "On the Limits of Deliberate Belief: An Illustration",
+    url: "/essays/on-the-limits-of-deliberate-belief/"
+  }
+];
+
+
+let lastQuote = Math.floor(Math.random() * quotes.length);
+
+function showRandomQuote() {
+    const offset =
+        1 + Math.floor(Math.random() * (quotes.length - 1));
+
+    const quote =
+        (lastQuote + offset) % quotes.length;
+
+    lastQuote = quote;
+
+    const q = quotes[quote];
+
+    document.getElementById("homepage-quote").innerHTML = `
+        <blockquote>
+            <p>${q.text}</p>
+        </blockquote>
+        <footer>
+            from: <a href="${q.url}">${q.source}</a>
+        </footer>
+    `;
+}
+
+showRandomQuote();
+</script>
+<p><button
+  onclick="showRandomQuote()"
+  style="font-size: 0.8em; opacity: 0.7;">
+(Click here for another quote.)
+</button></p>
+</section>
       <!-- Page List -->
 
     
