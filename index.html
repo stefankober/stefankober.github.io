@@ -132,24 +132,9 @@ const quotes = [
     url: "/essays/ethics-aesthetics-meaning/"
   },
   {
-    text: "Conviction depends on the conditions under which it forms and is sustained. <br>Under stable conditions, it can remain remarkably consistent. A person may hold many of the same convictions across time and situation. But when conditions change, conviction can weaken, shift, or distort.",
-    source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
-    url: "/essays/ethics-aesthetics-meaning/"
-  },
-  {
     text: "We may not agree on what is true or right, but we may recognize how conviction forms. <br>Conviction formation theory begins from what convinces. Not in general, but in each case. What convinces me, what convinces you. From there, comparison becomes possible.",
     source: "Aspects Of Conviction Formation In Ethics, Aesthetics, And Meaning",
     url: "/essays/ethics-aesthetics-meaning/"
-  },
-  {
-    text: "Convictions arise, some of them stabilize while others fracture, and coherence can exert a powerful pressure on belief. These are features of our intellectual life that we encounter constantly.",
-    source: "How Formal Systems Reorganize Belief",
-    url: "/essays/formal-systems/"
-  },
-  {
-    text: "Conviction formation theory shifts the level at which these phenomena are addressed. Instead of treating them as symptoms of an underlying metaphysical order that must ultimately be secured, it treats them as structural features of finite orientation in the world. They are not puzzles to be solved by stepping outside conviction, but patterns to be understood from within it.",
-    source: "How Formal Systems Reorganize Belief",
-    url: "/essays/formal-systems/"
   },
   {
     text: "When we count a pile of stones, we expect that anyone else who performs the same activity carefully will obtain the same number. If a discrepancy arises, we do not usually conclude that the amount has changed mysteriously, or that the amount is different for different persons. Instead, we recount and look for an error in the procedure.<br>We have, in short, a strong conviction that collections of objects possess a definite number. The expectation that careful counting will converge on a single result appears almost self-evident.",
@@ -157,22 +142,7 @@ const quotes = [
     url: "/essays/formal-systems/"
   },
   {
-    text: "Why does this procedure feel convincing? <br>One reason is probably that the pairing process itself can be directly inspected. Each cow is used once, and the pairing makes omissions or duplications visible. As long as the procedure is carried out carefully, the result does not depend on counting ability or on knowing large numbers. Conviction stabilizes through the visible structure of the pairing.",
-    source: "How Formal Systems Reorganize Belief",
-    url: "/essays/formal-systems/"
-  },
-  {
-    text: "Socrates draws a square in the sand and asks the boy how to construct a square with twice the area. <br><img src='/meno1.svg' width='120' height='120'><br>The boy first proposes a solution that seems plausible but turns out to be incorrect, namely to double the length of the sides. <br><img src='/meno2.svg' width='120' height='120'><br>But that quadruples the area, as we have now four squares of the same size.",
-    source: "How Formal Systems Reorganize Belief",
-    url: "/essays/formal-systems/"
-  },
-  {
-    text: "From the perspective of conviction formation, logic introduces a distinctive strategy.<br>Instead of relying on naturally convincing procedures such as counting or diagrammatic construction, logic deliberately engineers a system in which reasoning becomes controllable.",
-    source: "How Formal Systems Reorganize Belief",
-    url: "/essays/formal-systems/"
-  },
-  {
-    text: "The convincing force of logic therefore does not arise simply from symbolic notation. It arises from a two-stage process: first, the construction of a controllable system, and second, the demonstration that this system reliably tracks patterns of reasoning we already experience as compelling.",
+    text: "Socrates draws a square in the sand and asks the boy how to construct a square with twice the area. <br><img src='/meno1.svg' width='66' height='66'><br>The boy first proposes a solution that seems plausible but turns out to be incorrect, namely to double the length of the sides. <br><img src='/meno2.svg' width='120' height='120'><br>But that quadruples the area, as we have now four squares of the same size.",
     source: "How Formal Systems Reorganize Belief",
     url: "/essays/formal-systems/"
   },
@@ -187,9 +157,24 @@ const quotes = [
     url: "/essays/formal-systems/"
   },
   {
-    text: "No one can avoid forming convictions. They arise as naturally as perception itself. We do not choose whether they appear, only how we respond to them. Conviction formation is a fact of life.",
-    source: "How Formal Systems Reorganize Belief",
-    url: "/essays/formal-systems/"
+    text: "The gist of conviction formation theory is simple: you can’t choose what you believe, in the same way you can’t choose what makes you angry or sad. Belief settles where things feel compelling, although they are influenced by reflection, different viewpoints and updated information, in the same way as emotions are. That is what gives opinion its provisional stability.",
+    source: "Questions And Stories",
+    url: "/essays/questions-and-stories/"
+  },
+  {
+    text: "As with opinions, questions and doubts are not chosen at will. You cannot decide to be genuinely puzzled or uncertain. What you can do is encounter new considerations, notice gaps, or be confronted with situations that give rise to questions you did not have before. You can even train yourself to raise questions in specific situations, if you have the opinion that this is a good course of action.",
+    source: "Questions And Stories",
+    url: "/essays/questions-and-stories/"
+  },
+  {
+    text: "Some methods repeatedly lead to convictions that survive criticism better than others, like logic or probability theory.<br>These observations are not illusions. Situations exist where we regret not using criteria. Looking back, we sometimes realize that we should have compared more carefully, checked more thoroughly, or taken considerations seriously that we dismissed at the time.<br>'Had I only' is the sound of missed opportunities for good choices.<br>Any account that dismisses them too quickly creates new problems while solving old ones.",
+    source: "On Criteria For Good Convictions",
+    url: "/essays/on-criteria/"
+  },
+  {
+    text: "Human experience appears to contain both automatic and reflective modes.<br>Breathing provides a familiar example. Most of the time it happens without deliberate intervention. Yet under some conditions it can become an object of attention and control before receding into the background again.<br>Conviction formation seems to exhibit a similar structure. Much of it unfolds automatically, yet parts of it can become objects of reflection, evaluation, and deliberate modification.<br>The difference becomes visible when comparing a car through explicit criteria and simply finding oneself drawn to one because it immediately feels right. Experiences like that are familiar. The first foregrounds reflection. The second foregrounds processes that largely unfold on their own.",
+    source: "On Criteria For Good Convictions",
+    url: "/essays/on-criteria/"
   },
   {
     text: "Look outside on a sunny day and see that the sky is blue. Now try to make yourself believe that the sky is red. <br>Again, you may attempt to decide that it is red. This does not work. The perception remains. The belief does not follow.",
@@ -217,7 +202,7 @@ function showRandomQuote() {
             <p>${q.text}</p>
         </blockquote>
         <footer>
-            from: <a href="${q.url}">${q.source}</a>
+            from <a href="${q.url}">${q.source}</a>
         </footer>
     `;
 }
