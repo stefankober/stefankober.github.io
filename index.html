@@ -204,19 +204,27 @@ const quotes = [
   }
 ];
 
+let quoteOrder = [];
+let quoteIndex = 0;
 
-let lastQuote = Math.floor(Math.random() * quotes.length);
+function shuffleQuotes() {
+    quoteOrder = quotes.map((_, i) => i);
+
+    for (let i = quoteOrder.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [quoteOrder[i], quoteOrder[j]] = [quoteOrder[j], quoteOrder[i]];
+    }
+
+    quoteIndex = 0;
+}
 
 function showRandomQuote() {
-    const offset =
-        1 + Math.floor(Math.random() * (quotes.length - 1));
+    if (quoteOrder.length === 0 || quoteIndex >= quoteOrder.length) {
+        shuffleQuotes();
+    }
 
-    const quote =
-        (lastQuote + offset) % quotes.length;
-
-    lastQuote = quote;
-
-    const q = quotes[quote];
+    const q = quotes[quoteOrder[quoteIndex]];
+    quoteIndex++;
 
     document.getElementById("homepage-quote").innerHTML = `
         <blockquote>
@@ -228,6 +236,7 @@ function showRandomQuote() {
     `;
 }
 
+shuffleQuotes();
 showRandomQuote();
 </script>
 <p><button
