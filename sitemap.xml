@@ -10,9 +10,6 @@
   <loc>https://www.stefankober.de/articles/</loc>
 </url>
 <url>
-  <loc>https://www.stefankober.de/conversations/</loc>
-</url>
-<url>
   <loc>https://www.stefankober.de/essays/</loc>
 </url>
 <url>
@@ -280,6 +277,36 @@
   <loc>https://www.stefankober.de/essays/opinion-and-strategy/04-strategy-and-opinion/</loc>
 </url>
 <url>
+  <loc>https://www.stefankober.de/essays/participation/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/00-introduction/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/01-what-is-our-doing/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/02-looking-at-choice/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/03-action-without-obvious-choice/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/04-choosing-one-thing-doing-another/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/05-the-reach-of-choice/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/06-revoking-a-choice/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/07-doing-across-time/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/participation/08-participation/</loc>
+</url>
+<url>
   <loc>https://www.stefankober.de/essays/puzzle-pieces/</loc>
 </url>
 <url>
@@ -338,5 +365,8 @@
 </url>
 <url>
   <loc>https://www.stefankober.de/essays/recursion-tables/07-visibility-and-conviction/</loc>
+</url>
+<url>
+  <loc>https://www.stefankober.de/essays/tent-stove-tools/</loc>
 </url>
 </urlset>
