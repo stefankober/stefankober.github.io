@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
 
-<head prefix="og: https://ogp.me/ns#">
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="generator" content="Zola" />
-  <title>Recursion Tables</title>
-  <meta property="og:title" content="Recursion Tables" />
-  <meta property="og:url" content="https://www.stefankober.de/essays/recursion-tables/" />
-  <link rel="canonical" href="https://www.stefankober.de/essays/recursion-tables/" />
-  <meta property="og:type" content="website" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>Closure and Maintained Openness</title>
+  <meta property="og:title" content="Closure and Maintained Openness" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/questions-possibilities-and-formal-systems/06/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/questions-possibilities-and-formal-systems/06/" />
+  <meta property="og:type" content="article" />
   <!-- Begin Head inject -->
   
   <!-- End Head inject -->
@@ -98,117 +98,96 @@
 <script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
 
     
-    <h1 class="mb-16">Recursion Tables</h1>
-    <section><p>An exploratory essay on making recursive definitions and their structure easier to inspect.</p>
-</section>
-      <!-- Page List -->
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
 
-  <h2 class="my-0! pb-1 leading-none! font-bold">1. From Truth Tables to Recursion Tables</h2>
-  <div class="my-1 truncate"></div>
-
-  <!-- Page Info -->
-<div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H2M0S">2&nbsp;min</time><span
-      class="middot"></span><span>Stefan Kober</span>
-</div>
-
-  <a class="absolute inset-0 text-[0px]" href="https://www.stefankober.de/essays/recursion-tables/01/">1. From Truth Tables to Recursion Tables</a>
-</section>
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-
-  <h2 class="my-0! pb-1 leading-none! font-bold">2. Truth Tables</h2>
-  <div class="my-1 truncate"></div>
-
-  <!-- Page Info -->
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">Closure and Maintained Openness</h1>
+    <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
     datetime="PT0H1M0S">1&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
-  <a class="absolute inset-0 text-[0px]" href="https://www.stefankober.de/essays/recursion-tables/02/">2. Truth Tables</a>
+  </header>
+  <!-- Content -->
+  <section><p>What happens once several possibilities are available?</p>
+<p>Sometimes one becomes sufficiently convincing that the others cease to matter.</p>
+<p>Suppose you ask: "What caused the outage?"</p>
+<p>At first several explanations remain plausible. Then the logs show that a deployment introduced the failure.</p>
+<p>Other possibilities lose their force. One answer has become convincing enough to proceed with.</p>
+<p>This is a form of relative closure. It need not be certainty. Conflicting evidence may reopen the question.</p>
+<p>In other situations, closure would achieve little.</p>
+<p>You are traveling tomorrow.</p>
+<p>Rain is a serious possibility, but sunshine remains plausible.</p>
+<p>You do not need to settle the meteorological question.</p>
+<p>You take a light raincoat.</p>
+<p>That action works across more than one possibility.</p>
+<p>Security planning often has this form.</p>
+<p>You do not know whether an attacker will use phishing, credential stuffing, an exposed service, or a supply-chain weakness.</p>
+<p>A defense may be designed to work across several routes.</p>
+<p>Strategy can preserve plurality for practical reasons.</p>
+<p>Once several possibilities are available, one of them may become convincing enough that the others lose their force. If that does not happen, several may remain live and have to be carried forward.</p>
 </section>
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
+  <hr />
+  <!-- Post Taxonomies -->
 
-  <h2 class="my-0! pb-1 leading-none! font-bold">3. Types, Constructors, And Cases</h2>
-  <div class="my-1 truncate"></div>
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/questions-possibilities-and-formal-systems/05/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>From Questions to Possibilities</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/questions-possibilities-and-formal-systems/07/" accesskey="."
+    ><span>Constraining Inquiry</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
 
-  <!-- Page Info -->
-<div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H2M0S">2&nbsp;min</time><span
-      class="middot"></span><span>Stefan Kober</span>
-</div>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;01&#x2F;">From Conviction to Inquiry</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;02&#x2F;">Questions</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;03&#x2F;">What Questions Reveal</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;04&#x2F;">Questions Between People</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;05&#x2F;">From Questions to Possibilities</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;06&#x2F;">Closure and Maintained Openness</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;07&#x2F;">Constraining Inquiry</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;08&#x2F;">Formal Systems</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;questions-possibilities-and-formal-systems&#x2F;09&#x2F;">Questions, Possibilities, and Formal Systems</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
 
-  <a class="absolute inset-0 text-[0px]" href="https://www.stefankober.de/essays/recursion-tables/03/">3. Types, Constructors, And Cases</a>
-</section>
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-
-  <h2 class="my-0! pb-1 leading-none! font-bold">4. A First Example: Equality On Natural Numbers</h2>
-  <div class="my-1 truncate"></div>
-
-  <!-- Page Info -->
-<div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H2M0S">2&nbsp;min</time><span
-      class="middot"></span><span>Stefan Kober</span>
-</div>
-
-  <a class="absolute inset-0 text-[0px]" href="https://www.stefankober.de/essays/recursion-tables/04/">4. A First Example: Equality On Natural Numbers</a>
-</section>
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-
-  <h2 class="my-0! pb-1 leading-none! font-bold">5. Addition And Multiplication</h2>
-  <div class="my-1 truncate"></div>
-
-  <!-- Page Info -->
-<div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H2M0S">2&nbsp;min</time><span
-      class="middot"></span><span>Stefan Kober</span>
-</div>
-
-  <a class="absolute inset-0 text-[0px]" href="https://www.stefankober.de/essays/recursion-tables/05/">5. Addition And Multiplication</a>
-</section>
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-
-  <h2 class="my-0! pb-1 leading-none! font-bold">6. From Recursion To Induction And Algorithms</h2>
-  <div class="my-1 truncate"></div>
-
-  <!-- Page Info -->
-<div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H2M0S">2&nbsp;min</time><span
-      class="middot"></span><span>Stefan Kober</span>
-</div>
-
-  <a class="absolute inset-0 text-[0px]" href="https://www.stefankober.de/essays/recursion-tables/06/">6. From Recursion To Induction And Algorithms</a>
-</section>
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-
-  <h2 class="my-0! pb-1 leading-none! font-bold">7. Visibility</h2>
-  <div class="my-1 truncate"></div>
-
-  <!-- Page Info -->
-<div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H1M0S">1&nbsp;min</time><span
-      class="middot"></span><span>Stefan Kober</span>
-</div>
-
-  <a class="absolute inset-0 text-[0px]" href="https://www.stefankober.de/essays/recursion-tables/07/">7. Visibility</a>
-</section>
-
-    
   </main>
   <!-- Footer -->
 <footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
