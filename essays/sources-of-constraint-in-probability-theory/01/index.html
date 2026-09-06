@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
 
-<head prefix="og: https://ogp.me/ns#">
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="generator" content="Zola" />
-  <title>Conviction Formation Theory</title>
-  <meta property="og:title" content="Conviction Formation Theory" />
-  <meta property="og:url" content="https://www.stefankober.de/essays/conviction-formation-theory/" />
-  <link rel="canonical" href="https://www.stefankober.de/essays/conviction-formation-theory/" />
-  <meta property="og:type" content="website" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>1. About Probability</title>
+  <meta property="og:title" content="1. About Probability" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/01/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/01/" />
+  <meta property="og:type" content="article" />
   <!-- Begin Head inject -->
   
   <!-- End Head inject -->
@@ -98,24 +98,77 @@
 <script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
 
     
-    <h1 class="mb-16">Conviction Formation Theory</h1>
-    <section><p>A cycle of essays about what can carry thinking and action amid competing convictions and standards, without certainty or a final foundation.</p>
-<h2 id="i-forming-and-revising-convictions">I. Forming And Revising Convictions</h2>
-<p>A first cycle of essays examining how convictions form, how inquiry can reorganize them, and how finite agents participate without fully controlling what becomes convincing.</p>
-<p><a href="/essays/conviction-formation/">Conviction Formation</a></p>
-<p><a href="/essays/questions-possibilities-and-formal-systems/">Questions, Possibilities, And Formal Systems</a></p>
-<p><a href="/essays/participation/">Participation</a></p>
-<h2 id="ii-examining-constraint">II. Examining Constraint</h2>
-<p>A second cycle of essays examining logic, probability, and causality, asking what makes their conclusions compelling, what they depend on, and how far their authority reaches.</p>
-<p><a href="/essays/recursive-examination">Recursive Examination</a></p>
-<p><a href="/essays/sources-of-logical-constraint/">Sources Of Logical Constraint</a></p>
-<p><a href="/essays/sources-of-constraint-in-probability-theory/">Sources Of Constraint In Probability Theory And Bayesian Updating</a></p>
-<p>Sources Of Constraint In Pearl's Theory Of Causality</p>
-<p>Refinement, Pluralism, And What Remains</p>
-</section>
-      <!-- Page List -->
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
 
-    
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">1. About Probability</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H2M0S">2&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><p>Probability theory gives us ways of reasoning when several possibilities remain open.</p>
+<p>Logic let us ask which possibilities remained compatible with fixed premises and mappings.</p>
+<p>Probability lets us go further when several possibilities remain open and assign different weights to them. Under suitable conditions, the result can feel strongly constrained.</p>
+<p>Where does that constraint come from?</p>
+<p>The previous investigation of logic began with very small formal systems. In small cases, the relevant possibilities could remain open to inspection. We could see what had been represented, which mappings had been fixed, which possibilities survived, and where a counterexample remained.</p>
+<p>Probability offers cases of the same kind.</p>
+<p>Dice and cards give us examples in which the relevant possibilities are easy to inspect. A die has only six faces, two throws still give a manageable number of pairs, and after drawing a card we can inspect what remains.</p>
+<p>These examples are elementary enough that some of the structure later compressed into probability formulas stays visible.</p>
+<p>This essay is not an introduction to probability theory. It will leave almost all of probability theory untouched. Nor does it take sides in the discussion about competing interpretations of probability, or between Bayesian and other statistical methods.</p>
+<p>This is also why the essay uses Bayesian updating rather than beginning with a more elaborate statistical method. More elaborate methods usually rely on several layers of probability theory and other mathematical machinery. To inspect their convincing force in the same way, we would first have to reconstruct a considerable number of smaller tools.</p>
+<p>Bayes' theorem is far enough along to show how probability can reorganize weights among possibilities, while still being simple enough that much of the relevant structure can be rebuilt from dice, cards, conditional probability, and algebra.</p>
+<p>The examples have been chosen for a narrower reason. They let us keep enough of the relevant possibilities and mappings visible to inspect the constraint directly. We will follow a small path from dice to cards and from cards to Bayesian updating, asking where some of the convincing force along that path comes from.</p>
+<p>As in the logic essay, we can ask what had to become convincing before the calculation could begin.</p>
+<p>And once those things were in place, what stopped being independently open?</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/02/" accesskey="."
+    ><span>2. Dice</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;01&#x2F;">1. About Probability</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;02&#x2F;">2. Dice</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. What Probability Adds</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
   </main>
   <!-- Footer -->
 <footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">

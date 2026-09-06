@@ -1,0 +1,279 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>3. Cards</title>
+  <meta property="og:title" content="3. Cards" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/03/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/03/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=f80708626536b19f7ee3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=742c78e18c737b43062a" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/inline-code-fix.css">
+
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">3. Cards</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H4M0S">4&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><p>Take a well-shuffled deck of 52 cards. Draw one card. For a single draw, the structure looks much like the die.</p>
+<p>There are four aces among 52 cards.</p>
+<p>If we treat every card as equally likely to occupy the first position in the shuffled deck, then:</p>
+<p>$$
+P(\text{ace})=\frac4{52}=\frac1{13}.
+$$</p>
+<p>Now draw another card without returning the first.</p>
+<p>Suppose the first card was an ace.</p>
+<p>What is the probability that the second card is also an ace?</p>
+<p>It cannot still be:</p>
+<p>$$
+\frac4{52}.
+$$</p>
+<p>There are only 51 cards left. Only three of them are aces.</p>
+<p>So:</p>
+<p>$$
+\frac3{51}.
+$$</p>
+<p>The first draw has changed the situation in which the second draw occurs.</p>
+<p>With repeated dice, the second stage presented the same six equally weighted possibilities whatever happened at the first. The deck does not.</p>
+<p>Its later structure depends on the path already taken. That difference gives us a reason to preserve more information.</p>
+<p>Let:</p>
+<p>$$
+A=\text{the first card is an ace}
+$$</p>
+<p>and:</p>
+<p>$$
+B=\text{the second card is an ace}.
+$$</p>
+<p>Before specifying what happened on the first draw, every card is equally likely to occupy the second position too, so:</p>
+<p>$$
+P(B)=\frac4{52}.
+$$</p>
+<p>Given that the first card was an ace:</p>
+<p>$$
+P(B\mid A)=\frac3{51}.
+$$</p>
+<p>The vertical bar preserves a difference that the changing deck has made difficult to ignore.</p>
+<p>Consider "What is the probability that the second card is an ace?", and consider "What is the probability that the second card is an ace given that the first was an ace?"</p>
+<p>These are very different questions. The conditions under which we evaluate event $B$ have changed. The physical deck makes the distinction easy to inspect.</p>
+<h2 id="a-more-general-multiplication-rule">A More General Multiplication Rule</h2>
+<p>We can now calculate the probability of drawing two aces.</p>
+<p>First the first card must be an ace:</p>
+<p>$$
+P(A)=\frac4{52}.
+$$</p>
+<p>Then, along that branch, the second card must also be an ace:</p>
+<p>$$
+P(B\mid A)=\frac3{51}.
+$$</p>
+<p>So:</p>
+<p>$$
+P(A\land B)=P(A)P(B\mid A).
+$$</p>
+<p>In this case:</p>
+<p>$$
+P(A\land B)=\frac4{52}\cdot\frac3{51}.
+$$</p>
+<p>The multiplication can be reconstructed from the tree of possible events.</p>
+<p>If we collapse some of the branches, the relevant part of the tree looks like this:</p>
+<p><img src="/tree1.png" alt="Tree" /></p>
+<p>First select the $A$ branch.</p>
+<p>Then select the part of that branch in which $B$ also occurs.</p>
+<p>The rule we used for repeated dice now appears as a special case.</p>
+<p>If:</p>
+<p>$$
+P(B\mid A)=P(B),
+$$</p>
+<p>then:</p>
+<p>$$
+P(A\land B)=P(A)P(B).
+$$</p>
+<p>The cards show us what has to remain stable for the simpler dice rule to apply: $P(B|A) = P(B)$.</p>
+<p><img src="/tree2.png" alt="Tree" /></p>
+<p>In the card example, the first draw physically changes the deck. Conditional probability does not in general require one event to cause or physically alter another.</p>
+<p>The cards are useful because they make a changing condition visible. The notation itself is more general.</p>
+<h2 id="from-trees-to-rules">From Trees To Rules</h2>
+<p>The examples with dice and cards can now be seen as two forms of the same structure.</p>
+<p>A probability tree begins with some initial possibility and then branches further as more conditions are added.</p>
+<p>To follow one complete path, we move stage by stage.</p>
+<p>At each step we take the fraction that remains once the earlier stages have already been fixed.</p>
+<p>For two stages this gives:</p>
+<p>$$ P(A\land B)=P(A)P(B\mid A). $$</p>
+<p>For three stages:</p>
+<p>$$ P(A\land B\land C)=P(A)P(B\mid A)P(C\mid A\land B). $$</p>
+<p>And similarly for longer paths.</p>
+<p>The card example shows the more general form. The relevant fraction at the next step may depend on what happened before.</p>
+<p>The repeated-dice case shows a special simplification. If the next-stage probabilities do not depend on what happened before, the branches no longer require different conditional weights. If the same probability also repeats at every stage, as in our repeated-die example, the product can be compressed into a power.</p>
+<p>Independence removes the dependence of later factors on earlier outcomes. The branches can then be treated with the same weight from one stage to the next.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/02/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>2. Dice</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/04/" accesskey="."
+    ><span>4. Bayesian Updating</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;01&#x2F;">1. About Probability</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;02&#x2F;">2. Dice</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. What Probability Adds</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

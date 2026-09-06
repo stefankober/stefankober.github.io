@@ -1,0 +1,307 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>2. Dice</title>
+  <meta property="og:title" content="2. Dice" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/02/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/02/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=f80708626536b19f7ee3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=742c78e18c737b43062a" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/inline-code-fix.css">
+
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">2. Dice</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H6M0S">6&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><p>Put an ordinary six-sided die on the table. Before throwing it, we can name six possible results: $1,2,3,4,5,6.$ That seems almost too simple to investigate.</p>
+<p>We have already selected an object and specified an experiment: throw the die and look at the upper face after it has come to rest. We have also decided what counts as the result: the number on that face.</p>
+<p>Many other differences between throws do not enter the result. The die may bounce twice or five times, land near the edge of the table, or rotate differently. The sound may differ too.</p>
+<p>For the question we are asking, none of those differences is preserved.</p>
+<p>We can write:</p>
+<p>$$
+\Omega=\{1,2,3,4,5,6\}.
+$$</p>
+<p>The symbol $\Omega$ will stand for the possibilities admitted by this small model.</p>
+<p>We have constructed six outcomes by deciding what about the throw will count as the result.</p>
+<p>For the question "Which numbered face ends upward?" that representation seems very convincing.</p>
+<p>The six outcomes exclude one another. If the result is $2$, it is not also $5$.</p>
+<p>They also appear to exhaust the experiment as we have specified it. The die has no seventh numbered face. We can pick it up. Turn it around. Count. Under ordinary conditions, one of those six faces ends upward.</p>
+<p>This is a friendly possibility space.</p>
+<p>Earlier we encountered the problem that relevant possibilities have to become available somehow. An evaluation cannot later recover an alternative that never entered the inquiry.</p>
+<p>Here we have reasons to think that the relevant alternatives have all been represented.</p>
+<h2 id="weight">Weight</h2>
+<p>Now suppose we treat the die as fair.</p>
+<p>That adds something.</p>
+<p>We no longer say only that six outcomes are possible. We say that none of them should receive greater weight than another.</p>
+<p>So:</p>
+<p>$$
+P(1)=P(2)=\cdots=P(6)=\frac16.
+$$</p>
+<p>The six possibilities alone do not tell us how much weight each should receive.</p>
+<p>Imagine putting a small metal weight inside the die near one face. The same numbered outcomes remain possible: $\Omega=\{1,2,3,4,5,6\}.$ But equal weighting has become much less convincing.</p>
+<p>The loaded die separates two things that were easy to run together: counting gives us the number of possibilities, while fairness gives us a reason to weight them equally.</p>
+<p>For an ordinary die manufactured to be symmetric and thrown under ordinary conditions, equal weighting may seem natural. The visible symmetry of the object can contribute to that conviction.</p>
+<p>But it remains another step.</p>
+<p>The expression:</p>
+<p>$$
+P(1)=\frac16
+$$</p>
+<p>contains more than the fact that there are six possibilities. It depends on which possibilities we admitted and on why we treat them as carrying equal weight.</p>
+<p>Once those things remain convincing, further calculations become simple.</p>
+<p>Let $A=\{2,4,6\}.$ This is the event that the result is even.</p>
+<p>Three of our six equally weighted possibilities belong to it.</p>
+<p>So:</p>
+<p>$$
+P(A)=\frac36=\frac12.
+$$</p>
+<p>In this simple setting, probability has become a proportion. We count the possibilities in the event and compare them with the possibilities in the whole space.</p>
+<p>The calculation is strongly constrained because much of what it depends on can still be inspected.</p>
+<h2 id="throw-twice">Throw Twice</h2>
+<p>Now throw the fair die twice. A complete outcome contains two results.</p>
+<p>For example:</p>
+<p>$$
+(2,5)
+$$</p>
+<p>means that the first throw produced $2$ and the second produced $5$. For every possible result of the first throw, there are six possible results of the second.</p>
+<p>So there are:</p>
+<p>$$
+6\cdot6=36
+$$</p>
+<p>ordered pairs.</p>
+<p>We can write all of them down. Or we can imagine a tree. The first throw produces six branches. Each of those branches produces another six.</p>
+<p>Suppose:</p>
+<p>$$
+A=\text{the first throw is 6}
+$$</p>
+<p>and:</p>
+<p>$$
+B=\text{the second throw is 6}.
+$$</p>
+<p>Only one of the 36 complete and equally weighted paths gives two sixes.</p>
+<p>So direct counting gives:</p>
+<p>$$
+P(A\land B)=\frac1{36}.
+$$</p>
+<p>But there is another route.</p>
+<p>The first six selects one sixth of the possibilities:</p>
+<p>$$
+P(A)=\frac16.
+$$</p>
+<p>Along that branch, by equal weighting, one sixth of the remaining possibilities also have a six on the second throw.</p>
+<p>So:</p>
+<p>$$
+P(A\land B)=\frac16\cdot\frac16=\frac1{36}.
+$$</p>
+<p>Both routes give the same result.</p>
+<p>We can inspect the complete possibility space and count one successful path. Or we can move through the tree and take one sixth of one sixth.</p>
+<p>The multiplication compresses a structure that can still be reconstructed directly.</p>
+<p>This resembles what happened in logic. We first inspected small cases directly, then compressed repeated relations into notation and rules. Once the relation had become convincing, we no longer needed to reconstruct the whole path every time.</p>
+<h2 id="independence">Independence</h2>
+<p>There is another reason the multiplication worked so simply.</p>
+<p>Suppose the first throw was a six.</p>
+<p>What possibilities remain for the second throw?</p>
+<p>Again:</p>
+<p>$$
+1,2,3,4,5,6.
+$$</p>
+<p>Suppose the first throw was a three.</p>
+<p>For the second throw the same six possibilities remain. The first result has not altered the second die. It still has the same faces and the same shape. If we continue treating it as fair, the six outcomes remain equally weighted.</p>
+<p>Given our assumptions, learning the first result does not change how we weight the outcomes of the second. The second stage of our tree repeats the same structure whatever happened at the first.</p>
+<p>We can now give that stability a name.</p>
+<p>Let $A$ be an event concerning the first throw and $B$ an event concerning the second.</p>
+<p>In this case:</p>
+<p>$$
+P(B\mid A)=P(B).
+$$</p>
+<p>Learning $A$ does not change the probability assigned to $B$.</p>
+<p>We call the events <em>independent</em> of each other. This gives us a compact way to preserve that relation.</p>
+<p>Now suppose we throw the die ten times and ask for ten sixes.</p>
+<p>The complete possibility space contains:</p>
+<p>$$
+6^{10}
+$$</p>
+<p>paths. We could in principle construct it. But doing so would be a bit pointless. At every stage relevant to the event we care about, the same local relation repeats.</p>
+<p>The next six has probability:</p>
+<p>$$
+\frac16.
+$$</p>
+<p>So:</p>
+<p>$$
+P(\text{ten sixes}) = \left(\frac16\right)^{10}.
+$$</p>
+<p>There is no need to inspect the entire possibility space. The formal compression has become useful precisely because the space has become too large to survey comfortably. But the local relation on which the compression depends remains reconstructible from the smaller cases.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/01/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>1. About Probability</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/03/" accesskey="."
+    ><span>3. Cards</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;01&#x2F;">1. About Probability</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;02&#x2F;">2. Dice</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. What Probability Adds</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

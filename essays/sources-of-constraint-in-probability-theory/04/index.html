@@ -1,0 +1,493 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>4. Bayesian Updating</title>
+  <meta property="og:title" content="4. Bayesian Updating" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/04/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/04/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=f80708626536b19f7ee3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=742c78e18c737b43062a" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/inline-code-fix.css">
+
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">4. Bayesian Updating</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H10M0S">10&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><h2 id="turning-the-conditional-around">Turning The Conditional Around</h2>
+<p>We have:</p>
+<p>$$
+P(A\land B)=P(A)P(B\mid A).
+$$</p>
+<p>But $A\land B$ is the same joint event as $B\land A$.</p>
+<p>So we can also write:</p>
+<p>$$
+P(A\land B)=P(B)P(A\mid B).
+$$</p>
+<p>Both expressions describe the same part of the possibility space.</p>
+<p>The two different right sides are equal to the same left side, so they are equal to each other:</p>
+<p>$$
+P(A)P(B\mid A)=P(B)P(A\mid B).
+$$</p>
+<p>If:</p>
+<p>$$
+P(B)&gt;0,
+$$</p>
+<p>we can divide by $P(B)$:</p>
+<p>$$
+P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}.
+$$</p>
+<p>That is Bayes' theorem.</p>
+<p>We have only described the same joint event in two directions and rearranged the equality. The result follows from the conditional relation we have already reconstructed and from algebra.</p>
+<p>Why, then, is the formula useful?</p>
+<p>The answer becomes clearer when the conditional we know is not the conditional we want.</p>
+<p>A diagnostic test gives us a simple case.</p>
+<h2 id="bayes-theorem">Bayes' Theorem</h2>
+<p>Suppose:</p>
+<p>$$
+H=\text{a person has disease D}
+$$</p>
+<p>and:</p>
+<p>$$
+E=\text{a diagnostic test is positive}.
+$$</p>
+<p>Imagine that in a certain population:</p>
+<p>$$
+P(H)=0.01.
+$$</p>
+<p>One person in one hundred has the disease.</p>
+<p>Suppose the test returns a positive result for 90 percent of people who have it:</p>
+<p>$$
+P(E\mid H)=0.90.
+$$</p>
+<p>And suppose it also returns a positive result for 5 percent of people who do not:</p>
+<p>$$
+P(E\mid\neg H)=0.05.
+$$</p>
+<p>A person tests positive.</p>
+<p>How likely is it that the person has the disease?</p>
+<p>The 90 percent figure is tempting.</p>
+<p>But it answers: Given the disease is present, how likely is a positive test?</p>
+<p>We want: Given a positive test, how likely is the disease?</p>
+<p>Those are:</p>
+<p>$$
+P(E\mid H)
+$$</p>
+<p>and:</p>
+<p>$$
+P(H\mid E).
+$$</p>
+<p>They are not the same conditional.</p>
+<p>We can answer the second question without Bayes' theorem.</p>
+<p>Imagine 10,000 people.</p>
+<p>About 100 have the disease.</p>
+<p>Of those, about 90 test positive.</p>
+<p>The other 9,900 do not have the disease.</p>
+<p>Five percent of them also test positive:</p>
+<p>$$
+495.
+$$</p>
+<p>So there are about:</p>
+<p>$$
+90+495=585
+$$</p>
+<p>positive tests.</p>
+<p>Of those, about 90 come from people with the disease:</p>
+<p>$$
+P(H\mid E)
+\approx
+\frac{90}{585}
+\approx0.154.
+$$</p>
+<p>The positive result has changed the probability substantially. It has moved from one percent before we looked at the evidence to about fifteen percent after we looked at the evidence. But it has not moved to ninety percent.</p>
+<p>Bayes' theorem lets us calculate that result in a general way.</p>
+<p>A positive test can occur in two mutually exclusive ways: the person has the disease and tests positive, or the person does not have the disease and tests positive.</p>
+<p>So:</p>
+<p>$$ P(E)=P(E\land H)+P(E\land \neg H). $$</p>
+<p>Using the multiplication rule from the previous chapter:</p>
+<p>$$ P(E\land H)=P(H)P(E\mid H) $$</p>
+<p>and:</p>
+<p>$$ P(E\land \neg H)=P(\neg H)P(E\mid\neg H). $$</p>
+<p>Combining the two branches gives:</p>
+<p>$$P(E)=P(E∣H)P(H)+P(E∣¬H)P(¬H).$$</p>
+<p>So:</p>
+<p>$$
+P(E)
+=0.90\cdot0.01
++
+0.05\cdot0.99
+=0.0585.
+$$</p>
+<p>We now have all the pieces we need:</p>
+<p>$$
+P(H)=0.01,
+$$</p>
+<p>the prior probability of the hypothesis,</p>
+<p>$$
+P(E\mid H)=0.90,
+$$</p>
+<p>the probability of the evidence if the hypothesis is true,</p>
+<p>$$
+P(E) = 0.0585
+$$</p>
+<p>the total probability of the evidence, and we want:</p>
+<p>$$
+P(H\mid E),
+$$</p>
+<p>the probability of the hypothesis given the evidence.</p>
+<p>We take Bayes' theorem</p>
+<p>$$
+P(H\mid E)
+=\frac{P(E\mid H)P(H)}{P(E)}.
+$$</p>
+<p>and plug the values in:</p>
+<p>$$
+P(H\mid E)
+=\frac{0.90\cdot0.01}{0.0585}
+\approx0.154.
+$$</p>
+<p>Again, both routes give the same result.</p>
+<p>We can construct an imagined finite population and count. Or we can use the algebraic relation.</p>
+<p>The formula reaches the same result while doing much less work.</p>
+<p>Up to this point, we are still close to the world of dice and cards. The probabilities supplied to the calculation may have empirical histories, but the inversion itself can still be reconstructed through explicit finite arrangements.</p>
+<p>The situation changes when the possibilities themselves are hypotheses.</p>
+<h2 id="a-hypothesis-is-not-a-card">A Hypothesis Is Not A Card</h2>
+<p>A computer repeatedly restarts under heavy load.</p>
+<p>Several explanations occur to us.</p>
+<p>The power supply may be failing. The machine may be overheating. Memory could be defective.</p>
+<p>Call these:</p>
+<p>$$
+H_1=\text{power supply failure},
+$$</p>
+<p>$$
+H_2=\text{overheating},
+$$</p>
+<p>and:</p>
+<p>$$
+H_3=\text{memory failure}.
+$$</p>
+<p>We observe:</p>
+<p>$$
+E=\text{the machine restarts under heavy load}.
+$$</p>
+<p>We can ask:</p>
+<p>$$
+P(H_i\mid E).
+$$</p>
+<p>The form is familiar.</p>
+<p>But a hypothesis is not a card.</p>
+<p>We cannot spread every possible explanation of the machine failure across a table and check that all of them are present.</p>
+<p>Probability theory did not generate:</p>
+<p>$$
+H_1,H_2,H_3.
+$$</p>
+<p>Someone had to think of them.</p>
+<p>A technician may recognize familiar failure patterns. The age of the power supply may make one possibility salient, or overheating may have occurred before. Memory problems may also be common in similar machines.</p>
+<p>Why exactly these three?</p>
+<p>The operating system may contain a bug, the motherboard may be failing, the external power supply may be unstable, or two faults may occur together.</p>
+<p>The probability model can distribute weight only among possibilities represented in it.</p>
+<p>If an important hypothesis is missing, no flawless update can assign probability to it until the model changes.</p>
+<p>This is the old problem of possibility generation in another form. With dice, the completeness of the possibility space was easy to inspect. Here, the conviction that the relevant possibilities have been included has to come from somewhere else.</p>
+<p>Schematically, Bayes' theorem lets us do this:</p>
+<p><img src="/bayes001.png" alt="Bayes&#39; theorem applied" /></p>
+<p>An observation can change how strongly competing hypotheses are weighted. The rest of the chapter asks what has to be in place for that update to be carried out.</p>
+<h2 id="priors">Priors</h2>
+<p>For this small model, suppose we treat these three hypotheses as mutually exclusive and exhaustive: exactly one of them is taken to explain the failure.</p>
+<p>We assign:</p>
+<p>$$
+P(H_1)=0.50,
+$$</p>
+<p>$$
+P(H_2)=0.30,
+$$</p>
+<p>$$
+P(H_3)=0.20.
+$$</p>
+<p>These are priors: the probabilities assigned to the hypotheses before (<em>prior</em> to) the observation (E) is used to update them.</p>
+<p>Where did they come from?</p>
+<p>Comparable failures may historically have been power-supply problems about half the time. A technician might instead translate her own judgment of plausibility into numbers, or the values may come from another statistical model.</p>
+<p>The notation does not preserve that history.</p>
+<p>It gives us:</p>
+<p>$$
+P(H_1)=0.50.
+$$</p>
+<p>The prior must get its convincing force from experience, data, another model, judgment, or several of these together.</p>
+<h2 id="likelihoods">Likelihoods</h2>
+<p>We also need to know how expected the observation would be under each hypothesis.</p>
+<p>Suppose:</p>
+<p>$$
+P(E\mid H_1)=0.80,
+$$</p>
+<p>$$
+P(E\mid H_2)=0.60,
+$$</p>
+<p>$$
+P(E\mid H_3)=0.20.
+$$</p>
+<p>The likelihood, too, has to get its convincing force from the support behind the number. Once it enters the model, the update constrains what follows from it.</p>
+<h2 id="evidence">Evidence</h2>
+<p>Even:</p>
+<p>$$
+E
+$$</p>
+<p>had to be constructed.</p>
+<p>Something happened in the machine.</p>
+<p>We represented it as "The machine restarts under heavy load."</p>
+<p>We might instead have recorded "The machine restarts within thirty seconds above 80 percent CPU load", or "The machine loses power without a kernel panic."</p>
+<p>Those descriptions preserve different distinctions. The world does not arrive carrying an $E$ label.</p>
+<p>Something becomes salient, is observed, classified, measured or described, and then enters the formal process in a particular representation.</p>
+<p>Probability theory can operate on that representation.</p>
+<p>It does not decide from nowhere which description should matter.</p>
+<h2 id="the-update">The Update</h2>
+<p>Now suppose the model is in place.</p>
+<p>We have:</p>
+<p>$$
+P(H_1)=0.50,
+\quad
+P(H_2)=0.30,
+\quad
+P(H_3)=0.20
+$$</p>
+<p>and:</p>
+<p>$$
+P(E\mid H_1)=0.80,
+\quad
+P(E\mid H_2)=0.60,
+\quad
+P(E\mid H_3)=0.20.
+$$</p>
+<p>The probability of the observation under the model is:</p>
+<p>$$
+P(E)
+=0.80\cdot0.50
++
+0.60\cdot0.30
++
+0.20\cdot0.20.
+$$</p>
+<p>So:</p>
+<p>$$
+P(E)=0.62.
+$$</p>
+<p>The posterior probabilities are:</p>
+<p>$$
+P(H_1\mid E)
+=\frac{0.80\cdot0.50}{0.62}
+\approx0.645,
+$$</p>
+<p>$$
+P(H_2\mid E)
+=\frac{0.60\cdot0.30}{0.62}
+\approx0.290,
+$$</p>
+<p>and:</p>
+<p>$$
+P(H_3\mid E)
+=\frac{0.20\cdot0.20}{0.62}
+\approx0.065.
+$$</p>
+<p>Conditioning the model on the restart under load has redistributed the weights.</p>
+<p>The power-supply hypothesis has become more probable in the model. The memory hypothesis has become substantially less probable. Overheating remains live.</p>
+<p>In the logical examples, much of the visible constraint worked by exclusion..</p>
+<p>A combination survived or did not. A counterexample existed or it did not.</p>
+<p>Probability can constrain while leaving several possibilities open.</p>
+<p>It can say, in effect: These possibilities remain, but not with the same weight.</p>
+<p>Once the hypothesis space and its structure, the priors, likelihoods, representation of the evidence, and probability rules remain in place, the posterior values are not separately open.</p>
+<p>We cannot then choose that:</p>
+<p>$$
+P(H_3\mid E)
+$$</p>
+<p>should come out as $0.7$ because memory failure happens to be our preferred explanation.</p>
+<p>Something else would have to change: a prior, a likelihood, the hypothesis space, the evidence, or the calculation.</p>
+<p>The agent can participate in constructing the formal conditions. But the result inside those conditions is constrained.</p>
+<p>And the agent did not choose what the machine did merely by choosing to examine it. The observation entered the process as something that had occurred.</p>
+<h2 id="the-posterior-is-not-the-conviction">The Posterior Is Not The Conviction</h2>
+<p>Suppose the calculation gives:</p>
+<p>$$
+P(H_1\mid E)\approx0.645.
+$$</p>
+<p>A technician may now find power-supply failure more convincing. Or not.</p>
+<p>She may distrust the prior, think the overheating likelihood is badly estimated, notice another possible failure mode, or question how the observation was represented.</p>
+<p>The posterior is a result inside the model. Conviction is what forms for the person.</p>
+<p>The formal result can participate strongly in conviction formation without being identical with conviction.</p>
+<p>Other parts of the person's orientation still matter: whether the priors, likelihoods, evidence, and model remain convincing.</p>
+<p>That is what CFT would lead us to expect. The calculation can constrain part of the process without determining what the person will become convinced of.</p>
+<p>The calculation can make a discrepancy explicit: It can expose a difference between the person's earlier orientation and the consequences of probabilities she accepted. But it cannot simply install the posterior as conviction.</p>
+<p>One further condition remains worth keeping in view.</p>
+<p>If several pieces of evidence enter the model, their dependence relations matter. Probability theory can preserve whatever dependence structure we supply. It cannot repair a dependence we represented incorrectly. The card example gave us a simple case in which changing the condition changed the probability.</p>
+<p>A formal system can constrain very strongly while faithfully carrying an error that entered through its representation.</p>
+<p>With dice and cards, much of what supported the probability assignment remained easy to inspect. With hypotheses, more of that support has to be supplied by judgments, observations, models, and classifications whose own convincing force must be examined separately.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/03/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>3. Cards</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/05/" accesskey="."
+    ><span>5. What Probability Adds</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;01&#x2F;">1. About Probability</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;02&#x2F;">2. Dice</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. What Probability Adds</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>
