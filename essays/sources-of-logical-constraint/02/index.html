@@ -1,0 +1,412 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>2. A Small Propositional System</title>
+  <meta property="og:title" content="2. A Small Propositional System" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-logical-constraint/02/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-logical-constraint/02/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=f80708626536b19f7ee3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=742c78e18c737b43062a" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/inline-code-fix.css">
+
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">2. A Small Propositional System</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H15M0S">15&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><p>A conclusion counts as valid if there is no permitted case in which all the premises are true and the conclusion is false.</p>
+<p>That criterion will guide the construction.</p>
+<p>Our first example was:</p>
+<p>If the alarm light is on, the machine has stopped.<br />
+The alarm light is on.</p>
+<p>Thus: The machine has stopped.</p>
+<p>In the previous chapter, we asked what makes the first conclusion difficult to deny while the premises remain in place. To examine that more closely, we will construct a small formal system in which the relation between premises and conclusion can be inspected directly.</p>
+<p>If the model itself becomes convincing, and if it reproduces the difference between the inferences in a way we can inspect, then it may tell us something about where the constraint comes from.</p>
+<p>What should be the main objects of our formal system?</p>
+<p>An alarm light is not true or false.</p>
+<p>A machine is not true or false.</p>
+<p>That means they cannot be our primary objects.</p>
+<p>The claims we make about them can be true however.</p>
+<p>"The alarm light is on" can be true or false. So can "The machine has stopped". And so can "The alarm light is on and the machine has stopped".</p>
+<p>We will call things of this kind <em>propositions</em>.</p>
+<p>For the present construction, a proposition is a linguistic object to which we assign one of two truth values $\text{true}$ or $\text{false}.$</p>
+<p>Some claims are uncertain for us, or difficult to classify, even if they are in fact either true or false and we simply do not know which. Other claims are vague or context-dependent in ways that make it less clear whether treating them as having exactly one of two truth values is an adequate representation.</p>
+<p>Both cases raise further problems, but we do not need to settle them here. We are not trying to build a system for every kind of claim. We are trying to construct one small setting in which a source of logical constraint can be made visible. We deliberately restrict ourselves to propositions that we treat as having one of two truth values.</p>
+<p>That gives us objects suitable for the criterion we started with.</p>
+<p>We use the letters of the alphabet to name propositions, such as $A$ and $B.$</p>
+<p>Let $A$ stand for "The alarm light is on".</p>
+<p>And let $B$ stand for "The machine has stopped".</p>
+<p>"If the alarm light is on, the machine has stopped" is also a proposition, as is "The alarm light is not on" or "The alarm light is on and the machine has stopped".</p>
+<p>Each of them can be true or false.</p>
+<p>But they have a structure that our simpler examples do not.</p>
+<p>Take "The alarm light is on and the machine has stopped".</p>
+<p>We can separate it into "The alarm light is on", "and", and "the machine has stopped".</p>
+<p>The left and right sides are themselves propositions.</p>
+<p>Between them is the word "and".</p>
+<p>The word itself is not another proposition. It tells us how the two propositions have been combined into a larger one.</p>
+<p>The same is true of "If the alarm light is on, the machine has stopped".</p>
+<p>It contains two propositions and a way of connecting them.</p>
+<p>By contrast "The machine has stopped" does not obviously break apart in the same way into smaller parts that are themselves still true or false and whose combination gives us the original claim.</p>
+<p>Propositions of the latter kind are objectively simple in exactly the sense that they are not combinations of other propositions, and they cannot be split into smaller propositions.</p>
+<p>We will usually name only these propositions with letters of the alphabet. But if we are not interested in their interior, we can also name complex ones with letters of the alphabet, we just lose the possibility of analysing them further in our system.</p>
+<p>We now have two things to represent: <em>simple propositions</em> and <em>ways of combining propositions into larger propositions</em>.</p>
+<p>We already said that letters of the alphabet such as $A$, $B$ and $C$ stand for simple propositions.</p>
+<p>If we want to build such propositions formally, we need more than symbols for their parts.</p>
+<p>We also need rules that tell us which combinations of symbols count as propositions in our system.</p>
+<p>Otherwise any sequence of symbols would be allowed, including expressions for which we would not know what proposition they represent or how their truth value should be determined.</p>
+<p>We will call expressions constructed according to these rules <em>well-formed formulas</em>.</p>
+<p>The rules to create them will do two things at once.</p>
+<p>They introduce the connectives we need and ensure that larger formulas are built from smaller ones in a way we can recover.</p>
+<p>If $P$ is a proposition, then: $\neg (P$) is a proposition. It represents "not $P$".</p>
+<p>If $P$ and $Q$ are propositions, then $(P)\land (Q)$ is a proposition. It represents "$P$ and $Q$".</p>
+<p>If $P$ and $Q$ are propositions, then $(P)\lor (Q)$ is a proposition, it represents "$P$ or $Q$".</p>
+<p>Lastly, if $P$ and $Q$ are propositions, then $(P)\to (Q)$ is a proposition. It represents "if $P$, then $Q$".</p>
+<p>The formation rules make the construction of a proposition traceable.</p>
+<p>The parentheses help preserve that trace.</p>
+<p>Whenever propositions are combined, they mark which propositions belong together.</p>
+<p>For a short expression this may seem unnecessary. But once propositions are combined again, the parentheses preserve the order in which the larger proposition was constructed.</p>
+<p>Every complex expression can in this way be taken apart into simpler expressions until we reach the original variables.</p>
+<p>That trace will matter when we assign truth values, because the truth value of a complex proposition will depend on the truth values of the propositions from which it was built.</p>
+<h2 id="what-we-have-constructed">What We Have Constructed</h2>
+<p>We now have a small formal language.</p>
+<p>Its basic objects are propositions that we treat as either true or false, and connectives.</p>
+<p>We have created formation rules that let us build complex propositions from simpler ones while preserving how they were constructed. That seems to be what happens in natural language, too.</p>
+<p>Now we need a way to find out which propositions must be true when others are true.</p>
+<p>We have made the structure of the propositions explicit enough that their construction can be followed step by step.</p>
+<p>If the truth value of a complex proposition can be determined from the truth values of the propositions from which it was built, then we may be able to inspect the whole process rather than simply accept the result.</p>
+<p>What is still missing is exactly that connection.</p>
+<p>We know how formulas can be constructed.</p>
+<p>We have not yet defined how their truth values depend on the truth values of their parts.</p>
+<p>That is the next step.</p>
+<h2 id="fixing-the-mappings">Fixing The Mappings</h2>
+<p>We now have expressions, but how do we make use of them?</p>
+<p>For that we define mappings from the truth values of the simpler parts to the truth value of the whole.</p>
+<p>Each connective operates on one or two propositions. "Connective" is inherited terminology here and applies also to negation.</p>
+<p>For two variables, there are four possible assignments:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>false</td></tr>
+<tr><td>false</td><td>true</td></tr>
+<tr><td>false</td><td>false</td></tr>
+</tbody></table>
+<p>There are no other combinations if each variable has two possible truth values.</p>
+<p>We can look at how it was created systematically: to each truth value of A, the two truth values of B have been attached.</p>
+<p>On that basis of complete enumeration of all cases we can now define our connectives.</p>
+<p>We can be sure that we have not overlooked a case:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A$</th><th>$A\land B$</th><th>$A\lor B$</th><th>$A\to B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>false</td><td>true</td><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td></td><td>false</td><td>true</td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td>true</td><td>false</td><td>true</td><td>true</td></tr>
+<tr><td>false</td><td>false</td><td></td><td>false</td><td>false</td><td>true</td></tr>
+</tbody></table>
+<p>The first two columns give us all possible truth value combinations of the simpler propositions $A$ and $B$.</p>
+<p>The later columns fix the truth value of the complex proposition combining them using each connective.</p>
+<p>Once the truth values of $A$ and $B$ are given, the truth value of each more complex expression is no longer separately chosen. If $A=\text{true}$ and $B=\text{false}$, then under the definitions above $A\land B=\text{false}$, $A\lor B=\text{true}$, and $A\to B=\text{false}$.</p>
+<p>The convincing force here is conditional. Nothing about the symbols themselves forces us to use these definitions. We have adopted them, but once we do, and once the truth values of the simpler expressions are fixed, the mappings determine the truth values of the more complex expressions.</p>
+<p>That gives us one source of constraint.</p>
+<h2 id="why-these-definitions">Why These Definitions?</h2>
+<p>The table fixes how the connectives behave inside our formal system.</p>
+<p>As we will see now, they catch many intuitions about how connectives work in natural language. But at the same time they exclude some quite natural readings. Those readings require more complicated constructions. We gain simplicity and inspectability, but some natural-language claims become harder to translate.</p>
+<p>Take $A\land B$.</p>
+<p>If it represents "$A$ and $B$", then it should be true exactly when both $A$ and $B$ are true.</p>
+<p>That is the basic intuition behind "and" in natural language.</p>
+<p>But what we lose are the fine differences between "Peter felt sick and Peter took the medicine" and "Peter took the medicine and Peter felt sick".</p>
+<p>There is no temporal or causal meaning hidden in the logical "and".</p>
+<p>It is true when both components are true, and false otherwise, and no other meaning is preserved.</p>
+<p>For $A\lor B$, we use the inclusive sense of "or": "$A$, or $B$, or both". It is false only when both $A$ and $B$ are false.</p>
+<p>The exclusive sense of "or" gets lost, like in "We can go to the movies, or we can stay home."</p>
+<p>If we want to express it, we need to resort to something like $(A \lor B) \land (\neg A \lor \neg B)$.</p>
+<p>Negation is rather simple.</p>
+<p>If $A$ is true, then $\neg A$ is false.</p>
+<p>If $A$ is false, $\neg A$ is true.</p>
+<p>Nothing worth mentioning seems lost here.</p>
+<p>The implication $A\to B$ is more complicated again.</p>
+<p>We want to make sure that when $A$ is true, then $B$ is also true. That is the intuition we identified behind a valid conclusion.</p>
+<p>Treating every other combination as true makes the connective very simple to handle, but it has consequences that may seem strange.</p>
+<p>Suppose we have:</p>
+<p>Cats are plants.<br />
+Trees are plants.<br />
+Cats are animals.</p>
+<p>Under the ordinary interpretation, "Trees are plants" is true. So is "Cats are animals". "Cats are plants" is false.</p>
+<p>According to the mapping we defined for $A\to B$, both of these come out true:</p>
+<p>"If cats are plants, then trees are plants."</p>
+<p>Because if the antecedent is false, the whole proposition is true. We were only forbidding the case that the antecedent is true and the consequent is false. That is not the case here.</p>
+<p>"If cats are animals, then trees are plants."</p>
+<p>Because antecedent and consequent are true, the whole proposition is true, too. The formal system is not telling us that being a cat has anything to do with trees being plants. It is preserving only this condition: $A\to B$ is false when $A$ is true and $B$ is false. If $B$ is already true, that forbidden case cannot occur.</p>
+<p>These consequences have long been recognized as peculiarities of material implication, the standard name for this truth-functional conditional. The connective preserves only a narrow condition: the antecedent cannot be true while the consequent is false. It contains no causal or other connection between what the two propositions say. That is exactly the part of the conditional relation we want this system to preserve.</p>
+<p>Once the representation and the mappings remain in place, the truth values of the more complex propositions are no longer settled separately. They follow from the truth values of their parts according to rules we can inspect directly.</p>
+<h2 id="testing-the-inference">Testing The Inference</h2>
+<p>How can we use this to check if inferences are valid?</p>
+<p>Let's assume we have the following premises. They can either be our first machine example from the last chapter, or any other conclusion that fits this pattern:</p>
+<p>$A$</p>
+<p>$A\to B.$</p>
+<p>We can combine them into one expression (we drop the first pair of brackets; it does not change anything in the reading):</p>
+<p>$A\land(A\to B).$</p>
+<p>Now compare that expression with the proposed conclusion:</p>
+<p>$$
+B.
+$$</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\land(A\to B)$</th><th>$B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td></td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td></td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td></td><td>true</td></tr>
+<tr><td>false</td><td>false</td><td></td><td>false</td></tr>
+</tbody></table>
+<p>How do we find the truth value of a complex proposition?</p>
+<p>We can follow the way the proposition was constructed.</p>
+<p>Our proposition is</p>
+<p>$$
+A\land(A\to B).
+$$</p>
+<p>We begin with its simple propositions, $A$ and $B$, and list every possible assignment of truth values:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>false</td></tr>
+<tr><td>false</td><td>true</td></tr>
+<tr><td>false</td><td>false</td></tr>
+</tbody></table>
+<p>Then we look for the simplest part whose truth value is not yet in the table.</p>
+<p>Here that is $A\to B$.</p>
+<p>Its truth value depends only on $A$ and $B$, so we can add a column for it:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\to B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td>true</td></tr>
+<tr><td>false</td><td>false</td><td>true</td></tr>
+</tbody></table>
+<p>Now the truth values of both parts of the larger proposition are available:</p>
+<p>$$
+A\land(A\to B).
+$$</p>
+<p>So we add one more column:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\to B$</th><th>$A\land(A\to B)$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td>false</td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td>true</td><td>false</td></tr>
+<tr><td>false</td><td>false</td><td>true</td><td>false</td></tr>
+</tbody></table>
+<p>This gives us a general procedure.</p>
+<p>Start with the simple propositions and enumerate all possible assignments to them. Then add the complex parts one by one, beginning with those whose own parts already have truth values in the table. Continue until the whole proposition has a column.</p>
+<p>Because our formation rules let us take every complex proposition apart into smaller propositions, we can repeat this procedure for propositions of any finite complexity.</p>
+<p>We end up with this table:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\land(A\to B)$</th><th>$B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td>false</td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td>false</td><td>true</td></tr>
+<tr><td>false</td><td>false</td><td>false</td><td>false</td></tr>
+</tbody></table>
+<p>The first two columns give us every possible assignment to $A$ and $B$. In that way we make sure we have every case covered.</p>
+<p>The third column tells us which assignments make both premises true.</p>
+<p>Only one does.</p>
+<p>In that same row $B$ is true.</p>
+<p>There is no row in which $A\land(A\to B)$ is true while $B$ is false.</p>
+<p>Thus the conclusion is valid in the sense we fixed at the beginning of the chapter.</p>
+<p>If someone wants to reject the conclusion while keeping both premises, we can ask what assignment would make that possible.</p>
+<p>The table contains every assignment allowed by the system.</p>
+<p>None works.</p>
+<p>The attempted denial requires a counterexample that is not available under the conditions stipulated here.</p>
+<p>That matters because we took care at two earlier points.</p>
+<p>First, the first two columns contain every possible combination of truth values for $A$ and $B$ in this system.</p>
+<p>Second, the formal expressions are meant to preserve the parts of the natural-language claims that matter for the inference.</p>
+<p>If that representation remains convincing, and if the mappings we defined remain in place, then the table leaves no case in which the premises are true and the conclusion false.</p>
+<p>Under those conditions, the conclusion is valid.</p>
+<h2 id="an-inference-that-fails">An Inference That Fails</h2>
+<p>We can now return to the first inference from the previous chapter that did not seem convincing:</p>
+<p>If the alarm light is on, the machine has stopped.<br />
+The alarm light is off.</p>
+<p>Thus: The machine has not stopped.</p>
+<p>Using the same representation gives $A\to B$ and $\neg A$.</p>
+<p>The proposed conclusion is $\neg B$.</p>
+<p>Again, we can combine the premises and inspect every possible assignment:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A\land(A\to B)$</th><th>$\neg B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>false</td><td>false</td></tr>
+<tr><td>true</td><td>false</td><td>false</td><td>true</td></tr>
+<tr><td>false</td><td>true</td><td>true</td><td>false</td></tr>
+<tr><td>false</td><td>false</td><td>true</td><td>true</td></tr>
+</tbody></table>
+<p>This time two assignments make both premises true.</p>
+<p>In one of them $\neg B$ is false:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A\land(A\to B)$</th><th>$\neg B$</th></tr></thead><tbody>
+<tr><td>false</td><td>true</td><td>true</td><td>false</td></tr>
+</tbody></table>
+<p>That means the premises can be true, while the consequence is false.</p>
+<p>The constraint that held in the earlier inference is absent here.</p>
+<p>And the table gives us the counterexample directly.</p>
+<p>Translated back into ordinary language, the premises do not exclude this situation:</p>
+<p>If the alarm light is on, the machine has stopped.<br />
+The alarm light is off.<br />
+The machine has stopped.</p>
+<p>Our small formal system therefore does both kinds of work we wanted from it, provided that we handle the translation into the system with care.</p>
+<p>It shows, within the representation we constructed, why one inference satisfies our criterion of validity and why the other does not.</p>
+<p>And it can do that because the relevant possibilities have all been made explicit.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-logical-constraint/01/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>1. About Logic</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-logical-constraint/03/" accesskey="."
+    ><span>3. A Small Quantified System</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-logical-constraint&#x2F;01&#x2F;">1. About Logic</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-logical-constraint&#x2F;02&#x2F;">2. A Small Propositional System</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-logical-constraint&#x2F;03&#x2F;">3. A Small Quantified System</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-logical-constraint&#x2F;04&#x2F;">4. Sources Of Logical Constraint</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

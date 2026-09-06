@@ -1,0 +1,453 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>3. A Small Quantified System</title>
+  <meta property="og:title" content="3. A Small Quantified System" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-logical-constraint/03/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-logical-constraint/03/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=f80708626536b19f7ee3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=742c78e18c737b43062a" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/inline-code-fix.css">
+
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">3. A Small Quantified System</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H10M0S">10&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><p>The propositional system from the previous chapter could inspect some kinds of conclusions already.</p>
+<p>If the alarm light is on, the machine has stopped.<br />
+The alarm light is on.</p>
+<p>Thus: The machine has stopped.</p>
+<p>It could do that because the inferentially relevant structure was already visible in the propositions and their combination.</p>
+<p>Our second example is different:</p>
+<p>All men are mortal.<br />
+Socrates is a man.</p>
+<p>Thus: Socrates is mortal.</p>
+<p>If we represent these three propositions simply as $A$, $B$ and $C$, then our small propositional system sees three unrelated propositions:</p>
+<p>$A$<br />
+$B$</p>
+<p>Thus: $C$</p>
+<p>But this representation has lost some of the structure that is important to what happens.</p>
+<p>"Man" occurs in the first premise and again in the second.</p>
+<p>"Mortal" occurs in the first premise and again in the conclusion.</p>
+<p>Socrates is the same person in the second premise and the conclusion.</p>
+<p>And "all men are mortal" does not concern Socrates alone.</p>
+<p>None of that survives in $A$, $B$ and $C$.</p>
+<p>If we want to inspect the constraint in this inference, we need a representation that preserves more of what happens inside the propositions.</p>
+<h2 id="things-properties-and-propositions">Things, Properties, And Propositions</h2>
+<p>Consider "Socrates is a man."</p>
+<p>This proposition has parts that play different roles.</p>
+<p>"Socrates" is not true or false.</p>
+<p>Neither is "is a man" by itself.</p>
+<p>But the complete claim "Socrates is a man" can be true or false.</p>
+<p>For our small system, we will distinguish between <em>things</em> we talk about, <em>properties</em> we attribute to them, and <em>propositions</em> produced by <em>attributing</em> a <em>property</em> to a <em>thing</em>.</p>
+<p>Let $s$ stand for Socrates.</p>
+<p>Let $M$ stand for the property "is a man".</p>
+<p>Then $M(s)$ shall stand for "Socrates is a man."</p>
+<p>Similarly, let $D$ stand for the property "is mortal".</p>
+<p>Then $D(s)$ shall stand for "Socrates is mortal."</p>
+<p>The notation now preserves something our earlier propositional letters did not. The same object $s$ can occur in several propositions. And the same property can be attributed to several objects.</p>
+<p>That gives us a way to preserve some of the internal structure that matters to the inference.</p>
+<p>It does not tell us whether Socrates is in fact a man or mortal. Those truth values still have to come from somewhere else.</p>
+<p>What the notation gives us is a way to keep track of what is being said about what.</p>
+<h2 id="a-small-collection">A Small Collection</h2>
+<p>The first premise causes another problem.</p>
+<p><em>All men are mortal.</em></p>
+<p>This does not concern only Socrates.</p>
+<p>To inspect the word "all", we need to know what objects are under consideration.</p>
+<p>For the present construction, suppose there are exactly three:</p>
+<p>$$
+{s,a,b}.
+$$</p>
+<p>The letters stand for three objects. One of them is Socrates.</p>
+<p>The collection is complete for this small system. There is no fourth object hiding outside it that also has to be checked.</p>
+<p>This is obviously not a claim about the world.</p>
+<p>Ordinary universal claims can range over far larger collections, including ones we cannot simply list. We restrict the present system because a finite collection lets us inspect what universal coverage amounts to.</p>
+<p>That is the same advantage we used in the previous chapter. There, two truth values for two variables gave us four possible assignments. Here, a finite collection lets us make every object under consideration explicit.</p>
+<h2 id="saying-it-for-every-object">Saying It For Every Object</h2>
+<p>We can now try to represent "All men are mortal."</p>
+<p>Without introducing any new symbol, we can write the relevant condition separately for every object in our collection:</p>
+<p>$$
+M(s)\to D(s)
+$$</p>
+<p>$$
+M(a)\to D(a)
+$$</p>
+<p>$$
+M(b)\to D(b).
+$$</p>
+<p>We already defined the implication in the previous chapter. For each object, the expression excludes one combination: the object being a man while not being mortal.</p>
+<p>In our finite model, the representation of 'all men are mortal' requires this condition to hold for every object we have admitted.</p>
+<p>Nothing is hidden yet. We can inspect all three cases directly.</p>
+<p>But the construction is repetitive. The same pattern appears three times. Only the object changes.</p>
+<h2 id="a-repeated-place">A Repeated Place</h2>
+<p>Compare:</p>
+<p>$$
+M(s)\to D(s)
+$$</p>
+<p>$$
+M(a)\to D(a)
+$$</p>
+<p>$$
+M(b)\to D(b).
+$$</p>
+<p>Each expression has the same form.</p>
+<p>The first position inside both properties is occupied once by $s$, once by $a$, and once by $b.$</p>
+<p>We can mark that repeated place with another symbol: $x$.</p>
+<p>Then the common form becomes $M(x)\to D(x)$.</p>
+<p>Here, $x$ is not another object in our collection. It marks a place into which each of those objects can be inserted. It is a variable.</p>
+<p>If we put $s$ there, we get:</p>
+<p>$$
+M(s)\to D(s).
+$$</p>
+<p>If we put $a$ there:</p>
+<p>$$
+M(a)\to D(a).
+$$</p>
+<p>And for $b$:</p>
+<p>$$
+M(b)\to D(b).
+$$</p>
+<p>The new notation compresses the repeated structure. But we can reconstruct each individual case.</p>
+<h2 id="saying-all">Saying "All"</h2>
+<p>We now have a common form:</p>
+<p>$$
+M(x)\to D(x).
+$$</p>
+<p>What is still missing is the requirement that this form hold for every object in our collection.</p>
+<p>For that we introduce $\forall.$</p>
+<p>We write $\forall x(M(x)\to D(x)).$</p>
+<p>For the small system we have constructed, this means we claim that these are all true:</p>
+<p>$$
+M(s)\to D(s),
+$$</p>
+<p>$$
+M(a)\to D(a),
+$$</p>
+<p>$$
+M(b)\to D(b).
+$$</p>
+<p>The symbol expresses in one formula the requirement that every object in our collection satisfy the same condition.</p>
+<p>Because the collection is finite and complete, we can unfold the expression again and inspect every case.</p>
+<h2 id="what-we-have-constructed">What We Have Constructed</h2>
+<p>We can now distinguish objects from properties, preserve the same object across several propositions and the same property across several objects, and express one condition that has to hold for every object in a fixed finite collection.</p>
+<p>The variable and the universal quantifier compress that repeated structure, but we can still unfold it whenever we want to inspect the individual cases.</p>
+<p>The interpretation has to be supplied from outside of the system.</p>
+<p>What the system gives us is a way to make more of the structure of the inference explicit.</p>
+<p>Is it enough to recover the constraint we started with?</p>
+<h2 id="testing-the-inference">Testing The Inference</h2>
+<p>Our original inference was:</p>
+<p>All men are mortal.<br />
+Socrates is a man.</p>
+<p>Thus: Socrates is mortal.</p>
+<p>In the system we have constructed, this becomes:</p>
+<p>$$
+\forall x(M(x)\to D(x))
+$$</p>
+<p>$$
+M(s)
+$$</p>
+<p>with the proposed conclusion:</p>
+<p>$$
+D(s).
+$$</p>
+<p>The notation alone does not show why the conclusion follows.</p>
+<p>So we unfold the universal premise.</p>
+<p>Our complete collection is:</p>
+<p>$$
+{s,a,b}.
+$$</p>
+<p>That means the first premise requires:</p>
+<p>$$
+M(s)\to D(s),
+$$</p>
+<p>$$
+M(a)\to D(a),
+$$</p>
+<p>and:</p>
+<p>$$
+M(b)\to D(b).
+$$</p>
+<p>The first of these concerns Socrates.</p>
+<p>So among the things we have taken as true are:</p>
+<p>$$
+M(s)\to D(s)
+$$</p>
+<p>and:</p>
+<p>$$
+M(s).
+$$</p>
+<p>We have already inspected this form in the previous chapter.</p>
+<p>It is the same structure as:</p>
+<p>$$
+A\to B
+$$</p>
+<p>$$
+A
+$$</p>
+<p>Thus:</p>
+<p>$$
+B.
+$$</p>
+<p>There was no assignment in which both premises were true while the conclusion was false.</p>
+<p>The same propositional mapping still applies even though the letters now occur inside a more structured notation.</p>
+<p>If:</p>
+<p>$$
+M(s)\to D(s)
+$$</p>
+<p>is true, and:</p>
+<p>$$
+M(s)
+$$</p>
+<p>is true, then:</p>
+<p>$$
+D(s)
+$$</p>
+<p>cannot be false under the mapping we already fixed.</p>
+<p>The quantified premise gave us the Socrates instance because Socrates belongs to the complete collection over which the condition ranges.</p>
+<p>The second premise tells us that Socrates satisfies the first part of that condition.</p>
+<p>Together they leave no case in which Socrates is a man but not mortal.</p>
+<p>The conclusion is valid in the small system.</p>
+<p>If we add more objects, even as many as there are human beings, we get a much larger collection, but still a finite one. In principle, the quantified expression can still be unfolded into one condition for each object.</p>
+<p>That is as far as our present construction carries us. But it can fully accomodate the real example. For an infinite collection, we could no longer inspect universal coverage by unfolding every case into a finite list.</p>
+<p>Quantified logic can handle such structures, but doing so requires machinery we have not constructed here.</p>
+<h2 id="an-inference-that-fails">An Inference That Fails</h2>
+<p>We can now test the other inference:</p>
+<p>All men are mortal.<br />
+Socrates is mortal.</p>
+<p>Thus: Socrates is a man.</p>
+<p>Its formal representation is:</p>
+<p>$$
+\forall x(M(x)\to D(x))
+$$</p>
+<p>$$
+D(s)
+$$</p>
+<p>with the proposed conclusion:</p>
+<p>$$
+M(s).
+$$</p>
+<p>To show that the conclusion does not follow, we need one case in which both premises are true while the conclusion is false.</p>
+<p>We can try to construct one systematically.</p>
+<p>The proposed conclusion is:</p>
+<p>$$
+M(s).
+$$</p>
+<p>So we begin by making it false:</p>
+<p>$$
+M(s)=\text{false}.
+$$</p>
+<p>The second premise has to remain true:</p>
+<p>$$
+D(s)=\text{true}.
+$$</p>
+<p>Now consider the part of the universal premise that concerns Socrates:</p>
+<p>$$
+M(s)\to D(s).
+$$</p>
+<p>With the values we just chose, this becomes:</p>
+<p>$$
+\text{false}\to\text{true},
+$$</p>
+<p>which is true under the mapping we already fixed.</p>
+<p>So making the conclusion false has not yet broken either premise.</p>
+<p>We still need the universal condition to hold for $a$ and $b$. We can choose any values for them that do not make $M(x)$ true while $D(x)$ is false.</p>
+<p>For example:</p>
+<table><thead><tr><th>Object</th><th>Man</th><th>Mortal</th></tr></thead><tbody>
+<tr><td>$s$</td><td>false</td><td>true</td></tr>
+<tr><td>$a$</td><td>true</td><td>true</td></tr>
+<tr><td>$b$</td><td>false</td><td>false</td></tr>
+</tbody></table>
+<p>Now we can inspect the universal premise object by object.</p>
+<p>For Socrates $M(s)\to D(s)$ is true.</p>
+<p>Its first part is false and its second part true.</p>
+<p>For $a$ $M(a)\to D(a)$ is also true.</p>
+<p>Both parts are true.</p>
+<p>For $b$ $M(b)\to D(b)$ is true as well.</p>
+<p>Its first part is false. Remember that is how we defined the implication.</p>
+<p>So every object in the collection satisfies $M(x)\to D(x)$.</p>
+<p>That means $\forall x(M(x)\to D(x))$ is true.</p>
+<p>The second premise $D(s)$ is also true.</p>
+<p>But $M(s)$ is false.</p>
+<p>The premises can therefore be true while the proposed conclusion is false.</p>
+<p>Translated back into ordinary language, the premises do not exclude this situation:</p>
+<p>All men are mortal.
+Socrates is mortal.
+Socrates is not a man.</p>
+<p>The system contains a counterexample.</p>
+<p>The system has reproduced the inferential difference we started with. To do so, it had to preserve more structure than the propositional system from the last chapter. It had to keep track of objects and properties, and it had to make the coverage of the universal claim explicit.</p>
+<p>Once those things were in place, the earlier propositional constraint could be applied to Socrates in particular. The convincing force still remains conditional on what we supplied.</p>
+<p>We supplied the objects, their interpretation, the properties, the finite collection, and the premises. We also relied on the mappings constructed in the previous chapter. The formal system does not make those things convincing.</p>
+<p>What it adds is a structure in which the repeated relations can be made explicit, universal coverage can be inspected, and counterexamples can either survive or disappear.</p>
+<p>That is another source of logical constraint.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-logical-constraint/02/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>2. A Small Propositional System</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-logical-constraint/04/" accesskey="."
+    ><span>4. Sources Of Logical Constraint</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-logical-constraint&#x2F;01&#x2F;">1. About Logic</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-logical-constraint&#x2F;02&#x2F;">2. A Small Propositional System</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-logical-constraint&#x2F;03&#x2F;">3. A Small Quantified System</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-logical-constraint&#x2F;04&#x2F;">4. Sources Of Logical Constraint</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>
