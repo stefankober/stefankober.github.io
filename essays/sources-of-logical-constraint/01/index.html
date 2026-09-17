@@ -107,14 +107,28 @@
     <h1 class="my-0! pb-2.5">1. About Logic</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H2M0S">2&nbsp;min</time><span
+    datetime="PT0H3M0S">3&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
   </header>
   <!-- Content -->
-  <section><p>Logic studies inference.</p>
-<p>We can begin by comparing conclusions that seem to follow from their premises with conclusions that do not.</p>
+  <section><h2 id="where-is-anna">Where is Anna?</h2>
+<p>If Anna is at work, her car is not in the driveway.<br />
+Her car is not in the driveway.</p>
+<p>So Anna is at work.</p>
+<p>Given we can be sure that the first premise has no exceptions, is that a valid conclusion?</p>
+<p>It may feel convincing, and you start to rely on it. You send Anna a message asking whether she wants to meet at the coffee shop during her lunch break. But then Anna replies that she has a day off and is at the spa.</p>
+<p>The premises are all true:</p>
+<p>If Anna is at work, her car is indeed not in the driveway. It is parked in front of her office building.</p>
+<p>Also her car is now not in the driveway. Her car is at the spa.</p>
+<p>So the conclusion may have felt convincing at first, but then a counterexample emerged.</p>
+<p>If you saw that right away, good. But more complicated conclusions exist.</p>
+<p>Are we supposed to exclude all counterexamples when we want to draw a valid conclusion?</p>
+<p>How should we do that?</p>
+<h2 id="logic">Logic</h2>
+<p>Logic studies inference.</p>
+<p>We can now look more closely at what distinguishes a conclusion that really follows from its premises from one for which a counterexample remains possible.</p>
 <p>Consider:</p>
 <p>If the alarm light is on, the machine has stopped.<br />
 The alarm light is on.</p>
@@ -132,18 +146,15 @@ The alarm light is off.</p>
 <p>All men are mortal.<br />
 Socrates is mortal.</p>
 <p>Thus: Socrates is a man.</p>
-<p>These do not seem to follow in the same way from the premises.</p>
-<p>What constrains the first two conclusions while the premises remain in place, and why can that constraint become so convincing?</p>
+<p>These do not follow in the same way from the premises.</p>
+<p>But how can we know that the first two have no counter examples, while the second pair has them?</p>
+<p>What constrains the first two conclusions, and why can that constraint become so convincing?</p>
 <p>What is missing in the second two cases, and why do their conclusions fail to acquire the same force?</p>
+<p>To answer that, we need a way to make the relevant possibilities explicit enough to inspect.</p>
 <p>This essay is not an introduction to logic. For that purpose it is much too thin.</p>
-<p>We will try to construct formal systems that let us inspect that difference rather than merely relying on our initial sense that one inference follows and the other does not.</p>
-<p>The goal is to trace some basic sources of logical constraint and to examine how those sources can acquire convincing force.</p>
-<p>We will not attempt to reconstruct the convincing force of modern first-order logic by analysing all the mathematical machinery on which it depends.</p>
-<p>That investigation would be worthwhile, but it would hinder what we actually want to achieve here now.</p>
-<p>First-order logic is already a mature formal system. Its language, semantics, proof methods, and metatheory have been developed together with mathematics and with other parts of logic. Much of the convincing force available to a trained user is carried by structures whose own justification and history would have to be reconstructed in turn.</p>
-<p>Here we will instead construct only as much formal machinery as each example requires, and keep the resulting systems small enough that the relevant possibilities and mappings remain open to inspection.</p>
-<p>There is no natural point at which an investigation like this becomes complete. More machinery could always be added.</p>
-<p>Here we will follow only a few paths far enough that their constraint can be inspected rather than merely assumed.</p>
+<p>We will construct only as much formal machinery as the examples require, keeping the resulting systems small enough that the relevant possibilities and mappings remain open to inspection.</p>
+<p>The aim is to trace where the constraint inside these systems comes from and why it can become convincing, while also asking what gives the results of applying them to a problem enough convincing force to become operative in inquiry.</p>
+<p>There is no natural point at which an investigation like this becomes complete. More machinery could always be added. We will follow only a few paths far enough that the relevant sources of convincing force can be inspected rather than merely assumed.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->

@@ -107,7 +107,7 @@
     <h1 class="my-0! pb-2.5">3. A Small Quantified System</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H10M0S">10&nbsp;min</time><span
+    datetime="PT0H11M0S">11&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
@@ -147,7 +147,7 @@ $B$</p>
 <p>Then $D(s)$ shall stand for "Socrates is mortal."</p>
 <p>The notation now preserves something our earlier propositional letters did not. The same object $s$ can occur in several propositions. And the same property can be attributed to several objects.</p>
 <p>That gives us a way to preserve some of the internal structure that matters to the inference.</p>
-<p>It does not tell us whether Socrates is in fact a man or mortal. Those truth values still have to come from somewhere else.</p>
+<p>It does not tell us whether Socrates is in fact a man or mortal. Those truth values still have to come from the context of the application of the formal system.</p>
 <p>What the notation gives us is a way to keep track of what is being said about what.</p>
 <h2 id="a-small-collection">A Small Collection</h2>
 <p>The first premise causes another problem.</p>
@@ -176,22 +176,11 @@ $$</p>
 M(b)\to D(b).
 $$</p>
 <p>We already defined the implication in the previous chapter. For each object, the expression excludes one combination: the object being a man while not being mortal.</p>
-<p>In our finite model, the representation of 'all men are mortal' requires this condition to hold for every object we have admitted.</p>
-<p>Nothing is hidden yet. We can inspect all three cases directly.</p>
+<p>In our finite model, the representation of "all men are mortal" requires this condition to hold for every object we have admitted.</p>
+<p>All three cases can be inspected directly.</p>
 <p>But the construction is repetitive. The same pattern appears three times. Only the object changes.</p>
 <h2 id="a-repeated-place">A Repeated Place</h2>
-<p>Compare:</p>
-<p>$$
-M(s)\to D(s)
-$$</p>
-<p>$$
-M(a)\to D(a)
-$$</p>
-<p>$$
-M(b)\to D(b).
-$$</p>
-<p>Each expression has the same form.</p>
-<p>The first position inside both properties is occupied once by $s$, once by $a$, and once by $b.$</p>
+<p>The first position inside both properties is occupied once by $s$, once by $a$, and once by $b.$ The property however does not change.</p>
 <p>We can mark that repeated place with another symbol: $x$.</p>
 <p>Then the common form becomes $M(x)\to D(x)$.</p>
 <p>Here, $x$ is not another object in our collection. It marks a place into which each of those objects can be inserted. It is a variable.</p>
@@ -208,15 +197,21 @@ $$</p>
 M(b)\to D(b).
 $$</p>
 <p>The new notation compresses the repeated structure. But we can reconstruct each individual case.</p>
-<h2 id="saying-all">Saying "All"</h2>
+<h2 id="taming-the-variable">Taming The Variable</h2>
 <p>We now have a common form:</p>
 <p>$$
 M(x)\to D(x).
 $$</p>
-<p>What is still missing is the requirement that this form hold for every object in our collection.</p>
-<p>For that we introduce $\forall.$</p>
-<p>We write $\forall x(M(x)\to D(x)).$</p>
-<p>For the small system we have constructed, this means we claim that these are all true:</p>
+<p>But the variable $x$ is still only marking a place. The two occurrences of $x$ tell us to put the same object into both places, but we have not yet said which objects are to be considered, or how far that use of $x$ extends.</p>
+<p>For that we introduce $\forall$.</p>
+<p>It does two jobs for us. It says that we are considering every object in our collection, and it marks the scope within which $x$ is governed by that requirement.</p>
+<p>That matters because a later use of $x$ need not always belong to the same quantifier. Parentheses let us mark where the reach of a quantifier ends and where another use could begin. We may also need other quantifiers for different kinds of claims.</p>
+<p>For our present claim, we want the requirement to cover the whole formula:</p>
+<p>$$
+\forall x(M(x)\to D(x)).
+$$</p>
+<p>The quantifier tells us that throughout the formula in its scope, $x$ ranges over every object in our collection.</p>
+<p>For the small system we have constructed, this means that all of these must be true:</p>
 <p>$$
 M(s)\to D(s),
 $$</p>
@@ -226,8 +221,7 @@ $$</p>
 <p>$$
 M(b)\to D(b).
 $$</p>
-<p>The symbol expresses in one formula the requirement that every object in our collection satisfy the same condition.</p>
-<p>Because the collection is finite and complete, we can unfold the expression again and inspect every case.</p>
+<p>Because the collection is finite and complete, we can unfold the quantified formula again and inspect every case.</p>
 <h2 id="what-we-have-constructed">What We Have Constructed</h2>
 <p>We can now distinguish objects from properties, preserve the same object across several propositions and the same property across several objects, and express one condition that has to hold for every object in a fixed finite collection.</p>
 <p>The variable and the universal quantifier compress that repeated structure, but we can still unfold it whenever we want to inspect the individual cases.</p>
@@ -368,17 +362,24 @@ $$</p>
 <p>That means $\forall x(M(x)\to D(x))$ is true.</p>
 <p>The second premise $D(s)$ is also true.</p>
 <p>But $M(s)$ is false.</p>
-<p>The premises can therefore be true while the proposed conclusion is false.</p>
+<p>The premises can be true while the proposed conclusion is false.</p>
 <p>Translated back into ordinary language, the premises do not exclude this situation:</p>
 <p>All men are mortal.
 Socrates is mortal.
 Socrates is not a man.</p>
-<p>The system contains a counterexample.</p>
-<p>The system has reproduced the inferential difference we started with. To do so, it had to preserve more structure than the propositional system from the last chapter. It had to keep track of objects and properties, and it had to make the coverage of the universal claim explicit.</p>
-<p>Once those things were in place, the earlier propositional constraint could be applied to Socrates in particular. The convincing force still remains conditional on what we supplied.</p>
-<p>We supplied the objects, their interpretation, the properties, the finite collection, and the premises. We also relied on the mappings constructed in the previous chapter. The formal system does not make those things convincing.</p>
-<p>What it adds is a structure in which the repeated relations can be made explicit, universal coverage can be inspected, and counterexamples can either survive or disappear.</p>
-<p>That is another source of logical constraint.</p>
+<p>There is a counterexample.</p>
+<h2 id="what-this-construction-shows">What This Construction Shows</h2>
+<p>The system has reproduced the inferential difference we started with.</p>
+<p>To do that, it had to preserve more structure than the propositional system from the previous chapter.</p>
+<p>It had to keep track of objects and properties, preserve the same object across several propositions, and make explicit what it means for one condition to hold for every object in the collection.</p>
+<p>The universal quantifier compresses that repeated structure. In our finite model, we can unfold it again into one case for each object.</p>
+<p>That is where the additional constraint comes from.</p>
+<p>Once the universal premise is fixed, Socrates belongs to the collection, and $M(s)$ is true, the condition that applies to every object also applies to Socrates. The propositional constraint constructed in the previous chapter can then operate on that particular case.</p>
+<p>But the application still depends on what we supplied.</p>
+<p>We chose the objects under consideration, decided which object $s$ represents, chose the properties represented by $M$ and $D$, treated the collection as complete, and translated "all men are mortal" as a universally quantified conditional. We also relied on the truth-value mappings constructed in the previous chapter.</p>
+<p>Any of those choices can be questioned.</p>
+<p>If they remain convincing for the problem at hand, then the formal system makes the relevant structure explicit enough that a counterexample can either be constructed or excluded.</p>
+<p>The constraint does not come from the notation alone. It comes from fixing enough of the representation that the consequences can no longer be varied independently.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->

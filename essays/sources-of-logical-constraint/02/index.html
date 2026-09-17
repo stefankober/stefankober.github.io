@@ -113,74 +113,74 @@
 
   </header>
   <!-- Content -->
-  <section><p>A conclusion counts as valid if there is no permitted case in which all the premises are true and the conclusion is false.</p>
+  <section><p>The examples from the previous chapter suggest a way to test the difference.</p>
+<p>Can we find a case in which all the premises are true and the conclusion is false?</p>
+<p>In other words, can we find a case allowed by the premises in which the conclusion fails?</p>
+<p>If we can, the conclusion does not follow from those premises.</p>
+<p>If no such case remains, we will call the inference <em>valid</em>.</p>
 <p>That criterion will guide the construction.</p>
 <p>Our first example was:</p>
 <p>If the alarm light is on, the machine has stopped.<br />
 The alarm light is on.</p>
 <p>Thus: The machine has stopped.</p>
-<p>In the previous chapter, we asked what makes the first conclusion difficult to deny while the premises remain in place. To examine that more closely, we will construct a small formal system in which the relation between premises and conclusion can be inspected directly.</p>
-<p>If the model itself becomes convincing, and if it reproduces the difference between the inferences in a way we can inspect, then it may tell us something about where the constraint comes from.</p>
+<p>To examine more closely if it is valid, we will construct a small formal system in which the relation between premises and conclusion can be inspected directly.</p>
+<p>If the model itself becomes convincing, and if it can show either that a counterexample remains or that none is available, then it may tell us something about where the constraint comes from.</p>
 <p>What should be the main objects of our formal system?</p>
 <p>An alarm light is not true or false.</p>
 <p>A machine is not true or false.</p>
 <p>That means they cannot be our primary objects.</p>
-<p>The claims we make about them can be true however.</p>
+<p>The claims we make about them can be true or false however.</p>
 <p>"The alarm light is on" can be true or false. So can "The machine has stopped". And so can "The alarm light is on and the machine has stopped".</p>
-<p>We will call things of this kind <em>propositions</em>.</p>
-<p>For the present construction, a proposition is a linguistic object to which we assign one of two truth values $\text{true}$ or $\text{false}.$</p>
+<p>Claims that can be true or false will be our basic objects. We will call them <em>propositions</em>.</p>
 <p>Some claims are uncertain for us, or difficult to classify, even if they are in fact either true or false and we simply do not know which. Other claims are vague or context-dependent in ways that make it less clear whether treating them as having exactly one of two truth values is an adequate representation.</p>
 <p>Both cases raise further problems, but we do not need to settle them here. We are not trying to build a system for every kind of claim. We are trying to construct one small setting in which a source of logical constraint can be made visible. We deliberately restrict ourselves to propositions that we treat as having one of two truth values.</p>
 <p>That gives us objects suitable for the criterion we started with.</p>
-<p>We use the letters of the alphabet to name propositions, such as $A$ and $B.$</p>
-<p>Let $A$ stand for "The alarm light is on".</p>
-<p>And let $B$ stand for "The machine has stopped".</p>
-<p>"If the alarm light is on, the machine has stopped" is also a proposition, as is "The alarm light is not on" or "The alarm light is on and the machine has stopped".</p>
-<p>Each of them can be true or false.</p>
-<p>But they have a structure that our simpler examples do not.</p>
-<p>Take "The alarm light is on and the machine has stopped".</p>
-<p>We can separate it into "The alarm light is on", "and", and "the machine has stopped".</p>
-<p>The left and right sides are themselves propositions.</p>
-<p>Between them is the word "and".</p>
-<p>The word itself is not another proposition. It tells us how the two propositions have been combined into a larger one.</p>
-<p>The same is true of "If the alarm light is on, the machine has stopped".</p>
-<p>It contains two propositions and a way of connecting them.</p>
-<p>By contrast "The machine has stopped" does not obviously break apart in the same way into smaller parts that are themselves still true or false and whose combination gives us the original claim.</p>
-<p>Propositions of the latter kind are objectively simple in exactly the sense that they are not combinations of other propositions, and they cannot be split into smaller propositions.</p>
-<p>We will usually name only these propositions with letters of the alphabet. But if we are not interested in their interior, we can also name complex ones with letters of the alphabet, we just lose the possibility of analysing them further in our system.</p>
-<p>We now have two things to represent: <em>simple propositions</em> and <em>ways of combining propositions into larger propositions</em>.</p>
-<p>We already said that letters of the alphabet such as $A$, $B$ and $C$ stand for simple propositions.</p>
-<p>If we want to build such propositions formally, we need more than symbols for their parts.</p>
-<p>We also need rules that tell us which combinations of symbols count as propositions in our system.</p>
+<p>Now take the proposition "The alarm light is on and the machine has stopped."</p>
+<p>We can split it into two smaller claims:</p>
+<p>"The alarm light is on."</p>
+<p>"The machine has stopped."</p>
+<p>Each of those can still be true or false on its own.</p>
+<p>The word "and" tells us how the two claims have been combined into a larger proposition.</p>
+<p>The same happens with:</p>
+<p>"If the alarm light is on, the machine has stopped."</p>
+<p>Again we have two propositions, joined in a particular way.</p>
+<p>Now compare:</p>
+<p>"The alarm light is on."</p>
+<p>We cannot split this in the same way into smaller parts that are themselves propositions and whose combination gives us the original claim.</p>
+<p>For the present system, we will call propositions of the latter kind <em>simple propositions</em>.</p>
+<p>We will use letters such as $A$ and $B$ to stand for simple propositions. At this stage, what the propositions are about does not matter to the formal structure. What matters is whether each is true or false.</p>
+<p>For our case let:</p>
+<p>$A$ = "The alarm light is on"</p>
+<p>and:</p>
+<p>$B$ = "The machine has stopped".</p>
+<p>Then $A\ and\ B$ represents "The alarm light is on and the machine has stopped."</p>
+<p>If we want to build larger propositions formally, we need somewhere to start.</p>
+<p>Our simple propositions provide that starting point. Symbols such as $A$, $B$ or $C$ will count as propositions in the system.</p>
+<p>We then need rules that tell us how further propositions can be built from ones we already have.</p>
 <p>Otherwise any sequence of symbols would be allowed, including expressions for which we would not know what proposition they represent or how their truth value should be determined.</p>
 <p>We will call expressions constructed according to these rules <em>well-formed formulas</em>.</p>
-<p>The rules to create them will do two things at once.</p>
-<p>They introduce the connectives we need and ensure that larger formulas are built from smaller ones in a way we can recover.</p>
-<p>If $P$ is a proposition, then: $\neg (P$) is a proposition. It represents "not $P$".</p>
-<p>If $P$ and $Q$ are propositions, then $(P)\land (Q)$ is a proposition. It represents "$P$ and $Q$".</p>
-<p>If $P$ and $Q$ are propositions, then $(P)\lor (Q)$ is a proposition, it represents "$P$ or $Q$".</p>
-<p>Lastly, if $P$ and $Q$ are propositions, then $(P)\to (Q)$ is a proposition. It represents "if $P$, then $Q$".</p>
-<p>The formation rules make the construction of a proposition traceable.</p>
-<p>The parentheses help preserve that trace.</p>
-<p>Whenever propositions are combined, they mark which propositions belong together.</p>
-<p>For a short expression this may seem unnecessary. But once propositions are combined again, the parentheses preserve the order in which the larger proposition was constructed.</p>
+<p>The rules introduce the connectives we need and make the construction of larger formulas traceable.</p>
+<p>If $P$ is a proposition, then $\neg (P)$ is a proposition. It represents "not $P$".</p>
+<p>If $P$ and $Q$ are propositions, then $(P)\land(Q)$ is a proposition. It represents "$P$ and $Q$".</p>
+<p>If $P$ and $Q$ are propositions, then $(P)\lor(Q)$ is a proposition. It represents "$P$ or $Q$".</p>
+<p>If $P$ and $Q$ are propositions, then $(P)\to(Q)$ is a proposition. It represents "if $P$, then $Q$".</p>
+<p>The formation rules let us recover how a proposition was constructed.</p>
+<p>The parentheses help preserve the order of the construction.</p>
 <p>Every complex expression can in this way be taken apart into simpler expressions until we reach the original variables.</p>
 <p>That trace will matter when we assign truth values, because the truth value of a complex proposition will depend on the truth values of the propositions from which it was built.</p>
 <h2 id="what-we-have-constructed">What We Have Constructed</h2>
 <p>We now have a small formal language.</p>
-<p>Its basic objects are propositions that we treat as either true or false, and connectives.</p>
-<p>We have created formation rules that let us build complex propositions from simpler ones while preserving how they were constructed. That seems to be what happens in natural language, too.</p>
+<p>Its basic objects are propositions that we treat as either true or false, and connectives. "Connective" is inherited terminology here and applies also to negation.</p>
+<p>We have created formation rules that let us build complex propositions from simpler ones while preserving how they were constructed.</p>
 <p>Now we need a way to find out which propositions must be true when others are true.</p>
 <p>We have made the structure of the propositions explicit enough that their construction can be followed step by step.</p>
 <p>If the truth value of a complex proposition can be determined from the truth values of the propositions from which it was built, then we may be able to inspect the whole process rather than simply accept the result.</p>
 <p>What is still missing is exactly that connection.</p>
-<p>We know how formulas can be constructed.</p>
-<p>We have not yet defined how their truth values depend on the truth values of their parts.</p>
-<p>That is the next step.</p>
+<p>We know how formulas can be constructed. We have not yet defined how their truth values depend on the truth values of their parts.</p>
 <h2 id="fixing-the-mappings">Fixing The Mappings</h2>
 <p>We now have expressions, but how do we make use of them?</p>
 <p>For that we define mappings from the truth values of the simpler parts to the truth value of the whole.</p>
-<p>Each connective operates on one or two propositions. "Connective" is inherited terminology here and applies also to negation.</p>
+<p>Each connective operates on one or two propositions.</p>
 <p>For two variables, there are four possible assignments:</p>
 <table><thead><tr><th>$A$</th><th>$B$</th></tr></thead><tbody>
 <tr><td>true</td><td>true</td></tr>
@@ -190,19 +190,22 @@ The alarm light is on.</p>
 </tbody></table>
 <p>There are no other combinations if each variable has two possible truth values.</p>
 <p>We can look at how it was created systematically: to each truth value of A, the two truth values of B have been attached.</p>
-<p>On that basis of complete enumeration of all cases we can now define our connectives.</p>
-<p>We can be sure that we have not overlooked a case:</p>
-<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A$</th><th>$A\land B$</th><th>$A\lor B$</th><th>$A\to B$</th></tr></thead><tbody>
-<tr><td>true</td><td>true</td><td>false</td><td>true</td><td>true</td><td>true</td></tr>
-<tr><td>true</td><td>false</td><td></td><td>false</td><td>true</td><td>false</td></tr>
-<tr><td>false</td><td>true</td><td>true</td><td>false</td><td>true</td><td>true</td></tr>
-<tr><td>false</td><td>false</td><td></td><td>false</td><td>false</td><td>true</td></tr>
+<p>On the basis of complete enumeration of all cases we can now define our connectives.</p>
+<p>We can be sure that we have not overlooked a case. That will matter for showing that there can be no counterexample.</p>
+<table><thead><tr><th>$A$</th><th>$\neg A$</th></tr></thead><tbody>
+<tr><td>true</td><td>false</td></tr>
+<tr><td>false</td><td>true</td></tr>
 </tbody></table>
-<p>The first two columns give us all possible truth value combinations of the simpler propositions $A$ and $B$.</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\land B$</th><th>$A\lor B$</th><th>$A\to B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td>false</td><td>true</td><td>true</td></tr>
+<tr><td>false</td><td>false</td><td>false</td><td>false</td><td>true</td></tr>
+</tbody></table>
+<p>The first column of the first table, and the first two columns of the second table give us all possible truth value combinations of the simpler propositions $A$ and $B$.</p>
 <p>The later columns fix the truth value of the complex proposition combining them using each connective.</p>
 <p>Once the truth values of $A$ and $B$ are given, the truth value of each more complex expression is no longer separately chosen. If $A=\text{true}$ and $B=\text{false}$, then under the definitions above $A\land B=\text{false}$, $A\lor B=\text{true}$, and $A\to B=\text{false}$.</p>
-<p>The convincing force here is conditional. Nothing about the symbols themselves forces us to use these definitions. We have adopted them, but once we do, and once the truth values of the simpler expressions are fixed, the mappings determine the truth values of the more complex expressions.</p>
-<p>That gives us one source of constraint.</p>
+<p>The convincing force here is conditional. Nothing about the symbols themselves forces us to use these definitions. We have adopted them, but once we do, and once the truth values of the simpler expressions are fixed, the mappings determine the truth values of the more complex expressions in a definite way.</p>
 <h2 id="why-these-definitions">Why These Definitions?</h2>
 <p>The table fixes how the connectives behave inside our formal system.</p>
 <p>As we will see now, they catch many intuitions about how connectives work in natural language. But at the same time they exclude some quite natural readings. Those readings require more complicated constructions. We gain simplicity and inspectability, but some natural-language claims become harder to translate.</p>
@@ -219,8 +222,8 @@ The alarm light is on.</p>
 <p>If $A$ is true, then $\neg A$ is false.</p>
 <p>If $A$ is false, $\neg A$ is true.</p>
 <p>Nothing worth mentioning seems lost here.</p>
-<p>The implication $A\to B$ is more complicated again.</p>
-<p>We want to make sure that when $A$ is true, then $B$ is also true. That is the intuition we identified behind a valid conclusion.</p>
+<p>For $A\to B$ the case we need to exclude is the one in which $A$ is true and $B$ is false. That is exactly the shape of the counterexample we used to test whether a conclusion follows from its premises.</p>
+<p>So we define $A\to B$ as false in that case, and true in the other three.</p>
 <p>Treating every other combination as true makes the connective very simple to handle, but it has consequences that may seem strange.</p>
 <p>Suppose we have:</p>
 <p>Cats are plants.<br />
@@ -229,14 +232,14 @@ Cats are animals.</p>
 <p>Under the ordinary interpretation, "Trees are plants" is true. So is "Cats are animals". "Cats are plants" is false.</p>
 <p>According to the mapping we defined for $A\to B$, both of these come out true:</p>
 <p>"If cats are plants, then trees are plants."</p>
-<p>Because if the antecedent is false, the whole proposition is true. We were only forbidding the case that the antecedent is true and the consequent is false. That is not the case here.</p>
+<p>If the premise is false, the whole proposition is true. We were only forbidding the case that the premise is true and the consequence is false. That is not the case here.</p>
 <p>"If cats are animals, then trees are plants."</p>
-<p>Because antecedent and consequent are true, the whole proposition is true, too. The formal system is not telling us that being a cat has anything to do with trees being plants. It is preserving only this condition: $A\to B$ is false when $A$ is true and $B$ is false. If $B$ is already true, that forbidden case cannot occur.</p>
-<p>These consequences have long been recognized as peculiarities of material implication, the standard name for this truth-functional conditional. The connective preserves only a narrow condition: the antecedent cannot be true while the consequent is false. It contains no causal or other connection between what the two propositions say. That is exactly the part of the conditional relation we want this system to preserve.</p>
+<p>Because premise and consequence are true, the whole proposition is true, too. The formal system is not telling us that being a cat has anything to do with trees being plants. It is preserving only this condition: $A\to B$ is false when $A$ is true and $B$ is false. If $B$ is already true, that forbidden case cannot occur.</p>
+<p>These consequences have long been recognized as peculiarities of the so-called material implication $\rarr$. The connective preserves only a narrow condition: the antecedent cannot be true while the consequent is false. It contains no causal or other connection between what the two propositions say. That is exactly the part of the conditional relation we want this system to preserve.</p>
 <p>Once the representation and the mappings remain in place, the truth values of the more complex propositions are no longer settled separately. They follow from the truth values of their parts according to rules we can inspect directly.</p>
 <h2 id="testing-the-inference">Testing The Inference</h2>
 <p>How can we use this to check if inferences are valid?</p>
-<p>Let's assume we have the following premises. They can either be our first machine example from the last chapter, or any other conclusion that fits this pattern:</p>
+<p>Let's assume we have the following premises. They can either be our first machine example from the last chapter, or any other inference that fits this pattern:</p>
 <p>$A$</p>
 <p>$A\to B.$</p>
 <p>We can combine them into one expression (we drop the first pair of brackets; it does not change anything in the reading):</p>
@@ -328,7 +331,7 @@ The alarm light is off.</p>
 <table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A\land(A\to B)$</th><th>$\neg B$</th></tr></thead><tbody>
 <tr><td>false</td><td>true</td><td>true</td><td>false</td></tr>
 </tbody></table>
-<p>That means the premises can be true, while the consequence is false.</p>
+<p>That means the premises can be true, while the conclusion is false.</p>
 <p>The constraint that held in the earlier inference is absent here.</p>
 <p>And the table gives us the counterexample directly.</p>
 <p>Translated back into ordinary language, the premises do not exclude this situation:</p>
@@ -338,6 +341,18 @@ The machine has stopped.</p>
 <p>Our small formal system does both kinds of work we wanted from it, provided that we handle the translation into the system with care.</p>
 <p>It shows, within the representation we constructed, why one inference satisfies our criterion of validity and why the other does not.</p>
 <p>And it can do that because the relevant possibilities have all been made explicit.</p>
+<h2 id="what-this-construction-shows">What This Construction Shows</h2>
+<p>We can now separate two things that were easy to run together at the beginning.</p>
+<p>First, we can see where the constraint inside the formal system comes from.</p>
+<p>For a finite number of simple propositions, we can enumerate every possible assignment of truth values. The mappings then determine the truth values of the more complex propositions for each assignment.</p>
+<p>To test an inference, we inspect every case in which the premises are true.</p>
+<p>If none of those cases leaves the conclusion false, then there is no counterexample within the system. We can be sure of that. The conclusion is not another choice left open after the premises, mappings, and possible assignments have been fixed.</p>
+<p>That is the source of the constraint we constructed here.</p>
+<p>But this alone does not show that the formal system is an appropriate representation of a particular inference.</p>
+<p>In our examples, we were interested only in whether the premises could be true while the conclusion was false. We therefore represented the claims as propositions with two truth values and chose mappings that preserve the distinctions needed for that test.</p>
+<p>This deliberately leaves other things out. The system does not preserve temporal order, causal connection, uncertainty, vagueness, or every feature of ordinary conditionals.</p>
+<p>The choice of mappings can therefore be questioned, as can the decision to treat the claims as simply true or false, the translation of the ordinary-language claims into propositions, and whether something left out by the representation matters to the problem.</p>
+<p>If those choices remain convincing for the case at hand, then the absence of a counterexample inside the system can carry convincing force in the inquiry.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->
