@@ -107,7 +107,7 @@
     <h1 class="my-0! pb-2.5">2. A Small Propositional System</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H15M0S">15&nbsp;min</time><span
+    datetime="PT0H16M0S">16&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
@@ -347,11 +347,13 @@ The machine has stopped.</p>
 <p>For a finite number of simple propositions, we can enumerate every possible assignment of truth values. The mappings then determine the truth values of the more complex propositions for each assignment.</p>
 <p>To test an inference, we inspect every case in which the premises are true.</p>
 <p>If none of those cases leaves the conclusion false, then there is no counterexample within the system. We can be sure of that. The conclusion is not another choice left open after the premises, mappings, and possible assignments have been fixed.</p>
-<p>That is the source of the constraint we constructed here.</p>
-<p>But this alone does not show that the formal system is an appropriate representation of a particular inference.</p>
+<p>Several things contribute to the constraint: complete enumeration of the relevant possibilities, fixed mappings between simpler and more complex propositions, and a construction that remains open to inspection.</p>
+<p>They also make mistakes easier to locate. If something seems wrong, we can ask whether a case was omitted, a mapping was applied incorrectly, a formula was constructed incorrectly, or the original problem was represented badly.</p>
+<p>That combination seems to be the source of how this constraint becomes so widely convincing.</p>
+<p>But this alone does not show that the formal system is convincing as an appropriate representation of a particular inference.</p>
 <p>In our examples, we were interested only in whether the premises could be true while the conclusion was false. We therefore represented the claims as propositions with two truth values and chose mappings that preserve the distinctions needed for that test.</p>
 <p>This deliberately leaves other things out. The system does not preserve temporal order, causal connection, uncertainty, vagueness, or every feature of ordinary conditionals.</p>
-<p>The choice of mappings can therefore be questioned, as can the decision to treat the claims as simply true or false, the translation of the ordinary-language claims into propositions, and whether something left out by the representation matters to the problem.</p>
+<p>The choice of mappings can be questioned, as can the decision to treat the claims as simply true or false, the translation of the ordinary-language claims into propositions, and whether something left out by the representation matters to the problem.</p>
 <p>If those choices remain convincing for the case at hand, then the absence of a counterexample inside the system can carry convincing force in the inquiry.</p>
 </section>
   <hr />

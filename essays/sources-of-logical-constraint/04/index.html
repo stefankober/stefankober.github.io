@@ -107,17 +107,16 @@
     <h1 class="my-0! pb-2.5">4. Sources Of Logical Constraint</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H11M0S">11&nbsp;min</time><span
+    datetime="PT0H10M0S">10&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
   </header>
   <!-- Content -->
   <section><p>The small systems in the previous chapters were deliberately limited. Their purpose was to keep enough of the relevant machinery visible that we could inspect where some of the constraint came from.</p>
-<p>One source of constraint was representation.</p>
+<p>One source of the convincingness of constraint was representation.</p>
 <p>In the propositional system, replacing ordinary claims with letters was useful because the internal structure of those claims did not matter for the alarm inference.</p>
-<p>For the Socrates inference, the same move lost too much.</p>
-<p>We needed to preserve the fact that the same object and the same properties appeared in different propositions. Formalization preserves only what the representation makes explicit.</p>
+<p>For the Socrates inference, we needed to preserve the fact that the same object and the same properties appeared in different propositions. Formalization preserves only what the representation makes explicit.</p>
 <p>The second source was fixed structure.</p>
 <p>Once the truth-value mappings of the connectives had been defined, the truth value of a complex proposition was no longer settled independently of the truth values of its parts. Once universal quantification had been defined over a complete finite collection, the same condition applied to every member of that collection.</p>
 <p>The third source was the treatment of possibilities.</p>
@@ -130,25 +129,21 @@
 <p>But in our finite system the compressed expression could still be unfolded. The variable and quantifier preserved the repeated structure in a form that could be reused.</p>
 <p>These sources interact.</p>
 <p>A representation makes some structure available. Definitions and mappings constrain what can happen within it. Formal devices compress repeated structures. Possibilities can then be tested, and conclusions fail when a counterexample remains.</p>
-<p>The constraint comes from the relations made explicit and fixed within the system, not from the logical symbols by themselves.</p>
+<p>The convincingness of constraint seems to come from the relations made explicit and fixed within the system.</p>
 <h2 id="where-these-small-systems-sit">Where These Small Systems Sit</h2>
 <p>We can now use some of the standard terminology we mostly avoided while constructing the systems.</p>
 <p>The system in the second chapter contained familiar parts of classical propositional logic. The letters $A$, $B$, and $C$ were propositional variables, and our construction rules defined a small language of well-formed formulas.</p>
-<p>The assignments of $\text{true}$ and $\text{false}$ were Boolean valuations. The symbols $\neg, \land, \lor, \to$ were truth-functional connectives, with $\to$ interpreted as material implication.</p>
-<p>The tables we used were truth tables.</p>
+<p>The assignments of $\text{true}$ and $\text{false}$ were Boolean valuations. The symbols $\neg, \land, \lor, \to$ were truth-functional connectives. The tables we used were truth tables.</p>
 <p>When we asked whether there was an assignment in which the premises were true and the conclusion false, we were testing semantic validity. A surviving assignment of that kind can be called a countervaluation.</p>
 <p>The third chapter added machinery familiar from first-order logic.</p>
 <p>The symbol $s$ functioned as an individual constant naming Socrates. $M$ and $D$ were unary predicate symbols. Expressions such as $M(s)$ were atomic formulas. The symbol $x$ was a variable. Our three-object collection served as a finite domain of discourse.</p>
 <p>$\forall x(M(x)\to D(x))$ used universal quantification. The table assigning the properties "man" and "mortal" to the objects gave us a small interpretation. Together with the domain, this is close to what is called a finite structure.</p>
 <p>When such a structure makes the relevant premises true, it is a model of those premises. When it also makes the proposed conclusion false, it is a countermodel to the inference.</p>
-<p>Our third chapter should not be mistaken for a reconstruction of first-order logic. It used only a tiny fragment of first-order language, interpreted over a finite domain.</p>
 <p>Full first-order logic distinguishes more carefully between the symbols of the language and the objects they denote.</p>
 <p>For example, the symbol $s$ and Socrates himself are not the same thing. We mostly collapsed that distinction because nothing in our investigation depended on keeping it visible.</p>
 <p>The standard terminology also gives us a useful distinction between syntax and semantics.</p>
-<p>Syntax concerns which expressions belong to the formal language and how they can be constructed. Semantics concerns how those expressions receive truth conditions.</p>
-<p>An interpretation assigns meanings to the nonlogical parts of the language.</p>
-<p>Semantic validity concerns what happens across the relevant interpretations: an inference is valid if there is no interpretation in which all its premises are true and its conclusion false. Those are more precise names for much of the machinery we constructed from the other direction.</p>
-<p>We began with convincing and unconvincing inferences, and asked what had to become explicit before their difference could be inspected.</p>
+<p>Syntax concerns which expressions belong to the formal language and how they can be constructed. It concerns what we called well-formed formulas. Semantics concerns how those expressions receive truth conditions: an interpretation assigns meanings to the nonlogical parts of the language.</p>
+<p>Semantic validity concerns what happens across the relevant interpretations: an inference is valid if there is no interpretation in which all its premises are true and its conclusion false.</p>
 <h2 id="what-modern-logic-adds">What Modern Logic Adds</h2>
 <p>The small systems worked partly because they were small. That advantage disappears quickly.</p>
 <p>With two propositional variables, there are four Boolean valuations. With ten variables, there are already $1024$. With twenty, there are more than a million.</p>
@@ -169,13 +164,12 @@
 <p>For small propositional systems, a truth table can answer that directly. For larger systems, an exhaustive search may become impractical or impossible.</p>
 <p>Formal proof systems offer another route. Natural deduction, sequent calculi, tableaus, and axiomatic calculi differ in how they organize proofs, but for our purposes they share an important feature.</p>
 <p>They allow reasoning to proceed through local formal steps.</p>
-<p>Instead of inspecting every interpretation, we transform formulas according to specified rules. A large space of possibilities can be replaced by a sequence of smaller operations. That is another form of compression. It also creates another question. Why should the permitted proof steps convince us?</p>
+<p>Instead of inspecting every interpretation, we transform formulas according to specified rules. A large space of possibilities can be replaced by a sequence of smaller operations. That is another form of compression. It also creates another question: why should the permitted proof steps convince us?</p>
 <p>This is where metatheory enters.</p>
 <p>A proof system can itself become an object of mathematical investigation. A soundness result connects syntactic derivation back to semantics. Roughly, if a proof system is sound, then anything derivable from the premises by its rules is semantically valid. The local transformations do not lead us to a conclusion for which a semantic counterexample remains.</p>
 <p>Completeness establishes a converse relation for systems where it holds. Roughly, if a conclusion is semantically valid, then an appropriate complete proof system can derive it. For classical propositional logic and classical first-order logic, sound and complete proof systems are available.</p>
 <p>The proof system can be examined in turn.</p>
 <p>We can investigate not only whether a particular inference succeeds. We can also investigate whether the procedures we use for producing proofs correspond to the semantic relation we wanted them to track. That gives us another level at which the system can itself be examined.</p>
-<p>The metatheoretical proofs themselves use mathematics and logic. But this gives us additional ways to expose dependencies and test them.</p>
 <p>Classical propositional and first-order logic preserve some distinctions and ignore others. Other systems change the available machinery.</p>
 <p>Modal logic introduces formal treatment of notions such as necessity and possibility. Temporal logics represent temporal structure. Many-valued logics allow more than two truth values. Relevance and paraconsistent logics alter other parts of the inferential setting.</p>
 <p>Increasing formal precision does not by itself choose one unique formal system for every inquiry.</p>
@@ -204,7 +198,6 @@ $$</p>
 <p>We can construct examples, search for countermodels, learn calculi, check proofs, alter representations, and choose which formal systems to investigate.</p>
 <p>We cannot simply decide what the result of those activities will convince us of.</p>
 <h2 id="what-the-logic-investigation-found">What The Logic Investigation Found</h2>
-<p>The logic case makes the distinction from the opening essay of Part II concrete.</p>
 <p>One question concerns the constraint inside a formal system.</p>
 <p>Once enough of the representation, mappings, and premises remain fixed, some conclusions are no longer independently open. A counterexample either remains available or it does not.</p>
 <p>The other concerns the application of that system to a problem.</p>
@@ -213,16 +206,8 @@ $$</p>
 <p>We can examine what follows once the formal conditions are in place. This is often comparatively contained: if the formal system and the relevant inputs are fixed, we can inspect whether the conclusion follows within it.</p>
 <p>Or we can examine whether those were the right conditions to put in place for the problem.</p>
 <p>That can reopen the representation, the interpretation, the premises, or even the choice of formal system itself.</p>
-<p>If more of these dependencies have been exposed and the result is still convincing, then we are on firmer ground. We know more clearly what the conclusion depends on and what would have to change for it to move.</p>
-<p>Firmer ground first describes a change in the position of the same conviction. More of what it depends on has been exposed and examined, while the conviction remains convincing. It is, in that sense, better than before. But that does not mean it is better than other convictions.</p>
-<p>Other convictions can undergo the same kind of examination and also come to stand on firmer ground.</p>
-<p>But this still does not give us a definite criterion for ordering different convictions as better or worse.</p>
-<p>A conviction on firmer ground can still be false. It can still be inconsistent with other convictions. It can still depend on a poor representation, an unnoticed omission, or something that could not yet be examined.</p>
-<p>Firmer ground tells us that more has been exposed and examined. It does not tell us that everything relevant has been exposed, or that the conviction is true, consistent, reliable, useful, or otherwise better in every respect that might matter.</p>
-<p>Truth could therefore be another criterion. So could consistency, predictive success, resistance to counterexample, usefulness, or something else.</p>
-<p>Once one of these criteria becomes sufficiently convincing, we can compare convictions by it.</p>
-<p>The harder question is whether conviction formation itself gives us a criterion by which convictions can be ordered as better or worse, or a way to order several criteria when they conflict.</p>
-<p>The logic investigation has not answered that question.</p>
+<p>If more of these dependencies have been exposed and the result is still convincing, then we are on firmer ground. We know more clearly what the conclusion depends on and what would have to change for it to move. It is, in that sense, better than before.</p>
+<p>But that does not mean it is better than other convictions. It still does not give us a definite criterion for ordering different convictions as better or worse.</p>
 <hr />
 <p>Next essay: <a href="/essays/sources-of-constraint-in-probability-theory/">Sources Of Constraint In Probability Theory And Bayesian Updating</a></p>
 </section>
