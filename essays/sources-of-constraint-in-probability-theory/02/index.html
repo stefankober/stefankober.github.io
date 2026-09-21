@@ -113,15 +113,15 @@
 
   </header>
   <!-- Content -->
-  <section><p>Put an ordinary six-sided die on the table. Before throwing it, we can name six possible results: $1,2,3,4,5,6.$ That seems almost too simple to investigate.</p>
+  <section><p>Put an ordinary six-sided die on the table. Before throwing it, we can name six possible results: $1,2,3,4,5,6.$</p>
 <p>We have already selected an object and specified an experiment: throw the die and look at the upper face after it has come to rest. We have also decided what counts as the result: the number on that face.</p>
 <p>Many other differences between throws do not enter the result. The die may bounce twice or five times, land near the edge of the table, or rotate differently. The sound may differ too.</p>
-<p>For the question we are asking, none of those differences is preserved.</p>
-<p>We can write:</p>
+<p>For the question we are asking, none of those differences is preserved.
+We can write:</p>
 <p>$$
 \Omega=\{1,2,3,4,5,6\}.
 $$</p>
-<p>The symbol $\Omega$ will stand for the possibilities admitted by this small model.</p>
+<p>The symbol $\Omega$ ("Omega") will stand for the possibilities admitted by this small model.</p>
 <p>We have constructed six outcomes by deciding what about the throw will count as the result.</p>
 <p>For the question "Which numbered face ends upward?" that representation seems very convincing.</p>
 <p>The six outcomes exclude one another. If the result is $2$, it is not also $5$.</p>
@@ -138,10 +138,10 @@ $$</p>
 P(1)=P(2)=\cdots=P(6)=\frac16.
 $$</p>
 <p>The six possibilities alone do not tell us how much weight each should receive.</p>
-<p>Imagine putting a small metal weight inside the die near one face. The same numbered outcomes remain possible: $\Omega=\{1,2,3,4,5,6\}.$ But equal weighting has become much less convincing.</p>
-<p>The loaded die separates two things that were easy to run together: counting gives us the number of possibilities, while fairness gives us a reason to weight them equally.</p>
-<p>For an ordinary die manufactured to be symmetric and thrown under ordinary conditions, equal weighting may seem natural. The visible symmetry of the object can contribute to that conviction.</p>
-<p>But it remains another step.</p>
+<p>Imagine putting a small metal weight inside the die near one face. The same numbered outcomes remain possible. But equal weighting has become much less convincing.</p>
+<p>The loaded die separates two things that were easy to run together: counting gives us the number of possibilities, while fairness gives us one reason to weight them in a specific way.</p>
+<p>For an ordinary die manufactured to be symmetric and thrown under ordinary conditions, equal weighting may seem natural because of the visible symmetry of the object.</p>
+<p>But it remains a distinct step.</p>
 <p>The expression:</p>
 <p>$$
 P(1)=\frac16
@@ -155,9 +155,9 @@ $$</p>
 P(A)=\frac36=\frac12.
 $$</p>
 <p>In this simple setting, probability has become a proportion. We count the possibilities in the event and compare them with the possibilities in the whole space.</p>
-<p>The calculation is strongly constrained because much of what it depends on can still be inspected.</p>
+<p>Once we have decided to treat the die as fair, everything the calculation depends on is visible in the small model.</p>
 <h2 id="throw-twice">Throw Twice</h2>
-<p>Now throw the fair die twice. A complete outcome contains two results.</p>
+<p>Now throw that fair die twice. A complete outcome contains two results.</p>
 <p>For example:</p>
 <p>$$
 (2,5)
@@ -183,21 +183,27 @@ $$</p>
 P(A\land B)=\frac1{36}.
 $$</p>
 <p>But there is another route.</p>
-<p>The first six selects one sixth of the possibilities:</p>
+<p>The first condition leaves one sixth of the whole possibility space.</p>
+<p>That remaining sixth is then split equally among the six possible results of the second throw.</p>
+<p>So each path along that branch has weight:</p>
 <p>$$
-P(A)=\frac16.
+\frac{1/6}{6}
+=\frac16\cdot\frac16
+=\frac1{36}.
 $$</p>
-<p>Along that branch, by equal weighting, one sixth of the remaining possibilities also have a six on the second throw.</p>
-<p>So:</p>
-<p>$$
-P(A\land B)=\frac16\cdot\frac16=\frac1{36}.
-$$</p>
-<p>Both routes give the same result.</p>
+<p>Both routes lead to the same result.</p>
 <p>We can inspect the complete possibility space and count one successful path. Or we can move through the tree and take one sixth of one sixth.</p>
 <p>The multiplication compresses a structure that can still be reconstructed directly.</p>
 <p>This resembles what happened in logic. We first inspected small cases directly, then compressed repeated relations into notation and rules. Once the relation had become convincing, we no longer needed to reconstruct the whole path every time.</p>
 <h2 id="independence">Independence</h2>
-<p>There is another reason the multiplication worked so simply.</p>
+<p>We had:</p>
+<p>$$
+\frac{1/6}{6}
+=\frac16\cdot\frac16
+=\frac1{36}.
+$$</p>
+<p>Writing the division as multiplication is a convenient shorthand, and we will use that form from now on. If we picture the tree, under certain circumstances we can simply multiply along its branches. We will call this the <em>multiplication rule for dice</em>.</p>
+<p>Those circumstances deserve a closer look.</p>
 <p>Suppose the first throw was a six.</p>
 <p>What possibilities remain for the second throw?</p>
 <p>Again:</p>
@@ -205,16 +211,16 @@ $$</p>
 1,2,3,4,5,6.
 $$</p>
 <p>Suppose the first throw was a three.</p>
-<p>For the second throw the same six possibilities remain. The first result has not altered the second die. It still has the same faces and the same shape. If we continue treating it as fair, the six outcomes remain equally weighted.</p>
-<p>Given our assumptions, learning the first result does not change how we weight the outcomes of the second. The second stage of our tree repeats the same structure whatever happened at the first.</p>
-<p>We can now give that stability a name.</p>
-<p>Let $A$ be an event concerning the first throw and $B$ an event concerning the second.</p>
-<p>In this case:</p>
+<p>For the second throw the same six possibilities remain. The first result has not altered the die. It still has the same faces and the same shape. If we continue treating it as fair, the six outcomes remain equally weighted.</p>
+<p>The second stage of the tree therefore repeats the same structure whatever happened at the first. The weight of getting a six on the second throw remains:</p>
 <p>$$
-P(B\mid A)=P(B).
+\frac16.
 $$</p>
-<p>Learning $A$ does not change the probability assigned to $B$.</p>
-<p>We call the events <em>independent</em> of each other. This gives us a compact way to preserve that relation.</p>
+<p>We call this relation <em>independence</em>. The result of the first throw does not change how we weight the possibilities of the second.</p>
+<p>Under these circumstances, if $A$ is an event concerning the first throw and $B$ an event concerning the second, we can write:</p>
+<p>$$
+P(A\land B)=P(A)\cdot P(B).
+$$</p>
 <p>Now suppose we throw the die ten times and ask for ten sixes.</p>
 <p>The complete possibility space contains:</p>
 <p>$$
@@ -227,7 +233,7 @@ $$</p>
 $$</p>
 <p>So:</p>
 <p>$$
-P(\text{ten sixes}) = \left(\frac16\right)^{10}.
+P(\text{ten sixes})=\left(\frac16\right)^{10}.
 $$</p>
 <p>There is no need to inspect the entire possibility space. The formal compression has become useful precisely because the space has become too large to survey comfortably. But the local relation on which the compression depends remains reconstructible from the smaller cases.</p>
 </section>
@@ -263,10 +269,13 @@ $$</p>
         <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Bayesian Updating</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Putting The Pieces Together</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. What Probability Adds</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;06&#x2F;">6. What Probability Adds</a>
       </li>
     </ul>
   </details>

@@ -150,9 +150,10 @@ $$</p>
 <p>$$
 P(B\mid A)=\frac3{51}.
 $$</p>
-<p>The vertical bar preserves a difference that the changing deck has made difficult to ignore.</p>
-<p>Consider "What is the probability that the second card is an ace?", and consider "What is the probability that the second card is an ace given that the first was an ace?"</p>
-<p>These are very different questions. The conditions under which we evaluate event $B$ have changed. The physical deck makes the distinction easy to inspect.</p>
+<p>This is a conditional probability: the probability of $B$ under the condition that $A$ has occurred. The vertical bar is read as <em>given</em>: $B$ given $A$.</p>
+<p>The concept lets us preserve information about the path already taken when that path changes how the remaining possibilities should be weighted.</p>
+<p>We can now ask two different questions: "What is the probability that the second card is an ace?" and "What is that probability given that the first card was already an ace?"</p>
+<p>The conditions under which we evaluate $B$ are different in these questions. With the deck in front of us, that difference is easy to inspect.</p>
 <h2 id="a-more-general-multiplication-rule">A More General Multiplication Rule</h2>
 <p>We can now calculate the probability of drawing two aces.</p>
 <p>First the first card must be an ace:</p>
@@ -169,13 +170,13 @@ P(A\land B)=P(A)P(B\mid A).
 $$</p>
 <p>In this case:</p>
 <p>$$
-P(A\land B)=\frac4{52}\cdot\frac3{51}.
+P(A\land B)=\frac4{52}\cdot\frac3{51}=\frac1{221}.
 $$</p>
 <p>The multiplication can be reconstructed from the tree of possible events.</p>
 <p>If we collapse some of the branches, the relevant part of the tree looks like this:</p>
 <p><img src="/tree1.png" alt="Tree" /></p>
 <p>First select the $A$ branch.</p>
-<p>Then select the part of that branch in which $B$ also occurs.</p>
+<p>Then select the parts of that branch in which $B$ also occurs.</p>
 <p>The rule we used for repeated dice now appears as a special case.</p>
 <p>If:</p>
 <p>$$
@@ -183,12 +184,11 @@ P(B\mid A)=P(B),
 $$</p>
 <p>then:</p>
 <p>$$
-P(A\land B)=P(A)P(B).
+P(A\land B)=P(A)P(B\mid A)=P(A)P(B).
 $$</p>
-<p>The cards show us what has to remain stable for the simpler dice rule to apply: $P(B|A) = P(B)$.</p>
+<p>The cards show why the simpler dice rule worked: the probabilities of the outcomes of the second throw do not change with the result of the first throw.</p>
 <p><img src="/tree2.png" alt="Tree" /></p>
-<p>In the card example, the first draw physically changes the deck. Conditional probability does not in general require one event to cause or physically alter another.</p>
-<p>The cards are useful because they make a changing condition visible. The notation itself is more general.</p>
+<p>Conditional probability asks how likely an event is when we restrict attention to cases in which another condition holds. The probability is then evaluated within that restricted set of possibilities.</p>
 <h2 id="from-trees-to-rules">From Trees To Rules</h2>
 <p>The examples with dice and cards can now be seen as two forms of the same structure.</p>
 <p>A probability tree begins with some initial possibility and then branches further as more conditions are added.</p>
@@ -215,7 +215,7 @@ $$</p>
   <a
     class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
     href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/04/" accesskey="."
-    ><span>4. Bayesian Updating</span><span class="ml-1.5">&#8250;</span></a>
+    ><span>4. Putting The Pieces Together</span><span class="ml-1.5">&#8250;</span></a>
 </nav>
 
   <!-- TOC -->
@@ -235,10 +235,13 @@ $$</p>
         <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Bayesian Updating</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Putting The Pieces Together</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. What Probability Adds</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;06&#x2F;">6. What Probability Adds</a>
       </li>
     </ul>
   </details>

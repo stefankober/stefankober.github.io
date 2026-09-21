@@ -1,0 +1,249 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>6. What Probability Adds</title>
+  <meta property="og:title" content="6. What Probability Adds" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/06/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/06/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=f80708626536b19f7ee3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=742c78e18c737b43062a" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/inline-code-fix.css">
+
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">6. What Probability Adds</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H7M0S">7&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><p>Logic constrained inquiry mainly by ruling possibilities out.</p>
+<p>Probability allows several possibilities to remain open while assigning different weights to them. Those weights are not independent once enough of the probability model had been fixed.</p>
+<p>Bayesian updating gives us a way to methodically change these weights on hypotheses when evidence becomes available.</p>
+<h2 id="where-the-constraint-comes-from">Where The Constraint Comes From</h2>
+<p>In the small finite cases, much of the probability system remained open to inspection. We could lay out elementary outcomes, group them into events, inspect overlaps, follow branches in a tree, assign weights, and reconstruct the multiplication rule from those branches.</p>
+<p>Bayes' theorem could then be reconstructed from that rule, from $A\land B=B\land A$, and from algebra. In particularly simple cases, the same relation could also be checked by counting. The diagnostic example allowed exactly that.</p>
+<p>More general finite probability spaces need not allow such an exact counting representation. But their elementary possibilities and assigned weights can still be laid out, and the relevant conditional probabilities calculated from that weighted structure.</p>
+<p>The formulas compress these relations without completely losing the route back to the structures from which they were reconstructed.</p>
+<p>We saw something similar in logic. Small cases made enough of the structure visible for the constraint to be inspected directly. Once the relation became familiar, a formal rule could carry it into cases where reconstructing the whole arrangement each time would be impractical.</p>
+<p>Once the event structure, weights, conditional relations, and other relevant conditions remain fixed, some probability values are no longer independently open.</p>
+<p>Being able to inspect and reconstruct how that constraint arises seems to explain a large part of why it can become convincing.</p>
+<h2 id="what-probability-adds">What Probability Adds</h2>
+<p>Logic gave us ways to ask which possibilities remained once enough of a representation had been fixed. A possibility could be excluded, or a counterexample could remain.</p>
+<p>Probability adds another perspective. If more than one possibility remains open, how much weight does each of them carry?</p>
+<p>Conditional probability added a dependence. The weight of a possibility could change once we restricted attention to a particular branch of the tree of events.</p>
+<p>Bayesian updating then gave us a model for changing the weights of hypotheses when evidence arrives.</p>
+<p>Probability adds a form of constraint that does not require possibilities to disappear. Several possibilities can remain available while the weights assigned to them are no longer independently movable.</p>
+<h2 id="applying-probability">Applying Probability</h2>
+<p>The strength of that constraint does not settle whether a particular probabilistic model should be used for a particular problem.</p>
+<p>As in logic, applying the formal system depends on prerequisites that are not usually fully under our control.</p>
+<p>Applying probability to a problem requires more than the formal relations themselves.</p>
+<p>The possibility or hypothesis space has to preserve distinctions that matter for the question, and the weights assigned within it need some support.</p>
+<p>In Bayesian applications, the likelihoods have to make sense as claims about how the evidence relates to the hypotheses. The evidence itself also has to enter the model in some representation, through observation, measurement, classification, or description.</p>
+<p>Any dependence built into the model matters as well.</p>
+<p>The convincing force of those prerequisites has to come from elsewhere in the inquiry.</p>
+<p>We can now separate two kinds of uncertainty. A model can represent uncertainty among the possibilities it contains, while leaving open whether the model itself contains the right possibilities and relations.</p>
+<p>A probability distribution can represent uncertainty among possibilities already inside a model.</p>
+<p>Suppose it distributes its weight among:</p>
+<p>$$
+H_1,H_2,H_3.
+$$</p>
+<p>It says nothing by itself about an omitted:</p>
+<p>$$
+H_4.
+$$</p>
+<p>Some uncertainty about the model can itself be represented in a larger model. The adequacy of that larger representation remains another question.</p>
+<h2 id="how-the-investigations-clarify-one-another">How The Investigations Clarify One Another</h2>
+<p>The investigations so far have given us different kinds of formal constraint.</p>
+<p>Logic asks what follows once enough of the premises and relations have been fixed, and which possibilities can still remain.</p>
+<p>Probability becomes relevant when several possibilities remain open and we want to distinguish between them by weight.</p>
+<p>Bayesian updating asks how those weights should change when new evidence bears differently on the possibilities.</p>
+<p>If evidence rules a possibility out, logical constraint may be enough. If several possibilities remain but carry different plausibility, probability gives us another way to represent the situation. If new evidence should change those weights, Bayesian updating gives us a way to model that change.</p>
+<p>Part of the convincing force of an application can come from the fit between the question we are asking and the kind of constraint the method provides. Seeing several such methods beside one another also makes their boundaries easier to recognize.</p>
+<p>The investigations do more than clarify those differences. They also build on one another.</p>
+<p>Probability used structures already familiar from logic, such as <em>not</em>, <em>and</em>, and <em>or</em>, while adding numerical weight. Bayesian updating then used weighted possibilities and conditional probability to represent changes in those weights when evidence arrived.</p>
+<p>That makes the later constructions easier to understand because part of their structure has already been examined. At the same time, the later investigations make clearer where the earlier ones stop being enough for the question at hand.</p>
+<h2 id="what-becomes-available-for-examination">What Becomes Available For Examination</h2>
+<p>Making the probabilistic structure explicit also makes more of what a result depends on available for examination.</p>
+<p>Suppose a posterior remains doubtful even though the arithmetic is accepted. The question can then move. Maybe a prior needs better support, a relevant hypothesis is missing, or the evidence has been represented badly. The likelihood connecting a hypothesis to the evidence may itself be doubtful.</p>
+<p>The formal structure helps locate where something would have to change if the result is to change.</p>
+<p>We saw something similar in logic. A counterexample could move disagreement from a conclusion to a premise, a formalization, or the choice of logical system. Probability can do this while several possibilities remain open. It can expose which weights, conditional relations, and representations carry the result.</p>
+<p>If more of those dependencies are exposed and examined, and the result still remains convincing, the conviction may stand on firmer ground than before.</p>
+<p>But the probability investigation also takes us back another step.</p>
+<p>Before we assigned any numbers in the lottery example, some of the relevant distinctions were already in use. One explanation seemed more plausible than another. A new clue could count more strongly for one possibility than for the other. The balance could shift without either possibility disappearing.</p>
+<p>Probability theory gives those pretheoretic, practical distinctions a more exact form. Possibilities receive numerical weights, relations between those weights become constrained, and Bayesian updating specifies how evidence changes them once enough of the model has been fixed.</p>
+<p>That precision makes further examination possible. We can ask whether the weights fit the relations of the model, whether the likelihoods adequately represent how the evidence bears on the hypotheses, and whether the resulting update follows from what was supplied.</p>
+<p>The application of the model still has to become convincing.</p>
+<p>Like logic, neither probability nor Bayesian updating gives us a criterion for judging convictions from outside conviction formation. But once Bayesian updating is convincing enough to enter an inquiry, it does provide a criterion within that inquiry. We can ask whether the posterior weights follow from the priors, likelihoods, and evidence supplied under the probabilistic relations we have accepted.</p>
+<hr />
+<p>Next essay: <a href="/essays/sources-of-constraint-in-pearls-theory-of-causality/">Sources Of Constraint In Pearl's Theory Of Causality</a></p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/05/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>5. Bayesian Updating</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;01&#x2F;">1. About Probability</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;02&#x2F;">2. Dice</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Putting The Pieces Together</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;06&#x2F;">6. What Probability Adds</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>

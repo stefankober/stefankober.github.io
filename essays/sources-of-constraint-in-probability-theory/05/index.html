@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="generator" content="Zola v0.21.0" />
-  <title>5. What Probability Adds</title>
-  <meta property="og:title" content="5. What Probability Adds" />
+  <title>5. Bayesian Updating</title>
+  <meta property="og:title" content="5. Bayesian Updating" />
   <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/05/" />
   <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/05/" />
   <meta property="og:type" content="article" />
@@ -104,141 +104,348 @@
   <!-- End Page Start inject -->
 
   <header class="mb-16">
-    <h1 class="my-0! pb-2.5">5. What Probability Adds</h1>
+    <h1 class="my-0! pb-2.5">5. Bayesian Updating</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H6M0S">6&nbsp;min</time><span
+    datetime="PT0H14M0S">14&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
   </header>
   <!-- Content -->
-  <section><p>We can now return to the question that motivated the investigation.</p>
-<p>Where did the probabilistic constraint come from?</p>
-<p>The answer changed as we moved from dice to hypotheses.</p>
-<h2 id="possibilities">Possibilities</h2>
-<p>The die began with a represented possibility space:</p>
+  <section><h2 id="winning-the-lottery">Winning The Lottery</h2>
+<p>You entered a lottery a few weeks ago.</p>
+<p>One morning you receive an email saying that you have won one million euros. Click here.</p>
+<p>At first you are suspicious. Messages like this are often scams.</p>
+<p>But the email made it to the inbox in the first place. And the email carries the right lottery logo. The wording looks professional. That makes a genuine message seem somewhat more plausible.</p>
+<p>Then you look at the sender.</p>
+<p>The address is not from the lottery's usual domain. That counts against the message being genuine. But the address is not completely implausible either. Maybe they send such messages from another domain. It is still strange.</p>
+<p>The balance shifts again. Each clue fits the two possibilities differently, but neither of them settles which possibility is true.</p>
+<p>The setting is different from the earlier examples of cards and dice. There we worked with finite arrangements of outcomes.</p>
+<p>Here we are comparing two hypotheses in the light of evidence: the message is genuine, or it is a scam. The weights we assign in such a setting often come from quite different sources.</p>
+<p>The initial weights of the hypotheses may depend on background information, previous experience, base rates, or judgment.</p>
+<p>The likelihoods require another kind of assessment: how likely would this evidence be if the message were genuine, and how likely would it be if it were a scam?</p>
+<p>Those quantities are usually not read directly from a small finite arrangement in the way they were for dice, cards, or socks.</p>
+<p>Many questions involve such a setup: several hypotheses remain open, their weights are not given simply by counting a finite arrangement, and new evidence bears differently on them. What is causing the strange noise in the car? Why has a plant suddenly stopped growing? Which explanation best fits an unexpected result?</p>
+<p>In such cases, how should the weights assigned to the hypotheses change when new evidence is taken into account?</p>
+<p>That is the problem Bayesian updating addresses.</p>
+<h2 id="turning-the-conditional-around">Turning The Conditional Around</h2>
+<p>We already have:</p>
 <p>$$
-\Omega={1,2,3,4,5,6}.
+P(A\land B)=P(A)P(B\mid A).
 $$</p>
-<p>That representation was constructed.</p>
-<p>We chose what the experiment was and what would count as its outcome.</p>
-<p>But once those choices remained in place, the possibility space was easy to inspect.</p>
-<p>The outcomes excluded one another. Their exhaustiveness for the specified experiment could be supported by examining the object itself.</p>
-<p>The machine example exposed the same dependence under less favorable conditions. A hypothesis absent from the model cannot acquire posterior probability until the model changes.</p>
-<p>Possibility generation remains outside the calculation even when the calculation itself is impeccable.</p>
-<h2 id="weight">Weight</h2>
-<p>The loaded die exposed another source.</p>
-<p>Counting six possibilities did not establish that each had probability:</p>
+<p>From the previous chapter we also know:</p>
 <p>$$
-\frac16.
+A\land B=B\land A.
 $$</p>
-<p>Equal weighting required another conviction. In the fair-die case, symmetry and the setup made that weighting easy to accept. With hypotheses, it became harder to see where the weights came from. A prior might come from frequencies, another model, or expert judgment.</p>
-<p>The probability notation can represent all of these. It does not preserve the path by which their convincing force arose.</p>
-<p>This is one thing probability adds to the earlier investigation of logic.</p>
-<p>A possibility need not simply remain or disappear. Several possibilities can stay live while carrying different weights. The space of possibilities can remain open while becoming constrained internally.</p>
-<h2 id="counting-and-proportion">Counting And Proportion</h2>
-<p>In the simplest cases, probability inherited considerable force from counting.</p>
-<p>Three equally weighted even results among six gave:</p>
+<p>So the same joint event can be reached from the other direction:</p>
 <p>$$
-\frac36.
+P(B\land A)=P(B)P(A\mid B).
 $$</p>
-<p>One path among 36 gave:</p>
+<p>Since both expressions on the right side describe the same event, they must be equal to each other:</p>
 <p>$$
-\frac1{36}.
+P(A)P(B\mid A)=P(B)P(A\mid B).
 $$</p>
-<p>These calculations were convincing because the relevant arrangements could themselves be reconstructed.</p>
-<p>But the counting depended on what came before it. The possibility space had to be adequate for the question.</p>
-<p>And where simple counting was converted into probability by equal weighting, that weighting required its own support.</p>
-<p>The loaded die made the division visible.</p>
-<h2 id="conditional-structure">Conditional Structure</h2>
-<p>Repeated dice gave us a stable next stage.</p>
-<p>Whatever happened first, the second fair throw retained the same distribution.</p>
-<p>We later compressed this into:</p>
+<p>If:</p>
 <p>$$
-P(B\mid A)=P(B).
+P(B)&gt;0,
 $$</p>
-<p>Cards without replacement broke that stability. The probability of the next ace changed depending on what had already happened.</p>
-<p>That forced a distinction between:</p>
+<p>we can divide by $P(B)$:</p>
 <p>$$
-P(B)
+P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}.
+$$</p>
+<p>That is Bayes' theorem.</p>
+<p>Mathematically, it is an ordinary probability theorem.</p>
+<p>Why, then, has it become so prominent?</p>
+<p>The reason is easier to see when the conditional we know is not the conditional we want. But this is just the first step.</p>
+<h2 id="bayes-theorem">Bayes' Theorem</h2>
+<p>Suppose:</p>
+<p>$$
+H=\text{a person has disease D}
 $$</p>
 <p>and:</p>
 <p>$$
-P(B\mid A).
+E=\text{a diagnostic test is positive}.
 $$</p>
-<p>The more general relation:</p>
+<p>Imagine that in a certain population:</p>
 <p>$$
-P(A\land B)=P(A)P(B\mid A)
+P(H)=0.01.
 $$</p>
-<p>then showed the earlier independent rule as a special case.</p>
-<p>Discovering the limit did not make the simpler relation less convincing. It made clearer what had to remain unchanged for the simple multiplication rule to apply.</p>
-<h2 id="compression">Compression</h2>
-<p>Probability also repeated a pattern already encountered in logic.</p>
-<p>With two dice, the whole structure remained easy to inspect. We could draw the 36 possibilities and count the relevant paths.</p>
-<p>With more throws, exhaustive inspection quickly became inconvenient.</p>
-<p>Ten throws already produced $6^{10}$ paths. The local relation could nevertheless remain stable.</p>
-<p>So the tree was compressed into:</p>
+<p>One person in one hundred has the disease.</p>
+<p>Suppose the test returns a positive result for 90 percent of people who have it:</p>
 <p>$$
-\left(\frac16\right)^{10}.
+P(E\mid H)=0.90.
 $$</p>
-<p>Conditional probability let us preserve the structure when later probabilities depended on what had happened before.</p>
-<p>Bayes' theorem then rearranged the same joint relation into a reusable formula.</p>
-<p>A trained user does not need to reconstruct the whole tree each time. If the compressed rule becomes doubtful or needs explanation, however, the earlier construction is still available for examination.</p>
-<h2 id="bayesian-redistribution">Bayesian Redistribution</h2>
-<p>The move to hypotheses then added something else.</p>
-<p>Suppose several explanations remain live. We represent them, assign priors, represent an observation, and supply likelihoods. An event can then redistribute the probability assigned to those hypotheses.</p>
-<p>Given the model, the posterior is constrained. The user does not separately choose how much probability each hypothesis will receive after the update.</p>
-<p>That makes Bayesian updating interesting for Conviction Formation Theory.</p>
-<p>Several possibilities can remain live, while the procedure constrains their relative weights in a way the agent cannot simply choose.</p>
-<p>The agent participates by constructing the representation, selecting or accepting inputs, and initiating the calculation. Once enough has been fixed, however, the formal consequence is no longer independently free.</p>
-<h2 id="where-the-constraint-stops">Where The Constraint Stops</h2>
-<p>The same investigation also made the limits easier to locate.</p>
-<p>The update did not establish that our three machine hypotheses were exhaustive, that the prior or likelihoods were well supported, or that the observation and dependence relations had been represented appropriately. Producing a posterior also did not establish that the model suited the problem.</p>
-<p>Those things had to become convincing elsewhere, through observation, experience, measurement, other models, judgment, training, or some combination of them.</p>
-<p>They can later become objects of inquiry themselves. They can be recursively examined.</p>
-<p>Making these dependencies explicit does something else we already saw in logic.</p>
-<p>It makes questions available.</p>
-<p>Why these possibilities?</p>
-<p>Why these weights?</p>
-<p>Why this likelihood?</p>
-<p>Is an important hypothesis missing?</p>
-<p>Has a dependence been represented correctly?</p>
-<p>We can ask such questions deliberately. Whether they then become genuinely puzzling is another matter. Trying to answer one may expose that a number we had been willing to use has little support, or that a possibility space we had treated as adequate is harder to defend than we expected.</p>
-<p>Probability participates in conviction formation not only through the constraint of its calculations. Its formalization can also expose places from which further inquiry begins.</p>
-<p>Once the model is in place, its probabilistic consequences can be extremely constraining.</p>
-<p>But strength inside the representation does not travel backward and establish every condition from which the representation began.</p>
-<h2 id="two-kinds-of-uncertainty">Two Kinds Of Uncertainty</h2>
-<p>This gives us a useful distinction.</p>
-<p>A probability distribution can represent uncertainty among possibilities inside a model.</p>
+<p>And suppose it also returns a positive result for 5 percent of people who do not:</p>
+<p>$$
+P(E\mid\neg H)=0.05.
+$$</p>
+<p>A person tests positive.</p>
+<p>How likely is it that the person has the disease?</p>
+<p>The 90 percent figure is tempting.</p>
+<p>But it answers: Given the disease is present, how likely is a positive test?</p>
+<p>We want: Given a positive test, how likely is the disease?</p>
+<p>Those are:</p>
+<p>$$
+P(E\mid H)
+$$</p>
+<p>and:</p>
+<p>$$
+P(H\mid E).
+$$</p>
+<p>They are not the same conditional.</p>
+<p>We can answer the second question without Bayes' theorem.</p>
+<p>Imagine 10,000 people.</p>
+<p>About 100 have the disease.</p>
+<p>Of those, about 90 test positive.</p>
+<p>The other 9,900 do not have the disease.</p>
+<p>Five percent of them also test positive:</p>
+<p>$$
+495.
+$$</p>
+<p>So there are about:</p>
+<p>$$
+90+495=585
+$$</p>
+<p>positive tests.</p>
+<p>Of those, about 90 come from people with the disease:</p>
+<p>$$
+P(H\mid E)
+\approx
+\frac{90}{585}
+\approx0.154.
+$$</p>
+<p>After conditioning on the positive result, the probability in the model has moved from one percent to about fifteen percent. But it has not moved to ninety percent.</p>
+<p>Bayes' theorem lets us calculate that result in a general way.</p>
+<p>A positive test can occur in two mutually exclusive ways: the person has the disease and tests positive, or the person does not have the disease and tests positive.</p>
+<p>So:</p>
+<p>$$ P(E)=P(E\land H)+P(E\land \neg H). $$</p>
+<p>Using the multiplication rule from the previous chapter:</p>
+<p>$$ P(E\land H)=P(H)P(E\mid H) $$</p>
+<p>and:</p>
+<p>$$ P(E\land \neg H)=P(\neg H)P(E\mid\neg H). $$</p>
+<p>Combining the two branches gives:</p>
+<p>$$P(E)=P(E∣H)P(H)+P(E∣¬H)P(¬H).$$</p>
+<p>So:</p>
+<p>$$
+P(E)
+=0.90\cdot0.01
++
+0.05\cdot0.99
+=0.0585.
+$$</p>
+<p>We now have all the pieces we need:</p>
+<p>The prior probability of the hypothesis:</p>
+<p>$$
+P(H)=0.01.
+$$</p>
+<p>The probability of the evidence if the hypothesis is true:</p>
+<p>$$
+P(E\mid H)=0.90.
+$$</p>
+<p>The total probability of the evidence:</p>
+<p>$$
+P(E) = 0.0585
+$$</p>
+<p>What we want is:</p>
+<p>$$
+P(H\mid E),
+$$</p>
+<p>the probability of the hypothesis given the evidence.</p>
+<p>We take Bayes' theorem</p>
+<p>$$
+P(H\mid E)
+=\frac{P(E\mid H)P(H)}{P(E)}.
+$$</p>
+<p>and plug the values in:</p>
+<p>$$
+P(H\mid E)
+=\frac{0.90\cdot0.01}{0.0585}
+\approx0.154.
+$$</p>
+<p>Both routes lead to the same result.</p>
+<p>We can construct an imagined finite population and count. Or we can use the algebraic relation.</p>
+<p>The formula reaches the same result while doing much less work.</p>
+<p>Up to this point, we are still close to the world of dice and cards. The numbers supplied to the calculation may come from earlier observations or measurements, but the inversion itself can still be reconstructed through an explicit finite arrangement.</p>
+<p>The situation changes when the possibilities themselves are hypotheses. That is the second step.</p>
+<h2 id="between-hypotheses-and-evidence">Between Hypotheses And Evidence</h2>
+<p>We saw that Bayes' theorem is a mathematical theorem about a relation between conditional probabilities.</p>
+<p>In Bayesian inference, it is usually given a particular interpretation: one conditional represents how likely some evidence would be under a hypothesis, and the other represents how probable the hypothesis is given that evidence.</p>
+<p>We begin with a set of hypotheses representing possible explanations of what is happening. Some carry more weight than others before the present evidence is taken into account. We assign probabilities to those hypotheses to represent the weight we give them.</p>
+<p>Something we have observed that bears on our investigation becomes evidence, $E$.</p>
+<p>The likelihood connects the two sides. For each hypothesis $H_i$, we ask how likely this particular evidence would be if that hypothesis were true.</p>
+<p>That gives us $P(E\mid H_i).$ In many applications, this is the conditional we can estimate or model more directly.</p>
+<p>Bayes' theorem then carries the relation in the other direction. Once $E$ has been observed, it constrains how the weights assigned to the hypotheses change, giving us $P(H_i\mid E)$.</p>
+<p>This gives the mathematics a particular role in inquiry. We can represent explanatory hypotheses we have in mind, represent evidence we encounter, and connect them through claims about what each hypothesis would lead us to expect.</p>
+<p>Those connecting claims are doing substantial work. If two hypotheses make $E$ equally likely, that evidence does not distinguish between them. If one makes $E$ much more likely than another, the observation shifts their relative weights, as in this schema:</p>
+<p><img src="/bayes001.png" alt="Bayes&#39; theorem applied" /></p>
+<p>That is what gives Bayes' theorem its particular importance in Bayesian inference. An ordinary relation between conditional probabilities becomes a model for a common situation in inquiry: several hypotheses remain open, evidence bears differently on them, and their relative weights change as that evidence is taken into account.</p>
+<h2 id="when-the-possibilities-are-hypotheses">When The Possibilities Are Hypotheses</h2>
+<p>A computer repeatedly restarts under heavy load.</p>
+<p>Several explanations occur to us.</p>
+<p>The power supply may be failing. The machine may be overheating. Memory could be defective.</p>
+<p>Call these:</p>
+<p>$$
+H_1=\text{power supply failure},
+$$</p>
+<p>$$
+H_2=\text{overheating},
+$$</p>
+<p>and:</p>
+<p>$$
+H_3=\text{memory failure}.
+$$</p>
+<p>We observe:</p>
+<p>$$
+E=\text{the machine restarts under heavy load}.
+$$</p>
+<p>We can ask:</p>
+<p>$$
+P(H_i\mid E).
+$$</p>
+<p>That form is familiar. But unlike the cards in the earlier examples, the hypotheses are not given to us by an arrangement we can simply inspect. We cannot spread every possible explanation of the machine failure across a table and check that all of them are present. We have to come up with the possibilities somehow.</p>
+<p>A technician may recognize familiar failure patterns. The age of the power supply may make one possibility salient, or overheating may have occurred before. Memory problems may also be common in similar machines.</p>
+<p>Why exactly these three?</p>
+<p>The operating system may contain a bug, the motherboard may be failing, the external power supply may be unstable, or two faults may occur together.</p>
+<p>The probability model can distribute weight only among possibilities represented in it.</p>
+<p>If an important hypothesis is missing, no flawless update can assign probability to it until the model changes.</p>
+<p>This is the old problem of possibility generation in another form. With dice and cards, the completeness of the possibility space was easy to inspect. Here, the conviction that the relevant possibilities have been included has to come from somewhere else.</p>
+<h2 id="priors">Priors</h2>
+<p>For this small model, suppose we treat these three hypotheses as mutually exclusive and exhaustive: exactly one of them is taken to explain the failure.</p>
+<p>We assign:</p>
+<p>$$
+P(H_1)=0.50,
+$$</p>
+<p>$$
+P(H_2)=0.30,
+$$</p>
+<p>$$
+P(H_3)=0.20.
+$$</p>
+<p>These are priors: the probabilities assigned to the hypotheses before (<em>prior</em> to) the observation $E$ is used to update them.</p>
+<p>Where did they come from?</p>
+<p>Comparable failures may historically have been power-supply problems about half the time. A technician might instead translate her own judgment of plausibility into numbers, or the values may come from another statistical model. These are examples of where the convincing force of a prior can come from. Its source can then itself be examined.</p>
+<h2 id="likelihoods">Likelihoods</h2>
+<p>We also need to know how expected the observation would be under each hypothesis.</p>
 <p>Suppose:</p>
+<p>$$
+P(E\mid H_1)=0.80,
+$$</p>
+<p>$$
+P(E\mid H_2)=0.60,
+$$</p>
+<p>$$
+P(E\mid H_3)=0.20.
+$$</p>
+<p>That says roughly: the evidence we are looking at is very likely under the first hypothesis, likely under the second, and not so likely under the third.</p>
+<p>The likelihood, too, has to become convincing through whatever supports that estimate. Once it enters the model, the update constrains what follows from it.</p>
+<p>Likelihoods do not have to add up to 1. Each is the probability of the evidence under a different condition.</p>
+<h2 id="evidence">Evidence</h2>
+<p>Even $E$ had to be constructed.</p>
+<p>Something happened in the machine.</p>
+<p>We represented it as "The machine restarts under heavy load."</p>
+<p>We might instead have recorded "The machine restarts within thirty seconds above 80 percent CPU load", or "The machine loses power without a kernel panic."</p>
+<p>Those descriptions preserve different distinctions. The world does not arrive carrying an $E$ label.</p>
+<p>Something becomes salient, is observed, classified, measured or described, and then enters the formal process in a particular representation.</p>
+<p>That representation can change the likelihoods assigned under the hypotheses.</p>
+<h2 id="the-update">The Update</h2>
+<p>Now suppose the model is in place.</p>
+<p>We have:</p>
 <p>$$
 P(H_1)=0.50,
 \quad
 P(H_2)=0.30,
 \quad
-P(H_3)=0.20.
+P(H_3)=0.20
 $$</p>
-<p>That distribution represents uncertainty among:</p>
+<p>and:</p>
 <p>$$
-H_1,H_2,H_3.
+P(E\mid H_1)=0.80,
+\quad
+P(E\mid H_2)=0.60,
+\quad
+P(E\mid H_3)=0.20.
 $$</p>
-<p>It does not automatically represent our uncertainty about whether those were the right hypotheses to include.</p>
-<p>Maybe $H_4$ is missing.</p>
-<p>The existing distribution cannot give $H_4$ probability until the model is changed.</p>
-<p>Uncertainty inside the model is not the same thing as uncertainty about the model.</p>
-<p>Bayesian updating can be exact about the first while the second remains unresolved.</p>
-<p>We can represent some uncertainty about the model inside a larger model. But then the same question returns at the next level: how convincing is that larger model?</p>
-<h2 id="constraint-without-final-authority">Constraint Without Final Authority</h2>
-<p>The result resembles what we found in logic.</p>
-<p>Logic did not supply its own premises, interpretations, or every feature of its representation.</p>
-<p>But once enough remained fixed, some possibilities disappeared.</p>
-<p>Probability likewise receives possibilities, weights, likelihoods, representations, and dependence assumptions.</p>
-<p>Once enough remains fixed, the permissible redistribution of weight narrows sharply.</p>
-<p>In both cases, the supplied conditions can remain open to recursive examination without leaving every consequence equally open.</p>
-<p>Probability does not stand outside conviction formation and dictate what a person must believe. A mathematically impeccable posterior may fail to convince. An invalid probability model may convince strongly.</p>
-<p>Probability can keep several possibilities open while making their relative weights explicit and constraining how those weights change with an observation. The assumptions on which the calculation depends can in turn become objects of inquiry.</p>
-<p>We can choose to enter the procedure. We cannot simply choose what follows from it.</p>
+<p>The probability of the observation under the model is:</p>
+<p>$$
+P(E)
+=0.80\cdot0.50
++
+0.60\cdot0.30
++
+0.20\cdot0.20.
+$$</p>
+<p>So:</p>
+<p>$$
+P(E)=0.62.
+$$</p>
+<p>The posterior probabilities are:</p>
+<p>$$
+P(H_1\mid E)
+=\frac{0.80\cdot0.50}{0.62}
+\approx0.645,
+$$</p>
+<p>$$
+P(H_2\mid E)
+=\frac{0.60\cdot0.30}{0.62}
+\approx0.290,
+$$</p>
+<p>and:</p>
+<p>$$
+P(H_3\mid E)
+=\frac{0.20\cdot0.20}{0.62}
+\approx0.065.
+$$</p>
+<h2 id="what-the-bayesian-investigation-shows">What The Bayesian Investigation Shows</h2>
+<p>What makes the constraint inside Bayesian updating convincing?</p>
+<p>Bayes' theorem was reconstructed from the multiplication rule established in the previous chapter:</p>
+<p>$$
+P(A\land B)=P(A)P(B\mid A),
+$$</p>
+<p>from the fact that:</p>
+<p>$$
+A\land B=B\land A,
+$$</p>
+<p>and algebra.</p>
+<p>That gives us a route back through the formula.</p>
+<p>We can inspect the multiplication rule, inspect why $A\land B$ and $B\land A$ describe the same event, and follow the algebraic rearrangement step by step.</p>
+<p>The diagnostic example gave us another way to inspect the same relation.</p>
+<p>Bayes' theorem gave us the same result from the prior and the two conditional probabilities.</p>
+<p>In cases like this, the probabilities can be represented as proportions of finitely many equally weighted cases, so the calculation can be reconstructed by counting those cases directly.</p>
+<p>That is not always possible exactly. Even a finite probability space can contain weights that cannot be expressed as a ratio of two finite counts.</p>
+<p>But even then, the route back to the structure remains open. We can still lay out the elementary possibilities, assign the weights supplied by the model, and calculate the relevant conditional probabilities directly from those weighted possibilities.</p>
+<p>It is again inspectability that lends some convincing force. In simple cases we can reconstruct it by counting. In more general finite cases we can reconstruct it from explicitly weighted possibilities and from relations whose operation has already become familiar in the simpler examples.</p>
+<p>The hypothesis example showed the same constraint in a richer model. Once the model is fixed, the posterior values are not separately open. If one of them is to change, something else in the model has to change with it.</p>
+<p>This differs somewhat from the logical cases. There, much of the visible constraint worked by exclusion. A possibility survived or did not. A counterexample existed or did not.</p>
+<p>Here several hypotheses can remain open while their relative weights become constrained.</p>
+<p>The second question concerns applying Bayesian updating to an actual problem.</p>
+<p>As in logic, applying the formal system depends on prerequisites that are not usually fully under our control.</p>
+<p>The hypothesis space has to contain possibilities that matter for the question. Bayes' theorem cannot assign weight to a hypothesis that never entered the model.</p>
+<p>This returns us to the problem of possibility generation from Part I. With cards, completeness was easy to inspect. With explanations for a computer failure, it is not.</p>
+<p>The priors also need support. Whatever their source, their convincing force has to arise outside the Bayesian update itself.</p>
+<p>The same is true of likelihoods. A value such as $P(E\mid H_1)=0.80$ has to become convincing somehow. The update tells us what follows from that value once it is supplied.</p>
+<p>The evidence has prerequisites of its own. The world does not arrive carrying an $E$ label. Something becomes salient, is observed, measured, classified, or described, and then enters the model in a particular representation.</p>
+<p>Those differences can matter to the likelihoods and to the update.</p>
+<p>There is another prerequisite as well.</p>
+<p>The Bayesian interpretation itself has to become convincing, both as a way of relating hypotheses to evidence and as a suitable representation of this particular problem.</p>
+<p>We have used Bayes' theorem by treating possible explanations as hypotheses that can carry probability, treating an observation as evidence, and using likelihoods to represent what each hypothesis would lead us to expect.</p>
+<p>We then interpret conditioning on that evidence as a change in the weights of the hypotheses.</p>
+<p>This asks more than the small finite arrangements we reconstructed earlier, because more of the formalism now has to stand for something outside the calculation.</p>
+<p>So the convincing force of Bayesian updating depends on more than the correctness of the calculation and the support for its numerical inputs. The bridge we have built between hypotheses and evidence has to become convincing as well.</p>
+<h2 id="the-posterior-is-not-the-conviction">The Posterior Is Not The Conviction</h2>
+<p>Suppose the calculation gives:</p>
+<p>$$
+P(H_1\mid E)\approx0.645.
+$$</p>
+<p>That is a result inside the model.</p>
+<p>A technician may become more convinced that the power supply is failing.</p>
+<p>She may also question the prior, a likelihood, the hypothesis space, the way the evidence was represented, or whether this is an appropriate model of the problem.</p>
+<p>The posterior and the conviction are not the same thing.</p>
+<p>The calculation can participate strongly in conviction formation without determining what the person will become convinced of.</p>
+<p>It can also make disagreement more precise.</p>
+<p>If the arithmetic is accepted but the posterior is not, attention can move to what the result depends on.</p>
+<p>A prior may be challenged. A likelihood may need better support. Another hypothesis may have been omitted. The evidence may have been represented differently.</p>
+<p>The formal structure can expose where something would have to change if the result is to change.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->
@@ -248,7 +455,11 @@ $$</p>
   <a
     class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
     href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/04/" accesskey=","
-    ><span class="mr-1.5">&#8249;</span><span>4. Bayesian Updating</span></a>
+    ><span class="mr-1.5">&#8249;</span><span>4. Putting The Pieces Together</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/06/" accesskey="."
+    ><span>6. What Probability Adds</span><span class="ml-1.5">&#8250;</span></a>
 </nav>
 
   <!-- TOC -->
@@ -268,10 +479,13 @@ $$</p>
         <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Bayesian Updating</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Putting The Pieces Together</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. What Probability Adds</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;06&#x2F;">6. What Probability Adds</a>
       </li>
     </ul>
   </details>

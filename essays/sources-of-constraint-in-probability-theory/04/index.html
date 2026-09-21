@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="generator" content="Zola v0.21.0" />
-  <title>4. Bayesian Updating</title>
-  <meta property="og:title" content="4. Bayesian Updating" />
+  <title>4. Putting The Pieces Together</title>
+  <meta property="og:title" content="4. Putting The Pieces Together" />
   <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/04/" />
   <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/04/" />
   <meta property="og:type" content="article" />
@@ -104,7 +104,7 @@
   <!-- End Page Start inject -->
 
   <header class="mb-16">
-    <h1 class="my-0! pb-2.5">4. Bayesian Updating</h1>
+    <h1 class="my-0! pb-2.5">4. Putting The Pieces Together</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
     datetime="PT0H10M0S">10&nbsp;min</time><span
@@ -113,309 +113,380 @@
 
   </header>
   <!-- Content -->
-  <section><h2 id="turning-the-conditional-around">Turning The Conditional Around</h2>
+  <section><h2 id="elementary-definitions">Elementary Definitions</h2>
+<p>We can now define possibility spaces as finite sets.</p>
+<p>For example the possibility space for one throw of a die is:</p>
+<p>$$
+\Omega=\{1,2,3,4,5,6\}.
+$$</p>
+<p>Events are subsets of that possibility space. For example:</p>
+<p>$$
+A=\{2,4,6\}
+$$</p>
+<p>is the event that the result is even, and:</p>
+<p>$$
+B=\{4,5,6\}
+$$</p>
+<p>is the event that the result is greater than 3.</p>
+<p>$$
+C=\{1\}
+$$</p>
+<p>is the event that the result is exactly 1.</p>
+<p>That gives us a connection to the logic investigation that we will now look into.</p>
+<p>There, <em>and</em>, <em>or</em>, and <em>not</em> operated on propositions. Here the same distinctions can operate on events.</p>
+<p>For <em>not</em>, we take everything in the possibility space that does not belong to the event.</p>
+<p>For the $A$ we defined above:</p>
+<p>$$
+\neg A=\{1,3,5\}.
+$$</p>
+<p><em>Not even</em> is in our case <em>odd</em> for the numbers in the possibility space.</p>
+<p>More generally, for any event $A$:</p>
+<p>$$
+\neg A=\Omega\setminus A,
+$$</p>
+<p>that means $\Omega$ without the elements from $A$. In other words: everything outside $A$.</p>
+<p>The fixed possibility space matters here. It tells us what counts as everything outside $A.$</p>
+<p>The complement of $A$ can therefore be different in a different possibility space, even when $A$ itself is the same set.</p>
+<p>For <em>and</em>, we keep only the outcomes that belong to both events connected by <em>and</em>.</p>
+<p>With:</p>
+<p>$$
+A=\{2,4,6\},
+$$</p>
+<p>the event that the result is even, and:</p>
+<p>$$
+B=\{4,5,6\},
+$$</p>
+<p>the event that the result is greater than 3. The outcomes 4 and 6 occur in both sets. The outcome 2 belongs only to $A$, while 5 belongs only to $B$.</p>
+<p>So:</p>
+<p>$$
+A\land B=\{4,6\}.
+$$</p>
+<p>The event that the result is even and greater than 3 leaves us with 4 and 6 given this $\Omega.$</p>
+<p>Using set notation, the same relation can be written:</p>
+<p>$$
+A\land B=A\cap B.
+$$</p>
+<p>It makes no difference which event we name first:</p>
+<p>$$
+A\land B=B\land A.
+$$</p>
+<p>Both expressions select exactly the same elementary outcomes.</p>
+<p>For <em>or</em>, we keep every elementary outcome belonging to at least one of the events.</p>
+<p>Thus:</p>
+<p>$$
+A\lor B=\{2,4,5,6\}.
+$$</p>
+<p>The event that the result is even or greater than 3 leaves us with 2, 4, 5 and 6 given this $\Omega.$</p>
+<p>Using set notation, this relation can be written:</p>
+<p>$$
+A\lor B=A\cup B.
+$$</p>
+<p>The outcomes 4 and 6 belong to both $A$ and $B$, but they appear only once in the combined event. We are not joining two lists. We are asking which elementary outcomes satisfy at least one of the two conditions.</p>
+<p><em>Not</em> also gives us two simple relations that will matter shortly.</p>
+<p>No elementary outcome can belong both to $A$ and to its complement:</p>
+<p>$$
+A\land\neg A=\varnothing.
+$$</p>
+<p>Together they cover the whole possibility space:</p>
+<p>$$
+A\lor\neg A=\Omega.
+$$</p>
+<p>So far we have only organized possibilities.</p>
+<p>We know which elementary outcomes belong to an event, which events overlap, and how <em>not</em>, <em>and</em>, and <em>or</em> change the sets under consideration.</p>
+<p>We have constructed the structure of the events, but not yet their probabilities.</p>
+<h2 id="adding-weight">Adding Weight</h2>
+<p>Probability assigns numerical weight to these events, allowing us to distinguish between possibilities that remain open while constraining how much weight each of them can carry.</p>
+<p>We will write that weight as:</p>
+<p>$$
+P(A).
+$$</p>
+<p>In the examples so far, probabilities could often be read as shares of a whole. Three equally weighted outcomes out of six gave us:</p>
+<p>$$
+\frac{3}{6}.
+$$</p>
+<p>That suggests a scale on which 0 means none of the total weight and 1 means all of it.</p>
+<p>For the finite system we are constructing, we require three things.</p>
+<p>First, probability weight is not negative:</p>
+<p>$$
+P(A)\geq 0.
+$$</p>
+<p>An event can carry none of the available weight, but not less than none.</p>
+<p>Second, the whole represented possibility space carries total weight 1:</p>
+<p>$$
+P(\Omega)=1.
+$$</p>
+<p>The number 1 is the weight of the whole. If a finite possibility space contains $n$ elements, then:</p>
+<p>$$
+\frac{n}{n}=1.
+$$</p>
+<p>That represents all of them. Assigning that weight to $\Omega$ commits the model to treating this space as exhaustive for the question it represents.</p>
+<p>Third, consider two events that do not overlap.</p>
+<p>Suppose $A$ contains one part of the possibility space and $B$ contains another, with no elementary outcome belonging to both:</p>
+<p>$$
+A\land B=\varnothing.
+$$</p>
+<p>If probability weight represents shares of one whole, then combining two non-overlapping parts combines their shares without counting anything twice.</p>
+<p>So we require:</p>
+<p>$$
+P(A\lor B)=P(A)+P(B).
+$$</p>
+<p>The probability of events that do not overlap is additive.</p>
+<h2 id="some-rules-follow">Some Rules Follow</h2>
+<p>From these three requirements, several familiar probability relations follow.</p>
+<p>Consider first the empty event.</p>
 <p>We have:</p>
+<p>$$
+\Omega\lor\varnothing=\Omega.
+$$</p>
+<p>The two sets do not overlap, so additivity gives:</p>
+<p>$$
+P(\Omega)=P(\Omega)+P(\varnothing).
+$$</p>
+<p>Therefore:</p>
+<p>$$
+P(\varnothing)=0.
+$$</p>
+<p>The rule for <em>not</em> follows in the same way.</p>
+<p>We already know:</p>
+<p>$$
+A\land\neg A=\varnothing
+$$</p>
+<p>and:</p>
+<p>$$
+A\lor\neg A=\Omega.
+$$</p>
+<p>Additivity therefore gives:</p>
+<p>$$
+P(A)+P(\neg A)=P(\Omega).
+$$</p>
+<p>Since:</p>
+<p>$$
+P(\Omega)=1,
+$$</p>
+<p>we obtain:</p>
+<p>$$
+P(\neg A)=1-P(A).
+$$</p>
+<p>So once the whole space has weight 1, the probability of <em>not</em> $A$ is whatever weight remains outside $A$.</p>
+<p><em>Or</em> requires one additional step when the events overlap.</p>
+<p>For our die let again:</p>
+<p>$$
+A=\{2,4,6\}
+$$</p>
+<p>and:</p>
+<p>$$
+B=\{4,5,6\}.
+$$</p>
+<p>Their overlap is:</p>
+<p>$$
+A\land B=\{4,6\}.
+$$</p>
+<p>If we add:</p>
+<p>$$
+P(A)+P(B),
+$$</p>
+<p>the weight belonging to 4 and 6 is included twice.</p>
+<p>So one copy of the overlap has to be removed:</p>
+<p>$$
+P(A\lor B)
+=P(A)+P(B)-P(A\land B).
+$$</p>
+<p>For a fair die:</p>
+<p>$$
+P(A)=\frac36,
+$$</p>
+<p>$$
+P(B)=\frac36,
+$$</p>
+<p>and:</p>
+<p>$$
+P(A\land B)=\frac26.
+$$</p>
+<p>Therefore:</p>
+<p>$$
+P(A\lor B)
+=\frac36+\frac36-\frac26
+=\frac46.
+$$</p>
+<p>That agrees with the four elementary outcomes we can inspect directly:</p>
+<p>$$
+A\lor B=\{2,4,5,6\}.
+$$</p>
+<p>The formula compresses the same structure.</p>
+<h2 id="and-needs-more-information"><em>And</em> Needs More Information</h2>
+<p>Suppose we know:</p>
+<p>$$
+P(A)
+$$</p>
+<p>and:</p>
+<p>$$
+P(B).
+$$</p>
+<p>Does that determine:</p>
+<p>$$
+P(A\land B)?
+$$</p>
+<p>Take a possibility space with four equally weighted elementary outcomes:</p>
+<p>$$
+\Omega=\{1,2,3,4\}.
+$$</p>
+<p>Let:</p>
+<p>$$
+A=\{1,2\}.
+$$</p>
+<p>Then:</p>
+<p>$$
+P(A)=\frac12.
+$$</p>
+<p>Now consider three different events:</p>
+<p>$$
+B_1=\{1,2\},
+$$</p>
+<p>$$
+B_2=\{1,3\},
+$$</p>
+<p>and:</p>
+<p>$$
+B_3=\{3,4\}.
+$$</p>
+<p>Each has probability:</p>
+<p>$$
+\frac12.
+$$</p>
+<p>But their overlaps with $A$ differ.</p>
+<p>For $B_1$:</p>
+<p>$$
+A\land B_1=\{1,2\},
+$$</p>
+<p>so:</p>
+<p>$$
+P(A\land B_1)=\frac12.
+$$</p>
+<p>For $B_2$:</p>
+<p>$$
+A\land B_2=\{1\},
+$$</p>
+<p>so:</p>
+<p>$$
+P(A\land B_2)=\frac14.
+$$</p>
+<p>For $B_3$:</p>
+<p>$$
+A\land B_3=\varnothing,
+$$</p>
+<p>so:</p>
+<p>$$
+P(A\land B_3)=0.
+$$</p>
+<p>In every case:</p>
+<p>$$
+P(A)=P(B_i)=\frac12.
+$$</p>
+<p>Knowing the separate weights of $A$ and $B$ does not tell us how much weight belongs to both.</p>
+<p>The tree from the card example shows what is missing.</p>
+<p>To find $P(A\land B)$, we first followed the branch on which $A$ occurred. Then, within that branch, we asked what share also belonged to $B$.</p>
+<p>That restricted share is what we wrote as:</p>
+<p>$$
+P(B\mid A).
+$$</p>
+<p><em>And</em> needs conditional probabilities.</p>
+<h2 id="conditional-probability">Conditional Probability</h2>
+<p>The card tree gave us the missing relation.</p>
+<p>To reach the event $A\land B$, we first follow the branch on which $A$ occurs.</p>
+<p>That branch carries weight:</p>
+<p>$$
+P(A).
+$$</p>
+<p>Once we are on that branch, we ask how likely $B$ is under the condition that $A$ has already occurred.</p>
+<p>We write that as:</p>
+<p>$$
+P(B\mid A).
+$$</p>
+<p>In the card example, this was easy to determine directly. Once the first card was known to be an ace, 51 cards remained and 3 of them were aces, so:</p>
+<p>$$
+P(B\mid A)=\frac3{51}.
+$$</p>
+<p>In other problems, determining a conditional probability may be much harder. But once we have it, the tree tells us how the two stages fit together.</p>
+<p>We take the weight of the $A$ branch and then the share of that branch in which $B$ occurs:</p>
+<p>$$
+P(A\land B)
+=P(A)P(B\mid A).
+$$</p>
+<p>This is the more general multiplication rule we used in the previous chapter.</p>
+<p>In the last chapter we used this visualization:</p>
+<p><img src="/tree1.png" alt="Tree" /></p>
+<h2 id="independence">Independence</h2>
+<p>Repeated fair-die throws gave us a simpler case for <em>and</em>.</p>
+<p>There, learning the result of the first throw did not change the probabilities assigned to the possible results of the second.</p>
+<p>If $A$ and $B$ have that relation, then:</p>
+<p>$$
+P(B\mid A)=P(B).
+$$</p>
+<p>We call them independent.</p>
+<p>Substituting this into:</p>
+<p>$$
+P(A\land B)
+=P(A)P(B\mid A)
+$$</p>
+<p>gives:</p>
+<p>$$
+P(A\land B)
+=P(A)P(B).
+$$</p>
+<p>The multiplication rule we used for independent die throws is therefore a special case of the conditional relation.</p>
+<h2 id="equal-weighting">Equal Weighting</h2>
+<p>For the fair die, we treated the six elementary outcomes as carrying equal weight.</p>
+<p>Let the weight of each one be:</p>
+<p>$$
+w.
+$$</p>
+<p>Since the six outcomes together make up the whole possibility space:</p>
+<p>$$
+6w=1.
+$$</p>
+<p>Therefore:</p>
+<p>$$
+w=\frac16.
+$$</p>
+<p>For the event:</p>
+<p>$$
+A={2,4,6},
+$$</p>
+<p>additivity gives:</p>
+<p>$$
+P(A)
+=\frac16+\frac16+\frac16
+=\frac36.
+$$</p>
+<p>More generally, when the elementary outcomes in a finite possibility space are equally weighted:</p>
+<p>$$
+P(A)=\frac{|A|}{|\Omega|}.
+$$</p>
+<p>Counting produces probabilities only after equal weighting has been justified.</p>
+<p>For the fair die, its symmetry gave us a reason to assign equal weights to the six elementary outcomes.</p>
+<p>The loaded die showed why that step matters. Six possible faces do not by themselves imply six equal probabilities.</p>
+<h2 id="what-this-construction-shows">What This Construction Shows</h2>
+<p>We can now return to the two questions about convincing force which guide the second part of this essay cycle.</p>
+<p>The first question concerns the constraint inside the probability system.</p>
+<p>Once $\Omega$ is fixed, the events are represented as sets of elementary outcomes. We can inspect which outcomes belong to $A$, which belong to $B$, where they overlap, and what remains outside an event.</p>
+<p>Probability then adds weight.</p>
+<p>We treated 1 as the weight of the whole possibility space, required weights to be non-negative, and required the weights of non-overlapping parts to add.</p>
+<p>Once those conditions are fixed, some further relations are no longer separate choices.</p>
+<p>If $A$ and $\neg A$ divide the whole space between them, their weights must add to 1.</p>
+<p>If $A$ and $B$ overlap, adding their separate weights counts the overlap twice, so one copy has to be removed.</p>
+<p>If we follow an $A$ branch and then ask for the weight of $B$ under that condition, the weight of $A\land B$ is fixed by the two stages:</p>
 <p>$$
 P(A\land B)=P(A)P(B\mid A).
 $$</p>
-<p>But $A\land B$ is the same joint event as $B\land A$.</p>
-<p>So we can also write:</p>
-<p>$$
-P(A\land B)=P(B)P(A\mid B).
-$$</p>
-<p>Both expressions describe the same part of the possibility space.</p>
-<p>The two different right sides are equal to the same left side, so they are equal to each other:</p>
-<p>$$
-P(A)P(B\mid A)=P(B)P(A\mid B).
-$$</p>
-<p>If:</p>
-<p>$$
-P(B)&gt;0,
-$$</p>
-<p>we can divide by $P(B)$:</p>
-<p>$$
-P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}.
-$$</p>
-<p>That is Bayes' theorem.</p>
-<p>We have only described the same joint event in two directions and rearranged the equality. The result follows from the conditional relation we have already reconstructed and from algebra.</p>
-<p>Why, then, is the formula useful?</p>
-<p>The answer becomes clearer when the conditional we know is not the conditional we want.</p>
-<p>A diagnostic test gives us a simple case.</p>
-<h2 id="bayes-theorem">Bayes' Theorem</h2>
-<p>Suppose:</p>
-<p>$$
-H=\text{a person has disease D}
-$$</p>
-<p>and:</p>
-<p>$$
-E=\text{a diagnostic test is positive}.
-$$</p>
-<p>Imagine that in a certain population:</p>
-<p>$$
-P(H)=0.01.
-$$</p>
-<p>One person in one hundred has the disease.</p>
-<p>Suppose the test returns a positive result for 90 percent of people who have it:</p>
-<p>$$
-P(E\mid H)=0.90.
-$$</p>
-<p>And suppose it also returns a positive result for 5 percent of people who do not:</p>
-<p>$$
-P(E\mid\neg H)=0.05.
-$$</p>
-<p>A person tests positive.</p>
-<p>How likely is it that the person has the disease?</p>
-<p>The 90 percent figure is tempting.</p>
-<p>But it answers: Given the disease is present, how likely is a positive test?</p>
-<p>We want: Given a positive test, how likely is the disease?</p>
-<p>Those are:</p>
-<p>$$
-P(E\mid H)
-$$</p>
-<p>and:</p>
-<p>$$
-P(H\mid E).
-$$</p>
-<p>They are not the same conditional.</p>
-<p>We can answer the second question without Bayes' theorem.</p>
-<p>Imagine 10,000 people.</p>
-<p>About 100 have the disease.</p>
-<p>Of those, about 90 test positive.</p>
-<p>The other 9,900 do not have the disease.</p>
-<p>Five percent of them also test positive:</p>
-<p>$$
-495.
-$$</p>
-<p>So there are about:</p>
-<p>$$
-90+495=585
-$$</p>
-<p>positive tests.</p>
-<p>Of those, about 90 come from people with the disease:</p>
-<p>$$
-P(H\mid E)
-\approx
-\frac{90}{585}
-\approx0.154.
-$$</p>
-<p>The positive result has changed the probability substantially. It has moved from one percent before we looked at the evidence to about fifteen percent after we looked at the evidence. But it has not moved to ninety percent.</p>
-<p>Bayes' theorem lets us calculate that result in a general way.</p>
-<p>A positive test can occur in two mutually exclusive ways: the person has the disease and tests positive, or the person does not have the disease and tests positive.</p>
-<p>So:</p>
-<p>$$ P(E)=P(E\land H)+P(E\land \neg H). $$</p>
-<p>Using the multiplication rule from the previous chapter:</p>
-<p>$$ P(E\land H)=P(H)P(E\mid H) $$</p>
-<p>and:</p>
-<p>$$ P(E\land \neg H)=P(\neg H)P(E\mid\neg H). $$</p>
-<p>Combining the two branches gives:</p>
-<p>$$P(E)=P(E∣H)P(H)+P(E∣¬H)P(¬H).$$</p>
-<p>So:</p>
-<p>$$
-P(E)
-=0.90\cdot0.01
-+
-0.05\cdot0.99
-=0.0585.
-$$</p>
-<p>We now have all the pieces we need:</p>
-<p>$$
-P(H)=0.01,
-$$</p>
-<p>the prior probability of the hypothesis,</p>
-<p>$$
-P(E\mid H)=0.90,
-$$</p>
-<p>the probability of the evidence if the hypothesis is true,</p>
-<p>$$
-P(E) = 0.0585
-$$</p>
-<p>the total probability of the evidence, and we want:</p>
-<p>$$
-P(H\mid E),
-$$</p>
-<p>the probability of the hypothesis given the evidence.</p>
-<p>We take Bayes' theorem</p>
-<p>$$
-P(H\mid E)
-=\frac{P(E\mid H)P(H)}{P(E)}.
-$$</p>
-<p>and plug the values in:</p>
-<p>$$
-P(H\mid E)
-=\frac{0.90\cdot0.01}{0.0585}
-\approx0.154.
-$$</p>
-<p>Again, both routes give the same result.</p>
-<p>We can construct an imagined finite population and count. Or we can use the algebraic relation.</p>
-<p>The formula reaches the same result while doing much less work.</p>
-<p>Up to this point, we are still close to the world of dice and cards. The probabilities supplied to the calculation may have empirical histories, but the inversion itself can still be reconstructed through explicit finite arrangements.</p>
-<p>The situation changes when the possibilities themselves are hypotheses.</p>
-<h2 id="a-hypothesis-is-not-a-card">A Hypothesis Is Not A Card</h2>
-<p>A computer repeatedly restarts under heavy load.</p>
-<p>Several explanations occur to us.</p>
-<p>The power supply may be failing. The machine may be overheating. Memory could be defective.</p>
-<p>Call these:</p>
-<p>$$
-H_1=\text{power supply failure},
-$$</p>
-<p>$$
-H_2=\text{overheating},
-$$</p>
-<p>and:</p>
-<p>$$
-H_3=\text{memory failure}.
-$$</p>
-<p>We observe:</p>
-<p>$$
-E=\text{the machine restarts under heavy load}.
-$$</p>
-<p>We can ask:</p>
-<p>$$
-P(H_i\mid E).
-$$</p>
-<p>The form is familiar.</p>
-<p>But a hypothesis is not a card.</p>
-<p>We cannot spread every possible explanation of the machine failure across a table and check that all of them are present.</p>
-<p>Probability theory did not generate:</p>
-<p>$$
-H_1,H_2,H_3.
-$$</p>
-<p>Someone had to think of them.</p>
-<p>A technician may recognize familiar failure patterns. The age of the power supply may make one possibility salient, or overheating may have occurred before. Memory problems may also be common in similar machines.</p>
-<p>Why exactly these three?</p>
-<p>The operating system may contain a bug, the motherboard may be failing, the external power supply may be unstable, or two faults may occur together.</p>
-<p>The probability model can distribute weight only among possibilities represented in it.</p>
-<p>If an important hypothesis is missing, no flawless update can assign probability to it until the model changes.</p>
-<p>This is the old problem of possibility generation in another form. With dice, the completeness of the possibility space was easy to inspect. Here, the conviction that the relevant possibilities have been included has to come from somewhere else.</p>
-<p>Schematically, Bayes' theorem lets us do this:</p>
-<p><img src="/bayes001.png" alt="Bayes&#39; theorem applied" /></p>
-<p>An observation can change how strongly competing hypotheses are weighted. The rest of the chapter asks what has to be in place for that update to be carried out.</p>
-<h2 id="priors">Priors</h2>
-<p>For this small model, suppose we treat these three hypotheses as mutually exclusive and exhaustive: exactly one of them is taken to explain the failure.</p>
-<p>We assign:</p>
-<p>$$
-P(H_1)=0.50,
-$$</p>
-<p>$$
-P(H_2)=0.30,
-$$</p>
-<p>$$
-P(H_3)=0.20.
-$$</p>
-<p>These are priors: the probabilities assigned to the hypotheses before (<em>prior</em> to) the observation (E) is used to update them.</p>
-<p>Where did they come from?</p>
-<p>Comparable failures may historically have been power-supply problems about half the time. A technician might instead translate her own judgment of plausibility into numbers, or the values may come from another statistical model.</p>
-<p>The notation does not preserve that history.</p>
-<p>It gives us:</p>
-<p>$$
-P(H_1)=0.50.
-$$</p>
-<p>The prior must get its convincing force from experience, data, another model, judgment, or several of these together.</p>
-<h2 id="likelihoods">Likelihoods</h2>
-<p>We also need to know how expected the observation would be under each hypothesis.</p>
-<p>Suppose:</p>
-<p>$$
-P(E\mid H_1)=0.80,
-$$</p>
-<p>$$
-P(E\mid H_2)=0.60,
-$$</p>
-<p>$$
-P(E\mid H_3)=0.20.
-$$</p>
-<p>The likelihood, too, has to get its convincing force from the support behind the number. Once it enters the model, the update constrains what follows from it.</p>
-<h2 id="evidence">Evidence</h2>
-<p>Even:</p>
-<p>$$
-E
-$$</p>
-<p>had to be constructed.</p>
-<p>Something happened in the machine.</p>
-<p>We represented it as "The machine restarts under heavy load."</p>
-<p>We might instead have recorded "The machine restarts within thirty seconds above 80 percent CPU load", or "The machine loses power without a kernel panic."</p>
-<p>Those descriptions preserve different distinctions. The world does not arrive carrying an $E$ label.</p>
-<p>Something becomes salient, is observed, classified, measured or described, and then enters the formal process in a particular representation.</p>
-<p>Probability theory can operate on that representation.</p>
-<p>It does not decide from nowhere which description should matter.</p>
-<h2 id="the-update">The Update</h2>
-<p>Now suppose the model is in place.</p>
-<p>We have:</p>
-<p>$$
-P(H_1)=0.50,
-\quad
-P(H_2)=0.30,
-\quad
-P(H_3)=0.20
-$$</p>
-<p>and:</p>
-<p>$$
-P(E\mid H_1)=0.80,
-\quad
-P(E\mid H_2)=0.60,
-\quad
-P(E\mid H_3)=0.20.
-$$</p>
-<p>The probability of the observation under the model is:</p>
-<p>$$
-P(E)
-=0.80\cdot0.50
-+
-0.60\cdot0.30
-+
-0.20\cdot0.20.
-$$</p>
-<p>So:</p>
-<p>$$
-P(E)=0.62.
-$$</p>
-<p>The posterior probabilities are:</p>
-<p>$$
-P(H_1\mid E)
-=\frac{0.80\cdot0.50}{0.62}
-\approx0.645,
-$$</p>
-<p>$$
-P(H_2\mid E)
-=\frac{0.60\cdot0.30}{0.62}
-\approx0.290,
-$$</p>
-<p>and:</p>
-<p>$$
-P(H_3\mid E)
-=\frac{0.20\cdot0.20}{0.62}
-\approx0.065.
-$$</p>
-<p>Conditioning the model on the restart under load has redistributed the weights.</p>
-<p>The power-supply hypothesis has become more probable in the model. The memory hypothesis has become substantially less probable. Overheating remains live.</p>
-<p>In the logical examples, much of the visible constraint worked by exclusion..</p>
-<p>A combination survived or did not. A counterexample existed or it did not.</p>
-<p>Probability can constrain while leaving several possibilities open.</p>
-<p>It can say, in effect: These possibilities remain, but not with the same weight.</p>
-<p>Once the hypothesis space and its structure, the priors, likelihoods, representation of the evidence, and probability rules remain in place, the posterior values are not separately open.</p>
-<p>We cannot then choose that:</p>
-<p>$$
-P(H_3\mid E)
-$$</p>
-<p>should come out as $0.7$ because memory failure happens to be our preferred explanation.</p>
-<p>Something else would have to change: a prior, a likelihood, the hypothesis space, the evidence, or the calculation.</p>
-<p>The agent can participate in constructing the formal conditions. But the result inside those conditions is constrained.</p>
-<p>And the agent did not choose what the machine did merely by choosing to examine it. The observation entered the process as something that had occurred.</p>
-<h2 id="the-posterior-is-not-the-conviction">The Posterior Is Not The Conviction</h2>
-<p>Suppose the calculation gives:</p>
-<p>$$
-P(H_1\mid E)\approx0.645.
-$$</p>
-<p>A technician may now find power-supply failure more convincing. Or not.</p>
-<p>She may distrust the prior, think the overheating likelihood is badly estimated, notice another possible failure mode, or question how the observation was represented.</p>
-<p>The posterior is a result inside the model. Conviction is what forms for the person.</p>
-<p>The formal result can participate strongly in conviction formation without being identical with conviction.</p>
-<p>Other parts of the person's orientation still matter: whether the priors, likelihoods, evidence, and model remain convincing.</p>
-<p>That is what CFT would lead us to expect. The calculation can constrain part of the process without determining what the person will become convinced of.</p>
-<p>The calculation can make a discrepancy explicit: It can expose a difference between the person's earlier orientation and the consequences of probabilities she accepted. But it cannot simply install the posterior as conviction.</p>
-<p>One further condition remains worth keeping in view.</p>
-<p>If several pieces of evidence enter the model, their dependence relations matter. Probability theory can preserve whatever dependence structure we supply. It cannot repair a dependence we represented incorrectly. The card example gave us a simple case in which changing the condition changed the probability.</p>
-<p>A formal system can constrain very strongly while faithfully carrying an error that entered through its representation.</p>
-<p>With dice and cards, much of what supported the probability assignment remained easy to inspect. With hypotheses, more of that support has to be supplied by judgments, observations, models, and classifications whose own convincing force must be examined separately.</p>
+<p>For small enough problems, the route to those relations remains open to inspection.</p>
+<p>We can write down the possible outcomes, group them into events, inspect overlaps, follow branches in a tree, count, and compare the formulas with the structure from which they were derived.</p>
+<p>That is one source of the convincing force of the constraints produced by probability theory. The formulas compress relations that can still be reconstructed.</p>
+<p>The second question concerns applying the formal system of probability to a problem.</p>
+<p>As in logic, applying the formal system depends on prerequisites that are not usually fully under our control.</p>
+<p>The possibility space has to contain the possibilities that matter for the question. The elementary outcomes have to represent the distinctions that matter for the question. Equal weighting, when used, needs support. A claim of independence has to fit the situation. Conditional probabilities have to be estimated or otherwise justified.</p>
+<p>The probability calculus does not settle those questions for us.</p>
+<p>They can be examined separately from the formal relations that follow once the inputs are fixed.</p>
+<p>So the formal constraint may be highly convincing while its application to a particular problem remains doubtful.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->
@@ -429,7 +500,7 @@ $$</p>
   <a
     class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
     href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/05/" accesskey="."
-    ><span>5. What Probability Adds</span><span class="ml-1.5">&#8250;</span></a>
+    ><span>5. Bayesian Updating</span><span class="ml-1.5">&#8250;</span></a>
 </nav>
 
   <!-- TOC -->
@@ -449,10 +520,13 @@ $$</p>
         <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Bayesian Updating</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Putting The Pieces Together</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. What Probability Adds</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;06&#x2F;">6. What Probability Adds</a>
       </li>
     </ul>
   </details>
