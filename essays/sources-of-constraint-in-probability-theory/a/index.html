@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="generator" content="Zola v0.21.0" />
-  <title>1. About Probability</title>
-  <meta property="og:title" content="1. About Probability" />
-  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/01/" />
-  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/01/" />
+  <title>Appendix A: A Bayesian Investigation Loop</title>
+  <meta property="og:title" content="Appendix A: A Bayesian Investigation Loop" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/a/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/a/" />
   <meta property="og:type" content="article" />
   <!-- Begin Head inject -->
   
@@ -104,44 +104,92 @@
   <!-- End Page Start inject -->
 
   <header class="mb-16">
-    <h1 class="my-0! pb-2.5">1. About Probability</h1>
+    <h1 class="my-0! pb-2.5">Appendix A: A Bayesian Investigation Loop</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H3M0S">3&nbsp;min</time><span
+    datetime="PT0H2M0S">2&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
   </header>
   <!-- Content -->
-  <section><h2 id="colored-socks">Colored Socks</h2>
-<p>You have five socks in a drawer.</p>
-<p>Three are black and two are blue.</p>
-<p>It is early, the room is dark, and you want a matching pair.</p>
-<p>You could turn on the light, but then your spouse would wake up.</p>
-<p>Three of the five socks are black. So you may think your chances of pulling out a black pair are pretty good.</p>
-<p>You reach into the drawer and take two.</p>
-<p>One is black. The other is blue. Bad luck, maybe.</p>
-<p>But what were your chances in the first place?</p>
-<p>There are only a few possibilities we need to consider.</p>
-<p>You might draw two black socks. You might draw two blue socks. Or you might draw one of each.</p>
-<p>But those three possibilities do not have the same weight.</p>
-<p>There are more ways to end up with one black and one blue sock than with either matching pair.</p>
-<p>So simply listing the possible outcomes does not yet tell us how likely they are.</p>
-<p>How can we use what we know about the socks in the drawer to work out what weight each possibility should carry?</p>
-<h2 id="probability-theory">Probability Theory</h2>
-<p>Logic let us ask which possibilities remained compatible with fixed premises and mappings.</p>
-<p>Probability lets us go further when several possibilities remain open and assign different weights to them. Under suitable conditions, the result can be convincingly constrained.</p>
-<p>Where does that convincing force come from?</p>
-<p>The previous investigation of logic began with very small formal systems. In small cases, the relevant possibilities could remain open to inspection. We could see what had been represented, which mappings had been fixed, which possibilities survived, and where a counterexample remained.</p>
-<p>Probability offers cases of the same kind.</p>
-<p>Dice and cards give us examples in which the relevant possibilities are easy to inspect. A die has only six faces, two throws still give a manageable number of pairs, and after drawing a card we can inspect what remains.</p>
-<p>These examples are elementary enough that some of the structure later compressed into probability formulas stays visible.</p>
-<p>We will also look at Bayesian updating.</p>
-<p>Probability first lets us work forward from a model and a distribution to the probabilities of possible results. But inquiry often gives us the problem in the other direction. We observe a result and want to know how it should change the weights we assign to the possibilities that might have produced it.</p>
-<p>Bayes' theorem gives us a simple case in which that updating can still be reconstructed from conditional probability and algebra.</p>
-<p>More elaborate statistical methods usually rely on additional mathematical machinery that we would first have to reconstruct, even when much of it is not directly relevant to the question this essay is asking.</p>
-<p>We will therefore follow a small path from dice to cards and then to Bayesian updating, keeping enough of the relevant possibilities and mappings visible to inspect how probabilistic constraint is constructed and how it changes when new information arrives.</p>
-<p>As in the logic essay, this essay is not an introduction to probability theory. It will leave almost all of probability theory untouched. It does not depend on choosing one interpretation of probability over another. And although Bayesian updating is one of the cases we examine, the essay does not argue that Bayesian methods are preferable to other statistical approaches. <a href="/essays/sources-of-constraint-in-probability-theory/b/">Appendix B</a> briefly broadens the picture with two frequentist examples, randomization and sampling, which handle evidence differently.</p>
+  <section><p>In this appendix we give a heuristic algorithm that integrates Bayesian updating into a small model of an investigation.</p>
+<p>Here is how it works:</p>
+<p>Suppose we begin with a hypothesis space:</p>
+<p>$$
+H_1,\ldots,H_n.
+$$</p>
+<p>Each hypothesis has a prior weight.</p>
+<p>When new evidence $E$ becomes available, we ask:</p>
+<p>$$
+P(E\mid H_i)
+$$</p>
+<p>for each hypothesis.</p>
+<p>Bayes' theorem then constrains how the weights change:</p>
+<p>$$
+P(H_i\mid E)
+=\frac{P(E\mid H_i)P(H_i)}
+{P(E)}.
+$$</p>
+<p>The posterior can then become the prior for the next update.</p>
+<p>A simplified investigation might look like this:</p>
+<ol>
+<li>Begin with a represented set of possibilities.</li>
+<li>Assign or accept initial weights.</li>
+<li>Observe or represent new evidence.</li>
+<li>Ask how likely that evidence would be under each represented possibility.</li>
+<li>Update the weights.</li>
+<li>Continue with further evidence.</li>
+</ol>
+<p>As long as the hypothesis space remains fixed, Bayesian updating constrains the movement of the weights.</p>
+<p>But the investigation can also change in another important way.</p>
+<p>A new possibility may become available.</p>
+<p>Suppose we began with:</p>
+<p>$$
+H_1,H_2,H_3
+$$</p>
+<p>and later realize that:</p>
+<p>$$
+H_4
+$$</p>
+<p>also needs to be considered.</p>
+<p>The new possibility has to be represented, some initial weight has to be given to it, the weights of the existing hypotheses have to be reconsidered relative to the enlarged space, and relevant likelihoods have to be supplied.</p>
+<p>So a more realistic heuristic is:</p>
+<pre><code data-lang="text">Start with represented possibilities
+            |
+            v
+       New evidence
+            |
+            v
+How likely is the evidence under each hypothesis?
+            |
+            v
+      Calculate probability of evidence
+            |
+            v
+      Bayesian update
+            |
+            v
+Are the represented possibilities still adequate?
+         /       \
+       yes        no
+        |          |
+        |          v
+        |    revise possibility space
+        |    introduce new possibilities
+        |    reconsider weights
+        |    supply new likelihoods
+        |          |
+        +----------+
+            |
+            v
+      continue inquiry
+</code></pre>
+<p>The two routes in this heuristic are different.</p>
+<p>As long as the represented possibilities remain in place, Bayesian updating constrains what happens to their weights.</p>
+<p>The other route is less constrained.</p>
+<p>A new possibility may arise from observation, experience, analogy, another person's suggestion, a failed prediction, another model, or something else.</p>
+<p>Once it enters the investigation, the probability model has to be rebuilt around the enlarged possibility space.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->
@@ -149,9 +197,13 @@
   <!-- Post Nav -->
 <nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
   <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/06/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>6. What Probability Adds</span></a>
+  <a
     class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
-    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/02/" accesskey="."
-    ><span>2. Dice</span><span class="ml-1.5">&#8250;</span></a>
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/b/" accesskey="."
+    ><span>Appendix B: Examples Of Frequentist Handling Of Evidence</span><span class="ml-1.5">&#8250;</span></a>
 </nav>
 
   <!-- TOC -->

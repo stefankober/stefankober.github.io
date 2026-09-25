@@ -1,0 +1,337 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>Appendix B: Examples Of Frequentist Handling Of Evidence</title>
+  <meta property="og:title" content="Appendix B: Examples Of Frequentist Handling Of Evidence" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/b/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/b/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=f80708626536b19f7ee3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=742c78e18c737b43062a" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/inline-code-fix.css">
+
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">Appendix B: Examples Of Frequentist Handling Of Evidence</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H11M0S">11&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><h2 id="probability-and-statistical-inference">Probability And Statistical Inference</h2>
+<p>Earlier in the essay, probability was introduced through cases where the setup was already given and we calculated what followed from it.</p>
+<p>A fair die has a represented possibility space and assigned weights. From those, we can calculate how likely different outcomes are.</p>
+<p>Bayesian updating already moved us into statistical inference.</p>
+<p>There the direction was partly reversed.</p>
+<p>We had hypotheses about what might be producing the observations, some initial weights assigned to those hypotheses, and new evidence. The evidence then constrained how those weights changed.</p>
+<p>So statistical inference is broadly when we use observed data to learn something about the process, population, or hypothesis that may have produced it.</p>
+<p>In the Bayesian case, the probabilities belonged to the hypotheses and were updated with the evidence. Frequentist methods place the probability differently. In frequentist methods, the probabilities usually belong to possible data or statistics under a specified model, and the observed data is compared with that distribution.</p>
+<p>Imagine an urn whose composition we do not know. We draw some balls and record what we see.</p>
+<p>A Bayesian treatment might represent several possible compositions of the urn, assign probabilities to them, and update those probabilities in light of the sample.</p>
+<p>A frequentist treatment does not need to assign probabilities to the possible compositions themselves. Instead, it asks how samples would behave if a particular composition or sampling model were in place, and then compares the observed sample with those possible results.</p>
+<p>That difference will become clearer in the examples.</p>
+<p>We will look at two cases: randomization in an experiment, and sampling from a population.</p>
+<h2 id="randomization">Randomization</h2>
+<p>One important route into frequentist statistics comes from the work of Ronald Aylmer Fisher.</p>
+<p>Fisher developed methods in which the randomization of an experiment gives probability a precise role in assessing the observed result.</p>
+<p>An anecdotal example used often by the statistician Phillip I. Good makes the mechanism visible¹.</p>
+<p>Good discusses an experiment involving cell cultures grown either with a conventional nutrient solution or with vitamin E added.</p>
+<p>After some losses, six usable observations remained, three in each condition:</p>
+<table><thead><tr><th>vitamin E</th><th>control</th></tr></thead><tbody>
+<tr><td>121</td><td>34</td></tr>
+<tr><td>118</td><td>22</td></tr>
+<tr><td>110</td><td>12</td></tr>
+</tbody></table>
+<p>The sum of the vitamin E measurements is:</p>
+<p>$$
+121+118+110=349.
+$$</p>
+<p>The sum of the control measurements is:</p>
+<p>$$
+34+22+12=68.
+$$</p>
+<p>Their difference is:</p>
+<p>$$
+349-68=281.
+$$</p>
+<p>But is this difference large or small? Compared to what other differences?</p>
+<p>The experiment gives us a way to answer that.</p>
+<p>The treatment labels were assigned randomly. Now suppose that vitamin E had <em>no effect</em> on any of these measured outcomes.</p>
+<p>Under that hypothesis, it would not matter which three specimens had received the vitamin E label. The six measurements would remain:</p>
+<p>$121,\ 118,\ 110,\ 34,\ 22,\ 12$.</p>
+<p>We can thus keep the measurements fixed and redistribute three vitamin E labels and three control labels over them in every way allowed by the experiment.</p>
+<p>There are:</p>
+<p>$$
+\binom{6}{3}=20
+$$</p>
+<p>such assignments.</p>
+<p>Under this randomization design, each has probability:</p>
+<p>$$
+\frac1{20}=0.05.
+$$</p>
+<p>These 20 assignments give us a reference distribution against which we can compare the observed difference.</p>
+<p>For each possible assignment we calculate the same statistic: the sum of the vitamin E measurements minus the sum of the control measurements.</p>
+<table><thead><tr><th>vitamin E</th><th>control</th><th style="text-align: right">difference</th></tr></thead><tbody>
+<tr><td><strong>121, 118, 110</strong></td><td><strong>34, 22, 12</strong></td><td style="text-align: right"><strong>281</strong></td></tr>
+<tr><td>121, 118, 34</td><td>110, 22, 12</td><td style="text-align: right">129</td></tr>
+<tr><td>121, 110, 34</td><td>118, 22, 12</td><td style="text-align: right">113</td></tr>
+<tr><td>118, 110, 34</td><td>121, 22, 12</td><td style="text-align: right">107</td></tr>
+<tr><td>121, 118, 22</td><td>110, 34, 12</td><td style="text-align: right">105</td></tr>
+<tr><td>121, 110, 22</td><td>118, 34, 12</td><td style="text-align: right">89</td></tr>
+<tr><td>121, 118, 12</td><td>110, 34, 22</td><td style="text-align: right">85</td></tr>
+<tr><td>118, 110, 22</td><td>121, 34, 12</td><td style="text-align: right">83</td></tr>
+<tr><td>121, 110, 12</td><td>118, 34, 22</td><td style="text-align: right">69</td></tr>
+<tr><td>118, 110, 12</td><td>121, 34, 22</td><td style="text-align: right">63</td></tr>
+<tr><td>121, 34, 22</td><td>118, 110, 12</td><td style="text-align: right">-63</td></tr>
+<tr><td>118, 34, 22</td><td>121, 110, 12</td><td style="text-align: right">-69</td></tr>
+<tr><td>121, 34, 12</td><td>118, 110, 22</td><td style="text-align: right">-83</td></tr>
+<tr><td>110, 34, 22</td><td>121, 118, 12</td><td style="text-align: right">-85</td></tr>
+<tr><td>118, 34, 12</td><td>121, 110, 22</td><td style="text-align: right">-89</td></tr>
+<tr><td>110, 34, 12</td><td>121, 118, 22</td><td style="text-align: right">-105</td></tr>
+<tr><td>121, 22, 12</td><td>118, 110, 34</td><td style="text-align: right">-107</td></tr>
+<tr><td>118, 22, 12</td><td>121, 110, 34</td><td style="text-align: right">-113</td></tr>
+<tr><td>110, 22, 12</td><td>121, 118, 34</td><td style="text-align: right">-129</td></tr>
+<tr><td>34, 22, 12</td><td>121, 118, 110</td><td style="text-align: right">-281</td></tr>
+</tbody></table>
+<p>The entire probabilistic structure is visible.</p>
+<p>The observed difference $281$ is the largest positive difference among the 20 possible assignments.</p>
+<p>Only one assignment produces a result at least this favorable to vitamin E.</p>
+<p>So, under the no-effect hypothesis and this randomization procedure $p=\frac1{20}=0.05.$</p>
+<p>If vitamin E really made no difference to these measured outcomes, a result at least this favorable to vitamin E would occur in only one of the 20 possible assignments.</p>
+<p>That makes the observed result hard to reconcile with the no-effect setup. N.B.: It does not mean that the probability of the hypothesis is $5\%$. If we repeatedly used a valid test with a $5\%$ rejection threshold in situations where the no-effect hypothesis was actually true, the procedure would falsely reject that hypothesis only about $5\%$ of the time or less.</p>
+<p>That is the frequentist error guarantee. It concerns the long-run behavior of the procedure, not the probability that this particular hypothesis is true.</p>
+<p>It is a common convention to reject the no-effect hypothesis when the p-value is at most $5\%$.</p>
+<p>This differs from the Bayesian case in an important way. There we assigned probability to competing hypotheses and changed those probabilities when evidence arrived. Here we have not assigned a probability to the no-effect hypothesis. We assume it for the purpose of the test and ask how often results like the one we observed would arise under it.</p>
+<p>Both approaches use a model of what the evidence would look like under a hypothesis. Bayesian updating uses that relation to redistribute probability among hypotheses. The randomization test uses it to estimate how likely the observed result and more extreme results are compared to the other outcomes expected under the hypothesis being tested.</p>
+<h2 id="sampling-from-a-population">Sampling From A Population</h2>
+<p>Randomization is only one route within frequentist statistics.</p>
+<p>Another large family of methods is based on sampling.</p>
+<p>Instead of asking how treatment assignments could have varied under an experimental design, we ask what observations drawn from a population can tell us about that population.</p>
+<p>The familiar urn picture makes the basic relation visible.</p>
+<p>Imagine an urn containing a very large number of red and blue balls.</p>
+<p>We do not know the proportion of each color.</p>
+<p>Let $p$ be the proportion of red balls in the urn.</p>
+<p>If we knew that $p=0.60$, probability theory could tell us how samples from the urn would tend to vary.</p>
+<p>A sample of ten balls could easily contain somewhat more or fewer red balls than the population proportion would suggest.</p>
+<p>If we repeatedly drew random samples of the same size from the same population, the resulting sample proportions would form a probability distribution.</p>
+<p>Now reverse the problem.</p>
+<p>Suppose we do not know $p$.</p>
+<p>We draw a random sample and observe $60$ red balls among $100$.</p>
+<p>The sample proportion is:</p>
+<p>$$
+\hat p=\frac{60}{100}=0.60.
+$$</p>
+<p>Another sample from the same urn might give $0.57$, and another $0.64$.</p>
+<p>The statistical problem is to understand how much variation the sampling process itself can produce.</p>
+<p>Without going into the calculation, samples like these would be much easier to obtain from a population with $p$ near $0.60$ than from one with $p$ near $0.90$ or $0.10$.</p>
+<p>Probability theory lets us work out how compatible different population values are with the observed sample under the assumed sampling process.</p>
+<p>In a small finite case, we could make this completely explicit, as we did throughout the main text.</p>
+<p>Suppose the urn contained only ten balls, six red and four blue, and we drew three without replacement. Then we could lay out every possible sample of three balls and count how often each number of red balls occurs.</p>
+<p>A sample with three red balls would appear in some of those possible samples. A sample with no red balls would appear in others. The probability distribution over the possible samples could be reconstructed directly from the finite arrangement.</p>
+<p>If we now started from an observed sample instead, we could compare it with the distributions produced by different possible urn compositions. A composition under which samples like ours occur often fits the observation better than one under which they are rare.</p>
+<p>For larger populations and samples we usually do not enumerate every possibility by hand. The mathematics compresses the same kind of relation. Once a population model and a sampling process are supplied, they constrain which samples are more or less likely.</p>
+<p>The observed sample can then be compared with those possibilities.</p>
+<p>But the application does not establish its own prerequisites. The sample may not have been produced in the assumed way, or the population represented in the model may not be the one relevant to the question.</p>
+<p>These prerequisites still have to become convincing elsewhere.</p>
+<h2 id="frequentist-and-bayesian-uses-of-probability">Frequentist And Bayesian Uses Of Probability</h2>
+<p>In both frequentist examples, probability describes possible data under a setup that has been supplied, and the observation is assessed in relation to those possibilities.</p>
+<p>In the randomization example, the six measured outcomes were already there. We held them fixed and asked what differences could have appeared if the treatment labels had been assigned differently. The randomization procedure supplied those possible assignments and their probabilities under the hypothesis of no effect.</p>
+<p>In sampling the population is not fully known. We observe only a sample from it and ask how samples would tend to vary under different possible population values.</p>
+<p>Randomization and sampling require different things to be in place before probability can do any work.</p>
+<p>The randomization example needed experimental units, measured outcomes, treatment labels, and a procedure by which those labels were assigned.</p>
+<p>The sampling example needed a population, together with a process by which observations were sampled from it. The urn picture makes that concrete: the balls stand for the population, and drawing balls stands for sampling.</p>
+<p>Bayesian updating used probability differently. There, probability was assigned to competing hypotheses and redistributed when evidence arrived.</p>
+<p>The frequentist and Bayesian approaches represent different kinds of uncertainty.</p>
+<p>Randomization works with possible rearrangements of an experimental setup, while sampling starts from a population or generating process and a relation between it and the observations.</p>
+<p>In both cases, the probabilities concern possible outcomes of a process taking place in the world: other assignments that could have occurred, or other samples that could have been drawn.</p>
+<p>Bayesian updating needs a space of hypotheses and a way of relating each hypothesis to the evidence. Here the process being modeled is how inquiry changes the relative weight of competing hypotheses in light of evidence. Probability is used to represent something like the relative plausibility of those hypotheses. The possibilities being weighted are not alternative assignments or samples, but alternative accounts of what may be the case.</p>
+<p>That difference changes how the observation is used.</p>
+<p>In the randomization test we asked: if the treatment had no effect, how often would an assignment produce a difference at least this large?</p>
+<p>In sampling we asked: if the population had a particular composition, how would samples from it tend to vary?</p>
+<p>In Bayesian updating we asked how the evidence should redistribute weight among the represented hypotheses.</p>
+<p>Bayesian updating has the central update rule we have already seen: probabilities are assigned to hypotheses and Bayes' theorem updates them from the data.</p>
+<p>In frequentist inference, the data can count for or against a hypothesis or population value without that hypothesis or value itself being assigned a probability.</p>
+<p>There is no single frequentist update rule corresponding to Bayes' theorem. Different procedures build probability distributions from different parts of the setup: random assignments, repeated samples, test statistics, estimators, and other constructions.</p>
+<p>In the frequentist examples above, the constraint came from probabilities that could be traced back to represented possibilities generated by an experimental or sampling arrangement.</p>
+<p>In the randomization case we could lay those possibilities out almost completely. In sampling, the same relation is usually compressed into mathematical models of how repeated samples would behave.</p>
+<p>Bayesian updating puts probability on the hypotheses themselves.</p>
+<p>Across the examples, the constraint came from representing relevant possibilities and assigning or updating their weights in ways that could be inspected.</p>
+<hr />
+<ol>
+<li>cf. Phillip I. Good, <em>Resampling Methods</em>, 3rd Ed., Birkhäuser Boston, 2006, ch. 3.</li>
+</ol>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-probability-theory/a/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>Appendix A: A Bayesian Investigation Loop</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;01&#x2F;">1. About Probability</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;02&#x2F;">2. Dice</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;03&#x2F;">3. Cards</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;04&#x2F;">4. Putting The Pieces Together</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;05&#x2F;">5. Bayesian Updating</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;06&#x2F;">6. What Probability Adds</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;a&#x2F;">Appendix A: A Bayesian Investigation Loop</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-probability-theory&#x2F;b&#x2F;">Appendix B: Examples Of Frequentist Handling Of Evidence</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>
