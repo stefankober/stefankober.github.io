@@ -107,7 +107,7 @@
     <h1 class="my-0! pb-2.5">5. Bayesian Updating</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H15M0S">15&nbsp;min</time><span
+    datetime="PT0H16M0S">16&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
@@ -348,6 +348,80 @@ $$</p>
 <p>Those descriptions preserve different distinctions. The world does not arrive carrying an $E$ label.</p>
 <p>Something becomes salient, is observed, classified, measured or described, and then enters the formal process in a particular representation.</p>
 <p>That representation can change the likelihoods assigned under the hypotheses.</p>
+<p>Once $E$ has been represented, we still need its probability.</p>
+<p>For this model, the three hypotheses are mutually exclusive and exhaustive. Exactly one of them is taken to be true, and together their probabilities add to 1.</p>
+<p>So if the evidence $E$ occurs, it must occur together with one of the three hypotheses:</p>
+<p>$$
+E
+=(E\land H_1)
+\cup
+(E\land H_2)
+\cup
+(E\land H_3).
+$$</p>
+<p>These three cases do not overlap.</p>
+<p>From the addition rule:</p>
+<p>$$
+P(E)
+=P(E\land H_1)
++
+P(E\land H_2)
++
+P(E\land H_3).
+$$</p>
+<p>And from the multiplication rule:</p>
+<p>$$
+P(E\land H_i)
+=P(H_i)P(E\mid H_i).
+$$</p>
+<p>So:</p>
+<p>$$
+P(E)
+=P(H_1)P(E\mid H_1)
++
+P(H_2)P(E\mid H_2)
++
+P(H_3)P(E\mid H_3).
+$$</p>
+<p>With our values:</p>
+<p>$$
+P(E)
+=0.50\cdot0.80
++
+0.30\cdot0.60
++
+0.20\cdot0.20
+=0.62.
+$$</p>
+<p>More generally, suppose the model contains mutually exclusive and exhaustive hypotheses</p>
+<p>$$
+H_1,\ldots,H_n.
+$$</p>
+<p>Under each hypothesis, part of the probability of the evidence comes from:</p>
+<p>$$
+P(E_i)=P(E\land H_i)
+=P(H_i)P(E\mid H_i).
+$$</p>
+<p>The hypotheses do not overlap, so these contributions can be added. And because they exhaust the represented possibilities, there is no other part of $E$ left outside them.
+Thus:</p>
+<p>$$
+P(E)
+=P(E_1)+P(E_2)+\dots +P(E_i)=
+$$
+$$
+P(H_1)P(E\mid H_1)
++
+P(H_2)P(E\mid H_2)
++
+\cdots
++
+P(H_n)P(E\mid H_n).
+$$</p>
+<p>Or more compactly:</p>
+<p>$$
+P(E)=\sum_{i=1}^{n}P(H_i)P(E\mid H_i).
+$$</p>
+<p>Each hypothesis contributes according to how much probability it has and how likely the evidence would be under it. Adding those non-overlapping contributions gives the full probability of the evidence.</p>
 <h2 id="the-update">The Update</h2>
 <p>Now suppose the model is in place.</p>
 <p>We have:</p>
