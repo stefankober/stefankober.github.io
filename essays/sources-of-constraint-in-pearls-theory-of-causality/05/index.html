@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>5. Why The Shape Of The Graph Matters</title>
+  <meta property="og:title" content="5. Why The Shape Of The Graph Matters" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/05/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/05/" />
+  <meta property="og:type" content="article" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/main.min.css?h=80ece4d015818ae93fff" />
+  <link rel="stylesheet" href="https://www.stefankober.de/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://www.stefankober.de/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://www.stefankober.de/apple-touch-icon.png?h=f80708626536b19f7ee3" />
+  <link rel="icon" type="image/png" href="https://www.stefankober.de/android-icon.png?h=742c78e18c737b43062a" />
+  <script src="https://www.stefankober.de/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  <link rel="stylesheet" href="https://www.stefankober.de/inline-code-fix.css">
+
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://www.stefankober.de/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+      <div title="Toggle menu [Alt + `+`]" role="button" accesskey="+" tabindex="0"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer select-none flex-col items-center justify-center gap-2.5 lg:hidden"
+        onclick="window.zolaTheme.menu.toggleHeader();"
+        onkeydown="(event.keyCode == 13 || event.keyCode == 32) ? event.preventDefault() || window.zolaTheme.menu.toggleHeader() : true;"
+      ></div>
+    </div>
+    <nav class="flex w-full items-center lg:w-auto">
+      <menu
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/essays/"
+          >Essays</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/articles/"
+          >Articles</a>
+        </li>
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="/about/"
+          >About</a>
+        </li>
+      </menu>
+      <!-- Begin Header Nav inject -->
+      
+      <!-- End Header Nav inject -->
+    </nav>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://www.stefankober.de/elasticlunr.min.js", "https://www.stefankober.de/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">5. Why The Shape Of The Graph Matters</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+    datetime="PT0H5M0S">5&nbsp;min</time><span
+      class="middot"></span><span>Stefan Kober</span>
+</div>
+
+  </header>
+  <!-- Content -->
+  <section><p>We have already seen that the effect of conditioning depends on where a variable sits in the causal structure.</p>
+<p>A common cause and an intermediate variable behaved differently even though the same probability operation could be applied to both.</p>
+<p>With three variables, there are only a few basic local shapes to consider. Looking at them side by side makes the differences easier to see.</p>
+<h2 id="the-fork">The Fork</h2>
+<p>Return to the hospital example:</p>
+<p><img src="/g-r.g-t.png" alt="" /></p>
+<p>General health affects both treatment and recovery.</p>
+<p>This shape is called a <em>fork</em>.</p>
+<p>More generally:</p>
+<p><img src="/z-x.z-y.png" alt="" /></p>
+<p>$Z$ is a common cause of $X$ and $Y$.</p>
+<p>That is the role general health played in our hospital model.</p>
+<p>Observing treatment could tell us something about general health, and general health could tell us something about recovery.</p>
+<p>So treatment and recovery could be associated partly because both were connected to $G$.</p>
+<p>When we compared treated and untreated patients with the same general-health status, that route could no longer explain the difference between them.</p>
+<p>For the causal question we were asking, conditioning on $G$ helped separate the effect of treatment from the common-cause path.</p>
+<p>That is why adjustment worked in the previous chapter.</p>
+<h2 id="the-chain">The Chain</h2>
+<p>Suppose instead like in the second example of chapter two:</p>
+<p><img src="/x-z-y.png" alt="" /></p>
+<p>Here $Z$ is not a common cause.</p>
+<p>It lies on a causal route from $X$ to $Y$.</p>
+<p>Suppose again treatment reduces blood pressure, and reduced blood pressure improves recovery:</p>
+<p><img src="/t-b-r.png" alt="" /></p>
+<p>Part of the treatment's effect on recovery now operates through blood pressure.</p>
+<p>Imagine comparing treated and untreated patients only among people with the same blood pressure level.</p>
+<p>Within that comparison, differences in blood pressure have been removed.</p>
+<p>But blood pressure is one of the ways treatment changes recovery in this model.</p>
+<p>So holding $B$ fixed also removes that part of the treatment's effect from the comparison.</p>
+<p>The probability operation is familiar. We condition on a third variable. But its causal role is now very different.</p>
+<p>In the fork, conditioning helped remove a route that was not part of the treatment's effect.</p>
+<p>In the chain, conditioning removes a route through which the treatment itself can work. That is not what you want to determine the treatment effect.</p>
+<p>The arrows make that difference visible.</p>
+<h2 id="the-collider">The Collider</h2>
+<p>Suppose:</p>
+<p><img src="/x-z.y-z.png" alt="" /></p>
+<p>Both $X$ and $Y$ can affect $Z$.</p>
+<p>The arrows meet at $Z$, so this shape is called a <em>collider</em>.</p>
+<p>Consider a school that admits applicants for either strong academic results or strong athletic results.</p>
+<p>Let:</p>
+<p>$$
+A=\text{academic strength},
+$$</p>
+<p>$$
+S=\text{athletic strength},
+$$</p>
+<p>and:</p>
+<p>$$
+D=\text{admitted}.
+$$</p>
+<p>We can represent the small causal structure as:</p>
+<p><img src="/a-d.s-d.png" alt="" /></p>
+<p>For simplicity, suppose academic and athletic strength are unrelated in the whole applicant population.</p>
+<p>Now look only at admitted applicants.</p>
+<p>Among them, learning that an applicant was not especially strong academically gives us a reason to expect some other route to admission.</p>
+<p>In this small model, athletic strength is one such route.</p>
+<p>Likewise, if an admitted applicant had exceptionally strong academic results, less athletic strength may have been needed for admission.</p>
+<p>Once we restrict attention to admitted applicants, academic and athletic strength can become statistically related even though they were unrelated in the full applicant population.</p>
+<p>Conditioning on the common effect has <em>created</em> an association.</p>
+<p>That is the opposite of what happened in the fork.</p>
+<p>There, conditioning on the common cause helped <em>remove</em> an association carried through that cause.</p>
+<p>So there is no general causal rule saying that conditioning on more variables improves the analysis.</p>
+<p>The same probabilistic operation can help remove a misleading association, remove part of the effect we are trying to measure, or create a new association.</p>
+<p>Which of those happens depends on the causal structure. Graphs make those differences available for inspection. The $do$-notation then lets us mark the intervention whose consequences we want to follow through that structure.</p>
+<h2 id="what-the-shapes-show">What The Shapes Show</h2>
+<p>The fork, chain, and collider used the same basic graphical vocabulary.</p>
+<p>The same probability operation, conditioning, was also available in every case.</p>
+<p>Yet its causal significance changed with the arrangement of the arrows.</p>
+<p>In the fork, conditioning could remove an association carried through a common cause.</p>
+<p>In the chain, it could remove part of the effect we wanted to examine.</p>
+<p>At a collider, it could create an association that was not present before.</p>
+<p>The arrangement does more than display several causal claims conveniently. Once its interpretation is accepted, the structure constrains what the same probabilistic operation can tell us about an intervention.</p>
+<p>This also makes disagreement easier to locate.</p>
+<p>Two people may agree about the probabilities and about how conditioning works while disagreeing about whether a variable is a common cause, an intermediate variable, or a common effect.</p>
+<p>The disagreement has moved from the calculation to the causal representation.</p>
+<p>Making that dependency explicit does not resolve the disagreement.</p>
+<p>It makes more of what carries the causal conclusion available for examination.</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/04/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>4. Recovering An Intervention From Observation</span></a>
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/06/" accesskey="."
+    ><span>6. When Does The Answer Follow?</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;01&#x2F;">1. From Observation To Intervention</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;02&#x2F;">2. One Table, More Than One Causal Story</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;03&#x2F;">3. What Changes Under Intervention</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;04&#x2F;">4. Recovering An Intervention From Observation</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;05&#x2F;">5. Why The Shape Of The Graph Matters</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;06&#x2F;">6. When Does The Answer Follow?</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;07&#x2F;">7. What Causality Adds</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time> - <time datetime="2026">2026</time> Stefan Kober
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+  <link rel="stylesheet" href="https://www.stefankober.de/katex/katex.min.css?h=e189fd0238811989c364" />
+  <script defer src="https://www.stefankober.de/katex/katex.min.js?h=6b909443e6c8f6e5d24c"></script>
+  <script defer src="https://www.stefankober.de/katex/contrib/auto-render.min.js?h=bb53eb953394531aae36"></script>
+  <script>document.addEventListener("DOMContentLoaded", window.zolaTheme.katex.init);</script>
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>
