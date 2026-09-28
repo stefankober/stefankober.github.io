@@ -107,46 +107,46 @@
     <h1 class="my-0! pb-2.5">7. What Causality Adds</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H4M0S">4&nbsp;min</time><span
+    datetime="PT0H5M0S">5&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
   </header>
   <!-- Content -->
-  <section><p>We can look at what happened on nights when I slept longer:</p>
+  <section><p>The causality essay distinguished two kinds of claims.</p>
+<p>What happened on nights when I slept longer:</p>
 <p>$$
 P(M=1\mid S=1).
 $$</p>
-<p>Or we can ask what would happen if I deliberately made longer sleep occur:</p>
+<p>What would happen if I deliberately made longer sleep occur:</p>
 <p>$$
 P(M=1\mid do(S=1)).
 $$</p>
-<p>They can look almost the same in ordinary language, but one describes an observed situation and the other an intervention.</p>
-<p>Pearl's notation gives us a way to keep that difference explicit as the inquiry becomes more formal.</p>
-<p>The hospital example showed why that distinction matters.</p>
+<p>These claims can look almost the same in ordinary language, but one describes an observed situation and the other an intervention.</p>
+<p>Pearl's notation gave us a way to keep that difference explicit as the inquiry became more formal.</p>
+<p>In simple cases, the distinction may already be easy to recognize. It becomes much harder to keep track of when observational comparisons pull in different directions. The hospital example showed why that matters.</p>
 <p>The observed probabilities supported several different comparisons. Which one bore on the intervention question depended on how treatment, general health or blood pressure, and recovery were causally related.</p>
 <p>The graphs made those causal claims explicit.</p>
 <h2 id="where-the-constraint-comes-from">Where The Constraint Comes From</h2>
 <p>Once those claims were made explicit, they could begin to constrain what followed.</p>
-<p>The arrows of the graph represented claims about what could causally affect what.</p>
-<p>Once those causal relations were fixed, an intervention on $T$ had a specific effect on the representation. Setting $T$ by intervention removed the incoming causes of $T$ while leaving the other represented causal relations in place.</p>
-<p>That changed which comparisons bore on the intervention question.</p>
+<p>The arrows of the graph represented claims about what could causally affect what. Diagrams can help keep all of these of these relations visible at once.</p>
+<p>Once those causal relations were fixed, an intervention on $T$ had a specific effect on the representation. Setting $T$ by intervention removed the incoming causes of $T$ while leaving the other represented causal relations in place. The lack of incoming arrows became the definition of $do(T)$.</p>
 <p>In the hospital example, the graph showed why the aggregate treatment groups mixed together treatment and general health, and why comparing within levels of $G$ removed that common-cause route.</p>
 <p>As in the investigations of logic and probability, once enough of the representation was held fixed, the result was no longer independently open.</p>
 <p>Identification adds another kind of constraint. It asks whether the causal assumptions and observational information already supplied are enough to determine the intervention quantity.</p>
 <p>Sometimes the answer is no. Then the failure is informative. It tells us that the intervention result is not fixed by the materials we have supplied. More calculation from those same materials cannot make one answer follow.</p>
 <p>When the quantity is identified, the causal structure and probability information determine it.</p>
 <h2 id="what-the-investigation-found">What The Investigation Found</h2>
-<p>Applying the causal framework depended on more than the formal operations themselves.</p>
-<p>The variables had to preserve distinctions that mattered, and the arrows had to represent causal relations we found convincing enough to rely on. $do(X=x)$ also had to correspond closely enough to the change we were asking about. The observational information, in turn, had to be relevant to the quantities used in the calculation.</p>
+<p>Applying the causal framework depended on more than the formal operations or the drawing of diagrams.</p>
+<p>The variables had to preserve distinctions that mattered, and the arrows had to represent causal relations we found convincing enough to rely on. $Do(X)$ also had to correspond closely enough to the change we were asking about. The observational information, in turn, had to be relevant to the quantities used in the calculation.</p>
 <p>By now, that is a familiar result.</p>
 <p>Logic depended not just on having premises and interpretations, but on those premises, mappings, and interpretations being convincing enough for the argument at hand. Probability depended not just on assigning weights, but on the represented possibilities and their weights being appropriate to the problem. Bayesian updating added further requirements: the hypothesis space, priors, likelihoods, and representation of the evidence all had to be convincing enough for the update to bear on the inquiry.</p>
 <p>Causal reasoning added another set of application commitments: variables, causal relations, interventions, and observational information all had to fit the problem closely enough for the result to matter.</p>
-<p>But the investigation also returned us to something that was there before the formal machinery. We already understand, in ordinary life, that observing two things together does not tell us what will happen if we deliberately make one of them occur. The shadow of a large tree moving during daylight goes along with the Earth turning. But making that shadow move with a large lamp does not <em>make</em> the Earth turn. We would not normally be fooled by this, because ordinary thinking already carries causal expectations about what produces what.</p>
-<p>But those expectations don't necessarily carry over to new cases, they become harder to rely on when several causal relations interact, when conditioning changes what we are comparing, or when the observed numbers pull in opposite directions. The hospital example did exactly that.</p>
-<p>Pearl's framework gave us a way to preserve that difference formally, represent causal assumptions around it, and follow consequences that were difficult to keep apart in ordinary thought.</p>
-<p>A common cause, an intermediate variable, and a collider could all involve the same three variables and the same operation of conditioning, while changing what that operation meant for the causal question.</p>
-<p>Formal representation could hold those differences steady long enough to inspect them. It could also make new questions available: which path is being opened or blocked, what changes under intervention, and whether the information already supplied is enough to determine the answer.</p>
+<p>But the investigation also returned us to something that was there before the formal machinery. We already understand, in ordinary life, that observing two things together does not tell us what will happen if we deliberately make one of them occur. The shadow of a large tree moving during daylight goes along with the Earth turning. But making that shadow move with a large lamp does not make the Earth turn. We do not confuse the two, because ordinary thinking already carries causal intuition about what produces what.</p>
+<p>But this intuition doesn't necessarily carry over to new cases. The application of probability theory and statistical analysis can make relations visible that are difficult to interpret causally without further structure. This becomes harder when several causal relations interact, when conditioning changes what we are comparing, or when the observed numbers pull in opposite directions. In the hospital example, the aggregate and conditional comparisons did exactly that.</p>
+<p>Formal systems can make cases available that ordinary intuition does not handle easily. With the probability formalism we could construct complicated aggregate and conditional comparisons, all of them valid as probability calculations, without probability theory itself settling which comparison answered the causal question.</p>
+<p>Pearl's framework gave us a way to preserve that difference formally, represent causal assumptions around it, and follow consequences that were difficult to keep apart in ordinary thought. Diagrams added a formal tool the earlier investigations had not used. They kept several causal relations visible at once and made the relevant arrangements inspectable. A common cause, an intermediate variable, and a collider could all involve the same three variables and the same operation of conditioning, while changing what that operation meant for the causal question.</p>
+<p>One formal system can make relations available that exceed what ordinary intuition can still keep apart, and another can make the distinctions needed to examine them explicit. It can hold the relevant differences steady long enough to inspect them. And it can make further questions available: which path is being opened or blocked, what changes under intervention, and whether the information already supplied is enough to determine the answer.</p>
 <hr />
 <p>Next essay: <a href="/essays/constraint-without-final-authority/">Constraint Without Final Authority</a></p>
 </section>
