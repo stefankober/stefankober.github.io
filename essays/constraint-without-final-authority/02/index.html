@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="generator" content="Zola v0.21.0" />
-  <title>6. When Does The Answer Follow?</title>
-  <meta property="og:title" content="6. When Does The Answer Follow?" />
-  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/06/" />
-  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/06/" />
+  <title>2. Constraint Without Final Authority</title>
+  <meta property="og:title" content="2. Constraint Without Final Authority" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/constraint-without-final-authority/02/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/constraint-without-final-authority/02/" />
   <meta property="og:type" content="article" />
   <!-- Begin Head inject -->
   
@@ -104,70 +104,23 @@
   <!-- End Page Start inject -->
 
   <header class="mb-16">
-    <h1 class="my-0! pb-2.5">6. When Does The Answer Follow?</h1>
+    <h1 class="my-0! pb-2.5">2. Constraint Without Final Authority</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H3M0S">3&nbsp;min</time><span
+    datetime="PT0H2M0S">2&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
   </header>
   <!-- Content -->
-  <section><p>In the hospital example, our records came from a process in which general health helped determine treatment.</p>
-<p>We never observed the situation represented by:</p>
-<p>$$
-do(T=1).
-$$</p>
-<p>Yet, once we supplied the causal graph, the observational records were enough to determine:</p>
-<p>$$
-P(R\mid do(T=1))=0.65.
-$$</p>
-<p>Why were they enough?</p>
-<p>The question is whether the observations and causal assumptions already fix the intervention answer.</p>
-<p>In this example, they did. The graph told us why general health had to be adjusted for, and the records supplied the recovery rates within each health group and the distribution of general health. Once those pieces were held in place, the result was fixed:</p>
-<p>$$
-0.5\cdot0.9+0.5\cdot0.4=0.65.
-$$</p>
-<p>We could not keep those inputs and freely choose another value for:</p>
-<p>$$
-P(R\mid do(T=1)).
-$$</p>
-<p>When an interventional quantity can be determined from the observational information together with the causal assumptions, it is said to be <em>identified</em>.</p>
-<h2 id="when-the-answer-is-not-fixed">When The Answer Is Not Fixed</h2>
-<p>Having observational information and a causal model does not guarantee that an intervention quantity will be identified.</p>
-<p>We can see why by changing the hospital example slightly.</p>
-<p>Our adjustment worked because general health was represented in the causal model and recorded in the data.</p>
-<p>We knew:</p>
-<p>$$
-P(R\mid T,G),
-$$</p>
-<p>$$
-P(R\mid T,\neg G),
-$$</p>
-<p>and how common the two health conditions were in the population.</p>
-<p>That allowed us to reconstruct the intervention result.</p>
-<p>Now suppose the causal structure remains:</p>
-<p><img src="/g-t.t-r.g-r.png" alt="" /></p>
-<p>But general health was not recorded. We observe treatment and recovery, but not $G$.</p>
-<p>The aggregate records can still tell us:</p>
-<p>$$
-P(R\mid T)
-$$</p>
-<p>and:</p>
-<p>$$
-P(R\mid\neg T).
-$$</p>
-<p>But our graph says that these comparisons mix the effect of treatment with the influence of general health on both treatment and recovery.</p>
-<p>The adjustment we used before is no longer available, because the observational information needed to condition on $G$ is missing.</p>
-<p>And the remaining observations need not determine a unique intervention answer.</p>
-<p>Different causal processes compatible with the causal assumptions and the same observed distribution of treatment and recovery can imply different values for:</p>
-<p>$$
-P(R\mid do(T=1)).
-$$</p>
-<p>In that case, the effect is not identified from the observational information available to us under the model.</p>
-<p>The intervention may have a determinate causal result. But the observations and causal assumptions supplied so far do not fix that fact, and more calculation using the same information cannot remove the remaining openness.</p>
-<p>If general health was not measured, and no other observed variable or further causal assumption makes the effect recoverable in another way, we need different data or an actual intervention.</p>
-<p>Identification marks that limit: it tells us whether the causal quantity is already fixed by the observational information under the causal assumptions we have supplied.</p>
+  <section><p>The constraint the investigation found in logic was not quite the same as the constraint we found in probability or causality.</p>
+<p>In logic, once enough of the representation remained fixed, a conclusion could follow or a counterexample could remain. Probability allowed several possibilities to stay open while constraining the weights they could carry. Bayesian updating constrained how those weights changed under supplied priors, likelihoods, evidence, and a model.</p>
+<p>Causality added something different again. Under a causal model, observational information could sometimes determine an intervention quantity. In other cases it could establish that the quantity was not identified: more than one intervention answer remained compatible with what had been supplied.</p>
+<p>The methods also had something more concrete in common. They made enough of the relevant structure available for inspection and manipulation. In the small logical cases we could enumerate the relevant possibilities and look for a counterexample. Probability let us construct and partition possibility spaces and follow how weight changed within them. Causal diagrams kept structural relations visible so that interventions and their consequences could be followed through the model.</p>
+<p>Once enough of the arrangement remained fixed, other parts of the inquiry were no longer independently open. A conclusion followed, a counterexample remained, weights were constrained, an intervention quantity was identified, or several answers were shown still to fit.</p>
+<p>This is the sense in which Part II found <em>constraint without final authority</em>.</p>
+<p>The conditions carrying the constraint remained examinable. A premise could later become doubtful, or never become convincing in the first place. A probability model could omit an important possibility. Or a causal graph could represent the situation badly.</p>
+<p>Their consequences were still constrained while they remained in place.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->
@@ -176,12 +129,12 @@ $$</p>
 <nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
   <a
     class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
-    href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/05/" accesskey=","
-    ><span class="mr-1.5">&#8249;</span><span>5. Why The Shape Of The Graph Matters</span></a>
+    href="https://www.stefankober.de/essays/constraint-without-final-authority/01/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>1. What Part II Was Looking For</span></a>
   <a
     class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
-    href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/07/" accesskey="."
-    ><span>7. What Causality Adds</span><span class="ml-1.5">&#8250;</span></a>
+    href="https://www.stefankober.de/essays/constraint-without-final-authority/03/" accesskey="."
+    ><span>3. Distinctions Before Theory</span><span class="ml-1.5">&#8250;</span></a>
 </nav>
 
   <!-- TOC -->
@@ -192,25 +145,16 @@ $$</p>
     </summary>
     <ul class="ps-8">
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;01&#x2F;">1. From Observation To Intervention</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;constraint-without-final-authority&#x2F;01&#x2F;">1. What Part II Was Looking For</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;02&#x2F;">2. One Table, More Than One Causal Story</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;constraint-without-final-authority&#x2F;02&#x2F;">2. Constraint Without Final Authority</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;03&#x2F;">3. What Changes Under Intervention</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;constraint-without-final-authority&#x2F;03&#x2F;">3. Distinctions Before Theory</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;04&#x2F;">4. Recovering An Intervention From Observation</a>
-      </li>
-      <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;05&#x2F;">5. Why The Shape Of The Graph Matters</a>
-      </li>
-      <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;06&#x2F;">6. When Does The Answer Follow?</a>
-      </li>
-      <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;07&#x2F;">7. What Causality Adds</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;constraint-without-final-authority&#x2F;04&#x2F;">4. What Finite Inquiry Can Do</a>
       </li>
     </ul>
   </details>

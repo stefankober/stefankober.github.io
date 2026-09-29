@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="generator" content="Zola v0.21.0" />
-  <title>6. When Does The Answer Follow?</title>
-  <meta property="og:title" content="6. When Does The Answer Follow?" />
-  <meta property="og:url" content="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/06/" />
-  <link rel="canonical" href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/06/" />
+  <title>4. What Finite Inquiry Can Do</title>
+  <meta property="og:title" content="4. What Finite Inquiry Can Do" />
+  <meta property="og:url" content="https://www.stefankober.de/essays/constraint-without-final-authority/04/" />
+  <link rel="canonical" href="https://www.stefankober.de/essays/constraint-without-final-authority/04/" />
   <meta property="og:type" content="article" />
   <!-- Begin Head inject -->
   
@@ -104,70 +104,45 @@
   <!-- End Page Start inject -->
 
   <header class="mb-16">
-    <h1 class="my-0! pb-2.5">6. When Does The Answer Follow?</h1>
+    <h1 class="my-0! pb-2.5">4. What Finite Inquiry Can Do</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H3M0S">3&nbsp;min</time><span
+    datetime="PT0H4M0S">4&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
   </header>
   <!-- Content -->
-  <section><p>In the hospital example, our records came from a process in which general health helped determine treatment.</p>
-<p>We never observed the situation represented by:</p>
-<p>$$
-do(T=1).
-$$</p>
-<p>Yet, once we supplied the causal graph, the observational records were enough to determine:</p>
-<p>$$
-P(R\mid do(T=1))=0.65.
-$$</p>
-<p>Why were they enough?</p>
-<p>The question is whether the observations and causal assumptions already fix the intervention answer.</p>
-<p>In this example, they did. The graph told us why general health had to be adjusted for, and the records supplied the recovery rates within each health group and the distribution of general health. Once those pieces were held in place, the result was fixed:</p>
-<p>$$
-0.5\cdot0.9+0.5\cdot0.4=0.65.
-$$</p>
-<p>We could not keep those inputs and freely choose another value for:</p>
-<p>$$
-P(R\mid do(T=1)).
-$$</p>
-<p>When an interventional quantity can be determined from the observational information together with the causal assumptions, it is said to be <em>identified</em>.</p>
-<h2 id="when-the-answer-is-not-fixed">When The Answer Is Not Fixed</h2>
-<p>Having observational information and a causal model does not guarantee that an intervention quantity will be identified.</p>
-<p>We can see why by changing the hospital example slightly.</p>
-<p>Our adjustment worked because general health was represented in the causal model and recorded in the data.</p>
-<p>We knew:</p>
-<p>$$
-P(R\mid T,G),
-$$</p>
-<p>$$
-P(R\mid T,\neg G),
-$$</p>
-<p>and how common the two health conditions were in the population.</p>
-<p>That allowed us to reconstruct the intervention result.</p>
-<p>Now suppose the causal structure remains:</p>
-<p><img src="/g-t.t-r.g-r.png" alt="" /></p>
-<p>But general health was not recorded. We observe treatment and recovery, but not $G$.</p>
-<p>The aggregate records can still tell us:</p>
-<p>$$
-P(R\mid T)
-$$</p>
-<p>and:</p>
-<p>$$
-P(R\mid\neg T).
-$$</p>
-<p>But our graph says that these comparisons mix the effect of treatment with the influence of general health on both treatment and recovery.</p>
-<p>The adjustment we used before is no longer available, because the observational information needed to condition on $G$ is missing.</p>
-<p>And the remaining observations need not determine a unique intervention answer.</p>
-<p>Different causal processes compatible with the causal assumptions and the same observed distribution of treatment and recovery can imply different values for:</p>
-<p>$$
-P(R\mid do(T=1)).
-$$</p>
-<p>In that case, the effect is not identified from the observational information available to us under the model.</p>
-<p>The intervention may have a determinate causal result. But the observations and causal assumptions supplied so far do not fix that fact, and more calculation using the same information cannot remove the remaining openness.</p>
-<p>If general health was not measured, and no other observed variable or further causal assumption makes the effect recoverable in another way, we need different data or an actual intervention.</p>
-<p>Identification marks that limit: it tells us whether the causal quantity is already fixed by the observational information under the causal assumptions we have supplied.</p>
+  <section><p>Part I already gave external representation a practical role. Writing something down can preserve a possibility or comparison while attention moves elsewhere. What had to be held in mind can remain available for another look.</p>
+<p>Formalization can take this further.</p>
+<p>A representation can preserve relations on which a result depends and make them available for inspection. The logic essay gave us a simple example. When the Socrates inference was represented propositionally, the repeated object and properties disappeared. The three claims became unrelated propositions. A richer representation preserved relations that the weaker one had lost.</p>
+<p>Nothing about that made the richer representation correct merely because it was richer. It did make visible something the earlier representation could not carry.</p>
+<p>This is one way an operative distinction can enter a more explicit arrangement. The distinction does not need to receive a final theory first. Parts of its role can become more precise while other assumptions, mappings, or relations are added around it.</p>
+<p>More of what carries the inquiry can then become available for inspection. That gives us a limited sense of <em>refinement</em>.</p>
+<p>A conviction need not change for the inquiry around it to become more refined. Something implicit may become visible, making it easier to locate what a result or disagreement depends on.</p>
+<p>Refinement is not yet <em>improvement</em>.</p>
+<p>Making more of an inquiry available for inspection does not tell us that one conviction is better than another. That still depends on the criterion by which they are compared, and Part II did not find a general criterion for settling that question.</p>
+<p>But making more available still changes what can be examined within that inquiry.</p>
+<p>This is where the formal investigations return us to <em>recursive examination</em>.</p>
+<p>A distinction that helped organize a question can itself become an object of inquiry. So can a premise, a representation, or some other condition on which a result depends.</p>
+<p>The possibility of doing this does not require everything to become unsettled.</p>
+<p>Chapter 3 already gave us one reason. An inquiry need not possess a completed theory of every operative distinction or criterion it uses before those things can organize the inquiry.</p>
+<p>Recursive examination gives us another. Making something available for examination does not decide what the examination will do to it. That follows from the same limitation with which Conviction Formation Theory began.</p>
+<p>Becoming convinced is not under direct voluntary control.</p>
+<p>We can participate in examination. We cannot choose its effect on what remains convincing.</p>
+<p>Usually only part of what is carrying the inquiry becomes questionable. A distinction can stay operative while we examine one of its applications. A premise can continue to carry an argument while we consider what would happen if it were given up.</p>
+<p>This is <em>settlement without final settlement</em>. What remains in place can constrain what follows. If a logical representation remains fixed, a surviving counterexample cannot simply be wished away.</p>
+<p>The conditions can later change. That does not make their consequences arbitrary while they remain in place.</p>
+<p><em>Settlement without final settlement</em> and <em>constraint without final authority</em> describe different parts of the same local situation.</p>
+<p>Settlement concerns what remains sufficiently in place for the inquiry to continue.</p>
+<p>Constraint concerns what is no longer independently open while those conditions remain in place.</p>
+<p>Something already operative can organize a question before its final theory has been settled. Representation can make more of the surrounding arrangement explicit. What becomes visible can be examined further. What becomes visible can then be examined without requiring the rest of the inquiry to be reopened.</p>
+<p>Enough can remain settled for constraint to operate throughout.</p>
+<p>Part I called our involvement in such processes <em>participation</em>.</p>
+<p>We can alter some of the conditions under which conviction forms without controlling what will become convincing.</p>
+<p>In the formal investigations, something related appeared: we could choose what to put into the representation and hold it in place, but not separately choose what followed from it, or what effect those consequences would have on conviction.</p>
+<p>Finite inquiry does not have to wait for the final theory of everything it relies on. It can begin from distinctions clear and stable enough to organize a question, make more of what the inquiry depends on explicit, and continue from what that examination reveals. This gives us more ways to participate in inquiry without putting what will ultimately become convincing under our control.</p>
+<p>We cannot wait until everything is finally settled. If final settlement is possible at all, it is hard to see how we could reach it except through investigation.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->
@@ -176,12 +151,8 @@ $$</p>
 <nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
   <a
     class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
-    href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/05/" accesskey=","
-    ><span class="mr-1.5">&#8249;</span><span>5. Why The Shape Of The Graph Matters</span></a>
-  <a
-    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
-    href="https://www.stefankober.de/essays/sources-of-constraint-in-pearls-theory-of-causality/07/" accesskey="."
-    ><span>7. What Causality Adds</span><span class="ml-1.5">&#8250;</span></a>
+    href="https://www.stefankober.de/essays/constraint-without-final-authority/03/" accesskey=","
+    ><span class="mr-1.5">&#8249;</span><span>3. Distinctions Before Theory</span></a>
 </nav>
 
   <!-- TOC -->
@@ -192,25 +163,16 @@ $$</p>
     </summary>
     <ul class="ps-8">
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;01&#x2F;">1. From Observation To Intervention</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;constraint-without-final-authority&#x2F;01&#x2F;">1. What Part II Was Looking For</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;02&#x2F;">2. One Table, More Than One Causal Story</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;constraint-without-final-authority&#x2F;02&#x2F;">2. Constraint Without Final Authority</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;03&#x2F;">3. What Changes Under Intervention</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;constraint-without-final-authority&#x2F;03&#x2F;">3. Distinctions Before Theory</a>
       </li>
       <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;04&#x2F;">4. Recovering An Intervention From Observation</a>
-      </li>
-      <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;05&#x2F;">5. Why The Shape Of The Graph Matters</a>
-      </li>
-      <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;06&#x2F;">6. When Does The Answer Follow?</a>
-      </li>
-      <li class="ps-0.5">
-        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;sources-of-constraint-in-pearls-theory-of-causality&#x2F;07&#x2F;">7. What Causality Adds</a>
+        <a class="no-underline hover:underline" href="https:&#x2F;&#x2F;www.stefankober.de&#x2F;essays&#x2F;constraint-without-final-authority&#x2F;04&#x2F;">4. What Finite Inquiry Can Do</a>
       </li>
     </ul>
   </details>
