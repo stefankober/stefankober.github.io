@@ -107,7 +107,7 @@
     <h1 class="my-0! pb-2.5">2. A Small Propositional System</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H16M0S">16&nbsp;min</time><span
+    datetime="PT0H17M0S">17&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
@@ -120,40 +120,40 @@
 <p>If no such case remains, we will call the inference <em>valid</em>.</p>
 <p>That criterion will guide the construction.</p>
 <p>Our first example was:</p>
-<p>If the alarm light is on, the machine has stopped.<br />
-The alarm light is on.</p>
-<p>Thus: The machine has stopped.</p>
+<p>15 is even or 15 is divisible by 3.<br />
+15 is not even.</p>
+<p>Thus: 15 is divisible by 3.</p>
 <p>To examine more closely if it is valid, we will construct a small formal system in which the relation between premises and conclusion can be inspected directly.</p>
 <p>If the model itself becomes convincing, and if it can show either that a counterexample remains or that none is available, then it may tell us something about where the constraint comes from.</p>
 <p>What should be the main objects of our formal system?</p>
-<p>An alarm light is not true or false.</p>
-<p>A machine is not true or false.</p>
+<p>15 is not true or false.</p>
+<p>Even is not true or false.</p>
 <p>That means they cannot be our primary objects.</p>
 <p>The claims we make about them can be true or false however.</p>
-<p>"The alarm light is on" can be true or false. So can "The machine has stopped". And so can "The alarm light is on and the machine has stopped".</p>
+<p>"15 is even" can be true or false. So can "15 is divisible by 3". And so can "15 is even or 15 is divisible by 3".</p>
 <p>Claims that can be true or false will be our basic objects. We will call them <em>propositions</em>.</p>
 <p>Some claims are uncertain for us, or difficult to classify, even if they are in fact either true or false and we simply do not know which. Other claims are vague or context-dependent in ways that make it less clear whether treating them as having exactly one of two truth values is an adequate representation.</p>
 <p>Both cases raise further problems, but we do not need to settle them here. We are not trying to build a system for every kind of claim. We are trying to construct one small setting in which a source of logical constraint can be made visible. We deliberately restrict ourselves to propositions that we treat as having one of two truth values.</p>
 <p>That gives us objects suitable for the criterion we started with.</p>
-<p>Now take the proposition "The alarm light is on and the machine has stopped."</p>
+<p>Now take the proposition "15 is even or 15 is divisible by 3."</p>
 <p>We can split it into two smaller claims:</p>
-<p>"The alarm light is on."</p>
-<p>"The machine has stopped."</p>
+<p>"15 is even."</p>
+<p>"15 is divisible by 3."</p>
 <p>Each of those can still be true or false on its own.</p>
-<p>The word "and" tells us how the two claims have been combined into a larger proposition.</p>
+<p>The word "or" tells us how the two claims have been combined into a larger proposition.</p>
 <p>The same happens with:</p>
-<p>"If the alarm light is on, the machine has stopped."</p>
+<p>"15 is even or 15 is divisible by 3."</p>
 <p>Again we have two propositions, joined in a particular way.</p>
 <p>Now compare:</p>
-<p>"The alarm light is on."</p>
+<p>"15 is even."</p>
 <p>We cannot split this in the same way into smaller parts that are themselves propositions and whose combination gives us the original claim.</p>
 <p>For the present system, we will call propositions of the latter kind <em>simple propositions</em>.</p>
 <p>We will use letters such as $A$ and $B$ to stand for simple propositions. At this stage, what the propositions are about does not matter to the formal structure. What matters is whether each is true or false.</p>
 <p>For our case let:</p>
-<p>$A$ = "The alarm light is on"</p>
+<p>$A$ = "15 is even"</p>
 <p>and:</p>
-<p>$B$ = "The machine has stopped".</p>
-<p>Then $A\ and\ B$ represents "The alarm light is on and the machine has stopped."</p>
+<p>$B$ = "15 is divisible by 3".</p>
+<p>Then $A\ and\ B$ represents "15 is even and 15 is divisible by 3."</p>
 <p>If we want to build larger propositions formally, we need somewhere to start.</p>
 <p>Our simple propositions provide that starting point. Symbols such as $A$, $B$ or $C$ will count as propositions in the system.</p>
 <p>We then need rules that tell us how further propositions can be built from ones we already have.</p>
@@ -239,16 +239,17 @@ Cats are animals.</p>
 <p>Once the representation and the mappings remain in place, the truth values of the more complex propositions are no longer settled separately. They follow from the truth values of their parts according to rules we can inspect directly.</p>
 <h2 id="testing-the-inference">Testing The Inference</h2>
 <p>How can we use this to check if inferences are valid?</p>
-<p>Let's assume we have the following premises. They can either be our first machine example from the last chapter, or any other inference that fits this pattern:</p>
-<p>$A$</p>
-<p>$A\to B.$</p>
+<p>Let's assume we have the following premises. They can either be our first example from the last chapter, or any other inference that fits this pattern:</p>
+<p>$A \lor B$</p>
+<p>$\neg A.$</p>
+<p>$B.$</p>
 <p>We can combine them into one expression (we drop the first pair of brackets; it does not change anything in the reading):</p>
-<p>$A\land(A\to B).$</p>
+<p>$(A \lor B) \land \neg A.$</p>
 <p>Now compare that expression with the proposed conclusion:</p>
 <p>$$
 B.
 $$</p>
-<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\land(A\to B)$</th><th>$B$</th></tr></thead><tbody>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$(A\lor B)\land\neg A$</th><th>$B$</th></tr></thead><tbody>
 <tr><td>true</td><td>true</td><td></td><td>true</td></tr>
 <tr><td>true</td><td>false</td><td></td><td>false</td></tr>
 <tr><td>false</td><td>true</td><td></td><td>true</td></tr>
@@ -258,7 +259,7 @@ $$</p>
 <p>We can follow the way the proposition was constructed.</p>
 <p>Our proposition is</p>
 <p>$$
-A\land(A\to B).
+(A\lor B)\land\neg A
 $$</p>
 <p>We begin with its simple propositions, $A$ and $B$, and list every possible assignment of truth values:</p>
 <table><thead><tr><th>$A$</th><th>$B$</th></tr></thead><tbody>
@@ -267,42 +268,42 @@ $$</p>
 <tr><td>false</td><td>true</td></tr>
 <tr><td>false</td><td>false</td></tr>
 </tbody></table>
-<p>Then we look for the simplest part whose truth value is not yet in the table.</p>
-<p>Here that is $A\to B$.</p>
-<p>Its truth value depends only on $A$ and $B$, so we can add a column for it:</p>
-<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\to B$</th></tr></thead><tbody>
-<tr><td>true</td><td>true</td><td>true</td></tr>
-<tr><td>true</td><td>false</td><td>false</td></tr>
-<tr><td>false</td><td>true</td><td>true</td></tr>
-<tr><td>false</td><td>false</td><td>true</td></tr>
+<p>Then we look for the simplest parts whose truth value is not yet in the table.</p>
+<p>Here these are $\neg A$ and $A\lor B$.</p>
+<p>Their truth value depends only on $A$ and $B$, so we can add a column for each of them:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A$</th><th>$A\lor B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>false</td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td>false</td><td>true</td></tr>
+<tr><td>false</td><td>true</td><td>true</td><td>true</td></tr>
+<tr><td>false</td><td>false</td><td>true</td><td>false</td></tr>
 </tbody></table>
 <p>Now the truth values of both parts of the larger proposition are available:</p>
 <p>$$
-A\land(A\to B).
+(A\lor B)\land\neg A.
 $$</p>
 <p>So we add one more column:</p>
-<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\to B$</th><th>$A\land(A\to B)$</th></tr></thead><tbody>
-<tr><td>true</td><td>true</td><td>true</td><td>true</td></tr>
-<tr><td>true</td><td>false</td><td>false</td><td>false</td></tr>
-<tr><td>false</td><td>true</td><td>true</td><td>false</td></tr>
-<tr><td>false</td><td>false</td><td>true</td><td>false</td></tr>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A$</th><th>$A\lor B$</th><th>$(A\lor B)\land\neg A$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>false</td><td>true</td><td>false</td></tr>
+<tr><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td>true</td><td>true</td><td>true</td></tr>
+<tr><td>false</td><td>false</td><td>true</td><td>false</td><td>false</td></tr>
 </tbody></table>
 <p>This gives us a general procedure.</p>
 <p>Start with the simple propositions and enumerate all possible assignments to them. Then add the complex parts one by one, beginning with those whose own parts already have truth values in the table. Continue until the whole proposition has a column.</p>
 <p>Because our formation rules let us take every complex proposition apart into smaller propositions, we can repeat this procedure for propositions of any finite complexity.</p>
-<p>We end up with this table:</p>
-<table><thead><tr><th>$A$</th><th>$B$</th><th>$A\land(A\to B)$</th><th>$B$</th></tr></thead><tbody>
-<tr><td>true</td><td>true</td><td>true</td><td>true</td></tr>
+<p>We can now shorten the table to $A$, $B$, the premise and the conclusion:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$(A\lor B)\land\neg A$</th><th>$B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>false</td><td>true</td></tr>
 <tr><td>true</td><td>false</td><td>false</td><td>false</td></tr>
-<tr><td>false</td><td>true</td><td>false</td><td>true</td></tr>
+<tr><td>false</td><td>true</td><td>true</td><td>true</td></tr>
 <tr><td>false</td><td>false</td><td>false</td><td>false</td></tr>
 </tbody></table>
 <p>The first two columns give us every possible assignment to $A$ and $B$. In that way we make sure we have every case covered.</p>
 <p>The third column tells us which assignments make both premises true.</p>
 <p>Only one does.</p>
 <p>In that same row $B$ is true.</p>
-<p>There is no row in which $A\land(A\to B)$ is true while $B$ is false.</p>
-<p>Thus the conclusion is valid in the sense we fixed at the beginning of the chapter.</p>
+<p>There is no row in which $(A\lor B)\land\neg A$ is true while $B$ is false.</p>
+<p>Thus the inference is valid in the sense we fixed at the beginning of the chapter.</p>
 <p>If someone wants to reject the conclusion while keeping both premises, we can ask what assignment would make that possible.</p>
 <p>The table contains every assignment allowed by the system.</p>
 <p>None works.</p>
@@ -311,33 +312,44 @@ $$</p>
 <p>First, the first two columns contain every possible combination of truth values for $A$ and $B$ in this system.</p>
 <p>Second, the formal expressions are meant to preserve the parts of the natural-language claims that matter for the inference.</p>
 <p>If that representation remains convincing, and if the mappings we defined remain in place, then the table leaves no case in which the premises are true and the conclusion false.</p>
-<p>Under those conditions, the conclusion is valid.</p>
+<p>Under those conditions, the inference is valid.</p>
 <h2 id="an-inference-that-fails">An Inference That Fails</h2>
 <p>We can now return to the first inference from the previous chapter that did not seem convincing:</p>
-<p>If the alarm light is on, the machine has stopped.<br />
-The alarm light is off.</p>
-<p>Thus: The machine has not stopped.</p>
-<p>Using the same representation gives $A\to B$ and $\neg A$.</p>
-<p>The proposed conclusion is $\neg B$.</p>
+<p>15 is not even or 15 is divisible by 3.<br />
+15 is not even.</p>
+<p>Thus: 15 is divisible by 3.</p>
+<p>Using the same representation gives $\neg A \lor B$ and $\neg A$.</p>
+<p>The proposed conclusion is now $B$.</p>
 <p>Again, we can combine the premises and inspect every possible assignment:</p>
-<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A\land(A\to B)$</th><th>$\neg B$</th></tr></thead><tbody>
-<tr><td>true</td><td>true</td><td>false</td><td>false</td></tr>
-<tr><td>true</td><td>false</td><td>false</td><td>true</td></tr>
-<tr><td>false</td><td>true</td><td>true</td><td>false</td></tr>
-<tr><td>false</td><td>false</td><td>true</td><td>true</td></tr>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A$</th><th>$\neg A\lor B$</th><th>$(\neg A\lor B)\land\neg A$</th><th>$B$</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>false</td><td>true</td><td>false</td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td></tr>
+<tr><td>false</td><td>false</td><td>true</td><td>true</td><td>true</td><td>false</td></tr>
 </tbody></table>
 <p>This time two assignments make both premises true.</p>
-<p>In one of them $\neg B$ is false:</p>
-<table><thead><tr><th>$A$</th><th>$B$</th><th>$\neg A\land(A\to B)$</th><th>$\neg B$</th></tr></thead><tbody>
-<tr><td>false</td><td>true</td><td>true</td><td>false</td></tr>
+<p>In one of them $B$ is false:</p>
+<table><thead><tr><th>$A$</th><th>$B$</th><th>$(\neg A\lor B)\land\neg A$</th><th>$B$</th></tr></thead><tbody>
+<tr><td>false</td><td>false</td><td>true</td><td>false</td></tr>
 </tbody></table>
 <p>That means the premises can be true, while the conclusion is false.</p>
 <p>The constraint that held in the earlier inference is absent here.</p>
 <p>And the table gives us the counterexample directly.</p>
 <p>Translated back into ordinary language, the premises do not exclude this situation:</p>
-<p>If the alarm light is on, the machine has stopped.<br />
-The alarm light is off.<br />
-The machine has stopped.</p>
+<p>15 is not even or 15 is divisible by 3.<br />
+15 is not even.<br />
+15 is not divisible by 3.</p>
+<p>The last sentence is false in fact as a statement about arithmetic. But if we want it to enter the inference and make the counterexample go away, we need to add it as a premise. The premises we have do not force the conclusion. And that is the only question we are asking here: whether the inference is valid.</p>
+<p>For the validity of an inference, it does not matter whether the conclusion happens to be true for some other reason than following from the premises. An inference cannot use facts that have not entered the representation.</p>
+<p>We can see this more easily by changing the example:</p>
+<p>17 is not even or 17 is divisible by 3.<br />
+17 is not even.<br />
+17 is divisible by 3.</p>
+<p>Here the same inference form would lead to a false conclusion.</p>
+<p>On the other hand this is a valid inference, even though one premise is false:</p>
+<p>17 is even or 17 is divisible by 3.<br />
+17 is not even.</p>
+<p>Thus: 17 is divisible by 3.</p>
 <p>Our small formal system does both kinds of work we wanted from it, provided that we handle the translation into the system with care.</p>
 <p>It shows, within the representation we constructed, why one inference satisfies our criterion of validity and why the other does not.</p>
 <p>And it can do that because the relevant possibilities have all been made explicit.</p>

@@ -114,9 +114,9 @@
   </header>
   <!-- Content -->
   <section><p>The propositional system from the previous chapter could inspect some kinds of conclusions already.</p>
-<p>If the alarm light is on, the machine has stopped.<br />
-The alarm light is on.</p>
-<p>Thus: The machine has stopped.</p>
+<p>15 is even or 15 is divisible by 3.<br />
+15 is not even.</p>
+<p>Thus: 15 is divisible by 3.</p>
 <p>It could do that because the inferentially relevant structure was already visible in the propositions and their combination.</p>
 <p>Our second example is different:</p>
 <p>All men are mortal.<br />
@@ -235,7 +235,7 @@ Socrates is a man.</p>
 <p>Thus: Socrates is mortal.</p>
 <p>In the system we have constructed, this becomes:</p>
 <p>$$
-\forall x(M(x)\to D(x))
+\forall x (M(x)\to D(x))
 $$</p>
 <p>$$
 M(s)
@@ -270,7 +270,7 @@ $$</p>
 <p>$$
 M(s).
 $$</p>
-<p>We have already inspected this form in the previous chapter.</p>
+<p>The truth-value mapping for implication from the previous chapter already gives us what we need.</p>
 <p>It is the same structure as:</p>
 <p>$$
 A\to B
@@ -300,9 +300,9 @@ $$</p>
 <p>The quantified premise gave us the Socrates instance because Socrates belongs to the complete collection over which the condition ranges.</p>
 <p>The second premise tells us that Socrates satisfies the first part of that condition.</p>
 <p>Together they leave no case in which Socrates is a man but not mortal.</p>
-<p>The conclusion is valid in the small system.</p>
+<p>The inference is valid in the small system.</p>
 <p>If we add more objects, even as many as there are human beings, we get a much larger collection, but still a finite one. In principle, the quantified expression can still be unfolded into one condition for each object.</p>
-<p>That is as far as our present construction carries us. But it can fully accomodate the real example. For an infinite collection, we could no longer inspect universal coverage by unfolding every case into a finite list.</p>
+<p>That is as far as our present construction carries us. But it can fully accommodate the real example. For an infinite collection, we could no longer inspect universal coverage by unfolding every case into a finite list.</p>
 <p>Quantified logic can handle such structures, but doing so requires machinery we have not constructed here.</p>
 <h2 id="an-inference-that-fails">An Inference That Fails</h2>
 <p>We can now test the other inference:</p>
@@ -311,7 +311,7 @@ Socrates is mortal.</p>
 <p>Thus: Socrates is a man.</p>
 <p>Its formal representation is:</p>
 <p>$$
-\forall x(M(x)\to D(x))
+\forall x (M(x)\to D(x))
 $$</p>
 <p>$$
 D(s)
@@ -359,7 +359,7 @@ $$</p>
 <p>For $b$ $M(b)\to D(b)$ is true as well.</p>
 <p>Its first part is false. Remember that is how we defined the implication.</p>
 <p>So every object in the collection satisfies $M(x)\to D(x)$.</p>
-<p>That means $\forall x(M(x)\to D(x))$ is true.</p>
+<p>That means $\forall x (M(x)\to D(x))$ is true.</p>
 <p>The second premise $D(s)$ is also true.</p>
 <p>But $M(s)$ is false.</p>
 <p>The premises can be true while the proposed conclusion is false.</p>
