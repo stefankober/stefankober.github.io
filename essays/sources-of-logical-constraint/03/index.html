@@ -107,7 +107,7 @@
     <h1 class="my-0! pb-2.5">3. A Small Quantified System</h1>
     <!-- Page Info -->
 <div class="text-sm antialiased opacity-80"><time
-    datetime="PT0H11M0S">11&nbsp;min</time><span
+    datetime="PT0H12M0S">12&nbsp;min</time><span
       class="middot"></span><span>Stefan Kober</span>
 </div>
 
@@ -380,6 +380,30 @@ Socrates is not a man.</p>
 <p>Any of those choices can be questioned.</p>
 <p>If they remain convincing for the problem at hand, then the formal system makes the relevant structure explicit enough that a counterexample can either be constructed or excluded.</p>
 <p>What seems to make the resulting constraint convincing is that we can inspect how it arises from the representation we supplied.</p>
+<h2 id="an-aside-on-hidden-structure">An Aside On Hidden Structure</h2>
+<p>The quantified system also helps us see why we used the arithmetic example in the previous chapter.</p>
+<p>Consider:</p>
+<p>If the alarm light is on, the machine has stopped.<br />
+The alarm light is on.</p>
+<p>Thus: the machine has stopped.</p>
+<p>Written propositionally, this looks simple enough:</p>
+<p>$$
+A\to B
+$$</p>
+<p>$$
+A
+$$</p>
+<p>Thus:</p>
+<p>$$
+B.
+$$</p>
+<p>But the ordinary sentence does not naturally interpreted like a claim about one fixed situation. "If the alarm light is on, the machine has stopped" is more naturally read as a general condition: whenever the relevant light is on, the machine has stopped.</p>
+<p>At the same time, the reader will usually assume that the same machine and the same alarm light are meant throughout, and that the events belong to the same relevant time or situation. But $A\to B$ does not contain this extra information.</p>
+<p>Those connections can be made explicit. But if they remain implicit, the reader may supply structure that the propositional representation itself does not contain.</p>
+<p>The arithmetic example avoids much of this problem.</p>
+<p>"15 is even" and "15 is divisible by 3" already concern one fixed object. Their truth values do not change from one occasion to another. We can therefore treat them as complete propositions without first fixing a surrounding situation.</p>
+<p>The quantified system is a better fit when the truth of a claim depends on which object, time, or situation is under consideration. Those circumstances can become part of the representation instead of being silently supplied by the reader.</p>
+<p>In that sense, the two systems also illuminate each other. The quantified system makes it easier to see where a propositional representation has hidden a dependency, and to say more precisely what has been left implicit.</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->
